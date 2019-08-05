@@ -1,3 +1,13 @@
+@font-face {
+  @include font-face-regular;
+}
+@font-face {
+  @include font-face-italic;
+}
+@font-face {
+  @include font-face-bold;
+}
+
 // apply to <html>
 .page {
   font-size: $glob_font-size_base;
