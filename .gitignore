@@ -52,6 +52,7 @@
 _source/                        
 
 # other
+design/
 dist/
 node_modules/
 package-lock.json

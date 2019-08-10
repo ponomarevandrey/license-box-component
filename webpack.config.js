@@ -8,7 +8,9 @@ const TerserPlugin = require('terser-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-
+const RunPostCSSAfterCompilationPlugin = require('run-postcss-after-compilation-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+ 
 module.exports = (env, options) => {
   // console.log(options.mode); // returns string 'development' or 'production'
   return {
@@ -19,7 +21,7 @@ module.exports = (env, options) => {
   devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname + '/dist'),
-    filename: '[name].[contenthash].js',
+    filename: 'scripts.[contenthash].js',
     publicPath: './',
   },
   watch: true,
@@ -78,7 +80,7 @@ module.exports = (env, options) => {
             } 
           },
           // each loader, including css-nano applies to every SCSS file individualy, 
-          // this is the reason why css nano doesnt merge and optimize duplicated code 
+          // this is the reason why css nano doesn't merge and optimize duplicated code 
           // from different SCSS files. Should be fixed
           // https://stackoverflow.com/questions/52564625/cssnano-doesnt-remove-duplicates
           // https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/63#issuecomment-100493459       
@@ -94,7 +96,7 @@ module.exports = (env, options) => {
             loader: 'sass-loader', 
             options: { 
               sourceMap: true,
-              data: '@import "./_variables-mixins-and-functions.scss";',
+              data: '@import "./_variables-mixins-functions.scss";',
               includePaths: [__dirname, 'src'] 
             } 
           },
@@ -107,15 +109,11 @@ module.exports = (env, options) => {
           { 
             loader: 'file-loader',
             options: { 
-              name: 'img/[name].[ext]',
+              name: '[name].[ext]',
               context: 'src',
               outputPath: (url, resourcePath, context) => {
-                // `resourcePath` is original absolute path to asset
-                // `context` is directory where stored asset (`rootContext`) or `context` option
-                // To get relative path you can use
-                // const relativePath = path.relative(context, resourcePath);
-                // Another example: if (/favicon/.test(resourcePath)) return `favicon/${url}`;
-                return `${url}`;
+                if (/favicon/.test(resourcePath)) return `img/favicon/${url}`;
+                else return `img/${url}`;
               }
             },
           } 
@@ -128,7 +126,7 @@ module.exports = (env, options) => {
           { loader: 'html-loader' }, 
           { loader: 'pug-html-loader',
             options: { 
-              "pretty": true,
+              "pretty": true, 
             } 
           } 
         ] 
@@ -163,11 +161,34 @@ module.exports = (env, options) => {
 
     new CleanWebpackPlugin(),
    
+    // index page
     new HtmlWebpackPlugin({ 
       inject: true,
       hash: false,
       filename: 'index.html', 
-      template: './src/blocks.common/page/page.pug',
+      template: './src/pages/index.pug',
+      minify: { 
+        removeComments: true, 
+        collapseWhitespace: false,
+      },           
+    }),
+    // 404 page
+    new HtmlWebpackPlugin({ 
+      inject: true,
+      hash: false,
+      filename: '404.html', 
+      template: './src/pages/404.pug',
+      minify: { 
+        removeComments: true, 
+        collapseWhitespace: false,
+      },           
+    }),
+    // demo page
+    new HtmlWebpackPlugin({ 
+      inject: true,
+      hash: false,
+      filename: 'demo.html', 
+      template: './src/pages/demo.pug',
       minify: { 
         removeComments: true, 
         collapseWhitespace: false,
@@ -179,7 +200,7 @@ module.exports = (env, options) => {
     }),
                                  
     new MiniCssExtractPlugin({ 
-      filename: 'master.[contenthash].css',
+      filename: 'styles.[contenthash].css',
     }),
 
     new PrettierPlugin({ 
@@ -190,6 +211,12 @@ module.exports = (env, options) => {
       trailingComma: 'es5',
       bracketSpacing: true,
     }), 
+    
+    new RunPostCSSAfterCompilationPlugin(path.resolve(__dirname, "postcss.config.js")),
+    
+    new CopyPlugin([
+      { from: 'src/favicon', to: 'img/favicon' },
+    ]),
    
   ]
 

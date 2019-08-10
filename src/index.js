@@ -7,35 +7,38 @@ import './_reset.scss';
  * BLOCKS *
  **********/
 
-// link
-import './blocks.common/link/_link.scss';
+// Redefinition Level: blocks.common
+
+// html
+import './blocks.common/html/_html.scss';
+import './blocks.common/html/html.js';
+// main
+import './blocks.common/main/_main.scss';
 // section
-import './blocks.common/section/_section.scss';
 import './blocks.common/section/section.js';
-//article
-import './blocks.common/article/_article.scss';
 // paragraph
-import './blocks.common/paragraph/_paragraph.scss';
-// image
-import './blocks.common/image/_image.scss';
+import './blocks.common/text/_text.scss';
+// demo
+import './blocks.common/demo/_demo.scss';
 // heading
 import './blocks.common/heading/_heading.scss';
+// list
+import './blocks.common/list/_list.scss';
+// link
+import './blocks.common/link/_link.scss';
+// code
+import './blocks.common/code/_code.scss';
+// image
+import './blocks.common/image/_image.scss';
+// pre
+import './blocks.common/pre/_pre.scss';
+// footer
+import './blocks.common/footer/_footer.scss';
 
-// page-header
-import './blocks.common/page-header/_page-header.scss';
-import './blocks.common/page-header/page-header.js';
-// page-main
-import './blocks.common/page-main/_page-main.scss';
-// page-footer
-import './blocks.common/page-footer/_page-footer.scss';
-// page
-import './blocks.common/page/_page.scss';
-import './blocks.common/page/page.js';
+// Redefinition Level: blocks.touch
 
-// Redefinition Levels
-// Ex: import './blocks.desktop/page/_page.scss';
-// Ex: import './blocks.ru/page/_page.scss';
-// ...
+// header
+// import './blocks.demo/header/_header.scss';
 
 /************
  * GRAPHICS *
@@ -44,9 +47,6 @@ import './blocks.common/page/page.js';
 function requireAllFiles(r) {
   r.keys().forEach(r);
 }
-// require favicons
-requireAllFiles(
-  require.context('./favicon/', true, /\.(svg|png|ico|xml|json)$/)
-);
-// require icons
-requireAllFiles(require.context('./img/', true, /\.svg$/));
+
+// require all images
+requireAllFiles(require.context('./img/', true, /(svg|png|jpg)$/));

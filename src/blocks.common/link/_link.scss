@@ -1,20 +1,26 @@
 .link {
   text-decoration: none;
-  font-family: Georgia;
-  font-style: italic;
+  padding-bottom: 0.1em;
+  border-bottom: 1px solid $glob__color_dodger-blue;
+  color: $glob__color_dodger-blue;
+  outline: 0;
 
-  &:link,
-  &:visited {
-    color: $glob_buddha-gold;
+  // make fade in/out effect on link hover
+  &:link {
+    transition: all 0.2s linear;
   }
 
-  &:link {
-    transition: color 0.2s linear;
+  &:visited {
+    color: red;
+    border-color: red;
   }
 
   &:focus,
   &:hover,
   &:active {
-    color: #b38f00;
+    text-decoration: none;
+    color: $glob__color_science-blue;
+    border-color: $glob__color_dodger-blue;
+    background-color: $glob__color_zumthor;
   }
 }
