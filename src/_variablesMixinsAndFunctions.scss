@@ -1,0 +1,90 @@
+// *************
+// * VARIABLES *
+// *************
+
+// Typography
+$glob__fontStack_sansSerif: Lato, Arial, Verdana, sans-serif;
+$glob__fontStack_serif: Georgia, 'Times New Roman', Times, serif;
+$glob__fontStack_monospaced: Consolas, 'Courier New', Courier, monospace;
+
+$glob__fontSize_root: 16px;
+
+$glob__fontSize_h1: 3.052rem;
+$glob__fontSize_h2: 2.441rem;
+$glob__fontSize_h3: 1.953rem;
+$glob__fontSize_h4: 1.563rem;
+$glob__fontSize_h5: 1.25rem;
+$glob__fontSize_h6: 1rem;
+
+$glob__lineHeight: 1.7;
+
+// Colors
+$glob__color_white: white;
+
+$glob__color_black: #333;
+$glob__color_mineShaft: #262626;
+$glob__color_doveGray: #666;
+$glob__color_concrete: #f2f2f2;
+
+$glob__color_dodgerBlue: #2a7fff;
+$glob__color_scienceBlue: #0052cc;
+$glob__color_zumthor: #e6f0ff;
+
+$glob__color_flesh: #fca;
+$glob__color_atomicTangerine: #f95;
+$glob__color_whiteLinen: #f9f2ec;
+
+$glob__color_buddhaGold: #d4aa00;
+$glob__color_maroonFlush: #c7254e;
+
+// Media Quaries
+$glob__screenXS: 0 !default;
+$glob__screenSM: 480px !default;
+$glob__screenMD: 768px !default;
+$glob__screenLG: 992px !default;
+$glob__screenXL: 1200px !default;
+$glob__screenXXL: 1800px !default;
+
+// Other
+$glob__borderRadius: 6px;
+$glob__transitionTime: 0.3s;
+
+// **********
+// * MIXINS *
+// **********
+
+// Debugging
+@mixin glob__debugger {
+  border: 1px solid red;
+  background: grey;
+  color: red;
+}
+
+// Typography
+@mixin font-face-regular {
+  font-family: Lato;
+  src: url('../../fonts/Lato-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@mixin font-face-italic {
+  font-family: Lato;
+  src: url('../../fonts/Lato-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@mixin font-face-bold {
+  font-family: Lato;
+  src: url('../../fonts/Lato-Heavy.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+// *************
+// * FUNCTIONS *
+// *************
