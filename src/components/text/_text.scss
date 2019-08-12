@@ -1,0 +1,31 @@
+.text {
+  @media print {
+    orphans: 3;
+    widows: 3;
+  }
+
+  line-height: $glob__line-height;
+  font-family: $glob__font-stack_serif;
+
+  &_display_inline {
+    display: inline;
+  }
+
+  &_display_block-paragraph {
+    display: block;
+    text-indent: 0;
+    margin-bottom: 1em; /* space between paragraphs */
+  }
+
+  &_size_root {
+    font-size: 1rem;
+  }
+
+  &_color_black {
+    color: $glob__color_black;
+  }
+
+  &_color_white {
+    color: $glob__color_white;
+  }
+}

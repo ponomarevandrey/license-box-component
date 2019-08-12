@@ -1,0 +1,176 @@
+extends template-demo.pug
+
+block meta
+  meta(name='description' content='Description of the page less than 150 characters')
+  //- Displayed in Google search results:
+  meta(name='keywords' content='web development, web applications, frontend')
+  meta(name='author' content='Andrey Ponomarev')
+  title Static Website Starter Template. BEM Blocks Library
+ 
+block demo
+  div(class='demo')
+    header(class='demo__header')
+      h1(class='demo__heading') Static Website Starter Template
+      h2(class='demo__heading') BEM Blocks Library
+    
+    //a(href='https://github.com/ponomarevandrey', class='link heading__icon' aria-hidden='true', focusable='false', title='Github')
+      span(class='icon__accessLabel') Github
+      svg(
+        class='icon icon__link'): use(xlink:href='./img/icons.svg#github') 
+      
+    main(class='demo__main')
+    
+      article(class='')
+        h1(class='') Blocks
+        hr(class='')
+      //-
+        ul(class='list text list_style_unordered text_size_root') 
+          li(class='list__item') Main root:
+            ul(class='list list_style_unordered')
+              li(class='list__item') .html (assigned to &lt;html&gt; element)
+          li(class='list__item') Content sectioning:
+            ul(class='list list_style_unordered')
+              li(class='list__item') .article
+              li(class='list__item') .main
+              li(class='list__item')
+                a(href='#heading' class='link') .heading
+              li(class='list__item') .section
+              li(class='list__item') .mainNav
+              li(class='list__item') .headingGroup
+          li(class='list__item') Text:
+            ul(class='list list_style_unordered')
+              li(class='list__item') 
+                a(href='#text' class='link') .text
+              li(class='list__item') .pre
+              li(class='list__item') .list
+              li(class='list__item') .blockquote
+              li(class='list__item') .horizontalRule
+              li(class='list__item') 
+                a(href='#link' class='link') .link
+              li(class='list__item') .anchorLink
+              li(class='list__item') .code
+              li(class='list__item') .em
+              li(class='list__item') .strong
+          li(class='list__item') Image, multimedia, embedded content:
+            ul(class='list list_style_unordered')
+              li(class='list__item') 
+                a(href='#image' class='link') .image
+              li(class='list__item') .socialMediaIconLinks
+              li(class='list__item') .icons
+              li(class='list__item') .object
+              li(class='list__item') .picture
+              li(class='list__item') .responsiveMediaContent
+              li(class='list__item') .imageZoom
+              li(class='list__item') .imageSlider
+              li(class='list__item') .portfolioGalleryWithFiltering
+              li(class='list__item') .logo
+          li(class='list__item') Table:
+            ul(class='list list_style_unordered')
+              li(class='list__item') .table
+              li(class='list__item') .responsiveTable
+          li(class='list__item') Forms:
+            ul(class='list list_style_unordered')
+              li(class='list__item') .form
+              li(class='list__item') .formValidator     
+              li(class='list__item') .label
+              li(class='list__item') .selectBox
+              li(class='list__item') .progressBar
+              li(class='list__item') .fieldText
+              li(class='list__item') .checkbox
+              li(class='list__item') .radioButton
+              li(class='list__item') .fileUpload
+              li(class='list__item') .searchBar
+          li(class='list__item') Menus
+            ul(class='list list_style_unordered')
+              li(class='list__item') .hamburgerMenu
+              li(class='list__item') .offCanvasMenu
+              li(class='list__item') .multilevelMenu
+          li(class='list__item') Buttons:
+            ul(class='list list_style_unordered')          
+              li(class='list__item') .button 
+              li(class='list__item') .backToTopButton
+              li(class='list__item') .closeButton
+              li(class='list__item') .toggleSwitch
+              li(class='list__item') .numberSpinner
+              li(class='list__item') .rangeSlider
+          li(class='list__item') Grid:
+            ul(class='list list_style_unordered')
+              li(class='list__item') .twelveColumnGrid
+              li(class='list__item') .autofillColumnGrid
+              li(class='list__item') .pinterestGrid
+          li(class='list__item') Misc:
+            ul(class='list list_style_unordered')
+              li(class='list__item') .message
+              li(class='list__item') .productCard
+              li(class='list__item') .loader
+              li(class='list__item') .pagination
+              li(class='list__item') .breadcrumbs
+              li(class='list__item') .comments
+              li(class='list__item') .modalWindow
+              li(class='list__item') .tabs
+              li(class='list__item') .scrollBar
+              li(class='list__item') .filterElements
+              li(class='list__item') .scrollIndicator
+              li(class='list__item') .tooltip
+              li(class='list__item') .cssArrows
+    
+      div(class='demo__section') 
+
+        // heading
+        h1(class='heading') Heading
+        h1(class='heading heading_size_h1') Heading One
+        h1(class='heading heading_size_h2') Heading Two
+        h1(class='heading heading_size_h3') Heading Three
+        h1(class='heading heading_size_h4') Heading Four
+        h1(class='heading heading_size_h5') Heading Five
+        h1(class='heading heading_size_h6') Heading Six
+          
+        // image
+        include ../components/image/image-001.pug 
+        
+        // hr
+        hr(class='hr')
+
+        // list
+        ul(class='list list_style_unordered')
+          li(class='list__item') Fruit
+            ul(class='list list_style_unordered')
+              li(class='list__item') Bananas
+              li(class='list__item') Apples
+                ul(class='list list_style_ordered')
+                  li(class='list__item') Green
+                  li(class='list__item') Red
+              li(class='list__item') Pears
+          li(class='list__item') Vegetables
+          li(class='list__item') Meat
+
+        // text
+        // inline text
+        p(class='text text_display_inline') Lorem Ipsum
+        // block text
+        p(class='text text_display_block-paragraph text_size_root text_color_black').
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+        p(class='text text_display_block-paragraph text_size_root text_color_black'). 
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+        // link
+        a(href='#' class='link') link
+
+        // code
+        // inline code
+        p(class='text text_display_block-paragraph text_size_root text_color_black'). 
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, #[code(class='code code_display_inline code_theme_dark code_size_root') console.log( a );] and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        // code block
+        pre(class='code code_display_block code_theme_dark code_size_root')
+          code.
+            window.addEventListener( 'load', => {
+              console.log('Ready');
+            })
+
+        // page
+        // just write a short description
+
+        br
+
+        // button
+        a(class='button button_theme_black' href='###') Click me!

@@ -1,0 +1,40 @@
+.heading {
+  font-size: 1rem;
+  font-family: $glob__font-stack_sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  line-height: $glob__line-height;
+  margin-bottom: 0.5em;
+
+  &_size_h1 {
+    font-size: $glob__font-size_h1;
+  }
+
+  &_size_h2 {
+    font-size: $glob__font-size_h2;
+  }
+
+  &_size_h3 {
+    font-size: $glob__font-size_h3;
+  }
+
+  &_size_h4 {
+    font-size: $glob__font-size_h4;
+  }
+
+  &_size_h5 {
+    font-size: $glob__font-size_h5;
+  }
+
+  &_size_h6 {
+    font-size: $glob__font-size_h6;
+  }
+
+  &_color_white {
+    color: $glob__color_white;
+  }
+
+  &_color_black {
+    color: $glob__color_black;
+  }
+}

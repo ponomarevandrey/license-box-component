@@ -1,0 +1,26 @@
+.link {
+  text-decoration: none;
+  border-bottom: 1px solid $glob__color_dodger-blue;
+  color: $glob__color_dodger-blue;
+  outline: 0;
+
+  // make fade in/out effect on link hover
+  &:link {
+    transition: background-color 0.2s linear, color 0.2s linear,
+      border-bottom 0.2s linear;
+  }
+
+  &:visited {
+    color: red;
+    border-color: red;
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: $glob__color_science-blue;
+    border-color: $glob__color_dodger-blue;
+    background-color: $glob__color_zumthor;
+  }
+}

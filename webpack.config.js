@@ -96,7 +96,7 @@ module.exports = (env, options) => {
             loader: 'sass-loader', 
             options: { 
               sourceMap: true,
-              data: '@import "./_variables-mixins-functions.scss";',
+              data: '@import "./components/_global-variables-mixins-functions.scss";',
               includePaths: [__dirname, 'src'] 
             } 
           },
@@ -166,7 +166,7 @@ module.exports = (env, options) => {
       inject: true,
       hash: false,
       filename: 'index.html', 
-      template: './src/pages/index.pug',
+      template: './src/pug/page-index.pug',
       minify: { 
         removeComments: true, 
         collapseWhitespace: false,
@@ -177,7 +177,7 @@ module.exports = (env, options) => {
       inject: true,
       hash: false,
       filename: '404.html', 
-      template: './src/pages/404.pug',
+      template: './src/pug/page-404.pug',
       minify: { 
         removeComments: true, 
         collapseWhitespace: false,
@@ -188,7 +188,7 @@ module.exports = (env, options) => {
       inject: true,
       hash: false,
       filename: 'demo.html', 
-      template: './src/pages/demo.pug',
+      template: './src/pug/page-demo.pug',
       minify: { 
         removeComments: true, 
         collapseWhitespace: false,

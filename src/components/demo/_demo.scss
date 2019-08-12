@@ -1,0 +1,45 @@
+.demo {
+  &__header {
+    text-align: center;
+    padding: 2em 4%;
+    background-color: $glob__color_primary;
+  }
+
+  &__heading {
+    margin-left: -1.1em;
+    color: $glob__color_white;
+    font-size: 2rem;
+    font-family: $glob__font-stack_sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    line-height: $glob__line-height;
+    margin-bottom: 0.5em;
+  }
+
+  &__main {
+    padding: 0 4% 4em 4%;
+  }
+
+  &__article {
+    margin-bottom: 2em;
+    padding: 2em;
+  }
+
+  &__section {
+    margin-bottom: 2em;
+  }
+
+  &__section-item {
+    padding-left: 2em;
+    margin-bottom: 2em;
+    border-left: 1em solid $glob__color_black;
+  }
+
+  &__code {
+    background-color: $glob__color_black;
+    color: $glob__color_white;
+    font-family: $glob__font-stack_monospaced;
+    padding: 2em;
+    display: block;
+  }
+}

@@ -1,0 +1,16 @@
+.image {
+  // make the image responsive
+  max-width: 100%;
+  // if the images do not have a uniform width and height,
+  // replace 'max-width' property above with:
+  // object-fit: cover;
+
+  &_align_center {
+    // 'img' is the inline type of block, so we need to change
+    // the value to 'block' to be able to apply 'margin'
+    display: block;
+    margin: 0 auto;
+    // change image width as needed:
+    width: 60%;
+  }
+}

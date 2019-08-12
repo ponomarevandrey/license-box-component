@@ -1,0 +1,46 @@
+.button {
+  display: inline-block;
+  position: relative;
+  font-family: $glob__font-stack_sans-serif;
+  font-size: 1rem;
+  padding: 1em 1.3em;
+  cursor: pointer;
+  font-weight: bold;
+  //text-align: center;
+  border-radius: $glob__border-radius;
+
+  &_disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &_theme_black {
+    background-color: $glob__color_black;
+    color: $glob__color_white;
+    box-shadow: 0 0.5em 0 $glob__color_nobel;
+
+    &:link {
+      text-decoration: none;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    &:visited {
+      //color: $glob__color_black;
+      text-decoration: none;
+    }
+
+    &:focus {
+    }
+
+    &:hover {
+      background-color: $glob__color_mine-shaft;
+    }
+
+    &:active {
+      color: $glob__color_white;
+      text-decoration: none;
+      transform: translate(0, 2px);
+      box-shadow: 0 0.3em 0 $glob__color_nobel;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.code {
+  // 1. Correct the inheritance and scaling of font size in all browsers.
+  // 2. Correct the odd `em` font sizing in all browsers.
+
+  font-family: $glob__font-stack_monospaced;
+  border-radius: 0.4em;
+
+  &_display_block {
+    padding: 2em;
+    display: block;
+  }
+
+  &_display_inline {
+    display: inline-block;
+    padding: 0 5px;
+  }
+
+  &_size_root {
+    font-size: calc(#{$glob__font-size_root} - 8%);
+  }
+
+  &_theme_light {
+    background-color: $glob__color_primary-lightest;
+    color: $glob__color_black;
+  }
+
+  &_theme_dark {
+    background-color: $glob__color_primary-darkest;
+    color: $glob__color_white;
+  }
+}

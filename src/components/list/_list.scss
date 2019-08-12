@@ -1,0 +1,15 @@
+.list {
+  list-style-position: outside;
+
+  &__item {
+    margin-left: 1em;
+  }
+
+  &_style_ordered {
+    list-style-type: decimal;
+  }
+
+  &_style_unordered {
+    list-style-type: disk;
+  }
+}

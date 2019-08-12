@@ -1,5 +1,5 @@
 {
-  "name": "Static-Website-Starter-Template",
+  "name": "static-website-starter-template",
   "version": "1.0.0",
   "description": "Webpack template for developing static websites",
   "main": "master.js",
