@@ -1,26 +1,27 @@
 .link {
   text-decoration: none;
-  border-bottom: 1px solid $glob__color_dodger-blue;
-  color: $glob__color_dodger-blue;
-  outline: 0;
 
   // make fade in/out effect on link hover
   &:link {
+    color: $color_primary;
+    border-bottom: 1px solid $color_primary;
     transition: background-color 0.2s linear, color 0.2s linear,
       border-bottom 0.2s linear;
   }
 
-  &:visited {
-    color: red;
-    border-color: red;
+  &:visited,
+  &:focus {
+    color: $color_primary-lighten;
+    border-color: $color_primary-lighten;
   }
 
-  &:focus,
   &:hover,
   &:active {
-    text-decoration: none;
-    color: $glob__color_science-blue;
-    border-color: $glob__color_dodger-blue;
-    background-color: $glob__color_zumthor;
+    color: $color_primary-dark;
+    border-color: $color_primary-dark;
+  }
+
+  &_anchor:link {
+    border-bottom: 1px dashed $color_primary;
   }
 }

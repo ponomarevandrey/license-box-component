@@ -116,6 +116,14 @@ block demo
     
       div(class='demo__section') 
 
+        // Not a block - color palette
+        div(class='demo__palette')
+          div(class='demo__color-primary') 1
+          div(class='demo__color-secondary') 2
+          div(class='demo__color-on-error') 3
+          div(class='demo__color-on-success') 4
+          div(class='demo__color-info-message') 5
+
         // heading
         h1(class='heading') Heading
         h1(class='heading heading_size_h1') Heading One
@@ -154,14 +162,14 @@ block demo
           It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
         // link
-        a(href='#' class='link') link
+        a(href='##' class='link') link
 
         // code
         // inline code
         p(class='text text_display_block-paragraph text_size_root text_color_black'). 
-          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, #[code(class='code code_display_inline code_theme_dark code_size_root') console.log( a );] and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          It has survived not only five centuries, but also the leap into electronic typesetting, #[a(href='#image' class='link link_anchor') remaining] essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, #[code(class='code code_display_inline code_theme_light code_size_root') console.log( a );] and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         // code block
-        pre(class='code code_display_block code_theme_dark code_size_root')
+        pre(class='code code_display_block code_theme_light code_size_root')
           code.
             window.addEventListener( 'load', => {
               console.log('Ready');
@@ -173,4 +181,19 @@ block demo
         br
 
         // button
-        a(class='button button_theme_black' href='###') Click me!
+        a(class='button button_theme_primary' href='###') Click me!
+
+        br
+        br
+
+        // responsive grid
+        div(class='grid grid_style_autofill')
+          div(class='grid__item') One
+          div(class='grid__item') Two
+          div(class='grid__item') Three
+          div(class='grid__item') Four 
+          div(class='grid__item') Five
+          div(class='grid__item') Six
+          div(class='grid__item') Seven
+          div(class='grid__item') Eight
+          div(class='grid__item') Nine

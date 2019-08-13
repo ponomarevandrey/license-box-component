@@ -1,4 +1,7 @@
 .image {
+  // 'img' is the inline type of block, so we need to change
+  // the value to 'block' to be able to apply 'margin' for alignment
+  display: block;
   // make the image responsive
   max-width: 100%;
   // if the images do not have a uniform width and height,
@@ -6,11 +9,11 @@
   // object-fit: cover;
 
   &_align_center {
-    // 'img' is the inline type of block, so we need to change
-    // the value to 'block' to be able to apply 'margin'
-    display: block;
     margin: 0 auto;
     // change image width as needed:
-    width: 60%;
+    width: 80%;
+  }
+
+  &_align_left {
   }
 }

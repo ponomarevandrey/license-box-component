@@ -20,7 +20,8 @@ import './components/page/_page.scss';
 import './components/page/page.js';
 
 //image
-//autofill-column-grid
+// grid
+import './components/grid/_grid.scss';
 //form
 //hamburger-menu
 //icon
@@ -34,13 +35,13 @@ import './components/heading/_heading.scss';
 // list
 import './components/list/_list.scss';
 // button
-//import './components/button/_button.scss';
+import './components/button/_button.scss';
 // link
-//import './components/link/_link.scss';
+import './components/link/_link.scss';
 // code
 import './components/code/_code.scss';
 // image
 import './components/image/_image.scss';
 requireAllFiles(require.context('./components/image/', true, /(svg|png|jpg)$/));
 // hr
-//import './components/hr/_hr.scss';
+import './components/hr/_hr.scss';

@@ -2,17 +2,17 @@
   &__header {
     text-align: center;
     padding: 2em 4%;
-    background-color: $glob__color_primary;
+    background-color: $color_secondary;
   }
 
   &__heading {
     margin-left: -1.1em;
-    color: $glob__color_white;
+    color: $color_primary;
     font-size: 2rem;
-    font-family: $glob__font-stack_sans-serif;
+    font-family: $font-stack_sans-serif;
     font-weight: bold;
     font-style: normal;
-    line-height: $glob__line-height;
+    line-height: $root_line-height;
     margin-bottom: 0.5em;
   }
 
@@ -32,13 +32,38 @@
   &__section-item {
     padding-left: 2em;
     margin-bottom: 2em;
-    border-left: 1em solid $glob__color_black;
+    border-left: 1em solid $color_black;
+  }
+
+  &__palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
+  }
+
+  &__color-primary {
+    background-color: $color_primary;
+  }
+
+  &__color-secondary {
+    background-color: $color_secondary;
+  }
+
+  &__color-on-error {
+    background-color: $color_on-error;
+  }
+
+  &__color-on-success {
+    background-color: $color_on-success;
+  }
+
+  &__color-info-message {
+    background-color: $color_info-message;
   }
 
   &__code {
-    background-color: $glob__color_black;
-    color: $glob__color_white;
-    font-family: $glob__font-stack_monospaced;
+    background-color: $color_black;
+    color: $color_white;
+    font-family: $font-stack_monospaced;
     padding: 2em;
     display: block;
   }

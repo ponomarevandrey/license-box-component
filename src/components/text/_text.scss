@@ -4,8 +4,8 @@
     widows: 3;
   }
 
-  line-height: $glob__line-height;
-  font-family: $glob__font-stack_serif;
+  line-height: $root_line-height;
+  font-family: $font-stack_serif;
 
   &_display_inline {
     display: inline;
@@ -22,10 +22,10 @@
   }
 
   &_color_black {
-    color: $glob__color_black;
+    color: $color_black;
   }
 
   &_color_white {
-    color: $glob__color_white;
+    color: $color_white;
   }
 }
