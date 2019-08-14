@@ -17,7 +17,12 @@
   }
 
   &__main {
-    padding: 0 4% 4em 4%;
+    /* if you need full-width responsive image but with the same left and right padding as it's parent container, define the appropriate ammount of vw in 'image' component's .pug file. 
+    
+    For example, here we have 4vw padding for left and right = 8vw of blank space. So, in image's .pug file in 'sizes' attribute define '92 vw' (cause 100vw - 8vw = 92vw) for all (or only for some, if situation demands) media queries.
+    
+    Well, for strange reason it doesn't work, fix it */
+    padding: 0 4vw 4em 4vw;
   }
 
   &__article {

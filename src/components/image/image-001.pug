@@ -1,34 +1,58 @@
-//- play arpund with number values, delete redundant srcset alternatives or 
-//- even <source> tag (if you don't need to solve art direction proble, etc.
-//- this is just a template!
+//- the original size of inages
+- var widthSM = '480';
+- var widthMD = '768';
+- var widthLG = '992'; 
+- var widthXL = '1200';
+- var widthXXL = '1800';
+- var widthXXXL = '2000';
 
-- var img_url_sm = "./../img/animals_landscape_480.jpg";
-- var img_url_md = "./../img/animals_landscape_768.jpg";
-- var img_url_lg = "./../img/animals_landscape_992.jpg";
-- var img_url_xl = "./../img/animals_landscape_1200.jpg";
-- var img_url_xxl = "./../img/animals_landscape_1800.jpg";
-- var img_url_xxxl = "./../img/animals_landscape_2000.jpg 2000w";
+- var urlLandscapeSM = "/../img/animals_landscape_sm.jpg";
+- var urlLandscapeMD = "/../img/animals_landscape_md.jpg";
+- var urlLandscapeLG = "/../img/animals_landscape_lg.jpg";
+- var urlLandscapeXL = "/../img/animals_landscape_xl.jpg";
+- var urlLandscapeXXL = "/../img/animals_landscape_xxl.jpg";
+- var urlLandscapeXXXL = "/../img/animals_landscape_xxxl.jpg";
 
-figure(class='image')
+figure(class='image image_theme_black')
   
-  picture   
-    //- add more <source> tags if you need to provide alternative 
-    //- image types (WEBP for example)  
+  picture(class='image__wrapper')   
+    //- 
+      'srcset' and 'sizes' in <img> element traditionally solve resolution switching problem
     //-
-    //- traditionally handles art direction problem:
-    source(
-      type="image/jpg" 
-      media="(min-width: 1280px)" 
-      sizes="min-width: 0) calc(100vw - 40px), (min-width: 480px) 80vw, (min-width: 768px) 80vw, (min-width: 992px) 100vw, (min-width: 1200px) 100vw, (min-width: 1800px) 100vw, 100vw" 
-      srcset="./../img/animals_landscape_480.jpg 480w, ./../img/animals_landscape_768.jpg 768w, ./../img/animals_landscape_992.jpg 992w, ./../img/animals_landscape_1200.jpg 1200w, ./../img/animals_landscape_1800.jpg 1800w, ./../img/animals_landscape_2000.jpg 2000w")
+      'src' is a fallback value for browsers which doesn't support 'sizes' and 'srcset' attributes
+    //-
+      'sizes' attribute lists the widths of the image that would best fit the layout under different media conditions: the very last value (100vw) is default width, it applies when none of the media conditions match. In a nutshell, sizes = [media querie] [display the image chosen from 'srcset' at this size]
     
-    //- traditionally handles resolution switching problem:
+      The order of sizes in media queries (in 'sizes attribute') does matter!
+      If your media queries use only 'min-width', then start from the largest media query and move down to the smallest. Otherwise, the first-mentioned media query (media-width: 0) will be applied in ANY situation, making any following media queries senseless
+    //-
+      All '100vw' values mentioned below in 'sizes' attribute can be safely removed and it won't affect anything, cause if the value is omitted, it implicitly defaults to the same '100vw'. I defined '100vw' explicitly just for the sake of showing the possibility to change this value. But again: do this only if you REALLY NEED it. Otherwise, for changing image width, edit 'max-width' property of '.image' class in SCSS file, it will change not only the width of the image but the width of the whole container (with 'figcaption' block)
+    //- 
+      Note: although we set every media quiery in 'sizes' to '100vw', the image width is not actually 100% of viewport width cause it's constrained by CSS property max-width: 100%, set on 'image__img' element. Also the width can be constrained even further by the parent block's ('.image') width 
+
     img(
-      src='./../img/animals_landscape_992.jpg' 
-      alt="what is on the image" 
-      title='The value of the title attribute is usually presented to the user as a tooltip, which appears shortly after the cursor stops moving over the image' 
-      sizes="(min-width: 0) 92vw, (min-width: 480px) 92vw, (min-width: 768px) 92vw, (min-width: 992px) 92vw, (min-width: 1200px) 92vw, (min-width: 1800px) 92vw, 92vw" 
-      srcset='./../img/animals_portrait_480.jpg 480w, ./../img/animals_portrait_768.jpg 768w, ./../img/animals_portrait_992.jpg 992w, ./../img/animals_portrait_1200.jpg 1200w, ./../img/animals_portrait_1800.jpg 1800w, ./../img/animals_portrait_2000.jpg 2000w')
-  
-  figcaption(class='text text_color_black text_size_root').
-    Image description or any other text related to this image. Don't dublicate here 'alt' text!
+      class='image__img'
+
+      src=`${urlLandscapeLG}`
+
+      sizes=`(min-width: ${widthXXL}px) 100vw, 
+             (min-width: ${widthXL}px) 100vw,
+             (min-width: ${widthLG}px) 100vw,
+             (min-width: ${widthMD}px) 100vw,
+             (min-width: ${widthSM}px) 100vw,
+             (min-width: 0) 100vw,
+             100vw`
+
+      srcset=`${urlLandscapeSM} ${widthSM}w, 
+              ${urlLandscapeMD} ${widthMD}w, 
+              ${urlLandscapeLG} ${widthLG}w, 
+              ${urlLandscapeXL} ${widthXL}w, 
+              ${urlLandscapeXXL} ${widthXXL}w, 
+              ${urlLandscapeXXXL} ${widthXXXL}w`
+      
+      alt='Ships in the Field' 
+      
+      title='The world is a beautiful place!')
+
+  figcaption(class='text image__caption').
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.

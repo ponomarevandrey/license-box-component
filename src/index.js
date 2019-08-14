@@ -5,6 +5,7 @@ function requireAllFiles(r) {
   r.keys().forEach(r);
 }
 // require images
+// eslint-disable-next-line no-undef
 requireAllFiles(require.context('./img/', true, /(svg|png|jpg)$/));
 
 /*************
@@ -42,6 +43,7 @@ import './components/link/_link.scss';
 import './components/code/_code.scss';
 // image
 import './components/image/_image.scss';
+// eslint-disable-next-line no-undef
 requireAllFiles(require.context('./components/image/', true, /(svg|png|jpg)$/));
 // hr
 import './components/hr/_hr.scss';
