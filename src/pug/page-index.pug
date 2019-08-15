@@ -1,8 +1,7 @@
 extends template-index.pug
 
 block header
-  header(class='header text text_color_black text_size_root')
-    p(class='text_style_block-paragraph') some cool stuff for header
+  include ./../components/header/header.pug
 
 block main
   main(class='main text text_color_black text_size_root')  

@@ -8,13 +8,42 @@
   @include font-face__bold;
 }
 
-.html {
+.page {
   font-size: $root_font-size;
   height: 100%;
   scroll-behavior: smooth;
+  background-attachment: fixed;
 
   &__body {
     height: 100%;
+    background-attachment: fixed;
+
+    &_bg_solid {
+      background-color: $color_gray_darkest;
+    }
+
+    &_bg_gradient {
+      background: linear-gradient(
+          $color_primary-lightest,
+          $color_primary-lighten
+        )
+        no-repeat;
+      // make background fixed (adds nice effect);
+      // this property is not mandatoy:
+      background-attachment: fixed;
+    }
+
+    &_bg_image {
+      background-image: url('./../../img/animals_landscape_xxxl.jpg');
+      // make background image responsive:
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      // make background fixed (adds nice effect);
+      // this property is not mandatoy:
+      background-attachment: fixed;
+    }
   }
 
   /* Chrome transition fires on page load, 
@@ -23,7 +52,4 @@
   &__preload * {
     transition: none !important;
   }
-
-  /* helper class (wrapper), enable if needed:
-  &__wrapper {} */
 }

@@ -27,6 +27,8 @@ import './components/grid/_grid.scss';
 //hamburger-menu
 //icon
 
+// header
+import './components/header/_header.scss';
 // text
 import './components/text/_text.scss';
 // demo
