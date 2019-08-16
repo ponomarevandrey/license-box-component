@@ -13,9 +13,9 @@
 - var urlLandscapeXXL = "/../img/animals_landscape_xxl.jpg";
 - var urlLandscapeXXXL = "/../img/animals_landscape_xxxl.jpg";
 
-figure(class='image image_theme_black')
+figure(class='image-raster image-raster_theme_black')
   
-  picture(class='image__wrapper')   
+  picture(class='image-raster__wrapper')   
     //- 
       'srcset' and 'sizes' in <img> element traditionally solve resolution switching problem
     //-
@@ -31,7 +31,7 @@ figure(class='image image_theme_black')
       Note: although we set every media quiery in 'sizes' to '100vw', the image width is not actually 100% of viewport width cause it's constrained by CSS property max-width: 100%, set on 'image__img' element. Also the width can be constrained even further by the parent block's ('.image') width 
 
     img(
-      class='image__img'
+      class='image-raster__img'
 
       src=`${urlLandscapeLG}`
 
@@ -52,7 +52,8 @@ figure(class='image image_theme_black')
       
       alt='Ships in the Field' 
       
-      title='The world is a beautiful place!')
+      title='The world is a beautiful place!'
+    )
 
-  figcaption(class='text image__caption').
+  figcaption(class='text image-raster__caption').
     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.

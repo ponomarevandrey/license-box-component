@@ -134,7 +134,7 @@ block demo
         h1(class='heading heading_size_h6') Heading Six
           
         // image
-        include ../components/image/image-001.pug 
+        include ../components/image-raster/image-raster-001.pug 
         
         // hr
         hr(class='hr')
@@ -197,3 +197,32 @@ block demo
           div(class='grid__item') Seven
           div(class='grid__item') Eight
           div(class='grid__item') Nine
+
+        // image-svg
+        img(
+          src='./../img/logo.svg' 
+          alt='Logoipsum logo'
+          title='Logoipsum'
+          class='image-svg'
+        )
+
+        div(class='image-svg image-svg_bg')
+
+        // if you need interactivity, use SVG through <object> 
+        object(
+          type="image/svg+xml" 
+          data="./../../img/logo.svg"
+          class='image-svg'
+        ) Your browser does not support SVG
+
+        // header
+        include ../components/header/header.pug 
+
+        // blockquote
+        p(class='text text_display_block-paragraph text_size_root text_color_black'). 
+          It has survived not only five centuries,
+        blockquote(class='blockquote')
+          p(class='blockquote__main'). 
+            Big type, even huge type, can be beautiful and useful. But poise is usually far more important than size – and poise consists primarily of emptiness. Typographically, poise is made of white&space.
+          footer(class='blockquote__footer'). 
+            Robert Bringhurst

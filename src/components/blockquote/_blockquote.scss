@@ -1,0 +1,52 @@
+.blockquote {
+  // Reset
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  quotes: none;
+
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: 1.2rem;
+  line-height: $root_line-height - 0.2;
+  color: $color_black;
+  font-family: $font-stack_sans-serif;
+  background-color: $color_secondary-lighten;
+  padding: 1em 2em 1em 2em;
+  font-style: italic;
+
+  @media screen and (min-width: $screen-lg) {
+    padding: 4em 8em 4em 8em;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (min-width: $screen-sm) {
+    padding: 2em 4em 2em 4em;
+  }
+
+  &__main:first-of-type:before {
+    content: '\201c';
+  }
+
+  &__main:last-of-type:after {
+    content: '\201d';
+  }
+
+  &__footer {
+    padding-top: 0.5em;
+    font-size: $root_font-size;
+    font-family: $font-stack_sans-serif;
+  }
+
+  &__footer:before {
+    content: '–';
+  }
+}
+
+.blockquote:after,
+.blockquote:before {
+  content: '';
+  content: none;
+}
