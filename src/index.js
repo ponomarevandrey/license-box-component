@@ -22,6 +22,10 @@ import './components/demo/_demo.scss';
 //form
 //hamburger-menu
 //icon
+
+// backToTopBtn
+import './components/backToTopBtn/_backToTopBtn.scss';
+import './components/backToTopBtn/backToTopBtn.js';
 // blockquote
 import './components/blockquote/_blockquote.scss';
 // page
@@ -30,9 +34,9 @@ import './components/page/page.js';
 // grid
 import './components/grid/_grid.scss';
 // image-svg
-import './components/image-svg/_image-svg.scss';
+import './components/img-svg/_img-svg.scss';
 // image
-import './components/image-raster/_image-raster.scss';
+import './components/img-raster/_img-raster.scss';
 // header
 import './components/header/_header.scss';
 // text
@@ -41,8 +45,8 @@ import './components/text/_text.scss';
 import './components/heading/_heading.scss';
 // list
 import './components/list/_list.scss';
-// button
-import './components/button/_button.scss';
+// btn
+import './components/btn/_btn.scss';
 // link
 import './components/link/_link.scss';
 // code

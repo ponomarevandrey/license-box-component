@@ -133,8 +133,8 @@ block demo
         h1(class='heading heading_size_h5') Heading Five
         h1(class='heading heading_size_h6') Heading Six
           
-        // image
-        include ../components/image-raster/image-raster-001.pug 
+        // img-raster
+        include ../components/img-raster/img-raster-000.pug 
         
         // hr
         hr(class='hr')
@@ -180,8 +180,10 @@ block demo
 
         br
 
-        // button
-        a(class='button button_theme_primary' href='###') Click me!
+        // btn
+        a(class='btn btn_theme_primary' href='###') Click me!
+        button(type='button' class='btn btn_theme_primary') Click me!
+        button(type='button' class='btn btn_theme_primary btn_disabled') Click me!
 
         br
         br
@@ -198,21 +200,21 @@ block demo
           div(class='grid__item') Eight
           div(class='grid__item') Nine
 
-        // image-svg
+        // img-svg
         img(
           src='./../img/logo.svg' 
           alt='Logoipsum logo'
           title='Logoipsum'
-          class='image-svg'
+          class='img-svg'
         )
 
-        div(class='image-svg image-svg_bg')
+        div(class='img-svg img-svg_bg')
 
         // if you need interactivity, use SVG through <object> 
         object(
           type="image/svg+xml" 
           data="./../../img/logo.svg"
-          class='image-svg'
+          class='img-svg'
         ) Your browser does not support SVG
 
         // header
@@ -226,3 +228,9 @@ block demo
             Big type, even huge type, can be beautiful and useful. But poise is usually far more important than size – and poise consists primarily of emptiness. Typographically, poise is made of white&space.
           footer(class='blockquote__footer'). 
             Robert Bringhurst
+
+        // backToTopBtn
+        button(
+          class='backoTopBtn'
+          title='Go to top'
+        ) Top

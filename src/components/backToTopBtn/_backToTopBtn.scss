@@ -1,0 +1,20 @@
+.backToTopBtn {
+  display: none; // default state of the button is hidden
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99; // guarantee that the button is always on top of other layers
+  border: 0;
+  outline: none;
+  background-color: $color_primary;
+  color: $color_white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: $font-stack_sans-serif;
+
+  &:hover {
+    background-color: $color_primary-darken;
+  }
+}

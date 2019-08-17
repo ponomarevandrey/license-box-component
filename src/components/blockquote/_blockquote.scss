@@ -36,17 +36,17 @@
 
   &__footer {
     padding-top: 0.5em;
-    font-size: $root_font-size;
+    font-size: 1rem;
     font-family: $font-stack_sans-serif;
   }
 
   &__footer:before {
     content: '–';
   }
-}
 
-.blockquote:after,
-.blockquote:before {
-  content: '';
-  content: none;
+  &:after,
+  &:before {
+    content: '';
+    content: none;
+  }
 }

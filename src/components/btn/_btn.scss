@@ -1,4 +1,4 @@
-.button {
+.btn {
   display: inline-block;
   position: relative;
   font-family: $font-stack_sans-serif;
@@ -8,6 +8,7 @@
   font-weight: bold;
   border-radius: $border_radius;
   text-decoration: none;
+  border: 0;
 
   &_theme_primary {
     background-color: $color_primary;
@@ -31,7 +32,8 @@
     }
   }
 
-  &_disabled {
+  &_disabled,
+  &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 
