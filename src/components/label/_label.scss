@@ -1,0 +1,30 @@
+.label {
+  display: inline-block;
+  margin: 0 0.2em;
+  line-height: $root_line-height;
+  padding: 0.3em 0.8em 0.3em;
+  vertical-align: baseline;
+  background-color: $color_secondary;
+  color: $color_black;
+  text-decoration: none;
+  text-transform: none;
+  font-family: $font-stack_sans-serif;
+  font-weight: bold;
+  font-size: calc(1rem - 10%);
+  white-space: nowrap;
+  border-radius: $border_radius;
+  transition: background-color 0.2s ease;
+
+  &:link,
+  &:visited {
+  }
+
+  &:focus,
+  &:hover {
+    background-color: $color_secondary-dark;
+    text-decoration: none;
+  }
+
+  &:active {
+  }
+}

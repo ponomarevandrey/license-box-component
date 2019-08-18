@@ -9,17 +9,38 @@
   border-radius: $border_radius;
   text-decoration: none;
   border: 0;
+  color: $color_white;
+  background-color: $color_black;
+  box-shadow: 0 0.5em 0 $color_gray;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
 
+  &:link,
+  &:visited,
+  &:focus,
+  &:hover {
+  }
+
+  &:hover {
+    background-color: $color_gray-darken;
+  }
+
+  &:active {
+    transform: translate(0, 2px);
+    box-shadow: 0 0.3em 0 $color_gray-light;
+  }
+
+  // Modifier: theme
   &_theme_primary {
     background-color: $color_primary;
-    color: $color_white;
     box-shadow: 0 0.5em 0 $color_primary-lighten;
+    transition: transform 0.2s ease, box-shadow 0.2s ease,
+      background-color 0.2s ease;
 
     &:link,
     &:visited,
-    &:focus {
-      transition: transform 0.1s ease, box-shadow 0.1s ease,
-        background-color 0.2s ease;
+    &:focus,
+    &:hover {
     }
 
     &:hover {
@@ -32,6 +53,7 @@
     }
   }
 
+  // Modifier: disable
   &_disabled,
   &:disabled {
     opacity: 0.5;

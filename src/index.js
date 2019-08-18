@@ -23,6 +23,8 @@ import './components/demo/_demo.scss';
 //hamburger-menu
 //icon
 
+// label
+import './components/label/_label.scss';
 // backToTopBtn
 import './components/backToTopBtn/_backToTopBtn.scss';
 import './components/backToTopBtn/backToTopBtn.js';
