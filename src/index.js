@@ -23,6 +23,9 @@ import './components/demo/_demo.scss';
 //hamburger-menu
 //icon
 
+// breadcrumbs
+import './components/breadcrumbs/_breadcrumbs.scss';
+
 // label
 import './components/label/_label.scss';
 // backToTopBtn
@@ -55,3 +58,5 @@ import './components/link/_link.scss';
 import './components/code/_code.scss';
 // hr
 import './components/hr/_hr.scss';
+// pagination
+import './components/pagination/_pagination.scss';

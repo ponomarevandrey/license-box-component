@@ -31,9 +31,9 @@ $color_primary: #9a00f3;
 $color_primary-light: lighten($color_primary, 12%);
 $color_primary-lighten: lighten($color_primary, 28%);
 $color_primary-lightest: lighten($color_primary, 49%);
-$color_primary-dark: darken($color_primary, 12%);
-$color_primary-darken: darken($color_primary, 24%);
-$color_primary-darkest: darken($color_primary, 36%);
+$color_primary-dark: darken($color_primary, 5%);
+$color_primary-darken: darken($color_primary, 10);
+$color_primary-darkest: darken($color_primary, 15%);
 
 $color_secondary: #ffdd55;
 $color_secondary-light: lighten($color_secondary, 12%);

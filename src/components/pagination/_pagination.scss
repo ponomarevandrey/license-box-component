@@ -1,0 +1,55 @@
+.pagination {
+  display: flex;
+  flex: row wrap;
+
+  &__item {
+    border-radius: $border_radius;
+    font-family: $font-stack_serif;
+    font-size: 1rem;
+    padding: 0.7em 1em;
+    margin: 0 0.2em;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+
+    &:hover:not(.pagination__item_active) {
+      background-color: $color_primary-lightest;
+    }
+
+    &:link {
+      color: $color_primary;
+      transition: background-color 0.2s linear, color 0.2s linear;
+    }
+
+    &:visited,
+    &:focus {
+      color: $color_primary-lighten;
+    }
+
+    &:hover,
+    &:active {
+      color: $color_primary-dark;
+    }
+
+    // Modifier: active
+    &_active {
+      background-color: $color_primary;
+      color: $color_white;
+
+      &:link {
+        color: $color_white;
+        transition: background-color 0.2s linear, color 0.2s linear;
+      }
+
+      &:visited,
+      &:focus {
+        color: $color_white;
+      }
+
+      &:hover,
+      &:active {
+        color: $color_white;
+        background-color: $color_primary_dark;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.breadcrumbs {
+  list-style: none;
+  background-color: $color_primary-lightest;
+  padding: 0.8em 1em;
+  border-radius: $border_radius;
+  font-family: $font-stack_serif;
+  font-size: 1rem;
+  color: $color_black;
+  line-height: $root_line-height;
+
+  &__item {
+    display: inline;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color_primary;
+  }
+
+  &__item + &__item:before {
+    content: '/\00a0';
+    color: black;
+    padding: 0.5em;
+  }
+}
