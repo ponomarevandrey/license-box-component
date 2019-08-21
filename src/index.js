@@ -7,6 +7,7 @@ function requireAllFiles(r) {
 // require images
 // eslint-disable-next-line no-undef
 requireAllFiles(require.context('./img/', true, /(svg|png|jpg)$/));
+requireAllFiles(require.context('./components/', true, /(svg|png|jpg)$/));
 
 /*************
  * CSS RESET *
@@ -21,11 +22,11 @@ import './components/demo/_demo.scss';
 
 //form
 //hamburger-menu
-//icon
 
+//icon
+import './components/icons/_icons.scss';
 // breadcrumbs
 import './components/breadcrumbs/_breadcrumbs.scss';
-
 // label
 import './components/label/_label.scss';
 // backToTopBtn

@@ -1,0 +1,75 @@
+.icons:not(:last-child) {
+  margin-right: 0.6em;
+}
+
+.icons {
+  margin: 0em;
+  text-decoration: none;
+  display: inline-block;
+
+  &__img {
+    background-size: cover;
+    /* Use the current text color as the icon’s fill color. */
+    fill: $color_black;
+    /* Inherit the text’s size too. Also allows sizing the icon by changing its font-size. */
+    width: 2.5em;
+    height: 2.5em;
+    /* Paths and strokes that overflow the viewBox can show in IE11. */
+    overflow: hidden;
+
+    align-self: center;
+    transition: opacity 1s ease;
+
+    &:link,
+    &:visited {
+      fill: $color_black;
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+      // fill: $color_gray-dark;
+      opacity: 0.8;
+    }
+
+    // Modifiers:
+    &_name_github {
+      fill: $color_github;
+    }
+    &_name_fb {
+      fill: $color_fb;
+    }
+    &_name_instagram {
+      fill: $color_instagram;
+    }
+    &_name_ok {
+      fill: $color_ok;
+    }
+    &_name_telegram {
+      fill: $color_telegram;
+    }
+    &_name_twitter {
+      fill: $color_twitter;
+    }
+    &_name_youtube {
+      fill: $color_youtube;
+    }
+    &_name_vk {
+      fill: $color_vk;
+    }
+  }
+
+  &__access-label {
+    /* Visually hidden accessible label using styles that do not hide 
+    the text in screen readers */
+
+    /* We use !important because we should not apply other styles to this hidden alternative text */
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+
+    margin-right: 0.2em;
+  }
+}
