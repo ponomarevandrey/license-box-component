@@ -272,3 +272,15 @@ block demo
 
         // icons
         include ../components/icons/icons.pug 
+
+        br
+        br
+
+        // tooltip
+        p(class='text text_color_black text_display_inline text_size_root') ... some text, 
+          span(class='tooltip') hoverthepointer
+            span(class='tooltip__content') Your text
+
+        span(class='tooltip' style='display: inline-block; width: 50px; height: 50px; background-color: black; border-radius: 10000px;')
+          span(class='tooltip__content') Your text
+
