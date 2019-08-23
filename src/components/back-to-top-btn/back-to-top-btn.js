@@ -1,4 +1,4 @@
-const backToTopBtn = document.querySelector('.backToTopBtn');
+const backToTopBtn = document.querySelector('.back-to-top-btn');
 
 if (backToTopBtn) {
   window.addEventListener('scroll', () => {

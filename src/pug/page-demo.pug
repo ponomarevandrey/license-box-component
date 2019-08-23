@@ -229,9 +229,9 @@ block demo
           footer(class='blockquote__footer'). 
             Robert Bringhurst
 
-        // backToTopBtn
+        // back-to-top-btn
         button(
-          class='backToTopBtn'
+          class='back-to-top-btn'
           title='Go to top'
         ) Top
 
@@ -284,3 +284,119 @@ block demo
         span(class='tooltip' style='display: inline-block; width: 50px; height: 50px; background-color: black; border-radius: 10000px;')
           span(class='tooltip__content') Your text
 
+        br
+        br
+
+        // media-content
+        div(class="media-content media-content_ratio_4x3") 
+          iframe(
+            src='https://www.youtube.com/embed/oRkNaF0QvnI' 
+            frameborder='0' 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          )
+
+        br
+    
+        // table
+        div(class='table text text_color_black text_size_root')
+          table(class='table__container')
+            caption(class='table__caption') Table 1.1 Playlist
+            tr(class='table__row')
+              th(class='table__cell table__cell_type_header') Date
+              th(class='table__cell table__cell_type_header') Artist
+              th(class='table__cell table__cell_type_header') Title
+              th(class='table__cell table__cell_type_header') Album
+              th(class='table__cell table__cell_type_header') Label
+              th(class='table__cell table__cell_type_header') Genres
+              th(class='table__cell table__cell_type_header') Duration
+            tr(class='table__row')
+              td(class='table__cell table__cell_type_main') 1971
+              td(class='table__cell table__cell_type_main') Gil Scott-Heron
+              td(class='table__cell table__cell_type_main') Save The Children
+              td(class='table__cell table__cell_type_main') Pieces Of A Man
+              td(class='table__cell table__cell_type_main') Flying Dutchman
+              td(class='table__cell table__cell_type_main') Soul, Funk, Jazz
+              td(class='table__cell table__cell_type_main') 4:55
+            tr(class='table__row')
+              td(class='table__cell table__cell_type_main') 1975
+              td(class='table__cell table__cell_type_main') Rufus Featuring Chaka Khan
+              td(class='table__cell table__cell_type_main') Sweet Thing
+              td(class='table__cell table__cell_type_main') Rufus Featuring Chaka Khan
+              td(class='table__cell table__cell_type_main') ABC Records
+              td(class='table__cell table__cell_type_main') Soul, Funk, Disco
+              td(class='table__cell table__cell_type_main') 3:18
+            tr(class='table__row')
+              td(class='table__cell table__cell_type_main') 1994
+              td(class='table__cell table__cell_type_main') Adam F ‎
+              td(class='table__cell table__cell_type_main') Sea Of Destiny
+              td(class='table__cell table__cell_type_main') Stronger Than Ever
+              td(class='table__cell table__cell_type_main') Lucky Spin Recordings
+              td(class='table__cell table__cell_type_main') Jungle, Drum'n'Bass
+              td(class='table__cell table__cell_type_main') 6:47
+            tr(class='table__row')
+              td(class='table__cell table__cell_type_main') 2000
+              td(class='table__cell table__cell_type_main') Soulsearcher ‎
+              td(class='table__cell table__cell_type_main') Can't Get Enough (Vocal Club Mix)
+              td(class='table__cell table__cell_type_main') Various ‎- Disco Kandi
+              td(class='table__cell table__cell_type_main') Hed Kandi 
+              td(class='table__cell table__cell_type_main') Garage House, Disco
+              td(class='table__cell table__cell_type_main') 7:19
+
+        // loader
+        div(class='loader')
+
+        br
+
+        // toggle-switch
+        label(class='toggle-switch')
+          input(class='toggle-switch__system-checkbox' type='checkbox')
+          span(class='toggle-switch__container')
+
+        br
+        br
+
+        // checkbox
+        // enabled:
+        label(class='checkbox') 
+          span(class='text') Milk
+          input(class='checkbox__system-checkbox' type='checkbox' checked='checked')
+          span(class='checkbox__custom-checkbox')
+        br
+        label(class='checkbox') 
+          span(class='text') It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          input(class='checkbox__system-checkbox' type='checkbox' checked='checked')
+          span(class='checkbox__custom-checkbox')
+        // error:
+        label(class='checkbox checkbox_error') 
+          span(class='text') Milk
+          input(class='checkbox__system-checkbox' type='checkbox' checked='checked')
+          span(class='checkbox__custom-checkbox')
+        // disabled:
+        label(class='checkbox checkbox_disabled') 
+          span(class='text') Milk
+          input(class='checkbox__system-checkbox' type='checkbox' disabled)
+          span(class='checkbox__custom-checkbox')
+
+
+        // radio-btn
+        // enabled:
+        label(class='radio-btn') 
+          span(class='text') Milk
+          input(class='radio-btn__system-radio-btn' type='radio' name='radio' checked='checked')
+          span(class='radio-btn__custom-radio-btn')
+        br
+        label(class='radio-btn') 
+          span(class='text') It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          input(class='radio-btn__system-radio-btn' type='radio' name='radio')
+          span(class='radio-btn__custom-radio-btn')
+        // error:
+        label(class='radio-btn radio-btn_error') 
+          span(class='text') Milk
+          input(class='radio-btn__system-radio-btn' type='radio' name='radio')
+          span(class='radio-btn__custom-radio-btn')
+        // disabled:
+        label(class='radio-btn radio-btn_disabled') 
+          span(class='text') Milk
+          input(class='radio-btn__system-radio-btn' type='radio' name='radio' disabled)
+          span(class='radio-btn__custom-radio-btn')

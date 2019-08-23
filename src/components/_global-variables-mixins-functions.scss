@@ -29,7 +29,7 @@ $color_black: black;
 
 $color_primary: #9a00f3;
 $color_primary-light: lighten($color_primary, 12%);
-$color_primary-lighten: lighten($color_primary, 28%);
+$color_primary-lighten: lighten($color_primary, 30%);
 $color_primary-lightest: lighten($color_primary, 49%);
 $color_primary-dark: darken($color_primary, 5%);
 $color_primary-darken: darken($color_primary, 10);
@@ -52,12 +52,12 @@ $color_on-error-darken: darken($color_on-error, 24%);
 $color_on-error-darkest: darken($color_on-error, 36%);
 
 $color_on-success: #00d455;
-$color_on-error-light: lighten($color_on-error, 12%);
-$color_on-error-lighten: lighten($color_on-error, 24%);
-$color_on-error-lightest: lighten($color_on-error, 49%);
-$color_on-error-dark: darken($color_on-error, 12%);
-$color_on-error-darken: darken($color_on-error, 24%);
-$color_on-error-darkest: darken($color_on-error, 36%);
+$color_on-success-light: lighten($color_on-success, 12%);
+$color_on-success-lighten: lighten($color_on-success, 24%);
+$color_on-success-lightest: lighten($color_on-success, 35%);
+$color_on-success-dark: darken($color_on-success, 12%);
+$color_on-success-darken: darken($color_on-success, 24%);
+$color_on-success-darkest: darken($color_on-success, 36%);
 
 $color_info-message: #ffe6d5;
 $color_info-message-light: lighten($color_info-message, 12%);

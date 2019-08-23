@@ -1,0 +1,86 @@
+.radio-btn {
+  // define the wrapper container for radio button
+  display: block;
+  position: relative;
+  padding-left: 37px;
+  cursor: pointer;
+  user-select: none;
+  border: 0px solid red;
+
+  &__system-radio-btn:hover ~ &__custom-radio-btn {
+    // change radio button color on mouse over:
+    background-color: $color_gray-light;
+    transition: 0.2s;
+  }
+
+  &__system-radio-btn:checked ~ &__custom-radio-btn {
+    // change the radio button color when it checked:
+    background-color: $color_on-success;
+    transition: 0.2s;
+  }
+
+  &__system-radio-btn:checked ~ &__custom-radio-btn:after {
+    // show the radio button when checked:
+    display: block;
+  }
+
+  &__system-radio-btn {
+    // hide system radio button:
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__custom-radio-btn {
+    position: absolute;
+    top: 1px; // correcy the alignment of radio button relative to the text block
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: $color_gray-lighten;
+    border-radius: 50%;
+    transition: 0.2s;
+
+    &:after {
+      // create round dot (hide when not checked):
+      content: '';
+      position: absolute;
+      display: none;
+
+      // radio button's round dot styles:
+      left: 8px;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $color_white;
+    }
+  }
+
+  // Modifiers:
+
+  &_error {
+    color: $color_on-error;
+
+    .radio-btn__custom-radio-btn {
+      background-color: $color_on-error-light;
+    }
+
+    & .radio-btn__system-radio-btn:hover ~ .radio-btn__custom-radio-btn {
+      // change radio button color on mouse over:
+      background-color: $color_on-error;
+      transition: 0.2s;
+    }
+
+    & .radio-btn__system-radio-btn:checked ~ .radio-btn__custom-radio-btn {
+      // change the radio button color when it checked:
+      background-color: $color_on-error;
+      transition: 0.2s;
+    }
+  }
+
+  &_disabled {
+    color: $color_gray-light;
+    cursor: not-allowed;
+  }
+}

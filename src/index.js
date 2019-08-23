@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 /************
  * GRAPHICS *
  ************/
@@ -47,7 +49,7 @@ import './components/link/_link.scss';
 import './components/pagination/_pagination.scss';
 
 // Small blocks:
-// (usually you don't put anything inside this blocks (except text))
+// (usually, you don't put anything inside these blocks, except text)
 // image-svg
 import './components/img-svg/_img-svg.scss';
 // image
@@ -61,14 +63,25 @@ import './components/breadcrumbs/_breadcrumbs.scss';
 // label
 import './components/label/_label.scss';
 // backToTopBtn
-import './components/backToTopBtn/_backToTopBtn.scss';
-import './components/backToTopBtn/backToTopBtn.js';
+import './components/back-to-top-btn/_back-to-top-btn.scss';
+import './components/back-to-top-btn/back-to-top-btn.js';
 // blockquote
 import './components/blockquote/_blockquote.scss';
 // code
 import './components/code/_code.scss';
 // hr
 import './components/hr/_hr.scss';
-
+// media content
+import './components/media-content/_media-content.scss';
+// table
+import './components/table/_table.scss';
+// loader
+import './components/loader/_loader.scss';
+// toggle switch
+import './components/toggle-switch/_toggle-switch.scss';
+// checkbox
+import './components/checkbox/_checkbox.scss';
+// radio-btn
+import './components/radio-btn/_radio-btn.scss';
 //form
 //hamburger-menu

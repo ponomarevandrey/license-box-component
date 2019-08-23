@@ -1,0 +1,87 @@
+.checkbox {
+  // define the wrapper container for checkbox
+  display: block;
+  position: relative;
+  padding-left: 37px;
+  cursor: pointer;
+  user-select: none;
+
+  &__system-checkbox:hover ~ &__custom-checkbox {
+    // change checkbox color on mouse over:
+    background-color: $color_gray-light;
+    transition: 0.2s;
+  }
+
+  &__system-checkbox:checked ~ &__custom-checkbox {
+    // change the checkbox color when it checked:
+    background-color: $color_on-success;
+    transition: 0.2s;
+  }
+
+  &__system-checkbox:checked ~ &__custom-checkbox:after {
+    // show the checkmark when checked:
+    display: block;
+  }
+
+  &__system-checkbox {
+    // hide system cgeckbox:
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__custom-checkbox {
+    position: absolute;
+    top: 1px; // correcy the alignment of checkbox relative to the text block
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: $color_gray-lighten;
+    transition: 0.2s;
+    border-radius: $border_radius;
+
+    &:after {
+      // create checkmark (hide when not checked):
+      content: '';
+      position: absolute;
+      display: none;
+
+      // checkmark styles:
+      border-radius: 20%;
+      left: 7px;
+      top: 2px;
+      width: 6px;
+      height: 12px;
+      border: solid $color_white;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  // Modifiers:
+
+  &_error {
+    color: $color_on-error;
+
+    .checkbox__custom-checkbox {
+      background-color: $color_on-error-light;
+    }
+
+    & .checkbox__system-checkbox:hover ~ .checkbox__custom-checkbox {
+      // change checkbox color on mouse over:
+      background-color: $color_on-error;
+      transition: 0.2s;
+    }
+
+    & .checkbox__system-checkbox:checked ~ .checkbox__custom-checkbox {
+      // change the checkbox color when it checked:
+      background-color: $color_on-error;
+      transition: 0.2s;
+    }
+  }
+
+  &_disabled {
+    color: $color_gray-light;
+    cursor: not-allowed;
+  }
+}

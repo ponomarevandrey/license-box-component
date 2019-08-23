@@ -1,0 +1,41 @@
+.table {
+  // make table responsive (adds scrollbar if the width is too small)
+  overflow-x: auto;
+
+  &__container {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+
+  &__caption {
+    font-style: italic;
+    color: $color_black;
+    padding: 1em;
+  }
+
+  &__row:nth-child(even) {
+    background-color: $color_gray-lightest;
+  }
+
+  &__row:hover {
+    background-color: $color_gray-lighten;
+  }
+
+  &__cell {
+    padding: 1em;
+    text-align: left;
+    vertical-align: baseline;
+
+    &_type_header {
+      font-weight: bold;
+      background-color: $color_black;
+      color: $color_white;
+    }
+
+    /*
+    &_type_main {
+    }
+    */
+  }
+}

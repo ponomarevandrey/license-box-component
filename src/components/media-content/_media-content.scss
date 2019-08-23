@@ -1,0 +1,19 @@
+.media-content {
+  position: relative;
+  padding-bottom: 56.25%; // 16x9
+  overflow: hidden;
+
+  &_ratio_4x3 {
+    padding-bottom: 75%;
+  }
+}
+
+.media-content iframe,
+.media-content object,
+.media-content embed {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
