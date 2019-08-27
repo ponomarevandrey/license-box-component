@@ -2,9 +2,9 @@
   display: inline-block;
   margin: 0 0.2em;
   line-height: $root_line-height;
-  padding: 0.3em 0.8em 0.3em;
+  padding: 0.3em 0.6em;
   vertical-align: baseline;
-  background-color: $color_secondary;
+  // background-color: $color_secondary;
   color: $color_black;
   text-decoration: none;
   text-transform: none;
@@ -12,7 +12,7 @@
   font-weight: bold;
   font-size: calc(1rem - 10%);
   white-space: nowrap;
-  border-radius: $border_radius;
+  border: 1px solid $color_black;
   transition: background-color 0.2s ease;
 
   &:link,
@@ -21,8 +21,9 @@
 
   &:focus,
   &:hover {
-    background-color: $color_secondary-dark;
+    background-color: $color_black;
     text-decoration: none;
+    color: $color_white;
   }
 
   &:active {

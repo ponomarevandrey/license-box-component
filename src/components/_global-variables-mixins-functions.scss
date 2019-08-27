@@ -27,7 +27,7 @@ $color_gray-darken: #333333;
 $color_gray_darkest: #1a1a1a;
 $color_black: black;
 
-$color_primary: #9a00f3;
+$color_primary: #bc8484; //#9a00f3;
 $color_primary-light: lighten($color_primary, 12%);
 $color_primary-lighten: lighten($color_primary, 30%);
 $color_primary-lightest: lighten($color_primary, 49%);
@@ -43,7 +43,7 @@ $color_secondary-dark: darken($color_secondary, 12%);
 $color_secondary-darken: darken($color_secondary, 18%);
 $color_secondary-darkest: darken($color_secondary, 36%);
 
-$color_on-error: #ff2a2a;
+$color_on-error: #c83737;
 $color_on-error-light: lighten($color_on-error, 15%);
 $color_on-error-lighten: lighten($color_on-error, 24%);
 $color_on-error-lightest: lighten($color_on-error, 38%);
@@ -51,7 +51,7 @@ $color_on-error-dark: darken($color_on-error, 12%);
 $color_on-error-darken: darken($color_on-error, 24%);
 $color_on-error-darkest: darken($color_on-error, 36%);
 
-$color_on-success: #00d455;
+$color_on-success: #2ca05a;
 $color_on-success-light: lighten($color_on-success, 12%);
 $color_on-success-lighten: lighten($color_on-success, 24%);
 $color_on-success-lightest: lighten($color_on-success, 35%);
@@ -59,7 +59,7 @@ $color_on-success-dark: darken($color_on-success, 12%);
 $color_on-success-darken: darken($color_on-success, 24%);
 $color_on-success-darkest: darken($color_on-success, 36%);
 
-$color_info-message: #ffe6d5;
+$color_info-message: #f4d7d7; ///#ffcc00;
 $color_info-message-light: lighten($color_info-message, 12%);
 $color_info-message-lighten: lighten($color_info-message, 24%);
 $color_info-message-lightest: lighten($color_info-message, 49%);
@@ -76,7 +76,7 @@ $color_twitter: #55acee;
 $color_youtube: red;
 $color_vk: #4680c2;
 
-$color_bg: #f7f7f7;
+$color_bg: #f8f6f6; // #f7f7f7;
 
 // Media Quaries
 $screen-xs: 0 !default;

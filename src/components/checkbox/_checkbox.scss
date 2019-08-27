@@ -14,7 +14,7 @@
 
   &__system-checkbox:checked ~ &__custom-checkbox {
     // change the checkbox color when it checked:
-    background-color: $color_on-success;
+    background-color: $color_black;
     transition: 0.2s;
   }
 
@@ -38,7 +38,6 @@
     width: 24px;
     background-color: $color_gray-lighten;
     transition: 0.2s;
-    border-radius: $border_radius;
 
     &:after {
       // create checkmark (hide when not checked):
@@ -47,11 +46,10 @@
       display: none;
 
       // checkmark styles:
-      border-radius: 20%;
-      left: 7px;
-      top: 2px;
-      width: 6px;
-      height: 12px;
+      left: 8px;
+      top: 3px;
+      width: 5px;
+      height: 10px;
       border: solid $color_white;
       border-width: 0 3px 3px 0;
       transform: rotate(45deg);
