@@ -47,6 +47,8 @@ import './components/btn/_btn.scss';
 import './components/link/_link.scss';
 // pagination
 import './components/pagination/_pagination.scss';
+// comment
+import './components/comment/_comment.scss';
 
 // Small blocks:
 // (usually, you don't put anything inside these blocks, except text)
@@ -83,5 +85,6 @@ import './components/toggle-switch/_toggle-switch.scss';
 import './components/checkbox/_checkbox.scss';
 // radio-btn
 import './components/radio-btn/_radio-btn.scss';
-//form
+// form
+import './components/form/_form.scss';
 //hamburger-menu

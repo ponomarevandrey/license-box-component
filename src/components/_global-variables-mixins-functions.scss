@@ -44,9 +44,9 @@ $color_secondary-darken: darken($color_secondary, 18%);
 $color_secondary-darkest: darken($color_secondary, 36%);
 
 $color_on-error: #ff2a2a;
-$color_on-error-light: lighten($color_on-error, 12%);
+$color_on-error-light: lighten($color_on-error, 15%);
 $color_on-error-lighten: lighten($color_on-error, 24%);
-$color_on-error-lightest: lighten($color_on-error, 49%);
+$color_on-error-lightest: lighten($color_on-error, 38%);
 $color_on-error-dark: darken($color_on-error, 12%);
 $color_on-error-darken: darken($color_on-error, 24%);
 $color_on-error-darkest: darken($color_on-error, 36%);
@@ -75,6 +75,8 @@ $color_telegram: #0088cc;
 $color_twitter: #55acee;
 $color_youtube: red;
 $color_vk: #4680c2;
+
+$color_bg: #f7f7f7;
 
 // Media Quaries
 $screen-xs: 0 !default;

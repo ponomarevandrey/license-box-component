@@ -1,4 +1,100 @@
-// <input class='input'>
-.input:focus {
-  background: silver;
+.form {
+  & * {
+    box-sizing: border-box;
+  }
+
+  &__row {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-bottom: 0.7em;
+    justify-content: flex-end;
+
+    @media screen and (min-width: $screen-md) {
+      flex-flow: row nowrap;
+    }
+
+    // Modifiers:
+    &_view_stack {
+      flex-flow: column nowrap;
+    }
+  }
+
+  &__label-wrapper {
+    font-weight: bold;
+    padding: 0.5em 1em 0.5em 0;
+    overflow-wrap: break-word;
+
+    @media screen and (min-width: $screen-md) {
+      /* if forms become different width or you need more space for text inside <label> elements, increase max-width/min-width: */
+      width: 6em;
+    }
+  }
+
+  &__frame-wrapper {
+    flex: 1 1 auto;
+
+    // Modifiers:
+
+    &_disabled {
+      color: $color_gray-light;
+
+      & .form__frame {
+        background-color: $color_gray-lightest;
+      }
+
+      & .form__frame::placeholder {
+        color: $color_gray-lighten;
+        opacity: 1;
+      }
+    }
+
+    &_error {
+      color: $color_on-error;
+
+      & .form__frame::placeholder {
+        color: $color_on-error;
+        opacity: 1;
+      }
+
+      & .form__frame {
+        background-color: $color_on-error-lightest;
+        color: $color_on-error;
+        border-color: $color_on-error;
+      }
+
+      & .form__frame:focus {
+        background-color: $color_on-error-lightest;
+        border-bottom: 5px solid $color_on-error;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        color: $color_on-error;
+      }
+    }
+  }
+
+  &__frame {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid $color_gray-lighten;
+    resize: vertical;
+    background-color: $color_white;
+    font-family: $font-stack_sans-serif;
+  }
+
+  &__frame:focus {
+    background-color: $color_white;
+    outline: 2px dotted $color_gray-lighten;
+    outline-offset: 8px;
+    border-bottom: 5px solid $color_black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
+  &__help-text {
+    font-size: 1rem - 0.2rem;
+    padding-top: 8px;
+    padding-bottom: 0em;
+  }
 }
