@@ -15,7 +15,7 @@
 
   &__system-radio-btn:checked ~ &__custom-radio-btn {
     // change the radio button color when it checked:
-    background-color: $color_on-success;
+    background-color: $color_black;
     transition: 0.2s;
   }
 

@@ -19,9 +19,11 @@ import './components/_reset.scss';
 /**************
  * COMPONENTS *
  **************/
-/* The order of components is from biggest to smallest. 
+/* The order of components is from biggest to smallest.
 
-Don't change their s precedence cause some of components rely on cascade so reordering may break the trules. For now, the only component that is really depends on cascade is 'tooltip'  -line-height property of 'tooltip' reassigns line-height propery of 'text' block */
+Don't change their precedence cause some of components rely on cascade so reordering may break he trules. For now, the only component that is really depends on cascade is 'tooltip'  -line-height property of 'tooltip' reassigns line-height propery of 'text' block 
+
+If you don't need a component, don't delete it from this file, just comment it out' */
 
 // demo
 import './components/demo/_demo.scss';
@@ -31,8 +33,14 @@ import './components/demo/_demo.scss';
 // page
 import './components/page/_page.scss';
 import './components/page/page.js';
-// grid
-import './components/grid/_grid.scss';
+// grid-responsive-col
+import './components/grid-responsive-col/_grid-responsive-col.scss';
+// grid-items-list.scss
+import './components/grid-items-list/_grid-items-list.scss';
+// grid-classic
+import './components/grid-classic/_grid-classic.scss';
+// grid-12col
+import './components/grid-12col/_grid-12col.scss';
 // header
 import './components/header/_header.scss';
 // text
@@ -87,4 +95,5 @@ import './components/checkbox/_checkbox.scss';
 import './components/radio-btn/_radio-btn.scss';
 // form
 import './components/form/_form.scss';
+
 //hamburger-menu

@@ -1,0 +1,25 @@
+.grid-responsive-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+  grid-gap: 1rem;
+
+  &__item {
+    background-color: $color_primary-lighten;
+    padding: 1em;
+    text-align: center;
+  }
+}
+
+.grid-items-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 2rem;
+
+  padding: 2rem;
+  background-color: $color_primary-lighten;
+
+  &__image {
+    width: 100%;
+  }
+}

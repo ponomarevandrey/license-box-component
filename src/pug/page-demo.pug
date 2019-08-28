@@ -188,17 +188,71 @@ block demo
         br
         br
 
-        //- responsive grid
-        div(class='grid grid_style_autofill')
-          div(class='grid__item') One
-          div(class='grid__item') Two
-          div(class='grid__item') Three
-          div(class='grid__item') Four 
-          div(class='grid__item') Five
-          div(class='grid__item') Six
-          div(class='grid__item') Seven
-          div(class='grid__item') Eight
-          div(class='grid__item') Nine
+        //- responsive columns grid
+        div(class='grid-responsive-col')
+          div(class='grid-responsive-col__item') One
+          div(class='grid-responsive-col__item') Two
+          div(class='grid-responsive-col__item') Three
+          div(class='grid-responsive-col__item') Four 
+          div(class='grid-responsive-col__item') Five
+          div(class='grid-responsive-col__item') Six
+          div(class='grid-responsive-col__item') Seven
+          div(class='grid-responsive-col__item') Eight
+          div(class='grid-responsive-col__item') Nine
+
+        br
+        //- grid-items-list 
+        ul(class='grid-items-list')
+
+          li(class='grid-items-list__item')
+            figure
+              img(class='grid-items-list__image' src="/../img/animals_landscape_lg.jpg" alt="Several hands holding beer glasses")
+              figcaption
+                h3(class='heading heading_size_h3') Billions upon billions
+            p(class='text text_display_block-paragraph') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+            a(class='btn' href="###") Visit Website
+
+          li(class='grid-items-list__item')
+            figure
+              img(class='grid-items-list__image' src="/../img/animals_landscape_lg.jpg" alt="Several hands holding beer glasses")
+              figcaption
+                h3(class='heading heading_size_h3') Billions upon billions
+            p(class='text text_display_block-paragraph') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence? 
+            p(class='text text_display_block-paragraph') It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            a(class='btn' href="###") Visit Website
+        
+          li(class='grid-items-list__item')
+            figure
+              img(class='grid-items-list__image' src="/../img/animals_landscape_lg.jpg" alt="Several hands holding beer glasses")
+              figcaption
+                h3(class='heading heading_size_h3') Billions upon billions
+            p(class='text text_display_block-paragraph') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence? 
+            a(class='btn' href="###") Visit Website
+        
+        br
+
+        //- grid-classic 
+        section(class='grid-classic')
+          div(class='grid-classic__header') Header
+          div(class='grid-classic__news1') News. Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+          div(class='grid-classic__news2')
+            div hkjh
+            div(class='grid-classic__article') Article. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            div(class='grid-classic__info') Info
+          div(class='grid-classic__ads-l') Space L
+          div(class='grid-classic__ads-r') Space R  
+          div(class='grid-classic__footer') Footer
+
+        br
+
+        //- grid-12col
+        section(class='grid-12col')
+          div(class='grid-12col__one')
+            One One One One One One One One One One One One One One One
+          div(class='grid-12col__two') TwoTwo TwoTwo Two TwoTwo TwoTwo Two Two
+          div(class='grid-12col__three') ThreeThreeThreeThreeThree
+          div(class='grid-12col__four') Four Four Four Four Four
+          div(class='grid-12col__five') FiveFiveFiveFiveFive
 
         //- img-svg
         img(
@@ -450,7 +504,7 @@ block demo
               div(class='form__help-text') Help text
 
         //- example 2:
-        form(class='form' action='' method='')
+        form(class='form text' action='' method='')
           div(class='form__row form__row_view_stack')
             div(class='form__label-wrapper')
               label(for='name') Name
@@ -486,8 +540,13 @@ block demo
               label(for='subject') Subject
             div(class='form__frame-wrapper')
               textarea(class='form__frame' id='subject' name='subject' placeholder='Default text' style='height:200px')
+
           
+          div(class='form__row')
+            div(class='form__frame-wrapper') 
+              //- search-form
+              input(class='form__frame form__frame_type_search' id='search' type='text' name='search' placeholder='Search...')
+
           div(class='form__row')
             input(class='btn' type='submit' value='Submit')       
 
-        //- search-form
