@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Home",
+    "members": []
+  },
+  {
+    "title": "About",
+    "members": [
+      {
+        "title": "About Sub 1",
+        "members": [
+          {
+            "title": "About Sub 1 Sub 1",
+            "members": []
+          },
+          {
+            "title": "About Sub 1 Sub 2",
+            "members": []
+          }
+        ]
+      },
+      {
+        "title": "About Sub 2",
+        "members": []
+      }
+    ]
+  },
+  {
+    "title": "Contacts",
+    "members": []
+  }
+]

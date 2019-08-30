@@ -7,6 +7,8 @@
     '. . . . l-sidebar content content r-sidebar . . . .'
     '. . . . l-sidebar footer  footer  footer    . . . .';
 
+  overflow: hidden;
+
   &__one {
     grid-area: header; /* we can also use grid-row/grid-column properties instead of grid-area, this is just two diferent ways of assigning grid items to spicific places. */
 

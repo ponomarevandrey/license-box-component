@@ -3,8 +3,7 @@
   font-family: $font-stack_sans-serif;
   font-weight: bold;
   font-style: normal;
-  line-height: $root_line-height;
-  margin-bottom: 0.5em;
+  line-height: $root_line-height - 0.5;
 
   &_size_h1 {
     font-size: $font-size_h1;

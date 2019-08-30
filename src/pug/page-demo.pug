@@ -134,8 +134,21 @@ block demo
         h1(class='heading heading_size_h6') Heading Six
           
         //- img-raster
-        include ../components/img-raster/img-raster-000.pug 
-        
+        figure(class='image-raster image-raster_theme_black')
+          picture(class='image-raster__wrapper')   
+            img(
+              class='image-raster__img'
+              src="/../img/animals_landscape_xxxl.jpg"
+
+              sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
+
+              srcset="/../img/animals_landscape_sm.jpg 480w, /../img/animals_landscape_md.jpg 768w, /../img/animals_landscape_lg.jpg 992w, /../img/animals_landscape_xl.jpg 1200w, /../img/animals_landscape_xxl.jpg 1800w, /../img/animals_landscape_xxxl.jpg 2000w"
+              
+              alt='Ships in the Field' 
+            )
+          figcaption(class='text image-raster__caption').
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
         //- hr
         hr(class='hr')
 
@@ -205,30 +218,59 @@ block demo
         ul(class='grid-items-list')
 
           li(class='grid-items-list__item')
-            figure
-              img(class='grid-items-list__image' src="/../img/animals_landscape_lg.jpg" alt="Several hands holding beer glasses")
-              figcaption
-                h3(class='heading heading_size_h3') Billions upon billions
+            //- image-raster block
+            figure(class='image-raster')
+              picture(class='image-raster__wrapper')   
+                img(
+                  class='image-raster__img'
+                  src="/../img/animals_landscape_xxxl.jpg"
+
+                  sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
+
+                  srcset="/../img/animals_landscape_sm.jpg 480w, /../img/animals_landscape_md.jpg 768w, /../img/animals_landscape_lg.jpg 992w, /../img/animals_landscape_xl.jpg 1200w, /../img/animals_landscape_xxl.jpg 1800w, /../img/animals_landscape_xxxl.jpg 2000w"
+                  
+                  alt='Ships in the Field' 
+                )
+            h1(class='heading heading_size_h3 grid-items-list__heading') Billions upon bil lions upon billions
             p(class='text text_display_block-paragraph') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
             a(class='btn' href="###") Visit Website
 
           li(class='grid-items-list__item')
-            figure
-              img(class='grid-items-list__image' src="/../img/animals_landscape_lg.jpg" alt="Several hands holding beer glasses")
-              figcaption
-                h3(class='heading heading_size_h3') Billions upon billions
-            p(class='text text_display_block-paragraph') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence? 
-            p(class='text text_display_block-paragraph') It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            //- image-raster block
+            figure(class='image-raster')
+              picture(class='image-raster__wrapper')   
+                img(
+                  class='image-raster__img'
+                  src="/../img/animals_landscape_xxxl.jpg"
+
+                  sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
+
+                  srcset="/../img/animals_landscape_sm.jpg 480w, /../img/animals_landscape_md.jpg 768w, /../img/animals_landscape_lg.jpg 992w, /../img/animals_landscape_xl.jpg 1200w, /../img/animals_landscape_xxl.jpg 1800w, /../img/animals_landscape_xxxl.jpg 2000w"
+                  
+                  alt='Ships in the Field' 
+                )
+            h1(class='heading heading_size_h3 grid-items-list__heading') Billions upon bil lions upon billions
+            p(class='text text_display_block-paragraph') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
             a(class='btn' href="###") Visit Website
-        
+
           li(class='grid-items-list__item')
-            figure
-              img(class='grid-items-list__image' src="/../img/animals_landscape_lg.jpg" alt="Several hands holding beer glasses")
-              figcaption
-                h3(class='heading heading_size_h3') Billions upon billions
-            p(class='text text_display_block-paragraph') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence? 
+            //- image-raster block
+            figure(class='image-raster')
+              picture(class='image-raster__wrapper')   
+                img(
+                  class='image-raster__img'
+                  src="/../img/animals_landscape_xxxl.jpg"
+
+                  sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
+
+                  srcset="/../img/animals_landscape_sm.jpg 480w, /../img/animals_landscape_md.jpg 768w, /../img/animals_landscape_lg.jpg 992w, /../img/animals_landscape_xl.jpg 1200w, /../img/animals_landscape_xxl.jpg 1800w, /../img/animals_landscape_xxxl.jpg 2000w"
+                  
+                  alt='Ships in the Field' 
+                )
+            h1(class='heading heading_size_h3 grid-items-list__heading') Billions upon bil lions upon billions
+            p(class='text text_display_block-paragraph') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
             a(class='btn' href="###") Visit Website
-        
+
         br
 
         //- grid-classic 
@@ -243,16 +285,93 @@ block demo
           div(class='grid-classic__ads-r') Space R  
           div(class='grid-classic__footer') Footer
 
+        //- grid-gallery
+        ul(class='grid-gallery')
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22942_hires.jpg" alt="Juno's Latest Flyby of Jupiter Captures Two Massive Storms")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA23021_hires.jpg" alt="A first look at dunes")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA23002_hires.jpg" alt="K2-138 6 Planets Artwork (Artist's Illustration)")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA21212_hires.jpg" alt="Small Prominences")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22983_hires.jpg" alt="Ezinu Crater")
+
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22990_hires.jpg" alt="Polar Ice")
+
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22963_hires.jpg" alt="Jupiter")
+
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22918_hires.jpg" alt="Star Gaia 17pbi Seen by Spitzer")
+
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22900_hires.jpg" alt="Another Cloudy Day")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22941_hires.jpg" alt="South Equatorial Belt Brown Barge Close-up")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22936_hires.jpg" alt="Earth-based Observation of Jupiter")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22937_hires.jpg" alt="Jupiter's South Tropical Disturbance")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22933_hires.jpg" alt="Jupiter's Southern Circumpolar Cyclones")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22906_hires.jpg" alt=" Juno Flyby Movie ")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22895_hires.jpg" alt="Swiss Cheese on a Red Planet")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA21211_hires.jpg" alt="Solar Active Region's Cameo Appearance")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22914_hires.jpg" alt="Bow Shock Around Young Star")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22695_hires.jpg" alt="Jupiter's North Equatorial Belt")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22770_hires.jpg" alt="Titan Mosaic: The Surface Under the Haze")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA18144_hires.jpg" alt="Reappearing Coronal Hole")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22820_hires.jpg" alt="NASA's ASTER Captures Lava Flow, Ash from Guatemala Volcano")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22869_hires.jpg" alt="Active Dunes in Wirtz Crater")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22569_hires.jpg" alt="Supernova Remnant G54")
+
+
         br
 
         //- grid-12col
         section(class='grid-12col')
           div(class='grid-12col__one')
             One One One One One One One One One One One One One One One
-          div(class='grid-12col__two') TwoTwo TwoTwo Two TwoTwo TwoTwo Two Two
-          div(class='grid-12col__three') ThreeThreeThreeThreeThree
-          div(class='grid-12col__four') Four Four Four Four Four
-          div(class='grid-12col__five') FiveFiveFiveFiveFive
+          div(class='grid-12col__two') Two 
+          div(class='grid-12col__three') Three 
+          div(class='grid-12col__four') Four 
+          div(class='grid-12col__five') Five Five Five Five Five
 
         //- img-svg
         img(
@@ -292,10 +411,11 @@ block demo
         br
 
         //- label 
-        a(href='###' class='label') html5
-        a(href='###' class='label') javascript
-        a(href='###' class='label') css3
-        a(href='###' class='label') sass
+        div
+          a(href='###' class='label') html5
+          a(href='###' class='label') javascript
+          a(href='###' class='label') css3
+          a(href='###' class='label') sass
 
         br
         br 
@@ -550,3 +670,9 @@ block demo
           div(class='form__row')
             input(class='btn' type='submit' value='Submit')       
 
+        //- nav
+        div(class='nav')
+          a(href='#main' class='nav__item') Main
+          a(href='#main' class='nav__item') Portfolio
+          a(href='#about' class='nav__item nav__item_active') About
+          a(href='#contacts' class='nav__item') Contacts

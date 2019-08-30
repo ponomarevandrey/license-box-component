@@ -4,6 +4,8 @@
   grid-template-columns: repeat(14, 1fr);
   grid-gap: 1rem;
 
+  overflow: hidden; // temp solution, make the grid responsive later
+
   & > * {
     // add padding to all grid items
     padding: 1rem;

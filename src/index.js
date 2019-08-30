@@ -41,6 +41,8 @@ import './components/grid-items-list/_grid-items-list.scss';
 import './components/grid-classic/_grid-classic.scss';
 // grid-12col
 import './components/grid-12col/_grid-12col.scss';
+// grid-gallery
+import './components/grid-gallery/_grid-gallery.scss';
 // header
 import './components/header/_header.scss';
 // text
@@ -95,5 +97,7 @@ import './components/checkbox/_checkbox.scss';
 import './components/radio-btn/_radio-btn.scss';
 // form
 import './components/form/_form.scss';
-
+// form
+import './components/nav/_nav.scss';
+import './components/nav/nav.js';
 //hamburger-menu

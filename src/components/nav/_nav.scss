@@ -1,0 +1,20 @@
+.nav {
+  background-color: $color_primary;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row wrap;
+
+  &__item {
+    color: $color_white;
+    text-align: center;
+    padding: 1em 1.5em;
+    text-decoration: none;
+    border-bottom: 8px solid transparent;
+
+    // State Modifiers:
+    &:hover,
+    &_active {
+      border-bottom: 8px solid $color_primary-darkest;
+    }
+  }
+}
