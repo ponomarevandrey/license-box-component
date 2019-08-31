@@ -12,7 +12,8 @@
   font-weight: bold;
   border-radius: $border_radius;
   text-decoration: none;
-  border: 0;
+  border: 1px;
+  border-color: $color_white;
   color: $color_white;
   background-color: $color_black;
   box-shadow: 0 0.5em 0 $color_gray;

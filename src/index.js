@@ -28,6 +28,7 @@ If you don't need a component, don't delete it from this file, just comment it o
 // demo
 import './components/demo/_demo.scss';
 
+/*
 // 'Global' blocks:
 // (blocks often serving as a parent container for other blocks)
 // page
@@ -97,7 +98,10 @@ import './components/checkbox/_checkbox.scss';
 import './components/radio-btn/_radio-btn.scss';
 // form
 import './components/form/_form.scss';
-// form
+// nav
 import './components/nav/_nav.scss';
 import './components/nav/nav.js';
+// nav-foxed
+import './components/nav-fixed/_nav-fixed.scss';
 //hamburger-menu
+*/

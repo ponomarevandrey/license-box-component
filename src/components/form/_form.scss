@@ -1,4 +1,5 @@
 .form {
+  // fix overflow:
   & * {
     box-sizing: border-box;
   }
@@ -59,15 +60,14 @@
       & .form__frame {
         background-color: $color_on-error-lightest;
         color: $color_on-error;
-        border-color: $color_on-error;
+        border-color: lighten($color_on-error, 20%);
+        outline-color: $color_on-error;
       }
 
       & .form__frame:focus {
         background-color: $color_on-error-lightest;
-        border-bottom: 5px solid $color_on-error;
-        border-top: none;
-        border-left: none;
-        border-right: none;
+        border: 1px solid $color_on-error;
+        outline-color: $color_on-error;
         color: $color_on-error;
       }
     }
@@ -99,12 +99,9 @@
 
   &__frame:focus {
     background-color: $color_white;
-    outline: 2px dotted $color_gray-lighten;
-    outline-offset: 8px;
-    border-bottom: 5px solid $color_black;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    outline-color: $color_gray-lighten;
+    // outline-offset: 8px;
+    border: 1px solid $color_black;
   }
 
   &__help-text {

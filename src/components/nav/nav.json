@@ -1,32 +1,39 @@
 [
   {
     "title": "Home",
-    "members": []
+    "url": "/",
+    "children": []
   },
   {
     "title": "About",
-    "members": [
+    "url": "/about",
+    "children": [
       {
         "title": "About Sub 1",
-        "members": [
+        "utl": "/about-sub1",
+        "children": [
           {
             "title": "About Sub 1 Sub 1",
-            "members": []
+            "url": "/about-sub1-sub1",
+            "children": []
           },
           {
             "title": "About Sub 1 Sub 2",
-            "members": []
+            "url": "/about-sub1-sub2",
+            "children": []
           }
         ]
       },
       {
         "title": "About Sub 2",
-        "members": []
+        "url": "/about-sub2",
+        "children": []
       }
     ]
   },
   {
     "title": "Contacts",
-    "members": []
+    "url": "https://github.com/ponomarevandrey",
+    "children": []
   }
 ]

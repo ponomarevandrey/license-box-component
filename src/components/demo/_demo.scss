@@ -19,11 +19,6 @@
   }
 
   &__main {
-    /* if you need full-width responsive image but with the same left and right padding as it's parent container, define the appropriate ammount of vw in 'image' component's .pug file. 
-    
-    For example, here we have 4vw padding for left and right = 8vw of blank space. So, in image's .pug file in 'sizes' attribute define '92 vw' (cause 100vw - 8vw = 92vw) for all (or only for some, if situation demands) media queries.
-    
-    Well, for strange reason it doesn't work, fix it */
     padding: 0 4vw 4em 4vw;
   }
 
@@ -39,8 +34,8 @@
     grid-row-gap: 2em;
 
     & > * {
-      border: 1px solid black;
-      padding: 2em;
+      // border: 1px solid black;
+      // padding: 2em;
     }
   }
 
@@ -64,21 +59,21 @@
   }
 
   &__color-on-error {
-    background-color: $color_on-error;
+    background-color: $color_danger;
   }
 
   &__color-on-success {
-    background-color: $color_on-success;
+    background-color: $color_success;
   }
 
   &__color-info-message {
-    background-color: $color_info-message;
+    background-color: $color_info;
   }
 
   &__code {
     background-color: $color_black;
     color: $color_white;
-    font-family: $font-stack_monospaced;
+    font-family: $font-stack_monospace;
     padding: 2em;
     display: block;
   }

@@ -1,0 +1,34 @@
+.nav-fixed {
+  background-color: $color_primary;
+  overflow: hidden;
+  position: fixed;
+  z-index: 10000;
+
+  // if the parent container has paddings, ignore t
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: wrap row;
+  padding: 0.7em;
+
+  &__item {
+    color: $color_white;
+    text-align: center;
+    padding: 0.8em 0.8em;
+    text-decoration: none;
+
+    // State Modifiers:
+    &:hover,
+    &_active {
+      // border-bottom: 8px solid $color_primary-darkest;
+    }
+  }
+
+  &__logo {
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+  }
+}

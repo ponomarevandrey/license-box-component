@@ -7,7 +7,7 @@ $root_line-height: 1.7;
 
 $font-stack_sans-serif: Lato, Arial, Verdana, sans-serif;
 $font-stack_serif: Georgia, 'Times New Roman', Times, serif;
-$font-stack_monospaced: Consolas, 'Courier New', Courier, monospace;
+$font-stack_monospace: Consolas, 'Courier New', Courier, monospace;
 
 $font-size_h1: 3.052rem;
 $font-size_h2: 2.441rem;
@@ -27,45 +27,13 @@ $color_gray-darken: #333333;
 $color_gray_darkest: #1a1a1a;
 $color_black: black;
 
-$color_primary: #bc8484; //#9a00f3;
-$color_primary-light: lighten($color_primary, 12%);
-$color_primary-lighten: lighten($color_primary, 30%);
-$color_primary-lightest: lighten($color_primary, 49%);
-$color_primary-dark: darken($color_primary, 5%);
-$color_primary-darken: darken($color_primary, 10);
-$color_primary-darkest: darken($color_primary, 15%);
-
-$color_secondary: #ffdd55;
-$color_secondary-light: lighten($color_secondary, 12%);
-$color_secondary-lighten: lighten($color_secondary, 24%);
-$color_secondary-lightest: lighten($color_secondary, 49%);
-$color_secondary-dark: darken($color_secondary, 12%);
-$color_secondary-darken: darken($color_secondary, 18%);
-$color_secondary-darkest: darken($color_secondary, 36%);
-
-$color_on-error: #c83737;
-$color_on-error-light: lighten($color_on-error, 15%);
-$color_on-error-lighten: lighten($color_on-error, 24%);
-$color_on-error-lightest: lighten($color_on-error, 38%);
-$color_on-error-dark: darken($color_on-error, 12%);
-$color_on-error-darken: darken($color_on-error, 24%);
-$color_on-error-darkest: darken($color_on-error, 36%);
-
-$color_on-success: #2ca05a;
-$color_on-success-light: lighten($color_on-success, 12%);
-$color_on-success-lighten: lighten($color_on-success, 24%);
-$color_on-success-lightest: lighten($color_on-success, 35%);
-$color_on-success-dark: darken($color_on-success, 12%);
-$color_on-success-darken: darken($color_on-success, 24%);
-$color_on-success-darkest: darken($color_on-success, 36%);
-
-$color_info-message: #f4d7d7; ///#ffcc00;
-$color_info-message-light: lighten($color_info-message, 12%);
-$color_info-message-lighten: lighten($color_info-message, 24%);
-$color_info-message-lightest: lighten($color_info-message, 49%);
-$color_info-message-dark: darken($color_info-message, 12%);
-$color_info-message-darken: darken($color_info-message, 24%);
-$color_info-message-darkest: darken($color_info-message, 36%);
+$color_primary: #4788fb;
+$color_secondary: #565f77;
+$color_success: #00996a;
+$color_warning: #ffcc00;
+$color_danger: #ea2929;
+$color_info: #347ed4;
+$color_disabled: #e3eaf2ff;
 
 $color_fb: #1877f2;
 $color_github: #161514;
@@ -76,8 +44,6 @@ $color_twitter: #55acee;
 $color_youtube: red;
 $color_vk: #4680c2;
 
-$color_bg: #f8f6f6; // #f7f7f7;
-
 // Media Quaries
 $screen-xs: 0 !default;
 $screen-sm: 480px !default;
@@ -86,9 +52,17 @@ $screen-lg: 992px !default;
 $screen-xl: 1200px !default;
 $screen-xxl: 1800px !default;
 
+// Z-indexes
+$zindex-dropdown: 1000 !default;
+$zindex-sticky: 1020 !default;
+$zindex-fixed: 1030 !default;
+$zindex-modal-backdrop: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+
 // Other
-$border_radius: 0.4em;
-$transition_time: 0.3s;
+$border_radius: 0.2em;
 
 // **********
 // * MIXINS *

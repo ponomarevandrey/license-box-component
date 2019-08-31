@@ -1,7 +1,5 @@
-Webpack template for developing static websites
+[ RU ]
+**Бисквит** — это front-end-фреймворк на основе БЭМ-методологии и подхода mobile-first. Использует шаблонизатор Pug, препроцессор SASS и интегрирован с  системой сборки Webpack. Предназначен для быстрого старта при разработке сайтов и приложений.
 
-Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-
-
-All favicons borrowed from [NTH-start-project](https://github.com/nicothin/NTH-start-project)
+[ EN ]
+**Biscuit** is a front-end framework based on BEM methodology and a mobile-first approach. Utilizes Pug templating engine, SASS preprocessor and is integrated with Webpack module bundler. Intended for a quick start while developing websites and web applications
