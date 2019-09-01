@@ -52,6 +52,7 @@
 _source/                        
 
 # other
+design/
 dist/
 node_modules/
 package-lock.json
@@ -65,3 +66,6 @@ package-lock.json
 # Whitelisted Files (track these files, if they exist)
 
 !.gitignore
+!.prettierrc
+!.eslintrc.js
+!.eslintignore
