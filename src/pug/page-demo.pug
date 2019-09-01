@@ -8,22 +8,19 @@ block meta
   title Static Website Starter Template. BEM Blocks Library
  
 block demo
-  div(class='container-fluid') text
   div(class='demo')
     header(class='header header_theme_presentation ')
       h1(class='heading header__heading heading_size_h1 heading_color_white') Static Website Starter Template
       h2(class='heading header__heading heading_size_h3 heading_color_white') BEM Blocks Library
-    
-    //a(href='https://github.com/ponomarevandrey', class='link heading__icon' aria-hidden='true', focusable='false', title='Github')
-      span(class='icon__accessLabel') Github
-      svg(
-        class='icon icon__link'): use(xlink:href='./img/icons.svg#github') 
       
     main(class='demo__main')
     
       article(class='')
-        h1(class='') Blocks
-        hr(class='')
+        h1(class='heading heading_size_h3') Blocks
+        hr(class='hr')
+        p(class='text text_display_block') 
+          include:markdown-it ../readme.md
+      
       //-
         ul(class='list text list_style_unordered text_size_root') 
           li(class='list__item') Main root:
@@ -465,46 +462,48 @@ block demo
         div(class='table text text_color_black text_size_root')
           table(class='table__container')
             caption(class='table__caption') Table 1.1 Playlist
-            tr(class='table__row')
-              th(class='table__cell table__cell_type_header') Date
-              th(class='table__cell table__cell_type_header') Artist
-              th(class='table__cell table__cell_type_header') Title
-              th(class='table__cell table__cell_type_header') Album
-              th(class='table__cell table__cell_type_header') Label
-              th(class='table__cell table__cell_type_header') Genres
-              th(class='table__cell table__cell_type_header') Duration
-            tr(class='table__row')
-              td(class='table__cell table__cell_type_main') 1971
-              td(class='table__cell table__cell_type_main') Gil Scott-Heron
-              td(class='table__cell table__cell_type_main') Save The Children
-              td(class='table__cell table__cell_type_main') Pieces Of A Man
-              td(class='table__cell table__cell_type_main') Flying Dutchman
-              td(class='table__cell table__cell_type_main') Soul, Funk, Jazz
-              td(class='table__cell table__cell_type_main') 4:55
-            tr(class='table__row')
-              td(class='table__cell table__cell_type_main') 1975
-              td(class='table__cell table__cell_type_main') Rufus Featuring Chaka Khan
-              td(class='table__cell table__cell_type_main') Sweet Thing
-              td(class='table__cell table__cell_type_main') Rufus Featuring Chaka Khan
-              td(class='table__cell table__cell_type_main') ABC Records
-              td(class='table__cell table__cell_type_main') Soul, Funk, Disco
-              td(class='table__cell table__cell_type_main') 3:18
-            tr(class='table__row')
-              td(class='table__cell table__cell_type_main') 1994
-              td(class='table__cell table__cell_type_main') Adam F ‎
-              td(class='table__cell table__cell_type_main') Sea Of Destiny
-              td(class='table__cell table__cell_type_main') Stronger Than Ever
-              td(class='table__cell table__cell_type_main') Lucky Spin Recordings
-              td(class='table__cell table__cell_type_main') Jungle, Drum'n'Bass
-              td(class='table__cell table__cell_type_main') 6:47
-            tr(class='table__row')
-              td(class='table__cell table__cell_type_main') 2000
-              td(class='table__cell table__cell_type_main') Soulsearcher ‎
-              td(class='table__cell table__cell_type_main') Can't Get Enough (Vocal Club Mix)
-              td(class='table__cell table__cell_type_main') Various ‎- Disco Kandi
-              td(class='table__cell table__cell_type_main') Hed Kandi 
-              td(class='table__cell table__cell_type_main') Garage House, Disco
-              td(class='table__cell table__cell_type_main') 7:19
+            thead
+              tr(class='table__row')
+                th(class='table__cell table__cell_type_header') Date
+                th(class='table__cell table__cell_type_header') Artist
+                th(class='table__cell table__cell_type_header') Title
+                th(class='table__cell table__cell_type_header') Album
+                th(class='table__cell table__cell_type_header') Label
+                th(class='table__cell table__cell_type_header') Genres
+                th(class='table__cell table__cell_type_header') Duration
+            tbody
+              tr(class='table__row')
+                td(class='table__cell table__cell_type_main') 1971
+                td(class='table__cell table__cell_type_main') Gil Scott-Heron
+                td(class='table__cell table__cell_type_main') Save The Children
+                td(class='table__cell table__cell_type_main') Pieces Of A Man
+                td(class='table__cell table__cell_type_main') Flying Dutchman
+                td(class='table__cell table__cell_type_main') Soul, Funk, Jazz
+                td(class='table__cell table__cell_type_main') 4:55
+              tr(class='table__row')
+                td(class='table__cell table__cell_type_main') 1975
+                td(class='table__cell table__cell_type_main') Rufus Featuring Chaka Khan
+                td(class='table__cell table__cell_type_main') Sweet Thing
+                td(class='table__cell table__cell_type_main') Rufus Featuring Chaka Khan
+                td(class='table__cell table__cell_type_main') ABC Records
+                td(class='table__cell table__cell_type_main') Soul, Funk, Disco
+                td(class='table__cell table__cell_type_main') 3:18
+              tr(class='table__row')
+                td(class='table__cell table__cell_type_main') 1994
+                td(class='table__cell table__cell_type_main') Adam F ‎
+                td(class='table__cell table__cell_type_main') Sea Of Destiny
+                td(class='table__cell table__cell_type_main') Stronger Than Ever
+                td(class='table__cell table__cell_type_main') Lucky Spin Recordings
+                td(class='table__cell table__cell_type_main') Jungle, Drum'n'Bass
+                td(class='table__cell table__cell_type_main') 6:47
+              tr(class='table__row')
+                td(class='table__cell table__cell_type_main') 2000
+                td(class='table__cell table__cell_type_main') Soulsearcher ‎
+                td(class='table__cell table__cell_type_main') Can't Get Enough (Vocal Club Mix)
+                td(class='table__cell table__cell_type_main') Various ‎- Disco Kandi
+                td(class='table__cell table__cell_type_main') Hed Kandi 
+                td(class='table__cell table__cell_type_main') Garage House, Disco
+                td(class='table__cell table__cell_type_main') 7:19
 
         //- loader
         div(class='loader')

@@ -26,7 +26,7 @@ Don't change their precedence cause some of components rely on cascade so reorde
 If you don't need a component, don't delete it from this file, just comment it out' */
 
 // demo
-import './components/demo/_demo.scss';
+import './blocks.basic/demo/_demo.scss';
 
 /*
 // 'Global' blocks:

@@ -8,12 +8,12 @@
   font-family: $font-stack_sans-serif;
 
   // Modifiers:
-
+  // display as regular text
   &_display_inline {
     display: inline;
   }
-
-  &_display_block-paragraph {
+  // display as paragraph
+  &_display_block {
     display: block;
     text-indent: 0;
     margin-bottom: 1em; /* space between paragraphs */
