@@ -8,6 +8,6 @@
 
 # How it works
 
-![How it works](https://github.com/ponomarevandrey/biscuit/blob/master/src/img/how-it-works.svg?raw=true)
+![How it works](https://github.com/ponomarevandrey/biscuit/blob/master/src/img/how-it-works.svg?raw=true?sanitize=true)
 
 # Getting started
