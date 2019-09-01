@@ -9,12 +9,12 @@ function requireAllFiles(r) {
 // require images
 // eslint-disable-next-line no-undef
 requireAllFiles(require.context('./img/', true, /(svg|png|jpg)$/));
-requireAllFiles(require.context('./components/', true, /(svg|png|jpg)$/));
+requireAllFiles(require.context('./blocks.basic/', true, /(svg|png|jpg)$/));
 
 /*************
  * CSS RESET *
  *************/
-import './components/_reset.scss';
+import './blocks.basic/_reset.scss';
 
 /**************
  * COMPONENTS *
@@ -24,9 +24,6 @@ import './components/_reset.scss';
 Don't change their precedence cause some of components rely on cascade so reordering may break he trules. For now, the only component that is really depends on cascade is 'tooltip'  -line-height property of 'tooltip' reassigns line-height propery of 'text' block 
 
 If you don't need a component, don't delete it from this file, just comment it out' */
-
-// demo
-import './blocks.basic/demo/_demo.scss';
 
 /*
 // 'Global' blocks:

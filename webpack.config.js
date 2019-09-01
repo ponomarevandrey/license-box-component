@@ -101,7 +101,7 @@ module.exports = (env, options) => {
               options: {
                 sourceMap: true,
                 data:
-                  '@import "./components/_global-variables-mixins-functions.scss";',
+                  '@import "./blocks.basic/_global-variables-mixins-functions.scss";',
                 includePaths: [__dirname, 'src'],
               },
             },
@@ -204,7 +204,17 @@ module.exports = (env, options) => {
           collapseWhitespace: false,
         },
       }),
-
+      // demo doc
+      new HtmlWebpackPlugin({
+        inject: true,
+        hash: false,
+        filename: 'doc.html',
+        template: './src/pug/page-doc.pug',
+        minify: {
+          removeComments: true,
+          collapseWhitespace: false,
+        },
+      }),
       new ScriptExtHtmlWebpackPlugin({
         defaultAttribute: 'async',
       }),
