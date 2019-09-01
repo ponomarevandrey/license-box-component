@@ -69,3 +69,4 @@ package-lock.json
 !.prettierrc
 !.eslintrc.js
 !.eslintignore
+!.gitattributes
