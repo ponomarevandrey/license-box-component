@@ -1,4 +1,4 @@
-.media-content {
+.embed {
   position: relative;
   padding-bottom: 56.25%; // 16x9
   overflow: hidden;
@@ -8,9 +8,9 @@
   }
 }
 
-.media-content iframe,
-.media-content object,
-.media-content embed {
+.embed iframe,
+.embed object,
+.embed embed {
   position: absolute;
   left: 0;
   top: 0;

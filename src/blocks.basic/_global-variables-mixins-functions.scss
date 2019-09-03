@@ -5,9 +5,11 @@
 // Typography
 $root_line-height: 1.7;
 
-$font-stack_sans-serif: Lato, Arial, Verdana, sans-serif;
-$font-stack_serif: Georgia, 'Times New Roman', Times, serif;
-$font-stack_monospace: Consolas, 'Courier New', Courier, monospace;
+$font-stack_sans-serif: Lato, Helvetica, Verdana, Arial, Tahoma, sans-serif;
+$font-stack_serif: Georgia, 'Big Caslon', 'Hoefler Text', Garamond, Baskerville,
+  'Palatino Linotype', 'Times New Roman', Times, serif;
+$font-stack_monospace: Consolas, 'Lucida Console', 'Lucida Sans Typewriter',
+  'Courier New', Courier, monospace;
 
 $font-size_h1: 3.052rem;
 $font-size_h2: 2.441rem;
@@ -27,13 +29,13 @@ $color_gray-darken: #333333;
 $color_gray_darkest: #1a1a1a;
 $color_black: black;
 
-$color_primary: #4788fb;
-$color_secondary: #565f77;
-$color_success: #00996a;
+$color_primary: #000;
+$color_secondary: #4d4d4d;
+$color_success: #28a745;
 $color_warning: #ffcc00;
-$color_danger: #ea2929;
+$color_danger: #dc3545;
 $color_info: #347ed4;
-$color_disabled: #e3eaf2ff;
+$color_disabled: #b3b3b3;
 
 $color_fb: #1877f2;
 $color_github: #161514;
@@ -96,6 +98,31 @@ $border_radius: 0.2em;
   font-weight: bold;
   font-style: normal;
   font-display: swap;
+}
+
+// Hide visually and from screen readers
+@mixin hidden-complitely {
+  display: none !important;
+}
+
+/* Hide only visually, but have it available for screen readers:
+   https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+
+@mixin hidden-visually {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+// Hide visually and from screen readers, but maintain layout
+.invisible {
+  visibility: hidden;
 }
 
 // *************

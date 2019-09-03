@@ -176,7 +176,7 @@ module.exports = (env, options) => {
         inject: true,
         hash: false,
         filename: 'index.html',
-        template: './src/pug/page-index.pug',
+        template: './src/pug/page-index-extends-template-index.pug',
         minify: {
           removeComments: true,
           collapseWhitespace: false,
@@ -187,7 +187,7 @@ module.exports = (env, options) => {
         inject: true,
         hash: false,
         filename: '404.html',
-        template: './src/pug/page-404.pug',
+        template: './src/pug/page-404-extends-template-index.pug',
         minify: {
           removeComments: true,
           collapseWhitespace: false,
@@ -198,7 +198,7 @@ module.exports = (env, options) => {
         inject: true,
         hash: false,
         filename: 'demo.html',
-        template: './src/pug/page-demo.pug',
+        template: './src/pug/page-demo-extends-template-demo.pug',
         minify: {
           removeComments: true,
           collapseWhitespace: false,
@@ -209,7 +209,7 @@ module.exports = (env, options) => {
         inject: true,
         hash: false,
         filename: 'doc.html',
-        template: './src/pug/page-doc.pug',
+        template: './src/pug/page-doc-extends-template-demo.pug',
         minify: {
           removeComments: true,
           collapseWhitespace: false,
