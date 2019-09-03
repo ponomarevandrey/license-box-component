@@ -13,7 +13,7 @@
   line-height: $root_line-height - 0.2;
   color: $color_black;
   font-family: $font-stack_sans-serif;
-  background-color: $color_secondary-lighten;
+  background-color: lighten($color_secondary, 50%);
   padding: 1em 2em 1em 2em;
   font-style: italic;
 

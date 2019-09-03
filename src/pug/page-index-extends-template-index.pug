@@ -1,12 +1,10 @@
 extends template-index.pug
 
 block header
-  include ./../blocks.basic/header/header.pug
+  header(class='header') Header content
 
 block main
-  main(class='main text text_color_black text_size_root')  
-    p(class='text_style_block-paragraph') main content
+  main(class='main') Main content
 
 block footer
-  footer(class='footer text text_color_black text_size_root') 
-    p(class='text_style_block-paragraph') 2019
+  footer(class='footer') Footer Content

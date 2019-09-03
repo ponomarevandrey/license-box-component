@@ -12,7 +12,7 @@
     text-decoration: none;
 
     &:hover:not(.pagination__item_active) {
-      background-color: $color_primary-lightest;
+      background-color: lighten($color_primary, 50%);
     }
 
     &:link {
@@ -22,12 +22,12 @@
 
     &:visited,
     &:focus {
-      color: $color_primary-light;
+      color: lighten($color_primary, 20%);
     }
 
     &:hover,
     &:active {
-      color: $color_primary-dark;
+      color: lighten($color_primary, 70%);
     }
 
     // Modifier: active
@@ -48,7 +48,7 @@
       &:hover,
       &:active {
         color: $color_white;
-        background-color: $color_primary_dark;
+        background-color: $color_primary;
       }
     }
   }

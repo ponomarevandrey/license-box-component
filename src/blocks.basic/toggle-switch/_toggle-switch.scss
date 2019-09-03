@@ -24,8 +24,8 @@ $toggle-switch_width: 45px;
     &:checked + .toggle-switch__container:before {
       // animate the button and changle it's color:
       transform: translateX($toggle-switch_width - $circle-button_size);
-      background-color: $color_on-success;
-      box-shadow: 0 0 7px $color_on-success-lighten;
+      background-color: $color_success;
+      box-shadow: 0 0 7px lighten($color_success, 20%);
     }
   }
 

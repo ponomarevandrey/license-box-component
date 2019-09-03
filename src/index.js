@@ -25,80 +25,81 @@ Don't change their precedence cause some of components rely on cascade so reorde
 
 If you don't need a component, don't delete it from this file, just comment it out' */
 
-/*
 // 'Global' blocks:
 // (blocks often serving as a parent container for other blocks)
 // page
-import './components/page/_page.scss';
-import './components/page/page.js';
+import './blocks.basic/page/_page.scss';
+import './blocks.basic/page/page.js';
 // grid-responsive-col
-import './components/grid-responsive-col/_grid-responsive-col.scss';
+import './blocks.basic/grid-auto-col/_grid-auto-col.scss';
 // grid-items-list.scss
-import './components/grid-items-list/_grid-items-list.scss';
+import './blocks.basic/grid-3-col/_grid-3-col.scss';
 // grid-classic
-import './components/grid-classic/_grid-classic.scss';
+import './blocks.basic/grid-page-layout/_grid-page-layout.scss';
 // grid-12col
-import './components/grid-12col/_grid-12col.scss';
+import './blocks.basic/grid-12-col-page-layout/_grid-12-col-page-layout.scss';
 // grid-gallery
-import './components/grid-gallery/_grid-gallery.scss';
+import './blocks.basic/grid-gallery/_grid-gallery.scss';
 // header
-import './components/header/_header.scss';
+import './blocks.basic/header/_header.scss';
+// main
+import './blocks.basic/main/_main.scss';
 // text
-import './components/text/_text.scss';
+import './blocks.basic/text/_text.scss';
 // heading
-import './components/heading/_heading.scss';
+import './blocks.basic/heading/_heading.scss';
 // list
-import './components/list/_list.scss';
+import './blocks.basic/list/_list.scss';
 // btn
-import './components/btn/_btn.scss';
+import './blocks.basic/btn/_btn.scss';
 // link
-import './components/link/_link.scss';
+import './blocks.basic/link/_link.scss';
 // pagination
-import './components/pagination/_pagination.scss';
+import './blocks.basic/pagination/_pagination.scss';
 // comment
-import './components/comment/_comment.scss';
+import './blocks.basic/comment/_comment.scss';
 
 // Small blocks:
 // (usually, you don't put anything inside these blocks, except text)
 // image-svg
-import './components/img-svg/_img-svg.scss';
-// image
-import './components/img-raster/_img-raster.scss';
+import './blocks.basic/img-svg/_img-svg.scss';
+
+// image-raster
+import './blocks.basic/img-raster/_img-raster.scss';
 // tooltip
-import './components/tooltip/_tooltip.scss';
+import './blocks.basic/tooltip/_tooltip.scss';
 // icon
-import './components/icons/_icons.scss';
+import './blocks.basic/icons/_icons.scss';
 // breadcrumbs
-import './components/breadcrumbs/_breadcrumbs.scss';
+import './blocks.basic/breadcrumbs/_breadcrumbs.scss';
 // label
-import './components/label/_label.scss';
+import './blocks.basic/label/_label.scss';
 // backToTopBtn
-import './components/back-to-top-btn/_back-to-top-btn.scss';
-import './components/back-to-top-btn/back-to-top-btn.js';
+import './blocks.basic/back-to-top-btn/_back-to-top-btn.scss';
+import './blocks.basic/back-to-top-btn/back-to-top-btn.js';
 // blockquote
-import './components/blockquote/_blockquote.scss';
+import './blocks.basic/blockquote/_blockquote.scss';
 // code
-import './components/code/_code.scss';
+import './blocks.basic/code/_code.scss';
 // hr
-import './components/hr/_hr.scss';
+import './blocks.basic/hr/_hr.scss';
 // media content
-import './components/media-content/_media-content.scss';
+import './blocks.basic/embed/_embed.scss';
 // table
-import './components/table/_table.scss';
+import './blocks.basic/table/_table.scss';
 // loader
-import './components/loader/_loader.scss';
+import './blocks.basic/loader/_loader.scss';
 // toggle switch
-import './components/toggle-switch/_toggle-switch.scss';
+import './blocks.basic/toggle-switch/_toggle-switch.scss';
 // checkbox
-import './components/checkbox/_checkbox.scss';
+import './blocks.basic/checkbox/_checkbox.scss';
 // radio-btn
-import './components/radio-btn/_radio-btn.scss';
+import './blocks.basic/radio-btn/_radio-btn.scss';
 // form
-import './components/form/_form.scss';
+import './blocks.basic/form/_form.scss';
 // nav
-import './components/nav/_nav.scss';
-import './components/nav/nav.js';
+import './blocks.basic/nav/_nav.scss';
+import './blocks.basic/nav/nav.js';
 // nav-foxed
-import './components/nav-fixed/_nav-fixed.scss';
+import './blocks.basic/nav-fixed/_nav-fixed.scss';
 //hamburger-menu
-*/

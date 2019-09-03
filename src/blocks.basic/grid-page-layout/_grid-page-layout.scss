@@ -1,4 +1,4 @@
-.grid-classic {
+.grid-page-layout {
   display: grid;
   grid-template-rows: [row1-start] 100px [row1-end row2-start] auto [row2-end row3-start] 70px [row3-end];
   grid-template-columns: repeat(14, 1fr);
@@ -14,7 +14,7 @@
   &__header {
     grid-row: row1-start;
     grid-column: 1 / span 14; /* it's also possible to put here grid-line names. But in the current case we used repeat() function so we have only implicitly named grid lines, thus we can refer to them by implicitly defined namees (1, 2, 3, ...) */
-    background-color: $color_primary-lighten;
+    background-color: lighten($color_primary, 20%);
 
     display: flex;
     justify-content: center;

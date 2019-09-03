@@ -1,15 +1,19 @@
 .header {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
 
-  &__heading {
-    text-align: center;
-    padding: 0.5em;
+  // Modifiers:
+
+  &_align-content_right {
+    align-items: flex-end;
   }
 
-  &_theme_presentation {
+  &_align-content_center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_view_fullscreen-image {
     height: 100%;
 
     // background-color: $color_primary;
@@ -21,7 +25,7 @@
 
     /* or image: */
 
-    background-image: url('./../../img/abstract.jpg');
+    background-image: url('./../../img/fullscreen-image.jpg');
     // make background image responsive:
     background-position: center;
     background-repeat: no-repeat;

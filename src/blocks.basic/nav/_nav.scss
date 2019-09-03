@@ -14,7 +14,7 @@
     // State Modifiers:
     &:hover,
     &_active {
-      border-bottom: 8px solid $color_primary-darkest;
+      border-bottom: 8px solid lighten($color_primary, 50%);
     }
   }
 }

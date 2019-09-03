@@ -59,21 +59,21 @@
   // Modifiers:
 
   &_error {
-    color: $color_on-error;
+    color: $color_danger;
 
     .checkbox__custom-checkbox {
-      background-color: $color_on-error-light;
+      background-color: lighten($color_danger, 20%);
     }
 
     & .checkbox__system-checkbox:hover ~ .checkbox__custom-checkbox {
       // change checkbox color on mouse over:
-      background-color: $color_on-error;
+      background-color: $color_danger;
       transition: 0.2s;
     }
 
     & .checkbox__system-checkbox:checked ~ .checkbox__custom-checkbox {
       // change the checkbox color when it checked:
-      background-color: $color_on-error;
+      background-color: $color_danger;
       transition: 0.2s;
     }
   }

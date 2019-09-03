@@ -60,21 +60,21 @@
   // Modifiers:
 
   &_error {
-    color: $color_on-error;
+    color: $color_danger;
 
     .radio-btn__custom-radio-btn {
-      background-color: $color_on-error-light;
+      background-color: lighten($color_danger, 20%);
     }
 
     & .radio-btn__system-radio-btn:hover ~ .radio-btn__custom-radio-btn {
       // change radio button color on mouse over:
-      background-color: $color_on-error;
+      background-color: $color_danger;
       transition: 0.2s;
     }
 
     & .radio-btn__system-radio-btn:checked ~ .radio-btn__custom-radio-btn {
       // change the radio button color when it checked:
-      background-color: $color_on-error;
+      background-color: $color_danger;
       transition: 0.2s;
     }
   }

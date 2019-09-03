@@ -42,7 +42,7 @@
   // Modifier: theme
   &_theme_primary {
     background-color: $color_primary;
-    box-shadow: 0 0.5em 0 $color_primary-lighten;
+    box-shadow: 0 0.5em 0 lighten($color_primary, 50%);
     transition: transform 0.2s ease, box-shadow 0.2s ease,
       background-color 0.2s ease;
     /*
@@ -53,16 +53,16 @@
     }
 */
     &:hover {
-      background-color: $color_primary-dark;
+      background-color: lighten($color_primary, 20%);
     }
 
     &:active {
       transform: translate(0, 2px);
-      box-shadow: 0 0.3em 0 $color_primary-lighten;
+      box-shadow: 0 0.3em 0 lighten($color_primary, 20%);
     }
   }
 
-  // Modifier: disable
+  // Modifier: disabled
   &_disabled,
   &:disabled {
     opacity: 0.3;
@@ -73,12 +73,11 @@
     }
 
     &:hover {
-      background-color: $color_primary;
+      background-color: $color_black;
     }
 
     &:active {
       transform: none;
-      box-shadow: 0 0.5em 0 $color_primary-lighten;
     }
   }
 }

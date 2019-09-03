@@ -50,25 +50,25 @@
     }
 
     &_error {
-      color: $color_on-error;
+      color: $color_danger;
 
       & .form__frame::placeholder {
-        color: $color_on-error;
+        color: $color_danger;
         opacity: 1;
       }
 
       & .form__frame {
-        background-color: $color_on-error-lightest;
-        color: $color_on-error;
-        border-color: lighten($color_on-error, 20%);
-        outline-color: $color_on-error;
+        background-color: lighten($color_danger, 20%);
+        color: $color_danger;
+        border-color: lighten($color_danger, 20%);
+        outline-color: $color_danger;
       }
 
       & .form__frame:focus {
-        background-color: $color_on-error-lightest;
-        border: 1px solid $color_on-error;
-        outline-color: $color_on-error;
-        color: $color_on-error;
+        background-color: lighten($color_danger, 20%);
+        border: 1px solid $color_danger;
+        outline-color: $color_danger;
+        color: $color_danger;
       }
     }
   }

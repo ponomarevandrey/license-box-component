@@ -11,14 +11,14 @@
 
   &:visited,
   &:focus {
-    color: $color_primary-lighten;
-    border-color: $color_primary-lighten;
+    color: lighten($color_primary, 10%);
+    border-color: lighten($color_primary, 10%);
   }
 
   &:hover,
   &:active {
-    color: $color_primary-dark;
-    border-color: $color_primary-dark;
+    color: lighten($color_primary, 30%);
+    border-color: lighten($color_primary, 30%);
   }
 
   &_anchor:link {

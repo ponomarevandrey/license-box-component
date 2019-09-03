@@ -22,12 +22,12 @@
   }
 
   &_theme_light {
-    background-color: $color_primary-lightest;
+    background-color: darken($color_white, 12%);
     color: $color_black;
   }
 
   &_theme_dark {
-    background-color: $color_primary-darkest;
-    color: $color_white;
+    background-color: lighten($color_black, 15%);
+    color: darken($color_white, 10%);
   }
 }
