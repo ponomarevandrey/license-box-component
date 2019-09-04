@@ -1,34 +1,60 @@
 .nav-fixed {
+  display: flex;
+  flex-flow: column nowrap;
   background-color: $color_primary;
   overflow: hidden;
   position: fixed;
-  z-index: 10000;
+  z-index: $zindex-fixed;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  padding: 1em 1em;
+  font-size: 1rem;
+  font-family: $font-stack_sans-serif;
+  line-height: 2;
 
-  // if the parent container has paddings, ignore t
+  height: 2em;
+
+  // if the parent container has paddings, ignore it:
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
-  display: flex;
-  flex-flow: wrap row;
-  padding: 0.7em;
+
+  @media screen and (min-width: $screen-md) {
+    justify-content: space-between;
+    flex-flow: row wrap;
+  }
+
+  &__logo {
+    align-self: center;
+    width: 50%;
+    max-width: 9em;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    padding-top: 1em;
+
+    @media screen and (min-width: $screen-md) {
+      padding-top: 0;
+    }
+  }
 
   &__item {
     color: $color_white;
-    text-align: center;
-    padding: 0.8em 0.8em;
     text-decoration: none;
 
+    &:not(:last-child) {
+      padding-right: 1.6em;
+    }
     // State Modifiers:
+    /*
     &:hover,
     &_active {
       // border-bottom: 8px solid $color_primary-darkest;
     }
-  }
-
-  &__logo {
-    border: 1px solid white;
-    color: white;
-    font-weight: bold;
+    */
   }
 }

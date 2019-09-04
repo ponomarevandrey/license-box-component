@@ -1,16 +1,10 @@
 .checkbox {
   // define the wrapper container for checkbox
-  display: block;
+  display: inline-block;
   position: relative;
   padding-left: 37px;
   cursor: pointer;
   user-select: none;
-
-  &__system-checkbox:hover ~ &__custom-checkbox {
-    // change checkbox color on mouse over:
-    background-color: $color_gray-light;
-    transition: 0.2s;
-  }
 
   &__system-checkbox:checked ~ &__custom-checkbox {
     // change the checkbox color when it checked:

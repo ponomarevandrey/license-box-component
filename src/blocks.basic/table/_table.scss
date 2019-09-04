@@ -15,11 +15,11 @@
   }
 
   &__row:nth-child(even) {
-    background-color: $color_gray-lighten;
+    background-color: $color_gray-lightest;
   }
 
   &__row:hover {
-    background-color: $color_gray-light;
+    background-color: $color_gray-lighten;
   }
 
   &__cell {

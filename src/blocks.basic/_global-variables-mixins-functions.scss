@@ -3,6 +3,7 @@
 // *************
 
 // Typography
+$root_font-size: 16px;
 $root_line-height: 1.7;
 
 $font-stack_sans-serif: Lato, Helvetica, Verdana, Arial, Tahoma, sans-serif;
@@ -64,7 +65,8 @@ $zindex-popover: 1060 !default;
 $zindex-tooltip: 1070 !default;
 
 // Other
-$border_radius: 0.25em;
+$border_radius: 0.3em !default;
+$button-bow-shadow: 0 0 0 0.2rem gray;
 
 // **********
 // * MIXINS *

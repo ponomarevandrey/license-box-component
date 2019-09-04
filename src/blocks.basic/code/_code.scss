@@ -1,11 +1,11 @@
 .code {
-  // 1. Correct the inheritance and scaling of font size in all browsers.
-  // 2. Correct the odd `em` font sizing in all browsers.
-
   font-family: $font-stack_monospace;
   border-radius: 0.4em;
   white-space: pre-wrap;
   word-wrap: break-word;
+
+  background-color: darken($color_white, 12%);
+  color: $color_black;
 
   &_display_block {
     padding: 2em;
@@ -19,11 +19,6 @@
 
   &_size_root {
     font-size: calc(1rem - 8%);
-  }
-
-  &_theme_light {
-    background-color: darken($color_white, 12%);
-    color: $color_black;
   }
 
   &_theme_dark {

@@ -1,4 +1,4 @@
-.grid-page-layout {
+.grid-page-layout1 {
   display: grid;
   grid-template-rows: [row1-start] 100px [row1-end row2-start] auto [row2-end row3-start] 70px [row3-end];
   grid-template-columns: repeat(14, 1fr);
@@ -6,15 +6,15 @@
 
   overflow: hidden; // temp solution, make the grid responsive later
 
-  & > * {
-    // add padding to all grid items
-    padding: 1rem;
+  & * {
+    //padding: 1rem; // add padding to all grid items
+    border: 1px solid black;
   }
 
   &__header {
     grid-row: row1-start;
     grid-column: 1 / span 14; /* it's also possible to put here grid-line names. But in the current case we used repeat() function so we have only implicitly named grid lines, thus we can refer to them by implicitly defined namees (1, 2, 3, ...) */
-    background-color: lighten($color_primary, 20%);
+    background-color: yellow;
 
     display: flex;
     justify-content: center;
@@ -25,7 +25,7 @@
     grid-row: row2-start / row3-end;
     grid-column: 14;
 
-    background-color: thistle;
+    background-color: violet;
     z-index: 10000;
     opacity: 0.5;
   }
@@ -33,13 +33,13 @@
   &__news1 {
     grid-row: row2-start;
     grid-column: 2 / span 4;
-    background-color: pink;
+    background-color: turquoise;
   }
 
   &__news2 {
     grid-row: row2-start;
     grid-column: 6 / span 8;
-    background-color: palegreen;
+    background-color: yellowgreen;
 
     /* Now, lets make new grid out of grid item */
     display: grid;
@@ -54,7 +54,7 @@
 
   &__article {
     grid-column: col2-start / col2-end;
-    background-color: peru;
+    background-color: fuchsia;
   }
 
   &__info {
@@ -65,7 +65,7 @@
   &__footer {
     grid-row: row3-start;
     grid-column: 1 / span 14;
-    background-color: darkolivegreen;
+    background-color: orange;
 
     display: flex;
     justify-content: center;

@@ -3,25 +3,25 @@
 
   // make fade in/out effect on link hover
   &:link {
-    color: $color_primary;
-    border-bottom: 1px solid $color_primary;
+    color: $color_gray;
+    border-bottom: 1px solid $color_gray;
     transition: background-color 0.2s linear, color 0.2s linear,
       border-bottom 0.2s linear;
   }
 
   &:visited,
   &:focus {
-    color: lighten($color_primary, 10%);
-    border-color: lighten($color_primary, 10%);
+    color: $color_gray-darken;
+    border-color: $color_gray-darken;
   }
 
   &:hover,
   &:active {
-    color: lighten($color_primary, 30%);
-    border-color: lighten($color_primary, 30%);
+    color: $color_black;
+    border-color: $color_black;
   }
 
   &_anchor:link {
-    border-bottom: 1px dashed $color_primary;
+    border-bottom: 1px dashed $color_gray;
   }
 }

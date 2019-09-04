@@ -1,12 +1,11 @@
 .btn {
   display: inline-block;
   position: relative;
-  width: 100%;
   font-family: $font-stack_sans-serif;
   font-size: 1rem;
   text-align: center;
-  line-height: 50px;
-  padding: 0 20px;
+  line-height: 1.5;
+  padding: 0.8rem 1rem;
   box-sizing: border-box;
   cursor: pointer;
   font-weight: bold;
@@ -16,18 +15,13 @@
   border-color: $color_white;
   color: $color_white;
   background-color: $color_black;
-  box-shadow: 0 0.5em 0 $color_gray;
-  transition: transform 0.2s ease, box-shadow 0.2s ease,
-    background-color 0.2s ease;
+  outline: none;
+  transition: transform 0.2s ease, background-color 0.2s ease,
+    box-shadow 0.2s ease;
 
-  @media screen and (min-width: $screen-sm) {
-    width: 12em;
-  }
-
-  &:link,
-  &:visited,
   &:focus,
-  &:hover {
+  &:active {
+    box-shadow: $button-bow-shadow;
   }
 
   &:hover {
@@ -36,48 +30,26 @@
 
   &:active {
     transform: translate(0, 2px);
-    box-shadow: 0 0.3em 0 $color_gray-light;
-  }
-
-  // Modifier: theme
-  &_theme_primary {
-    background-color: $color_primary;
-    box-shadow: 0 0.5em 0 lighten($color_primary, 50%);
-    transition: transform 0.2s ease, box-shadow 0.2s ease,
-      background-color 0.2s ease;
-    /*
-    &:link,
-    &:visited,
-    &:focus,
-    &:hover {
-    }
-*/
-    &:hover {
-      background-color: lighten($color_primary, 20%);
-    }
-
-    &:active {
-      transform: translate(0, 2px);
-      box-shadow: 0 0.3em 0 lighten($color_primary, 20%);
-    }
   }
 
   // Modifier: disabled
   &_disabled,
   &:disabled {
+    outline: none;
     opacity: 0.3;
     cursor: not-allowed;
+    box-shadow: none;
 
-    &:link {
-      transition: none;
+    &:focus {
+      box-shadow: none;
     }
 
-    &:hover {
-      background-color: $color_black;
-    }
-
+    &:hover,
     &:active {
+      background-color: $color_black;
+      box-shadow: none;
       transform: none;
+      box-shadow: none;
     }
   }
 }

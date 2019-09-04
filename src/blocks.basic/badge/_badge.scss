@@ -1,0 +1,33 @@
+.badge {
+  display: inline-block;
+  margin: 0.2rem 0.15rem;
+  padding: 0 0.4rem;
+  vertical-align: baseline;
+  background-color: $color_black;
+  color: $color_white;
+  font-family: $font-stack_sans-serif;
+  font-weight: bold;
+  font-size: calc(1rem - 20%);
+  white-space: nowrap;
+  line-height: 2;
+  text-decoration: none;
+  border-radius: $border_radius;
+
+  &:link {
+    transition: all 0.2s ease;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color_gray-dark;
+    text-decoration: none;
+    color: $color_white;
+  }
+
+  &:focus,
+  &:active {
+    box-shadow: $button-bow-shadow;
+  }
+
+  // Modifiers:
+}

@@ -13,22 +13,11 @@ block meta
 
 block head
   style. 
-    .test {
-      margin-left: -1.1em;
-      color: #4788fb;
-      font-size: 2rem;
-      font-family: Lato, Arial, Verdana, sans-serif;
-      font-weight: bold;
-      font-style: normal;
-      line-height: 1.7;
-      margin-bottom: 0.5em;
-    }
-
     .demo {
-
+      margin-top: 6em;
     }
 
-    .demo__section {
+    .demo__item {
 
     }
 
@@ -36,11 +25,19 @@ block head
 block header
 
   div(class='nav-fixed')
-    div(class='nav-fixed__item nav-fixed__logo') biscuit
-    a(href='#main' class='nav-fixed__item') Main
-    a(href='#main' class='nav-fixed__item') Portfolio
-    a(href='#about' class='nav-fixed__item nav-fixed__item_active') About
-    a(href='#contacts' class='nav-fixed__item') Contacts
+    div(class='nav-fixed__logo')
+      img(
+        src='./../img/biscuit-logo-white.svg' 
+        alt='Logoipsum logo'
+        title='Logoipsum'
+        class='img-svg'
+      )
+    div(class='nav-fixed__items')
+      a(href='#main' class='nav-fixed__item') Main
+      a(href='#portfolio' class='nav-fixed__item') Portfolio
+      a(href='#blog' class='nav-fixed__item') Blog
+      a(href='#about' class='nav-fixed__item nav-fixed__item_active') About
+      a(href='#contacts' class='nav-fixed__item') Contacts
       
 
       
@@ -60,10 +57,10 @@ block main
 
 
     //- img-raster
-    figure(class='image-raster image-raster_theme_black')
-      picture(class='image-raster__wrapper')   
+    figure(class='img-raster')
+      picture(class='img-raster__wrapper')   
         img(
-          class='image-raster__img'
+          class='img-raster__img'
           src="/../img/animals_landscape_xxxl.jpg"
 
           sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
@@ -72,7 +69,7 @@ block main
           
           alt='Ships in the Field' 
         )
-      figcaption(class='text image-raster__caption').
+      figcaption(class='text img-raster__caption').
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 
 
@@ -83,7 +80,7 @@ block main
 
 
     //- list
-    ul(class='list list_style_unordered')
+    ul(class='list text list_style_unordered')
       li(class='list__item') Fruit
         ul(class='list list_style_unordered')
           li(class='list__item') Bananas
@@ -99,26 +96,27 @@ block main
   //- text
   //- inline text
   p(class='text text_display_inline') Lorem Ipsum
+  p(class='text text_display_inline') Lorem Ipsum
+
   //- block text
-  p(class='text text_display_block-paragraph text_size_root text_color_black').
-    include:markdown-it ../readme.md
+  p(class='text text_display_block text_size_root text_color_black').
     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-  p(class='text text_display_block-paragraph text_size_root text_color_black'). 
+  p(class='text text_display_block text_size_root text_color_black').
     It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 
 
   //- link
-  a(href='##' class='link') link
+  a(href='##' class='link text') link
 
 
 
   //- code
   //- inline code
-  p(class='text text_display_block-paragraph text_size_root text_color_black'). 
-    It has survived not only five centuries, but also the leap into electronic typesetting, #[a(href='#image' class='link link_anchor') remaining] essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, #[code(class='code code_display_inline code_theme_light code_size_root') console.log( a );] and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  p(class='text text_display_block text_size_root text_color_black'). 
+    It has survived not only five centuries, but also the leap into electronic typesetting, #[a(href='#image' class='link link_anchor') remaining] essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, #[code(class='code code_display_inline code_size_root') console.log( a );] and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
   //- code block
-  pre(class='code code_display_block code_theme_dark code_size_root')
+  pre(class='code code_display_block code_size_root')
     code.
       window.addEventListener( 'load', => {
         console.log('Ready');
@@ -127,9 +125,9 @@ block main
 
 
   //- btn
-  a(class='btn btn_theme_primary' href='###') Click me!
+  a(class='btn' href='###') Click me! 
   button(type='button' class='btn') Click me!
-  button(type='button' class='btn btn_theme_primary btn_disabled') Click me!
+  button(type='button' class='btn btn_disabled') Click me!
   input(type='button' value='Input' class='btn' disabled)
 
 
@@ -152,11 +150,11 @@ block main
   ul(class='grid-3-col')
 
     li(class='grid-3-col__item')
-      //- image-raster block
-      figure(class='image-raster')
-        picture(class='image-raster__wrapper')   
+      //- img-raster block
+      figure(class='img-raster')
+        picture(class='img-raster__wrapper')   
           img(
-            class='image-raster__img'
+            class='img-raster__img'
             src="/../img/animals_landscape_xxxl.jpg"
 
             sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
@@ -166,15 +164,15 @@ block main
             alt='Ships in the Field' 
           )
       h1(class='heading heading_size_h3 grid-items-list__heading') Billions upon bil lions upon billions
-      p(class='text text_display_block-paragraph') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+      p(class='text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
       a(class='btn' href="###") Visit Website
 
     li(class='grid-3-col__item')
-      //- image-raster block
-      figure(class='image-raster')
-        picture(class='image-raster__wrapper')   
+      //- img-raster block
+      figure(class='img-raster')
+        picture(class='img-raster__wrapper')   
           img(
-            class='image-raster__img'
+            class='img-raster__img'
             src="/../img/animals_landscape_xxxl.jpg"
 
             sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
@@ -184,15 +182,15 @@ block main
             alt='Ships in the Field' 
           )
       h1(class='heading heading_size_h3 grid-items-list__heading') Billions upon bil lions upon billions
-      p(class='text text_display_block-paragraph') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+      p(class='text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
       a(class='btn' href="###") Visit Website
 
     li(class='grid-3-col__item')
-      //- image-raster block
-      figure(class='image-raster')
-        picture(class='image-raster__wrapper')   
+      //- img-raster block
+      figure(class='img-raster')
+        picture(class='img-raster__wrapper')   
           img(
-            class='image-raster__img'
+            class='img-raster__img'
             src="/../img/animals_landscape_xxxl.jpg"
 
             sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
@@ -202,22 +200,22 @@ block main
             alt='Ships in the Field' 
           )
       h1(class='heading heading_size_h3 grid-items-list__heading') Billions upon bil lions upon billions
-      p(class='text text_display_block-paragraph') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+      p(class='text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
       a(class='btn' href="###") Visit Website
 
 
 
-  //- grid-page-layout 
-  section(class='grid-page-layout')
-    div(class='grid-page-layout__header') Header
-    div(class='grid-page-layout__news1') News. Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
-    div(class='grid-page-layout__news2')
+  //- grid-page-layout1 
+  section(class='grid-page-layout1')
+    div(class='grid-page-layout1__header') Header
+    div(class='grid-page-layout1__news1') News. Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+    div(class='grid-page-layout1__news2')
       div hkjh
-      div(class='grid-page-layout__article') Article. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-      div(class='grid-page-layout__info') Info
-    div(class='grid-page-layout__ads-l') Space L
-    div(class='grid-page-layout__ads-r') Space R  
-    div(class='grid-page-layout__footer') Footer
+      div(class='grid-page-layout1__article') Article. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      div(class='grid-page-layout1__info') Info
+    div(class='grid-page-layout1__ads-l') Space L
+    div(class='grid-page-layout1__ads-r') Space R  
+    div(class='grid-page-layout1__footer') Footer
 
 
 
@@ -299,18 +297,19 @@ block main
 
 
 
-  //- grid-12-col-page-layout
-  section(class='grid-12-col-page-layout')
-    div(class='grid-12-col-page-layout__one')
+  //- grid-page-layout2
+  section(class='grid-page-layout2')
+    div(class='grid-page-layout2__one')
       One One One One One One One One One One One One One One One
-    div(class='grid-12-col-page-layout__two') Two 
-    div(class='grid-12-col-page-layout__three') Three 
-    div(class='grid-12-col-page-layout__four') Four 
-    div(class='grid-12-col-page-layout__five') Five Five Five Five Five
+    div(class='grid-page-layout2__two') Two 
+    div(class='grid-page-layout2__three') Three 
+    div(class='grid-page-layout2__four') Four 
+    div(class='grid-page-layout2__five') Five Five Five Five Five
 
 
 
   //- img-svg
+  //- as <img>
   img(
     src='./../img/logo.svg' 
     alt='Logoipsum logo'
@@ -318,9 +317,10 @@ block main
     class='img-svg'
   )
 
+  //- as CSS background-image
   div(class='img-svg img-svg_bg')
 
-  //- if you need interactivity, use SVG with the help of <object> tag
+  //- and if you need interactivity, use SVG with the help of <object> tag
   object(
     type="image/svg+xml" 
     data="./../../img/logo.svg"
@@ -334,13 +334,13 @@ block main
 
 
   //- blockquote
-  p(class='text text_display_block-paragraph text_size_root text_color_black'). 
+  p(class='text text_display_block text_size_root text_color_black').
     It has survived not only five centuries,
   blockquote(class='blockquote')
-    p(class='blockquote__main'). 
+    p(class='blockquote__main').
       Big type, even huge type, can be beautiful and useful. But poise is usually far more important than size – and poise consists primarily of emptiness. Typographically, poise is made of white&space.
-    footer(class='blockquote__footer'). 
-      Robert Bringhurst
+    footer(class='blockquote__footer').
+      Robert Bringhurst, #[cite(title='Source Title') The Elements of Typographic Style]
 
 
 
@@ -352,12 +352,11 @@ block main
 
 
 
-  //- label 
-  div
-    a(href='###' class='label') html5
-    a(href='###' class='label') javascript
-    a(href='###' class='label') css3
-    a(href='###' class='label') sass
+  //- badge
+  a(href='###' class='badge') Closure
+  a(href='###' class='badge') Hoisting
+  a(href='###' class='badge') Call Stack
+  a(href='###' class='badge') Prototypes
 
 
 
@@ -373,14 +372,14 @@ block main
 
 
   //- breadcrumbs
-  ul(class='breadcrumbs')
-    li(class='breadcrumbs__item')
-      a(href='###' class='breadcrumbs__link') Home
-    li(class='breadcrumbs__item')
-      a(href='#s##' class='breadcrumbs__link') Equipment
-    li(class='breadcrumbs__item')
-      a(href='###f' class='breadcrumbs__link') Cooking Equipment
-    li(class='breadcrumbs__item').
+  ul(class='breadcrumb text')
+    li(class='breadcrumb__item')
+      a(href='###' class='link') Home
+    li(class='breadcrumb__item')
+      a(href='#s##' class='link') Equipment
+    li(class='breadcrumb__item')
+      a(href='###f' class='link') Cooking Equipment
+    li(class='breadcrumb__item breadcrumb__item_active').
       Cooking Performance Group S60-G24-N Natural Gas 6 Burner 60" Range with 24" Griddle and 2 Standard Ovens - 280,000 BTU
 
 
@@ -467,14 +466,15 @@ block main
   div(class='loader')
 
 
-
+  br
   //- toggle-switch
   label(class='toggle-switch')
     input(class='toggle-switch__system-checkbox' type='checkbox')
     span(class='toggle-switch__container')
 
 
-
+  br
+  br
   //- checkbox
   div
     //- enabled:
@@ -629,6 +629,11 @@ block main
       a(href='#about' class='nav__item nav__item_active') About
       a(href='#contacts' class='nav__item') Contacts
 
+
+  //-
+    <button type="button" class="close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
 
     
 block script
