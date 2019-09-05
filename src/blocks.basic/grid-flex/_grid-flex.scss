@@ -1,0 +1,27 @@
+.grid-flex {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 1rem;
+  // to change the order of checkbox and text edit grid-template-areas:
+  grid-template-areas: 'control text';
+
+  &__control {
+    grid-area: control;
+
+    display: flex;
+    border: 1px solid red;
+    flex-flow: column nowrap;
+    justify-self: center;
+  }
+
+  &__text {
+    grid-area: text;
+    user-select: none;
+
+    // Modifiers:
+
+    &_align_r {
+      text-align: right;
+    }
+  }
+}

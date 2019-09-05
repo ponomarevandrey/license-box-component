@@ -1,7 +1,6 @@
 .pagination {
   display: flex;
   flex-flow: row wrap;
-  outline: none;
 
   &__item {
     border-radius: $border_radius;
@@ -10,6 +9,7 @@
     padding: 0.7rem 1rem;
     margin: 0 0.2rem;
     text-decoration: none;
+    outline: none;
 
     &:link {
       color: $color_gray;

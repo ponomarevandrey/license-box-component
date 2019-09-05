@@ -220,7 +220,7 @@ block main
 
 
   //- grid-gallery
-  ul(class='grid-gallery')
+    ul(class='grid-gallery')
     li
       figure
         img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22942_hires.jpg" alt="Juno's Latest Flyby of Jupiter Captures Two Massive Storms")
@@ -467,36 +467,60 @@ block main
 
 
   br
+  
   //- toggle-switch
-  label(class='toggle-switch')
-    input(class='toggle-switch__system-checkbox' type='checkbox')
-    span(class='toggle-switch__container')
+  label(class='switch grid-flex text' for='switch1')
+    div(class='switch__wrapper grid-flex__control')
+      input(
+        class='switch__system-checkbox' 
+        type='checkbox'
+        id='switch1'
+      )
+      span(class='switch__custom-checkbox') 
+    span(class='grid-flex__text') Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+    
+  //- toggle-switch disabled
+  label(class='switch grid-flex text' for='switch2')
+    div(class='switch__wrapper grid-flex__control')
+      input(
+        class='switch__system-checkbox switch__system-checkbox_disabled' 
+        type='checkbox'
+        id='switch2'
+        disabled
+      )
+      span(class='switch__custom-checkbox switch__custom-checkbox_disabled') 
+    span(class='grid-flex__text') Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
 
-
-  br
   br
   //- checkbox
-  div
-    //- enabled:
-    label(class='checkbox') 
-      span(class='text') Milk
-      input(class='checkbox__system-checkbox' type='checkbox' checked='checked')
+  //- enabled:
+  label(class='checkbox grid-flex text' for='lastname') 
+    div(class='checkbox__wrapper grid-flex__control')
+      input(
+        class='checkbox__system-checkbox' 
+        type='checkbox' 
+        checked='checked'  
+        id='lastname'
+      )
       span(class='checkbox__custom-checkbox')
-    br
-    label(class='checkbox') 
-      span(class='text') It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-      input(class='checkbox__system-checkbox' type='checkbox' checked='checked')
-      span(class='checkbox__custom-checkbox')
-    //- error:
-    label(class='checkbox checkbox_error') 
-      span(class='text') Milk
-      input(class='checkbox__system-checkbox' type='checkbox' checked='checked')
-      span(class='checkbox__custom-checkbox')
-    //- disabled:
-    label(class='checkbox checkbox_disabled') 
-      span(class='text') Milk
-      input(class='checkbox__system-checkbox' type='checkbox' disabled)
-      span(class='checkbox__custom-checkbox')
+    span(class='grid-flex__text') Milk
+
+
+  br
+  label(class='checkbox') 
+    span(class='text') It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    input(class='checkbox__system-checkbox' type='checkbox' checked='checked')
+    span(class='checkbox__custom-checkbox')
+  //- error:
+  label(class='checkbox checkbox_error') 
+    span(class='text') Milk
+    input(class='checkbox__system-checkbox' type='checkbox' checked='checked')
+    span(class='checkbox__custom-checkbox')
+  //- disabled:
+  label(class='checkbox checkbox_disabled') 
+    span(class='text') Milk
+    input(class='checkbox__system-checkbox' type='checkbox' disabled)
+    span(class='checkbox__custom-checkbox')
 
 
 

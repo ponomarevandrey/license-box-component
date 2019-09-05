@@ -40,6 +40,8 @@ import './blocks.basic/grid-page-layout1/_grid-page-layout1.scss';
 import './blocks.basic/grid-page-layout2/_grid-page-layout2.scss';
 // grid-gallery
 import './blocks.basic/grid-gallery/_grid-gallery.scss';
+// grid-flex
+import './blocks.basic/grid-flex/_grid-flex.scss';
 // header
 import './blocks.basic/header/_header.scss';
 // main
@@ -92,7 +94,7 @@ import './blocks.basic/table/_table.scss';
 // loader
 import './blocks.basic/loader/_loader.scss';
 // toggle switch
-import './blocks.basic/toggle-switch/_toggle-switch.scss';
+import './blocks.basic/switch/_switch.scss';
 // checkbox
 import './blocks.basic/checkbox/_checkbox.scss';
 // radio-btn

@@ -66,7 +66,7 @@ $zindex-tooltip: 1070 !default;
 
 // Other
 $border_radius: 0.3em !default;
-$button-bow-shadow: 0 0 0 0.2rem gray;
+$button-bow-shadow: 0 0 0 0.2rem $color_gray-lighten;
 
 // **********
 // * MIXINS *

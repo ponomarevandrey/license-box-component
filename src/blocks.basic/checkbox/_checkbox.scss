@@ -1,40 +1,39 @@
+$custom-checkbox_size: 24px;
+
 .checkbox {
-  // define the wrapper container for checkbox
-  display: inline-block;
-  position: relative;
-  padding-left: 37px;
   cursor: pointer;
   user-select: none;
 
+  &__wrapper {
+    position: relative;
+  }
+
+  // change the checkbox color when it checked:
   &__system-checkbox:checked ~ &__custom-checkbox {
-    // change the checkbox color when it checked:
     background-color: $color_black;
     transition: 0.2s;
   }
 
+  // show the checkmark when checked:
   &__system-checkbox:checked ~ &__custom-checkbox:after {
-    // show the checkmark when checked:
     display: block;
   }
 
   &__system-checkbox {
-    // hide system cgeckbox:
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+    opacity: 0; // hide default system checkbox but keep it accessible
   }
 
   &__custom-checkbox {
     position: absolute;
     top: 1px; // correcy the alignment of checkbox relative to the text block
-    left: 0;
-    height: 24px;
-    width: 24px;
+    right: 0; // align checkbox in the grid cell to the right
+    height: $custom-checkbox_size;
+    width: $custom-checkbox_size;
     background-color: $color_gray-lighten;
     transition: 0.2s;
 
     &:after {
-      // create checkmark (hide when not checked):
+      // create checkmark and hide by default:
       content: '';
       position: absolute;
       display: none;
