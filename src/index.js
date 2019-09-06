@@ -3,13 +3,12 @@
 /************
  * GRAPHICS *
  ************/
-function requireAllFiles(r) {
+function requireFiles(r) {
   r.keys().forEach(r);
 }
 // require images
 // eslint-disable-next-line no-undef
-requireAllFiles(require.context('./img/', true, /(svg|png|jpg)$/));
-requireAllFiles(require.context('./blocks.basic/', true, /(svg|png|jpg)$/));
+requireFiles(require.context('./img/', true, /(svg|png|jpg)$/));
 
 /*************
  * CSS RESET *
@@ -62,18 +61,20 @@ import './blocks.basic/link/_link.scss';
 import './blocks.basic/pagination/_pagination.scss';
 // comment
 import './blocks.basic/comment/_comment.scss';
-
+// control
+import './blocks.basic/control/_control.scss';
+requireFiles(require.context('./blocks.basic/control', true, /(svg|png|jpg)$/));
 // Small blocks:
 // (usually, you don't put anything inside these blocks, except text)
 // image-svg
 import './blocks.basic/img-svg/_img-svg.scss';
-
 // image-raster
 import './blocks.basic/img-raster/_img-raster.scss';
 // tooltip
 import './blocks.basic/tooltip/_tooltip.scss';
 // icon
 import './blocks.basic/icons/_icons.scss';
+requireFiles(require.context('./blocks.basic/icons/', true, /(svg|png|jpg)$/));
 // breadcrumbs
 import './blocks.basic/breadcrumb/_breadcrumb.scss';
 // badge
@@ -93,12 +94,6 @@ import './blocks.basic/embed/_embed.scss';
 import './blocks.basic/table/_table.scss';
 // loader
 import './blocks.basic/loader/_loader.scss';
-// toggle switch
-import './blocks.basic/switch/_switch.scss';
-// checkbox
-import './blocks.basic/checkbox/_checkbox.scss';
-// radio-btn
-import './blocks.basic/radio-btn/_radio-btn.scss';
 // form
 import './blocks.basic/form/_form.scss';
 // nav

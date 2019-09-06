@@ -7,7 +7,15 @@
   line-height: $root_line-height;
   font-family: $font-stack_sans-serif;
 
-  // Modifiers:
+  // tips under forms/checkboxes/...
+  &__tip {
+    font-size: 80%;
+  }
+
+  /**************
+   * Modifiers: *
+   **************/
+
   // display as regular text
   &_display_inline {
     display: inline;
