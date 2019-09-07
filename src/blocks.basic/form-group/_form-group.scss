@@ -1,0 +1,48 @@
+.form-group {
+  margin-bottom: 1rem;
+  // fix overflow:
+  & * {
+    box-sizing: border-box;
+  }
+
+  &_row {
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+  }
+
+  &_col {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  &__label {
+    flex: 0;
+  }
+
+  &__form {
+    height: calc(2rem + 2px);
+    padding: 0.5rem 0.8rem;
+    border: 1px solid $color_black;
+    resize: vertical;
+    background-color: $color_white;
+    font-family: $font-stack_sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: $border_radius;
+    transition: 0.2s;
+    color: $color_black;
+
+    &:focus {
+      background-color: $color_white;
+      outline: none;
+      border: 1px solid #80bdff;
+      box-shadow: $outline;
+    }
+  }
+
+  &__tip {
+    padding-top: 0.6rem;
+    grid-column: span 2;
+  }
+}

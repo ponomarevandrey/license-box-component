@@ -39,8 +39,6 @@ import './blocks.basic/grid-page-layout1/_grid-page-layout1.scss';
 import './blocks.basic/grid-page-layout2/_grid-page-layout2.scss';
 // grid-gallery
 import './blocks.basic/grid-gallery/_grid-gallery.scss';
-// grid-flex
-import './blocks.basic/grid-flex/_grid-flex.scss';
 // header
 import './blocks.basic/header/_header.scss';
 // main
@@ -64,6 +62,9 @@ import './blocks.basic/comment/_comment.scss';
 // control
 import './blocks.basic/control/_control.scss';
 requireFiles(require.context('./blocks.basic/control', true, /(svg|png|jpg)$/));
+// form-group
+import './blocks.basic/form-group/_form-group.scss';
+
 // Small blocks:
 // (usually, you don't put anything inside these blocks, except text)
 // image-svg
@@ -94,8 +95,6 @@ import './blocks.basic/embed/_embed.scss';
 import './blocks.basic/table/_table.scss';
 // loader
 import './blocks.basic/loader/_loader.scss';
-// form
-import './blocks.basic/form/_form.scss';
 // nav
 import './blocks.basic/nav/_nav.scss';
 import './blocks.basic/nav/nav.js';

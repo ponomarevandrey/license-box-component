@@ -2,24 +2,26 @@
   font: inherit;
   display: flex;
   flex-flow: row nowrap;
-  margin-top: 1em;
-  padding-bottom: 1em;
-  border-bottom: 1px solid $color_gray-lighten;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px dashed $color_gray-lighten;
+  font-size: 1rem;
 
   &__avatar {
-    max-width: 6em;
-    min-width: 2em;
+    margin-top: 0.5rem;
+    max-width: 6rem;
+    min-width: 2rem;
     align-self: flex-start;
   }
 
   &__text {
-    margin-left: 1em;
+    margin-left: 1rem;
   }
 
   &__header {
     display: flex;
     flex-flow: column nowrap;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
 
     @media screen and (min-width: $screen-sm) {
       flex-flow: row nowrap;
@@ -31,8 +33,9 @@
 
     @media screen and (min-width: $screen-sm) {
       &:after {
-        content: '|';
-        margin: 0 0.2em;
+        content: '‧';
+        margin: 0 0.4rem;
+        font-weight: normal;
       }
     }
   }
@@ -43,6 +46,6 @@
   */
 
   &__main {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
   }
 }

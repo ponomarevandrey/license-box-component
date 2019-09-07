@@ -1,23 +1,24 @@
 .control {
   // make room for control:
   padding-left: 1.5rem;
-  font-size: 1rem;
 
-  // hide default .control__system-control but keep it accessible
+  // hide default &__system-control but keep it accessible
   &__system-control {
     opacity: 0;
     z-index: -1;
     position: absolute;
   }
 
-  /**************
-   * Modifiers: *
-   **************/
+  &__tip {
+    /* 'div' is always a block level element but in case if you will replace 'div' in your markup  with 'span' for example, for such situations just for the sake of safety, we declare 'display: block' */
+    display: block;
+  }
+
+  // Modifier for the switch:
   &_switch {
     // make room for the switch, cause it is wider than checkbox:
     padding-left: 2.6rem;
   }
-  /***************/
 
   &__label {
     position: relative;
@@ -33,7 +34,7 @@
       content: '';
       position: absolute;
       display: block;
-      top: 0.38rem;
+      top: 0.25rem;
       left: -1.5rem;
       width: 1rem;
       height: 1rem;
@@ -50,7 +51,7 @@
       display: none;
       // custrom control dot/checkmark styles:
       left: -1.5rem;
-      top: 0.38rem;
+      top: 0.25rem;
       width: 1rem;
       height: 1rem;
     }
@@ -96,7 +97,7 @@
 
     // add custom switch styles:
     &_switch:before {
-      top: 0.38rem;
+      top: 0.25rem;
       left: -2.6rem; // = .control_switch's padding-left value
       background-color: $color_white;
       transition: 0.4s;
@@ -115,46 +116,38 @@
       // left = &_switch:before's 'left' property + 2px (2px is for border)
       left: calc(-2.6rem + 2px);
       // top = &_switch:before's 'top' property + 2px (2px is for border)
-      top: calc(0.38rem + 2px);
+      top: calc(0.25rem + 2px);
       background-color: $color_black;
       border-radius: 50%;
       transition: all 0.4s ease;
       z-index: 10000;
     }
-    /**************/
   }
 
-  &__tip {
-    /* 'div' is always a block level element but in case if you will replace 'div' in your markup  with 'span' for example, for such situations just for the sake of safety, we declare 'display: block' */
-    display: block;
-  }
-
-  // Modifiers:
-
-  /***************************
-   * default (when checked): *
-   ***************************/
+  /*************************************
+   * default modifiers (when checked): *
+   *************************************/
 
   // show the checkmark/dot:
-  .control__system-control:checked ~ &__label:after {
+  &__system-control:checked ~ &__label:after {
     display: block;
   }
   // style control:
-  .control__system-control:checked ~ &__label:before {
+  &__system-control:checked ~ &__label:before {
     background-color: $color_black;
   }
   // and after__ it is deselected:
-  .control__system-control:focus ~ &__label:before {
+  &__system-control:focus ~ &__label:before {
     box-shadow: $outline;
   }
   // modifier for switch to override some of the beforementioned rules:
   // show the checkmark:
-  .control__system-control:checked ~ &__label_switch:after {
+  &__system-control:checked ~ &__label_switch:after {
     background-color: white;
     left: calc(-1.6rem + 2px);
   }
   // style control:
-  .control__system-control:checked ~ &__label_switch:before {
+  &__system-control:checked ~ &__label_switch:before {
     background-color: $color_black;
   }
 
@@ -164,49 +157,49 @@
 
   // on error:
 
-  .control__system-control_validation:checked ~ .control__label:before {
+  &__system-control_validation:checked ~ &__label:before {
     background-color: $color_success;
   }
 
-  .control__system-control_validation ~ &__label {
+  &__system-control_validation ~ &__label {
     color: $color_danger;
   }
-  .control__system-control_validation ~ &__label:before {
+  &__system-control_validation ~ &__label:before {
     border-color: $color_danger;
   }
   // add outline after it is unchecked
-  .control__system-control_validation:focus ~ &__label {
+  &__system-control_validation:focus ~ &__label {
     color: $color_danger;
   }
-  .control__system-control_validation:focus ~ &__label:before {
+  &__system-control_validation:focus ~ &__label:before {
     box-shadow: $outline_danger;
     border-color: $color_danger;
   }
-  // modifier for switch:
-  .control__system-control_validation ~ &__label_switch:after {
+  // modifier for__switch:
+  &__system-control_validation ~ &__label_switch:after {
     background-color: $color_danger;
   }
 
   // on success:
 
   // style control:
-  .control__system-control_validation:checked ~ &__label:before {
+  &__system-control_validation:checked ~ &__label:before {
     background-color: $color_success;
   }
-  .control__system-control_validation:checked ~ &__label {
+  &__system-control_validation:checked ~ &__label {
     color: $color_success;
   }
-  .control__system-control_validation:checked:focus ~ &__label:before {
+  &__system-control_validation:checked:focus ~ &__label:before {
     box-shadow: $outline_success;
     background-color: $color_success;
   }
-  .control__system-control_validation:checked ~ &__label:before {
+  &__system-control_validation:checked ~ &__label:before {
     border-color: $color_success;
   }
-  .control__system-control_validation ~ &__tip {
+  &__system-control_validation ~ &__tip {
     color: $color_danger;
   }
-  .control__system-control_validation:checked ~ &__tip {
+  &__system-control_validation:checked ~ &__tip {
     display: none;
   }
 
@@ -214,8 +207,8 @@
    * _disabled *
    *************/
 
-  .control__system-control_disabled ~ &__label,
-  .control__system-control_disabled ~ &__tip {
+  &__system-control_disabled ~ &__label,
+  &__system-control_disabled ~ &__tip {
     outline: none;
     opacity: 0.4;
     cursor: not-allowed;

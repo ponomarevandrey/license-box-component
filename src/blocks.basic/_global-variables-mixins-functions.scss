@@ -6,8 +6,7 @@
 $root_font-size: 16px;
 $root_line-height: 1.7;
 
-$font-stack_sans-serif: Tahoma, Lato, Helvetica, Verdana, Arial, Tahoma,
-  sans-serif;
+$font-stack_sans-serif: Lato, Helvetica, Verdana, Arial, Tahoma, sans-serif;
 $font-stack_serif: Georgia, 'Big Caslon', 'Hoefler Text', Garamond, Baskerville,
   'Palatino Linotype', 'Times New Roman', Times, serif;
 $font-stack_monospace: Consolas, 'Lucida Console', 'Lucida Sans Typewriter',
@@ -67,9 +66,10 @@ $zindex-tooltip: 1070 !default;
 
 // Other
 $border_radius: 0.3rem !default;
-$outline: 0 0 0 0.2rem $color_gray-lighten;
+$outline: 0 0 0 0.2rem #007bff40; // $outline: 0 0 0 0.2rem #007bff40;
 $outline_success: 0 0 0 0.2rem lighten($color_success, 39%);
 $outline_danger: 0 0 0 0.2rem lighten($color_danger, 30%);
+$state__focus_border-color: #80bdff;
 
 // **********
 // * MIXINS *
