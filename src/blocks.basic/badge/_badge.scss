@@ -27,7 +27,7 @@
 
   &:focus,
   &:active {
-    box-shadow: $outline;
+    box-shadow: $form__box-shadow_state_primary;
   }
 
   // Modifiers:

@@ -62,6 +62,8 @@ import './blocks.basic/comment/_comment.scss';
 // control
 import './blocks.basic/control/_control.scss';
 requireFiles(require.context('./blocks.basic/control', true, /(svg|png|jpg)$/));
+// form-grid
+import './blocks.basic/form-grid/_form-grid.scss';
 // form-group
 import './blocks.basic/form-group/_form-group.scss';
 

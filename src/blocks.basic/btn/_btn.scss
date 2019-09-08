@@ -11,8 +11,6 @@
   font-weight: bold;
   border-radius: $border_radius;
   text-decoration: none;
-  border: 1px;
-  border-color: $color_white;
   color: $color_white;
   background-color: $color_black;
   outline: none;
@@ -21,7 +19,7 @@
 
   &:focus,
   &:active {
-    box-shadow: $outline;
+    box-shadow: $form__box-shadow_state_primary;
   }
 
   &:hover {

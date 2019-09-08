@@ -1,29 +1,34 @@
 .form-group {
-  margin-bottom: 1rem;
-  // fix overflow:
   & * {
     box-sizing: border-box;
   }
 
-  &_row {
-    display: grid;
-    grid-template-columns: 0.1fr 1fr;
-    grid-template-rows: repeat(2, auto);
+  display: grid;
+
+  &__form {
+    position: relative;
   }
 
-  &_col {
-    display: flex;
-    flex-flow: column nowrap;
+  &_row {
+    // on a big screen, make form-group a grid with horizonal rows:
+    @media screen and (min-width: $screen-sm) {
+      // grid-template-columns: [col1-start] 18% [col1-end col2-start] 1fr [col2-end];
+      grid-template-columns: 20% 1fr;
+      grid-template-rows: [row1-start] auto [row1-end row2-start] auto [row2-end];
+      gap: 0 1.5rem; // gap between the label and input
+    }
   }
 
   &__label {
-    flex: 0;
+    overflow-wrap: break-word;
+    margin-bottom: 0.4rem;
   }
 
-  &__form {
+  &__input {
+    width: 100%;
     height: calc(2rem + 2px);
     padding: 0.5rem 0.8rem;
-    border: 1px solid $color_black;
+    border: $form__border_state_primary;
     resize: vertical;
     background-color: $color_white;
     font-family: $font-stack_sans-serif;
@@ -34,15 +39,108 @@
     color: $color_black;
 
     &:focus {
-      background-color: $color_white;
       outline: none;
-      border: 1px solid #80bdff;
-      box-shadow: $outline;
+      border: $form__border_state_primary;
+      box-shadow: $form__box-shadow_state_primary;
+    }
+
+    &_type_search {
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjkgMTI5Ij4KICA8cGF0aCBkPSJNNTEuNiA5Ni43YzExIDAgMjEtMy45IDI4LjgtMTAuNWwzNSAzNWMuOC44IDEuOCAxLjIgMi45IDEuMnMyLjEtLjQgMi45LTEuMmMxLjYtMS42IDEuNi00LjIgMC01LjhsLTM1LTM1YzYuNS03LjggMTAuNS0xNy45IDEwLjUtMjguOCAwLTI0LjktMjAuMi00NS4xLTQ1LjEtNDUuMS0yNC44IDAtNDUuMSAyMC4zLTQ1LjEgNDUuMSAwIDI0LjkgMjAuMyA0NS4xIDQ1LjEgNDUuMXptMC04MmMyMC40IDAgMzYuOSAxNi42IDM2LjkgMzYuOUM4OC41IDcyIDcyIDg4LjUgNTEuNiA4OC41UzE0LjcgNzEuOSAxNC43IDUxLjZjMC0yMC4zIDE2LjYtMzYuOSAzNi45LTM2Ljl6Ii8+Cjwvc3ZnPgo=');
+      background-size: 20px;
+      background-position: 9px 8px;
+      background-repeat: no-repeat;
+      padding-left: 40px;
+      width: 130px;
+      // animate form:
+      transition: width 0.4s ease-in-out;
+
+      &:focus {
+        width: 100%;
+      }
+    }
+  }
+
+  &__textarea {
+    height: 10rem;
+
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+    border-radius: $border_radius;
+    background-color: $color_white;
+    resize: none;
+    border: $form__border_state_primary;
+    font-family: $font-stack_sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: 0.2s;
+    color: $color_black;
+
+    &:focus {
+      outline: none;
+      border: $form__border_state_primary;
+      box-shadow: $form__box-shadow_state_primary;
     }
   }
 
   &__tip {
-    padding-top: 0.6rem;
-    grid-column: span 2;
+    padding-top: 0.4rem;
+  }
+
+  /* this modifier should be applied through JS handler, rewrite this! */
+  &_disabled {
+    outline: none;
+    opacity: 0.4;
+    cursor: not-allowed;
+
+    & .form-group__input {
+      background-color: $color_gray-lighten;
+      &::placeholder {
+        color: $color_gray-dark;
+      }
+    }
   }
 }
+
+/*
+
+    // Modifiers:
+
+    &_disabled {
+      color: $color_gray-light;
+
+      & .form__frame {
+        background-color: $color_gray-lightest;
+      }
+
+      & .form__frame::placeholder {
+        color: $color_gray-lighten;
+        opacity: 1;
+      }
+    }
+
+    &_error {
+      color: $color_danger;
+
+      & .form__frame::placeholder {
+        color: $color_danger;
+        opacity: 1;
+      }
+
+      & .form__frame {
+        background-color: lighten($color_danger, 20%);
+        color: $color_danger;
+        border-color: lighten($color_danger, 20%);
+        outline-color: $color_danger;
+      }
+
+      & .form__frame:focus {
+        background-color: lighten($color_danger, 20%);
+        border: 1px solid $color_danger;
+        outline-color: $color_danger;
+        color: $color_danger;
+      }
+    }
+  }
+
+
+*/

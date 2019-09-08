@@ -1,6 +1,7 @@
 .control {
   // make room for control:
   padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
 
   // hide default &__system-control but keep it accessible
   &__system-control {
@@ -65,7 +66,7 @@
     // add custom checkbox styles:
     &_checkbox:before {
       border-radius: 0.25rem;
-      border: 1px solid $color_black;
+      border: $form__border_state_primary;
       transition: 0.2s;
     }
     // add custom checkmark styles:
@@ -81,7 +82,7 @@
     // add custom radio button styles:
     &_radio:before {
       border-radius: 50%;
-      border: 1px solid $color_black;
+      border: $form__border_state_primary;
       transition: 0.2s;
     }
     // add custom dot styles:
@@ -101,7 +102,7 @@
       left: -2.6rem; // = .control_switch's padding-left value
       background-color: $color_white;
       transition: 0.4s;
-      border: 1px solid $color_black;
+      border: $form__border_state_primary;
       border-radius: 10000px;
       width: 2rem;
       height: 1rem;
@@ -117,7 +118,7 @@
       left: calc(-2.6rem + 2px);
       // top = &_switch:before's 'top' property + 2px (2px is for border)
       top: calc(0.25rem + 2px);
-      background-color: $color_black;
+      background-color: $color_primary;
       border-radius: 50%;
       transition: all 0.4s ease;
       z-index: 10000;
@@ -134,11 +135,11 @@
   }
   // style control:
   &__system-control:checked ~ &__label:before {
-    background-color: $color_black;
+    background-color: $color_primary;
   }
   // and after__ it is deselected:
   &__system-control:focus ~ &__label:before {
-    box-shadow: $outline;
+    box-shadow: $form__box-shadow_state_primary;
   }
   // modifier for switch to override some of the beforementioned rules:
   // show the checkmark:
@@ -148,7 +149,7 @@
   }
   // style control:
   &__system-control:checked ~ &__label_switch:before {
-    background-color: $color_black;
+    background-color: $color_primary;
   }
 
   /***************
@@ -165,15 +166,14 @@
     color: $color_danger;
   }
   &__system-control_validation ~ &__label:before {
-    border-color: $color_danger;
+    border: $form__border_state_danger;
   }
-  // add outline after it is unchecked
   &__system-control_validation:focus ~ &__label {
     color: $color_danger;
   }
   &__system-control_validation:focus ~ &__label:before {
-    box-shadow: $outline_danger;
-    border-color: $color_danger;
+    box-shadow: $form__box-shadow_state_danger;
+    border: $form__border_state_danger;
   }
   // modifier for__switch:
   &__system-control_validation ~ &__label_switch:after {
@@ -190,11 +190,11 @@
     color: $color_success;
   }
   &__system-control_validation:checked:focus ~ &__label:before {
-    box-shadow: $outline_success;
+    box-shadow: $form__box-shadow_state_success;
     background-color: $color_success;
   }
   &__system-control_validation:checked ~ &__label:before {
-    border-color: $color_success;
+    border: $form__border_state_success;
   }
   &__system-control_validation ~ &__tip {
     color: $color_danger;

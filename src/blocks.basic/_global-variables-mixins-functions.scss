@@ -3,7 +3,7 @@
 // *************
 
 // Typography
-$root_font-size: 16px;
+$root_font-size: 18px;
 $root_line-height: 1.7;
 
 $font-stack_sans-serif: Lato, Helvetica, Verdana, Arial, Tahoma, sans-serif;
@@ -35,7 +35,7 @@ $color_secondary: #4d4d4d;
 $color_success: #34ce57;
 $color_warning: #ffcc00;
 $color_danger: #dc3545;
-$color_info: #347ed4;
+$color_info: #37abc8;
 $color_disabled: #b3b3b3;
 
 $color_fb: #1877f2;
@@ -66,10 +66,15 @@ $zindex-tooltip: 1070 !default;
 
 // Other
 $border_radius: 0.3rem !default;
-$outline: 0 0 0 0.2rem #007bff40; // $outline: 0 0 0 0.2rem #007bff40;
-$outline_success: 0 0 0 0.2rem lighten($color_success, 39%);
-$outline_danger: 0 0 0 0.2rem lighten($color_danger, 30%);
-$state__focus_border-color: #80bdff;
+
+$form__box-shadow_state_primary: 0 0 0 0.2rem lighten($color_primary, 85%);
+$form__border_state_primary: 1px solid $color_primary;
+
+$form__box-shadow_state_success: 0 0 0 0.2rem lighten($color_success, 39%);
+$form__border_state_success: 1px solid $color_success;
+
+$form__box-shadow_state_danger: 0 0 0 0.2rem lighten($color_danger, 30%);
+$form__border_state_danger: 1px solid $color_danger;
 
 // **********
 // * MIXINS *
