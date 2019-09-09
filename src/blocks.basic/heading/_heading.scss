@@ -1,9 +1,14 @@
+$font-size_h1: 3.052rem;
+$font-size_h2: 2.441rem;
+$font-size_h3: 1.953rem;
+$font-size_h4: 1.563rem;
+$font-size_h5: 1.25rem;
+$font-size_h6: 1rem;
+
 .heading {
   font-size: 1rem;
-  font-family: $font-stack_sans-serif;
   font-weight: bold;
   font-style: normal;
-  line-height: $root_line-height - 0.5;
 
   &_size_h1 {
     font-size: $font-size_h1;
@@ -27,13 +32,5 @@
 
   &_size_h6 {
     font-size: $font-size_h6;
-  }
-
-  &_color_white {
-    color: $color_white;
-  }
-
-  &_color_black {
-    color: $color_black;
   }
 }

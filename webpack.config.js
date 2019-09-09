@@ -120,7 +120,7 @@ module.exports = (env, options) => {
                 // eslint-disable-next-line no-unused-vars
                 outputPath: (url, resourcePath, context) => {
                   if (/favicon/.test(resourcePath)) return `img/favicon/${url}`;
-                  else return `img/${url}`;
+                  return `img/${url}`;
                 },
               },
             },
@@ -236,7 +236,9 @@ module.exports = (env, options) => {
         path.resolve(__dirname, 'postcss.config.js')
       ),
 
-      new CopyPlugin([{ from: 'src/favicon', to: 'img/favicon' }]),
+      // new CopyPlugin([{ from: 'src/favicon', to: '/' }]),
+      // copies files to root folder:
+      new CopyPlugin([{ from: 'src/favicon' }]),
     ],
   };
 };

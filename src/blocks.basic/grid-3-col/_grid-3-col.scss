@@ -13,7 +13,7 @@
   
   If you use this grid component and you don't have any left/right-paddings in parent containers, remove calc function and leave only 'minmax(320px, 1fr)' */
 
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   grid-gap: 2rem;
 
   /*

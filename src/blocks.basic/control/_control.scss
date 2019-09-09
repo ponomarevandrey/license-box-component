@@ -1,7 +1,7 @@
 .control {
   // make room for control:
   padding-left: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 
   // hide default &__system-control but keep it accessible
   &__system-control {
@@ -89,7 +89,7 @@
     &_radio:after {
       border-radius: 50%;
       // center/40% means 'to center the image and scale it by 40%':
-      background: no-repeat center/40% url('./dot.svg');
+      background: no-repeat center/38% url('./dot.svg');
     }
 
     /**********

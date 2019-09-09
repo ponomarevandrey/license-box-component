@@ -1,11 +1,9 @@
 .comment {
-  font: inherit;
   display: flex;
   flex-flow: row nowrap;
   margin-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: 2px dashed $color_gray-lighten;
-  font-size: 1rem;
 
   &__avatar {
     margin-top: 0.5rem;

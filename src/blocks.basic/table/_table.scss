@@ -10,16 +10,7 @@
 
   &__caption {
     font-style: italic;
-    color: $color_black;
     padding: 1em;
-  }
-
-  &__row:nth-child(even) {
-    background-color: $color_gray-lightest;
-  }
-
-  &__row:hover {
-    background-color: $color_gray-lighten;
   }
 
   &__cell {
@@ -27,15 +18,43 @@
     text-align: left;
     vertical-align: baseline;
 
-    &_type_header {
-      font-weight: bold;
-      background-color: $color_black;
-      color: $color_white;
-    }
-
     /*
     &_type_main {
     }
     */
+  }
+
+  // Modifiers:
+
+  // theme_light
+
+  &_theme_light {
+    & th {
+      background-color: $color_black;
+      color: $color_white;
+    }
+
+    & tr:nth-child(even) {
+      background-color: $color_gray-lightest;
+    }
+    & tr:hover {
+      background-color: $color_gray-lighten;
+    }
+  }
+
+  // theme_documentation
+
+  &_theme_documentation {
+    & th {
+      background-color: $color_gray_darken;
+      font-weight: bold;
+    }
+
+    & tr {
+      border-bottom: 1px solid $color_gray-dark;
+    }
+    & tr:hover {
+      background-color: $color_gray-darkest;
+    }
   }
 }

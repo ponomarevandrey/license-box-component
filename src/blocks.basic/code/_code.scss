@@ -1,11 +1,8 @@
 .code {
-  font-family: $font-stack_monospace;
-  border-radius: 0.4em;
+  border-radius: $border_radius;
   white-space: pre-wrap;
   word-wrap: break-word;
-
-  background-color: darken($color_white, 12%);
-  color: $color_black;
+  border: none;
 
   &_display_block {
     padding: 2em;
@@ -14,15 +11,18 @@
 
   &_display_inline {
     display: inline-block;
-    padding: 0 5px;
+    padding: 0.05rem 0.4rem;
   }
 
-  &_size_root {
-    font-size: calc(1rem - 8%);
+  &_theme_gray {
+    background-color: $color_gray-lightest;
+    color: $color_black;
+    font-family: $font-stack_monospace;
   }
 
   &_theme_dark {
-    background-color: lighten($color_black, 15%);
-    color: darken($color_white, 10%);
+    background-color: $color_gray_darken;
+    color: $color_gray-lighten;
+    font-family: $font-stack_monospace;
   }
 }

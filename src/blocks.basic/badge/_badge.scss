@@ -3,32 +3,63 @@
   margin: 0.2rem 0.15rem;
   padding: 0 0.4rem;
   vertical-align: baseline;
-  background-color: $color_black;
-  color: $color_white;
-  font-family: $font-stack_sans-serif;
-  font-weight: bold;
-  font-size: calc(1rem - 20%);
   white-space: nowrap;
-  line-height: 2;
   text-decoration: none;
   border-radius: $border_radius;
   outline: none;
+  box-sizing: border-box;
 
-  &:link {
-    transition: all 0.2s ease;
-  }
-
-  &:hover,
-  &:focus {
-    background-color: $color_gray-dark;
-    text-decoration: none;
+  &_theme_black {
+    background-color: $color_black;
     color: $color_white;
+    font-weight: bold;
+    border: 1px solid $color_white;
+
+    &:link {
+      transition: all 0.2s ease;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color_gray-dark;
+      text-decoration: none;
+      color: $color_white;
+    }
+
+    &:focus,
+    &:active {
+      box-shadow: $form__box-shadow_state_primary;
+    }
   }
 
-  &:focus,
-  &:active {
-    box-shadow: $form__box-shadow_state_primary;
+  &_theme_white {
+    background-color: $color_white;
+    color: $color_black;
+    font-weight: bold;
+    border: 1px solid $color_black;
+
+    &:link {
+      transition: all 0.2s ease;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color_black;
+      text-decoration: none;
+      color: $color_white;
+      border: 1px solid $color_white;
+    }
+
+    &:focus,
+    &:active {
+      box-shadow: $form__box-shadow_state_primary;
+    }
   }
 
-  // Modifiers:
+  &_focus_disabled,
+  &_focus_disabled:focus,
+  &_focus_disabled:hover,
+  &_focus_disabled:active {
+    box-shadow: none;
+  }
 }

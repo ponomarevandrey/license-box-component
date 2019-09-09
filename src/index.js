@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 /************
  * GRAPHICS *
  ************/
@@ -7,7 +5,6 @@ function requireFiles(r) {
   r.keys().forEach(r);
 }
 // require images
-// eslint-disable-next-line no-undef
 requireFiles(require.context('./img/', true, /(svg|png|jpg)$/));
 
 /*************
@@ -15,20 +12,25 @@ requireFiles(require.context('./img/', true, /(svg|png|jpg)$/));
  *************/
 import './blocks.basic/_reset.scss';
 
-/**************
- * COMPONENTS *
- **************/
-/* The order of components is from biggest to smallest.
+/**********
+ * BLOCKS *
+ **********/
+/* To control the CSS cascade and inheritance while importing blocks into the project, all blocks divided into two main groups:
 
-Don't change their precedence cause some of components rely on cascade so reordering may break he trules. For now, the only component that is really depends on cascade is 'tooltip'  -line-height property of 'tooltip' reassigns line-height propery of 'text' block 
+   1. **Parent blocks** (these blocks usually, although it's not obligatory, serve as parent containers for "Child blocks")
+   2. **Child blocks** (usually, you don't put anything inside these blocks, except text. Being imported last, rules in these blocks may override rules declared earlier in "Parent blocks")
 
-If you don't need a component, don't delete it from this file, just comment it out' */
+**Don't change the order of blocks!** Although, all blocks are self-sufficient and don't rely on cascade and inheritance, in some rare cases reordering of their imports may break minor details like link color or font-size, so to be safe try to maintain the current blocks' order. If you don't need a block in your bundle, comment it out, don't delete it from this file, you might need it in the future */
 
-// 'Global' blocks:
-// (blocks often serving as a parent container for other blocks)
+// Parent blocks
+
 // page
 import './blocks.basic/page/_page.scss';
 import './blocks.basic/page/page.js';
+// text
+import './blocks.basic/text/_text.scss';
+// heading
+import './blocks.basic/heading/_heading.scss';
 // grid-responsive-col
 import './blocks.basic/grid-auto-col/_grid-auto-col.scss';
 // grid-items-list.scss
@@ -45,30 +47,22 @@ import './blocks.basic/header/_header.scss';
 import './blocks.basic/main/_main.scss';
 // footer
 import './blocks.basic/footer/_footer.scss';
-// text
-import './blocks.basic/text/_text.scss';
-// heading
-import './blocks.basic/heading/_heading.scss';
 // list
 import './blocks.basic/list/_list.scss';
 // btn
 import './blocks.basic/btn/_btn.scss';
+import './blocks.basic/btn/btn.js';
 // link
 import './blocks.basic/link/_link.scss';
 // pagination
 import './blocks.basic/pagination/_pagination.scss';
 // comment
 import './blocks.basic/comment/_comment.scss';
-// control
-import './blocks.basic/control/_control.scss';
-requireFiles(require.context('./blocks.basic/control', true, /(svg|png|jpg)$/));
 // form-grid
 import './blocks.basic/form-grid/_form-grid.scss';
-// form-group
-import './blocks.basic/form-group/_form-group.scss';
 
-// Small blocks:
-// (usually, you don't put anything inside these blocks, except text)
+// Child blocks
+
 // image-svg
 import './blocks.basic/img-svg/_img-svg.scss';
 // image-raster
@@ -82,9 +76,6 @@ requireFiles(require.context('./blocks.basic/icons/', true, /(svg|png|jpg)$/));
 import './blocks.basic/breadcrumb/_breadcrumb.scss';
 // badge
 import './blocks.basic/badge/_badge.scss';
-// backToTopBtn
-import './blocks.basic/back-to-top-btn/_back-to-top-btn.scss';
-import './blocks.basic/back-to-top-btn/back-to-top-btn.js';
 // blockquote
 import './blocks.basic/blockquote/_blockquote.scss';
 // code
@@ -97,6 +88,11 @@ import './blocks.basic/embed/_embed.scss';
 import './blocks.basic/table/_table.scss';
 // loader
 import './blocks.basic/loader/_loader.scss';
+// control
+import './blocks.basic/control/_control.scss';
+requireFiles(require.context('./blocks.basic/control', true, /(svg|png|jpg)$/));
+// form-group
+import './blocks.basic/form-group/_form-group.scss';
 // nav
 import './blocks.basic/nav/_nav.scss';
 import './blocks.basic/nav/nav.js';

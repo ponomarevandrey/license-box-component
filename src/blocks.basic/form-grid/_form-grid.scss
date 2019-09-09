@@ -1,7 +1,7 @@
 .form-grid {
   display: grid;
   grid-gap: 2rem 6%;
-  align-items: start;
+  align-items: start; // vertical alighnment of grid cells content
 
   @media screen and (min-width: $screen-sm) {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

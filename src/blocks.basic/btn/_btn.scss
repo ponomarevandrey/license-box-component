@@ -1,21 +1,13 @@
 .btn {
-  display: inline-block;
-  position: relative;
-  font-family: $font-stack_sans-serif;
-  font-size: 1rem;
   text-align: center;
-  line-height: 1.5;
-  padding: 0.8rem 1rem;
-  box-sizing: border-box;
   cursor: pointer;
-  font-weight: bold;
-  border-radius: $border_radius;
   text-decoration: none;
-  color: $color_white;
-  background-color: $color_black;
   outline: none;
+  border: 0;
   transition: transform 0.2s ease, background-color 0.2s ease,
     box-shadow 0.2s ease;
+  white-space: nowrap;
+  box-sizing: border-box;
 
   &:focus,
   &:active {
@@ -30,7 +22,10 @@
     transform: translate(0, 2px);
   }
 
-  // Modifier: disabled
+  // Modifiers:
+
+  // disabled:
+
   &_disabled,
   &:disabled {
     outline: none;
@@ -48,5 +43,33 @@
       box-shadow: none;
       transform: none;
     }
+  }
+
+  &_theme_black {
+    color: $color_white;
+    background-color: $color_black;
+    display: inline-block;
+    position: relative;
+    padding: 0.8rem 1rem;
+    border-radius: $border_radius;
+  }
+
+  &_size_md {
+    line-height: 1.2;
+  }
+
+  &_type_back-to-top {
+    display: none; // default state of the button is hidden
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1030; // guarantee that the button is always on top of other layers
+    outline: none;
+    background-color: $color_primary;
+    color: $color_white;
+    padding: 15px;
+    border-radius: $border_radius;
   }
 }
