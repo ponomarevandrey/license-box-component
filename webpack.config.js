@@ -133,7 +133,7 @@ module.exports = (env, options) => {
           use: [
             { loader: 'html-loader-srcset',
               options: {
-                attrs: ['img:src', 'img:srcset']
+                attrs: ['img:src', 'img:srcset', 'object:data']
               }
             },
             {
@@ -142,7 +142,6 @@ module.exports = (env, options) => {
             },
           ],
         },
-
 
         {
           // FONT LOADER
