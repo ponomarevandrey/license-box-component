@@ -131,26 +131,17 @@ module.exports = (env, options) => {
           // HTML (PUG) LOADER
           test: /\.pug$/,
           use: [
-            { loader: 'html-loader' },
+            { loader: 'html-loader-srcset',
+              options: {
+                attrs: ['img:src', 'img:srcset']
+              }
+            },
             {
               loader: 'pug-html-loader',
-              options: {
-                pretty: true,
-                exports: false
-              },
+              options: { pretty: true, exports: false },
             },
           ],
         },
-
-
-
-
-
-
-
-
-
-
 
 
         {

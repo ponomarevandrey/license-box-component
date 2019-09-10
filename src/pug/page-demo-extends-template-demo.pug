@@ -44,29 +44,13 @@ block header
 block main
 
   main(class='demo')
-
-    +heading('h1', 'Heading One', 'heading heading_size_h1')
-    +heading('h2', 'Heading Two', 'heading heading_size_h2')
-    +heading('h3', 'Heading Three', 'heading heading_size_h3')
-    +heading('h4', 'Heading Four', 'heading heading_size_h4')
-    +heading('h5', 'Heading Five', 'heading heading_size_h5')
-    +heading('h6', 'Heading Six', 'heading heading_size_h6')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    section(class='block')
+      +heading('h1', 'Heading One', 'heading heading_size_h1')
+      +heading('h2', 'Heading Two', 'heading heading_size_h2')
+      +heading('h3', 'Heading Three', 'heading heading_size_h3')
+      +heading('h4', 'Heading Four', 'heading heading_size_h4')
+      +heading('h5', 'Heading Five', 'heading heading_size_h5')
+      +heading('h6', 'Heading Six', 'heading heading_size_h6')
 
 
 
@@ -87,15 +71,15 @@ block main
         figure(class='img-raster')
           picture(class='img-raster__wrapper')   
             img(
-              class='img-raster__img'
-              src="./../img/animals_landscape_xxxl.jpg"
-
-              sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
-
-              srcset="./img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w"
+              class='img-raster__img' 
               
-              alt='Ships in the Field' 
-            )
+              src="./../img/animals_landscape_xxxl.jpg" 
+              
+              sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw" 
+              
+              srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w" 
+              
+              alt='Ships in the Field')
           figcaption(class='img-raster__caption').
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 
@@ -203,11 +187,11 @@ block main
         picture(class='img-raster__wrapper')   
           img(
             class='img-raster__img'
-            src="/../img/animals_landscape_xxxl.jpg"
+            src="./../img/animals_landscape_xxxl.jpg"
 
             sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
 
-            srcset="/../img/animals_landscape_sm.jpg 480w, /../img/animals_landscape_md.jpg 768w, /../img/animals_landscape_lg.jpg 992w, /../img/animals_landscape_xl.jpg 1200w, /../img/animals_landscape_xxl.jpg 1800w, /../img/animals_landscape_xxxl.jpg 2000w"
+            srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w"
             
             alt='Ships in the Field' 
           )
@@ -221,11 +205,11 @@ block main
         picture(class='img-raster__wrapper')   
           img(
             class='img-raster__img'
-            src="/../img/animals_landscape_xxxl.jpg"
+            src="./../img/animals_landscape_xxxl.jpg"
 
             sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
 
-            srcset="/../img/animals_landscape_sm.jpg 480w, /../img/animals_landscape_md.jpg 768w, /../img/animals_landscape_lg.jpg 992w, /../img/animals_landscape_xl.jpg 1200w, /../img/animals_landscape_xxl.jpg 1800w, /../img/animals_landscape_xxxl.jpg 2000w"
+            srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w"
             
             alt='Ships in the Field' 
           )
@@ -239,11 +223,11 @@ block main
         picture(class='img-raster__wrapper')   
           img(
             class='img-raster__img'
-            src="/../img/animals_landscape_xxxl.jpg"
+            src="./../img/animals_landscape_xxxl.jpg"
 
             sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
 
-            srcset="/../img/animals_landscape_sm.jpg 480w, /../img/animals_landscape_md.jpg 768w, /../img/animals_landscape_lg.jpg 992w, /../img/animals_landscape_xl.jpg 1200w, /../img/animals_landscape_xxl.jpg 1800w, /../img/animals_landscape_xxxl.jpg 2000w"
+            srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w"
             
             alt='Ships in the Field' 
           )
