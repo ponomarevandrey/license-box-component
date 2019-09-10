@@ -135,6 +135,21 @@
     color: $color_disabled;
   }
 
+  // style
+
+  &_style_normal {
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  &_style_bold {
+    font-weight: bold;
+  }
+
+  &_style_italic {
+    font-style: italic;
+  }
+
   // font-stack:
 
   &_font-stack_sans-serif {

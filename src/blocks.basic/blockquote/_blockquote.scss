@@ -8,8 +8,10 @@
   padding: 1.5rem 10%;
 
   &_theme_gray {
-    background-color: $color_gray-lightest;
-    font-style: italic;
+    background-color: $color_black;
+    color: $color_white;
+    //font-style: italic;
+    font-weight: bold;
     quotes: none;
   }
 

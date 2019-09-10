@@ -12,86 +12,67 @@ block meta
 
 
 block head
-
+  style. 
+    .block {
+      display: flex;
+      max-width: 1200px;
+      margin: auto;
+    }
 
 
 block header
 
-  div(class='nav-fixed')
-    div(class='nav-fixed__logo')
-      img(
-        src='./../img/biscuit-logo-white.svg' 
-        alt='Logoipsum logo'
-        title='Logoipsum'
-        class='img-svg'
-      )
-    div(class='nav-fixed__items')
-      a(href='#main' class='nav-fixed__item') Main
-      a(href='#portfolio' class='nav-fixed__item') Portfolio
-      a(href='#blog' class='nav-fixed__item') Blog
-      a(href='#about' class='nav-fixed__item nav-fixed__item_active') About
-      a(href='#contacts' class='nav-fixed__item') Contacts
+  //- nav-fixed
+
+    div(class='nav-fixed')
+      div(class='nav-fixed__logo')
+        img(
+          src='./../img/biscuit-logo-white.svg' 
+          alt='Logoipsum logo'
+          title='Logoipsum'
+          class='img-svg'
+        )
+      div(class='nav-fixed__items')
+        a(href='#main' class='nav-fixed__item') Main
+        a(href='#portfolio' class='nav-fixed__item') Portfolio
+        a(href='#blog' class='nav-fixed__item') Blog
+        a(href='#about' class='nav-fixed__item nav-fixed__item_active') About
+        a(href='#contacts' class='nav-fixed__item') Contacts
       
 
       
 block main
 
-
-  -
-    var blocks = ['page', 'text', 'heading', 'grid-auto-col', 'grid-3-col', 'grid-page-layout1', 'grid-page-layout2', 'grid-gallery', 'header', 'main', 'footer', 'list', 'btn', 'link', 'pagination', 'comment', 'form-grid', 'img-svg', 'img-raster', 'tooltip', 'icons', 'breadcrumb', 'badge', 'blockquote',  'code', 'hr', 'embed', 'table', 'loader', 'control', 'form-group', 'nav', 'nav-fixed'];
-
-
-  mixin block(blockName, implementation, )
-    section(class='block')
-
   main(class='demo')
 
-    //-  heading 
-
-    section(class='block')
-      div(class='block__about') 
-        header(class='block__header')  
-          span(class='block__name heading heading_size_h1 text text_font-stack_monospace') heading #{s}
-          span(class='block__implementation-tech') Implemented in: 
-            span(class='badge badge_theme_white text text_size_sm text_line-height_lg badge_focus_disabled') PUG 
-            span(class='badge badge_theme_white text text_size_sm text_line-height_lg badge_focus_disabled') SCSS 
-            span(class='badge badge_theme_white text text_size_sm text_line-height_lg badge_focus_disabled') JS
-        article(class='block_description') 
-          p(class='text text_display_block') Styling for headings
-          
-          div(class='table table_theme_light')
-            table(class='table__container')
-              thead
-                tr(class='table__row table__row table__row_theme_zebra-gray-lightest')
-                  th(class='table__cell table__cell_type_header') Modifiers
-                  th(class='table__cell table__cell_type_header') Values
-                  th(class='table__cell table__cell_type_header') Description
-              tbody
-                tr(class='table__row table__row_theme_zebra-gray-lightest')
-                  td(class='table__cell table__cell_type_main') #[code(class='code code_display_inline text text_size_sm code_theme_dark') size]
-                  td(class='table__cell table__cell_type_main').
-                    #[code(class='code code_display_inline text text_size_sm code_theme_dark') h1], #[code(class='code code_display_inline text text_size_sm code_theme_dark') h2], #[code(class='code code_display_inline text text_size_sm code_theme_dark') h3], #[code(class='code code_display_inline text text_size_sm code_theme_dark') h4], #[code(class='code code_display_inline text text_size_sm code_theme_dark') h5], #[code(class='code code_display_inline text text_size_sm code_theme_dark') h6]
-                  td(class='table__cell table__cell_type_main') Style of text
-
-      div(class='block__demo')
-        //- heading
-        h1(class='heading text text_color_secondary') Default Heading without modifier
-        h1(class='heading heading_size_h1') Heading One
-        h1(class='heading heading_size_h2') Heading Two
-        h1(class='heading heading_size_h3') Heading Three
-        h1(class='heading heading_size_h4') Heading Four
-        h1(class='heading heading_size_h5') Heading Five
-        h1(class='heading heading_size_h6') Heading Six
+    +heading('h1', 'Heading One', 'heading heading_size_h1')
+    +heading('h2', 'Heading Two', 'heading heading_size_h2')
+    +heading('h3', 'Heading Three', 'heading heading_size_h3')
+    +heading('h4', 'Heading Four', 'heading heading_size_h4')
+    +heading('h5', 'Heading Five', 'heading heading_size_h5')
+    +heading('h6', 'Heading Six', 'heading heading_size_h6')
 
 
-        
 
-        +heading('h1', 'Default Heading without modifier', 'font-stack_serif') Heading without modifier
-        +heading('h2', 'Heading One', 'heading heading_size_h1')
-        +heading('h3', 'Heading Two', 'heading heading_size_h2')
-        +heading('h4', 'Heading Three', 'heading heading_size_h3')
-        +heading('h5', 'Heading Four', 'heading heading_size_h4')
-        +heading('h5', 'Heading Five', 'heading heading_size_h5')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -180,9 +161,9 @@ block main
       div(class='block__demo')
         //- inline code
         p(class='text text_display_block text_size_root text_color_black'). 
-          It has survived not only five centuries, but also the leap into electronic typesetting, #[a(href='#image' class='link link_anchor') remaining] essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, #[code(class='code code_display_inline text text_size_sm code_theme_dark') console.log( a );] and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          It has survived not only five centuries, but also the leap into electronic typesetting, #[a(href='#image' class='link link_anchor') remaining] essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, #[code(class='code code_display_inline text text_size_sm code_theme_gray') console.log( a );] and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         //- code block
-        pre(class='code code_display_block text text_size_sm code_theme_dark')
+        pre(class='code code_display_block text text_size_sm code_theme_gray')
           code.
             window.addEventListener( 'load', => {
               console.log('Ready');

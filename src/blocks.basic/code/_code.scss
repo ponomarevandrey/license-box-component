@@ -3,6 +3,7 @@
   white-space: pre-wrap;
   word-wrap: break-word;
   border: none;
+  font-family: $font-stack_monospace;
 
   &_display_block {
     padding: 2em;
@@ -17,12 +18,10 @@
   &_theme_gray {
     background-color: $color_gray-lightest;
     color: $color_black;
-    font-family: $font-stack_monospace;
   }
 
   &_theme_dark {
     background-color: $color_gray_darken;
     color: $color_gray-lighten;
-    font-family: $font-stack_monospace;
   }
 }

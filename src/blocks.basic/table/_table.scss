@@ -35,10 +35,10 @@
     }
 
     & tr:nth-child(even) {
-      background-color: $color_gray-lightest;
+      background-color: lighten($color_gray-lightest, 5%);
     }
     & tr:hover {
-      background-color: $color_gray-lighten;
+      background-color: $color_gray-lightest;
     }
   }
 
