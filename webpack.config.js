@@ -114,7 +114,7 @@ module.exports = (env, options) => {
           use: [
             {
               loader: 'file-loader',
-              options: {
+                options: {
                 name: '[name].[ext]',
                 context: 'src',
                 // eslint-disable-next-line no-unused-vars
@@ -136,10 +136,22 @@ module.exports = (env, options) => {
               loader: 'pug-html-loader',
               options: {
                 pretty: true,
+                exports: false
               },
             },
           ],
         },
+
+
+
+
+
+
+
+
+
+
+
 
         {
           // FONT LOADER

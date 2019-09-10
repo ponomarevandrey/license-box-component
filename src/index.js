@@ -90,7 +90,7 @@ import './blocks.basic/table/_table.scss';
 import './blocks.basic/loader/_loader.scss';
 // control
 import './blocks.basic/control/_control.scss';
-requireFiles(require.context('./blocks.basic/control', true, /(svg|png|jpg)$/));
+// requireFiles(require.context('./blocks.basic/control', true, /(svg|png|jpg)$/));
 // form-group
 import './blocks.basic/form-group/_form-group.scss';
 // nav
