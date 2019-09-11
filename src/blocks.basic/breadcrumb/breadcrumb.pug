@@ -1,0 +1,21 @@
+mixin breadcrumb(classList='breadcrumb', ...breadcrumbs)
+
+  ul(class=`${classList}`)
+
+    - for (var i = 0; i < breadcrumbs.length; i++) 
+      - var item = breadcrumbs[i]; 
+      - if (i === breadcrumbs.length - 1)   
+        li(class='breadcrumb__item breadcrumb__item_active') Cooking Performance Group S60-G24-N Natural Gas 6 Burner 60" Range with 24" Griddle and 2 Standard Ovens - 280,000 BTU
+      - else 
+        li(class='breadcrumb__item')
+          a(href=`${item.link}` class='link') #{item.name}
+
+
+//-
+  Call example:
+
+  +breadcrumb(
+    'breadcrumb', 
+    { name: 'Home', link: '###' },
+    { name: 'Equipment', link: '###' },
+    { name: 'Cooking Equipment', link: '###' })

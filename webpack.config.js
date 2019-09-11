@@ -114,7 +114,7 @@ module.exports = (env, options) => {
           use: [
             {
               loader: 'file-loader',
-                options: {
+              options: {
                 name: '[name].[ext]',
                 context: 'src',
                 // eslint-disable-next-line no-unused-vars
@@ -131,10 +131,11 @@ module.exports = (env, options) => {
           // HTML (PUG) LOADER
           test: /\.pug$/,
           use: [
-            { loader: 'html-loader-srcset',
+            {
+              loader: 'html-loader-srcset',
               options: {
-                attrs: ['img:src', 'img:srcset', 'object:data']
-              }
+                attrs: ['img:src', 'img:srcset', 'object:data'],
+              },
             },
             {
               loader: 'pug-html-loader',

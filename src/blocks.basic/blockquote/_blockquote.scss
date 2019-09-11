@@ -5,26 +5,55 @@
   vertical-align: baseline;
   display: flex;
   flex-flow: column nowrap;
-  padding: 1.5rem 10%;
+  padding: 2em 10%;
 
-  &_theme_gray {
+  &_theme_black {
     background-color: $color_black;
-    color: $color_white;
-    //font-style: italic;
-    font-weight: bold;
-    quotes: none;
-  }
 
-  &__main:first-of-type:before {
-    content: '\201c';
-  }
+    & .blockquote__body {
+      color: $color_white;
+      font-weight: bold;
+      quotes: none;
 
-  &__main:last-of-type:after {
-    content: '\201d';
-  }
+      &:first-of-type:before {
+        content: '\201c';
+      }
 
-  &__footer:before {
-    content: '—';
-    padding-right: 0.3rem;
+      &:last-of-type:after {
+        content: '\201d';
+      }
+    }
+
+    & .blockquote__footer {
+      color: $color_gray;
+      font-size: 80%;
+      align-self: flex-end;
+      padding-top: 1em;
+    }
+
+    & .blockquote__link {
+      transition: color 0.2s linear;
+
+      &:link {
+        color: $color_gray;
+      }
+
+      &:visited {
+        color: $color_gray;
+      }
+
+      &:hover {
+        color: $color_gray-light;
+        text-decoration: none;
+      }
+
+      a:focus {
+        color: $color_gray;
+      }
+
+      &:active {
+        color: $color_gray-light;
+      }
+    }
   }
 }

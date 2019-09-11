@@ -1,18 +1,24 @@
 .link {
   // make fade in/out effect on link hover
   &:link {
-    color: $color_gray;
-    transition: color 0.2s linear;
-  }
-
-  &:visited,
-  &:focus {
-    color: $color_gray-darken;
-  }
-
-  &:hover,
-  &:active {
     color: $color_black;
-    border: none;
+    transition: all 0.2s linear;
+  }
+
+  &:visited {
+    color: $color_black;
+  }
+
+  &:hover {
+    color: $color_gray;
+    text-decoration: none;
+  }
+
+  &:focus {
+    color: $color_gray;
+  }
+
+  &:active {
+    color: $color_gray;
   }
 }

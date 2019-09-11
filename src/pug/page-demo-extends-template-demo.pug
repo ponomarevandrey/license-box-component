@@ -14,9 +14,11 @@ block meta
 block head
   style. 
     .block {
+      /*
       display: flex;
       max-width: 1200px;
       margin: auto;
+      */
     }
 
 
@@ -45,122 +47,98 @@ block main
 
   main(class='demo')
     section(class='block')
-      +heading('h1', 'Heading One', 'heading heading_size_h1')
-      +heading('h2', 'Heading Two', 'heading heading_size_h2')
-      +heading('h3', 'Heading Three', 'heading heading_size_h3')
-      +heading('h4', 'Heading Four', 'heading heading_size_h4')
-      +heading('h5', 'Heading Five', 'heading heading_size_h5')
-      +heading('h6', 'Heading Six', 'heading heading_size_h6')
+      +heading('Heading One','h1', 'heading heading_size_h1')
+      +heading('Heading Two', 'h2', 'heading heading_size_h2')
+      +heading('Heading Three', 'h3', 'heading heading_size_h3')
+      +heading('Heading Four', 'h4', 'heading heading_size_h4')
+      +heading('Heading Five', 'h5', 'heading heading_size_h5')
+      +heading('Heading Six', 'h6', 'heading heading_size_h6')
 
 
-
-
-
-
-
-
-
-
-
-
+    section(class='block')
+      
 
     //- img-raster
     section(class='block')
-      article(class='block__about') Some text
-      div(class='block__demo')
-        figure(class='img-raster')
-          picture(class='img-raster__wrapper')   
-            img(
-              class='img-raster__img' 
-              
-              src="./../img/animals_landscape_xxxl.jpg" 
-              
-              sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw" 
-              
-              srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w" 
-              
-              alt='Ships in the Field')
-          figcaption(class='img-raster__caption').
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+      figure(class='img-raster')
+        picture(class='img-raster__wrapper')   
+          img(
+            class='img-raster__img' 
+            
+            src="./../img/animals_landscape_xxxl.jpg" 
+            
+            sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw" 
+            
+            srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w" 
+            
+            alt='Ships in the Field')
+        figcaption(class='img-raster__caption').
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 
 
 
     //- hr
     section(class='block')
-      article(class='block__about') Some text
-      div(class='block__demo')
-        hr(class='hr')
+      +hr('hr hr_color_black')
 
 
 
     //- list
     section(class='block')
-      article(class='block__about') Some text
-      div(class='block__demo')
-        ul(class='list list_style_unordered')
-          li(class='list__item') Fruit
-            ul(class='list list_style_unordered')
-              li(class='list__item') Bananas
-              li(class='list__item') Apples
-                ul(class='list list_style_ordered')
-                  li(class='list__item') Green
-                  li(class='list__item') Red
-              li(class='list__item') Pears
-          li(class='list__item') Vegetables
-          li(class='list__item') Meat
+      ul(class='list list_style_unordered')
+        li(class='list__item') Fruit
+          ul(class='list list_style_unordered')
+            li(class='list__item') Bananas
+            li(class='list__item') Apples
+              ul(class='list list_style_ordered')
+                li(class='list__item') Green
+                li(class='list__item') Red
+            li(class='list__item') Pears
+        li(class='list__item') Vegetables
+        li(class='list__item') Meat
 
 
     //- text
     //- inline text
     section(class='block')
-      article(class='block__about') Some text
-      div(class='block__demo')
-        p(class='text text_display_inline') Lorem Ipsum
-        p(class='text text_display_inline') Lorem Ipsum
+      p(class='text text_display_inline') Lorem Ipsum
+      p(class='text text_display_inline') Lorem Ipsum
 
     //- block text
     section(class='block')
-      article(class='block__about') Some text
-      div(class='block__demo')
-        p(class='text text_display_block text_size_root').
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-        p(class='text text_display_block text_size_root').
-          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      p(class='text text_display_block text_size_root').
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+      p(class='text text_display_block text_size_root').
+        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 
 
     //- link
     section(class='block')
-      article(class='block__about') Some text
-      div(class='block__demo')
-        a(href='##' class='link') link
+      a(href='##' class='link') link
 
 
 
     //- code
     section(class='block')
-      article(class='block__about') Some text
-      div(class='block__demo')
-        //- inline code
-        p(class='text text_display_block text_size_root text_color_black'). 
-          It has survived not only five centuries, but also the leap into electronic typesetting, #[a(href='#image' class='link link_anchor') remaining] essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, #[code(class='code code_display_inline text text_size_sm code_theme_gray') console.log( a );] and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        //- code block
-        pre(class='code code_display_block text text_size_sm code_theme_gray')
-          code.
-            window.addEventListener( 'load', => {
-              console.log('Ready');
-            })
+      //- inline code
+      p(class='text text_display_block text_size_root text_color_black'). 
+        It has survived not only five centuries, but also the leap into electronic typesetting, #[a(href='#image' class='link link_anchor') remaining] essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, #[code(class='code code_display_inline text text_size_sm code_theme_gray') console.log( a );] and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      //- code block
+      pre(class='code code_display_block text text_size_sm code_theme_gray')
+        code.
+          window.addEventListener( 'load', => {
+            console.log('Ready');
+          })
 
 
 
     //- btn
     section(class='block')
-      article(class='block__about') Some text
-      div(class='block__demo')
-        a(class='btn btn_theme_black btn_size_md' href='###') a href Button 
-        button(type='button' class='btn btn_theme_black btn_size_md') button Button
-        button(type='button' class='btn btn_theme_black btn_size_md btn_disabled' disabled) button Button
-        input(type='button' value='input Button' class='btn btn_theme_black btn_size_md btn_disabled' disabled) 
+      a(class='btn btn_theme_black btn_size_md' href='###') a href Button 
+      button(type='button' class='btn btn_theme_black btn_size_md') button Button
+      button(type='button' class='btn btn_theme_black btn_size_md btn_disabled' disabled) button Button
+      input(type='button' value='input Button' class='btn btn_theme_black btn_size_md btn_disabled' disabled) 
 
 
 
@@ -362,17 +340,33 @@ block main
 
   //- header
   header(class='header header_view_fullscreen-image header_align-content_center')
-    h1(class='heading heading_size_h1 heading_color_white') Biscuit Demo Page
+    +heading(
+      'Biscuit Demo Page', 'h1', 
+      'heading heading_size_h1 text text_color_white') 
 
 
   //- blockquote
-  p(class='text text_display_block').
-    It has survived not only five centuries,
-  blockquote(class='blockquote text text_size_xl blockquote_theme_gray')
-    p(class='blockquote__main').
-      Big type, even huge type, can be beautiful and useful. But poise is usually far more important than size – and poise consists primarily of emptiness. Typographically, poise is made of white&space.
-    footer(class='blockquote__footer text text_color_gray').
-      Robert Bringhurst, #[cite(title='Source Title') The Elements of Typographic Style]
+  +blockquote(
+    'Big type, even huge type, can be beautiful and useful. But poise is usually far more important than size – and poise consists primarily of emptiness. Typographically, poise is made of white&space.',
+
+    'Robert Bringhurst', 
+    
+    'The Elements of Typographic Style',
+
+    'blockquote text text_size_xl blockquote_theme_black')
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -385,10 +379,30 @@ block main
 
 
   //- badge
-  a(href='###' class='badge badge_theme_white text text_size_sm text_line-height_lg') Closure
-  a(href='###' class='badge badge_theme_white text text_size_sm text_line-height_lg') Hoisting
-  a(href='###' class='badge badge_theme_white text text_size_sm text_line-height_lg') Call Stack
-  a(href='###' class='badge badge_theme_white text text_size_sm text_line-height_lg') Prototypes
+  +badge(
+    'Closure', 
+    'http://google.com', 
+    'badge badge_theme_white text text_size_sm text_line-height_lg')
+  
+  +badge(
+    'Hoisting', 
+    'http://google.com', 
+    'badge badge_theme_black text text_size_sm text_line-height_lg')
+  
+  +badge(
+    'Recursion', 
+    'http://google.com', 
+    'badge badge_theme_white text text_size_sm text_line-height_lg')
+  
+  +badge(
+    'Callback',
+    'http://google.com', 
+    'badge badge_theme_white text text_size_sm text_line-height_lg')
+  
+  +badge(
+    'Prototypes',
+    'http://google.com', 
+    'badge badge_theme_white text text_size_sm text_line-height_lg')
 
 
 
@@ -404,21 +418,18 @@ block main
 
 
   //- breadcrumbs
-  ul(class='breadcrumb')
-    li(class='breadcrumb__item')
-      a(href='###' class='link') Home
-    li(class='breadcrumb__item')
-      a(href='#s##' class='link') Equipment
-    li(class='breadcrumb__item')
-      a(href='###f' class='link') Cooking Equipment
-    li(class='breadcrumb__item breadcrumb__item_active').
-      Cooking Performance Group S60-G24-N Natural Gas 6 Burner 60" Range with 24" Griddle and 2 Standard Ovens - 280,000 BTU
+  +breadcrumb(
+    'breadcrumb', 
+    { name: 'Home', link: '###' },
+    { name: 'Equipment', link: '###' },
+    { name: 'Cooking Equipment', link: '###' })
 
 
 
   //- icons
   div
-    include ../blocks.basic/icons/icons.pug 
+    +icon('github', 'https://github.com/ponomarevandrey')
+  //-  include ../blocks.basic/icons/icons.pug 
 
 
 

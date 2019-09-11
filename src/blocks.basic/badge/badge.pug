@@ -1,13 +1,2 @@
-mixin heading(tag, text, mods)
-
-  //-
-    Accepts:
-    tag  [string[ - HTML tag name
-    text [string] - text inside tag
-    mods [string] - list of modifiers
-    
-    Call example:
-
-    +heading('p' 'My first blog post', 'size_sm color_black line-height_lg')
-
-  #{tag}(class=`${mods}`)= text
+mixin badge(text, href, classList='badge')
+  a(href=`${href}` class=`${classList}`)= text

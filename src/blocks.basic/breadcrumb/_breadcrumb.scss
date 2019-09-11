@@ -6,9 +6,6 @@
 
   &__item {
     display: inline;
-
-    &__item_active {
-    }
   }
 
   &__item + &__item:before {

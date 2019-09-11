@@ -1,16 +1,19 @@
+mixin icon (name, href)
+  - if (name === 'github')
+    a(
+      href=`${href}` 
+      class='icons' 
+      aria-hidden='true'
+      focusable='false' 
+      title='Github'
+    )
+      span(class='icons__access-label') Github
+      svg(class='icons__img icons__img_name_github')
+        use(xlink:href='./img/sprite.svg#github')
+
+
 //- 
   the path inside <use> element should be relative to webpack 'build' folder, not to 'icons' component folder
-
-a(
-  href='https://github.com/ponomarevandrey' 
-  class='icons' 
-  aria-hidden='true'
-  focusable='false' 
-  title='Github'
-)
-  span(class='icons__access-label') Github
-  svg(class='icons__img icons__img_name_github')
-    use(xlink:href='./img/sprite.svg#github')
 
 
 
