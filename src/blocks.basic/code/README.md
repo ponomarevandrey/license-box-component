@@ -1,12 +1,12 @@
 # How to use
 
-Inline code:
+- inline code:
 
 ```pug
 Lorem Ipsum #[+code( `console.log( a ) !!!;`, 'code code_display_inline text text_size_sm code_theme_gray' ) ] Lorem Ipsum
 ```
 
-Block code:
+- block code:
 ```pug
 +code( 
 `window.addEventListener( 'load', => {

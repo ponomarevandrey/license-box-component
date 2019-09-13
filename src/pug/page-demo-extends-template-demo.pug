@@ -14,11 +14,43 @@ block meta
 block head
   style. 
     .block {
-      /*
       display: flex;
-      max-width: 1200px;
-      margin: auto;
-      */
+      flex-flow: column nowrap;
+      max-width: 800px;
+      margin: 2rem auto;
+      border-radius: .3rem;
+      border: 1px solid black;
+    }
+
+    .block__about {
+      padding: 5rem 6rem 2rem 6rem;
+    }
+
+
+    .block__readme {
+      padding: 6rem;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      font-family: Consolas, 'Lucida Console', 'Lucida Sans Typewriter',   'Courier New', Courier, monospace;
+      /* overflow: scroll; */
+    }
+
+    .block__example {
+       padding: 6rem;
+    }
+
+    /* ---------------------- */
+
+    .block__header {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .block__content {
+      margin-bottom: 2rem;
     }
 
 
@@ -50,12 +82,49 @@ block main
 
     //- heading
     section(class='block')
-      +heading('Heading One')
-      +heading('Heading Two', 'heading heading_size_h2')
-      +heading('Heading Three', 'heading heading_size_h3')
-      +heading('Heading Four', 'heading heading_size_h4')
-      +heading('Heading Five', 'heading heading_size_h5')
-      +heading('Heading Six', 'heading heading_size_h6')
+      div(class='block__about')
+        header(class='block__header') 
+          +text('heading heading_size_h1 text text_font-stack_monospace') heading
+          +icon('github', '###', 'black')
+        div(class='block__content') 
+          +text() H1—H6 headings
+        div(class='table block__table table_theme_documentation')
+          table(class='table__container')
+            thead
+              tr(class='table__row text text_color_white')
+                th(class='table__cell table__cell_type_header') Modifiers
+                th(class='table__cell table__cell_type_header') Values
+                th(class='table__cell table__cell_type_header') Description
+            tbody
+              tr(class='table__row')
+                td(class='table__cell table__cell_type_main')
+                  +code('size', 'code code_display_inline code_theme_black')
+                td(class='table__cell table__cell_type_main') 
+                  +code('h1', 'code code_display_inline code_theme_black')
+                  | ,
+                  +code('h2', 'code code_display_inline code_theme_black')
+                  | ,
+                  +code('h3', 'code code_display_inline code_theme_black')
+                  | ,
+                  +code('h4', 'code code_display_inline code_theme_black')
+                  | ,
+                  +code('h5', 'code code_display_inline code_theme_black')
+                  | ,
+                  +code('h6', 'code code_display_inline code_theme_black')
+                td(class='table__cell table__cell_type_main') Headings sizes
+
+
+
+
+      div(class='block__readme') 
+        include:markdown-it ./../blocks.basic/heading/README.md
+      div(class='block__example')
+        +heading('Heading One', 'heading heading_size_h1')
+        +heading('Heading Two', 'heading heading_size_h2')
+        +heading('Heading Three', 'heading heading_size_h3')
+        +heading('Heading Four', 'heading heading_size_h4')
+        +heading('Heading Five', 'heading heading_size_h5')
+        +heading('Heading Six', 'heading heading_size_h6')
 
 
     //- img-raster
@@ -70,12 +139,12 @@ block main
               "992": "./../img/animals_landscape_lg.jpg",
               "1200": "./../img/animals_landscape_xl.jpg",
               "1800": "./../img/animals_landscape_xxl.jpg",
-              "2000": "./../img/animals_landscape_xxxl.jpg"
+              "2000": "./../img/animals_landscape_xxxl.jpg "
             },
       
           captionText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 
-          theme: false
+          theme: undefined
         }
       )
 
@@ -133,19 +202,67 @@ block main
 
 
 
-
-
-
     //- btn
     section(class='block')
-      +btn('a', 'a href Button', '###', 'enabled', 'btn btn_theme_black btn_size_md')
-      +btn('a', 'a href Button disabled', '###', 'disabled', 'btn btn_theme_black btn_size_md')
+      //- <a>
+      +btn(
+        { 
+          tag: 'a', 
+          text: 'a href Button', 
+          url: '###', 
+          state: 'enabled' 
+        },
+        'btn btn_theme_black btn_size_md'
+      )
+      +btn(
+        { 
+          tag: 'a', 
+          text: 'a href Button disabled', 
+          url: '###', 
+          state: 'disabled' 
+        },
+        'btn btn_theme_black btn_size_md'
+      )
       
-      +btn('button', 'button Button', '###', 'enabled', 'btn btn_theme_black btn_size_md')
-      +btn('button', 'button Button disabled', '###', 'disabled', 'btn btn_theme_black btn_size_md')
+      //- <button>
+      +btn(
+        { 
+          tag: 'button', 
+          text: 'button Button', 
+          url: '###', 
+          state: 'enabled' 
+        },
+        'btn btn_theme_black btn_size_md'
+      )
+      +btn(
+        { 
+          tag: 'button', 
+          text: 'button Button disabled', 
+          url: '###', 
+          state: 'disabled' 
+        },
+        'btn btn_theme_black btn_size_md'
+      )
 
-      +btn('input', 'input Button', '###', 'enabled', 'btn btn_theme_black btn_size_md')
-      +btn('input', 'input Button', '###', 'disabled', 'btn btn_theme_black btn_size_md')
+      //- <input>
+      +btn(
+        { 
+          tag: 'input', 
+          text: 'input Button', 
+          url: '###', 
+          state: 'enabled' 
+        },
+        'btn btn_theme_black btn_size_md'
+      )
+      +btn(
+        { 
+          tag: 'input', 
+          text: 'input Button', 
+          url: '###',  
+          url: 'disabled' 
+        },
+        'btn btn_theme_black btn_size_md'
+      )
 
 
 
@@ -380,7 +497,7 @@ block main
 
 
   //- pagination
-  +pagination()
+  +pagination('pagination')
 
 
 
@@ -439,7 +556,7 @@ block main
 
 
   //- embed (videos, ...)
-  +embed('https://www.youtube.com/embed/oRkNaF0QvnI')
+  +embed('https://www.youtube.com/embed/oRkNaF0QvnI', 'embed')
 
   //- table
   div(class='table table_theme_documentation')
@@ -491,7 +608,7 @@ block main
 
 
   //- loader
-  +loader()
+  +loader('loader')
 
 
 

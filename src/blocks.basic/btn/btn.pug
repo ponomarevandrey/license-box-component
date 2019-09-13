@@ -1,24 +1,24 @@
-mixin btn(type='a', text='Click me!', URL='###', state='enabled', classList='btn btn_theme_black btn_size_md')
+mixin btn(btn, classList='btn btn_theme_black btn_size_md')
 
-  //- 'a' button
-  - if (type === 'a' && state === 'enabled')
-    a(class=`${classList}` href=`${URL}`) #{text}
+  //- <a> button
+  - if (btn.tag === 'a' && btn.state === 'enabled')
+    a(class=`${classList}` href=`${url}`) #{btn.text}
 
-  - if (type === 'a' && state === 'disabled')
-    a(class=`${classList} btn_disabled` href=`${URL}`) #{text}
-
-
-  //- 'button' button
-  - if (type === 'button' && state === 'enabled')
-    button(type='button' class=`${classList}`) #{text}
-
-  - if (type === 'button' && state === 'disabled')
-    button(type='button' class=`${classList}` disabled) #{text}
+  - if (btn.tag === 'a' && btn.state === 'disabled')
+    a(class=`${classList} btn_disabled` href=`${url}`) #{btn.text}
 
 
-  //- 'input' button
-  - if (type === 'input' && state === 'enabled')
-    input(type='button' value=`${text}` class=`${classList}`) 
+  //- <button> button
+  - if (btn.tag === 'button' && btn.state === 'enabled')
+    button(tag='button' class=`${classList}`) #{btn.text}
 
-  - if (type === 'input' && state === 'disabled')
-    input(type='input' value=`${text}` class=`${classList}` disabled)
+  - if (btn.tag === 'button' && btn.state === 'disabled')
+    button(tag='button' class=`${classList}` disabled) #{btn.text}
+
+
+  //- <input> button
+  - if (btn.tag === 'input' && btn.state === 'enabled')
+    input(tag='button' value=`${btn.text}` class=`${classList}`) 
+
+  - if (btn.tag === 'input' && btn.state === 'disabled')
+    input(tag='input' value=`${btn.text}` class=`${classList}` disabled)

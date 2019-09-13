@@ -12,7 +12,7 @@
 
   &_display_inline {
     display: inline-block;
-    padding: 0.05rem 0.4rem;
+    padding: 0 0.4rem;
   }
 
   &_theme_gray {
@@ -20,8 +20,8 @@
     color: $color_black;
   }
 
-  &_theme_dark {
-    background-color: $color_gray_darken;
-    color: $color_gray-lighten;
+  &_theme_black {
+    background-color: $color_black;
+    color: $color_white;
   }
 }

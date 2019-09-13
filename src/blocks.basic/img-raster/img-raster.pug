@@ -1,10 +1,11 @@
 mixin img-raster(img)
+
   - var classList;
   
-  - if (img.theme === false)
+  - if (img.theme === undefined)
     - classList = 'img-raster';
   - else
-   - classList = `img-raster img-raster_theme_${img.theme}`
+  - classList = `img-raster img-raster_theme_${img.theme}`
 
   figure(class=`${classList}`)
     picture(class='img-raster__wrapper')   
@@ -15,9 +16,10 @@ mixin img-raster(img)
         
         sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw" 
         
-        srcset=`${img.srcset['480']} 480w, ${img.srcset['768']} 768w, ${img.srcset['992']} 992w, ${img.srcset['1200']} 1200w, ${img.srcset['1200']} 1800w, ${img.srcset['2000']} 2000w`
+        srcset=`${img.srcset['480']} 480w, ${img.srcset['768']} 768w, ${img.srcset['992']} 992w, ${img.srcset['1200']} 1200w, ${img.srcset['1800']} 1800w, ${img.srcset['2000']} 2000w`
         
         alt=`${img.alt}`)
+        
     - if (img.captionText) 
       figcaption(class='img-raster__caption') #{img.captionText}
 
