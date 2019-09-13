@@ -1,2 +1,2 @@
-mixin badge(text, href, classList='badge')
-  a(href=`${href}` class=`${classList}`)= text
+mixin badge(text, classList)
+  span(class=`${classList}`) #{text}

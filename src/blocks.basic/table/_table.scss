@@ -35,7 +35,7 @@
     }
 
     & tr:nth-child(even) {
-      background-color: lighten($color_gray-lightest, 5%);
+      background-color: $color_gray-lightest;
     }
     & tr:hover {
       background-color: $color_gray-lightest;
@@ -46,15 +46,16 @@
 
   &_theme_documentation {
     & th {
-      background-color: $color_gray_darken;
+      background-color: $color_black;
       font-weight: bold;
     }
 
     & tr {
-      border-bottom: 1px solid $color_gray-dark;
+      border-bottom: 1px solid $color_black;
     }
     & tr:hover {
-      background-color: $color_gray-darkest;
+      background-color: $color_black;
+      color: $color_gray-lightest;
     }
   }
 }

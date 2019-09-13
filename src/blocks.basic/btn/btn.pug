@@ -1,0 +1,24 @@
+mixin btn(type='a', text='Click me!', URL='###', state='enabled', classList='btn btn_theme_black btn_size_md')
+
+  //- 'a' button
+  - if (type === 'a' && state === 'enabled')
+    a(class=`${classList}` href=`${URL}`) #{text}
+
+  - if (type === 'a' && state === 'disabled')
+    a(class=`${classList} btn_disabled` href=`${URL}`) #{text}
+
+
+  //- 'button' button
+  - if (type === 'button' && state === 'enabled')
+    button(type='button' class=`${classList}`) #{text}
+
+  - if (type === 'button' && state === 'disabled')
+    button(type='button' class=`${classList}` disabled) #{text}
+
+
+  //- 'input' button
+  - if (type === 'input' && state === 'enabled')
+    input(type='button' value=`${text}` class=`${classList}`) 
+
+  - if (type === 'input' && state === 'disabled')
+    input(type='input' value=`${text}` class=`${classList}` disabled)

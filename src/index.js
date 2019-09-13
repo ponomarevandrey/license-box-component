@@ -82,6 +82,8 @@ import './blocks.basic/blockquote/_blockquote.scss';
 import './blocks.basic/code/_code.scss';
 // hr
 import './blocks.basic/hr/_hr.scss';
+// label
+import './blocks.basic/label/_label.scss';
 // media content
 import './blocks.basic/embed/_embed.scss';
 // table

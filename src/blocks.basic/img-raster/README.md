@@ -1,4 +1,31 @@
-```html
+# How to use
+
+```pug
++img-raster(
+  {
+    alt: "Ships in the Field",
+
+    src: "./../img/animals_landscape_xxxl.jpg", 
+    
+    srcset: {
+        "480": "./../img/animals_landscape_sm.jpg",
+        "768": "./../img/animals_landscape_md.jpg",
+        "992": "./../img/animals_landscape_lg.jpg",
+        "1200": "./../img/animals_landscape_xl.jpg",
+        "1800": "./../img/animals_landscape_xxl.jpg",
+        "2000": "./../img/animals_landscape_xxxl.jpg"
+      },
+
+    captionText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+
+    theme: false
+  }
+)
+```
+
+# Notes
+
+```pug
 figure(class='image-raster image-raster_theme_black')
   picture(class='image-raster__wrapper')   
     img(

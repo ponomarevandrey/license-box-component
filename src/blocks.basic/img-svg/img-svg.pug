@@ -1,0 +1,18 @@
+mixin img-svg(tag, url, alt, title, classList)
+  - if (tag === 'img')
+    #{tag}(
+      src=`${url}` 
+      alt=`${alt}`
+      title=`${title}`
+      class='img-svg'
+    )
+
+  - if (tag === 'div')
+    #{tag}(class='img-svg img-svg_bg')
+
+  - if (tag === 'object')
+    object(
+      type="image/svg+xml" 
+      data=`${url}`
+      class='img-svg'
+    ) Your browser does not support SVG

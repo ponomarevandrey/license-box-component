@@ -1,4 +1,9 @@
-mixin icon (name, href)
+//- 
+  if you omit 'color' value when calling mixin, 'color' will default to 'name' argument
+mixin icon (name, href, color=`${name}`)
+  //- 
+    the path inside <use> element should be relative to webpack 'build' folder, not to 'icons' component folder
+
   - if (name === 'github')
     a(
       href=`${href}` 
@@ -8,100 +13,103 @@ mixin icon (name, href)
       title='Github'
     )
       span(class='icons__access-label') Github
-      svg(class='icons__img icons__img_name_github')
+      svg(class=`icons__img icons__img_color_${color}`)
         use(xlink:href='./img/sprite.svg#github')
 
 
-//- 
-  the path inside <use> element should be relative to webpack 'build' folder, not to 'icons' component folder
+
+  - if (name === 'facebook')
+    a(
+      href=`${href}` 
+      class='icons' 
+      aria-hidden='true'
+      focusable='false' 
+      title='Facebook'
+    )
+      span(class='icons__access-label') Facebook
+      svg(class=`icons__img icons__img_color_${color}`)
+        use(xlink:href='./img/sprite.svg#fb')
 
 
 
-a(
-  href='###' 
-  class='icons' 
-  aria-hidden='true'
-  focusable='false' 
-  title='Github'
-)
-  span(class='icons__access-label') Facebook
-  svg(class='icons__img icons__img_name_fb')
-    use(xlink:href='./img/sprite.svg#fb')
+  - if (name === 'instagram')
+    a(
+      href=`${href}` 
+      class='icons' 
+      aria-hidden='true'
+      focusable='false' 
+      title='Instagram'
+    )
+      span(class='icons__access-label') Instagram
+      svg(class=`icons__img icons__img_color_${color}`)
+        use(xlink:href='./img/sprite.svg#instagram')
 
 
 
-a(
-  href='###' 
-  class='icons' 
-  aria-hidden='true'
-  focusable='false' 
-  title='Github'
-)
-  span(class='icons__access-label') Instagram
-  svg(class='icons__img icons__img_name_instagram')
-    use(xlink:href='./img/sprite.svg#instagram')
+  - if (name === 'odnoklassniki')
+    a(
+      href=`${href}` 
+      class='icons' 
+      aria-hidden='true'
+      focusable='false' 
+      title='Odnoklassniki'
+    )
+      span(class='icons__access-label') Odnoklassniki
+      svg(class=`icons__img icons__img_color_${color}`)
+        use(xlink:href='./img/sprite.svg#ok')
 
 
 
-a(
-  href='###' 
-  class='icons' 
-  aria-hidden='true'
-  focusable='false' 
-  title='Github'
-)
-  span(class='icons__access-label') Odnoklassniki
-  svg(class='icons__img icons__img_name_ok')
-    use(xlink:href='./img/sprite.svg#ok')
+  - if (name === 'telegram')
+    a(
+      href=`${href}` 
+      class='icons' 
+      aria-hidden='true'
+      focusable='false' 
+      title='Telegram'
+    )
+      span(class='icons__access-label') Telegram
+      svg(class=`icons__img icons__img_color_${color}`)
+        use(xlink:href='./img/sprite.svg#telegram')
 
 
 
-a(
-  href='###' 
-  class='icons' 
-  aria-hidden='true'
-  focusable='false' 
-  title='Github'
-)
-  span(class='icons__access-label') Telegram
-  svg(class='icons__img icons__img_name_telegram')
-    use(xlink:href='./img/sprite.svg#telegram')
+  - if (name === 'twitter')
+    a(
+      href=`${href}` 
+      class='icons' 
+      aria-hidden='true'
+      focusable='false' 
+      title='Twitter'
+    )
+      span(class='icons__access-label') Twitter
+      svg(class=`icons__img icons__img_color_${color}`)
+        use(xlink:href='./img/sprite.svg#twitter')
 
 
 
-a(
-  href='###' 
-  class='icons' 
-  aria-hidden='true'
-  focusable='false' 
-  title='Github'
-)
-  span(class='icons__access-label') Twitter
-  svg(class='icons__img icons__img_name_twitter')
-    use(xlink:href='./img/sprite.svg#twitter')
+  - if (name === 'youtube')
+    a(
+      href=`${href}` 
+      class='icons' 
+      aria-hidden='true'
+      focusable='false' 
+      title='YouTube'
+    )
+      span(class='icons__access-label') YouTube
+      svg(class=`icons__img icons__img_color_${color}`)
+        use(xlink:href='./img/sprite.svg#youtube')
 
 
 
-a(
-  href='###' 
-  class='icons' 
-  aria-hidden='true'
-  focusable='false' 
-  title='Github'
-)
-  span(class='icons__access-label') YouTube
-  svg(class='icons__img icons__img_name_youtube')
-    use(xlink:href='./img/sprite.svg#youtube')
-
-
-
-a(
-  href='###' 
-  class='icons' 
-  aria-hidden='true'
-  focusable='false' 
-  title='Github'
-)
-  span(class='icons__access-label') VKontakte
-  svg(class='icons__img icons__img_name_vk')
-    use(xlink:href='./img/sprite.svg#vk')
+  - if (name === 'vkontakte')
+    a(
+      href=`${href}` 
+      class='icons' 
+      aria-hidden='true'
+      focusable='false' 
+      title='VKontakte'
+    )
+      span(class='icons__access-label') VKontakte
+      svg(class=`icons__img icons__img_color_${color}`)
+        use(xlink:href='./img/sprite.svg#vk')

@@ -1,0 +1,12 @@
+mixin comment(user, comment, classList)
+  div(class=`${classList}`)
+    img(src=`${user.pic}` alt=`${user.name}` class='comment__user-pic')
+    div(class='comment__text') 
+      div(class='comment__header')
+        span(class='comment__user-name') #{user.name}
+        span(class='comment__time') #{comment.time}
+      p(class='comment__content') #{comment.content}
+      div(class='comment__button')
+        a(href='###' class='link') Reply
+
+

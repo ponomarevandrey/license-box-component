@@ -1,19 +1,10 @@
-mixin blockquote(text, author, source, classList='blockquote text text_size_xl blockquote_theme_gray')
+mixin blockquote(quote, classList)
+
   blockquote(class=`${classList}`) 
-    p(class='blockquote__body') #{text}
-    footer(class='blockquote__footer') #{author} —
-      cite(class='blockquote__source') 
-        a(class='blockquote__link' href='###') #{source}
-
-
-//-
-  Call example:
-
-  +blockquote(
-    'Big type, even huge type, can be beautiful and useful. But poise is usually far more important than size – and poise consists primarily of emptiness. Typographically, poise is made of white&space.',
-
-    'Robert Bringhurst', 
-    
-    'The Elements of Typographic Style',
-
-    'blockquote text text_size_xl blockquote_theme_black')
+    p(class='blockquote__body') #{quote.text}
+    footer(class='blockquote__footer') #{quote.author} —
+      - if (quote.sourceURL === undefined)
+        | &nbsp;#{quote.source}
+      - else
+        cite(class='blockquote__source') 
+            a(class='blockquote__link' href=`${quote.sourceURL}`) #{quote.source}

@@ -46,34 +46,38 @@ block header
 block main
 
   main(class='demo')
-    section(class='block')
-      +heading('Heading One','h1', 'heading heading_size_h1')
-      +heading('Heading Two', 'h2', 'heading heading_size_h2')
-      +heading('Heading Three', 'h3', 'heading heading_size_h3')
-      +heading('Heading Four', 'h4', 'heading heading_size_h4')
-      +heading('Heading Five', 'h5', 'heading heading_size_h5')
-      +heading('Heading Six', 'h6', 'heading heading_size_h6')
 
 
+    //- heading
     section(class='block')
-      
+      +heading('Heading One')
+      +heading('Heading Two', 'heading heading_size_h2')
+      +heading('Heading Three', 'heading heading_size_h3')
+      +heading('Heading Four', 'heading heading_size_h4')
+      +heading('Heading Five', 'heading heading_size_h5')
+      +heading('Heading Six', 'heading heading_size_h6')
+
 
     //- img-raster
     section(class='block')
-      figure(class='img-raster')
-        picture(class='img-raster__wrapper')   
-          img(
-            class='img-raster__img' 
-            
-            src="./../img/animals_landscape_xxxl.jpg" 
-            
-            sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw" 
-            
-            srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w" 
-            
-            alt='Ships in the Field')
-        figcaption(class='img-raster__caption').
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+      +img-raster(
+        {
+          alt: "Ships in the Field",
+          src: "./../img/animals_landscape_xxxl.jpg", 
+          srcset: {
+              "480": "./../img/animals_landscape_sm.jpg",
+              "768": "./../img/animals_landscape_md.jpg",
+              "992": "./../img/animals_landscape_lg.jpg",
+              "1200": "./../img/animals_landscape_xl.jpg",
+              "1800": "./../img/animals_landscape_xxl.jpg",
+              "2000": "./../img/animals_landscape_xxxl.jpg"
+            },
+      
+          captionText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+
+          theme: false
+        }
+      )
 
 
 
@@ -98,47 +102,52 @@ block main
         li(class='list__item') Meat
 
 
-    //- text
-    //- inline text
-    section(class='block')
-      p(class='text text_display_inline') Lorem Ipsum
-      p(class='text text_display_inline') Lorem Ipsum
 
-    //- block text
+    //- text
     section(class='block')
-      p(class='text text_display_block text_size_root').
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-      p(class='text text_display_block text_size_root').
-        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      +text('text text_display_inline').
+        Inline text without margin-bottom. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+
+      +text('text text_display_block').
+        Block text looks like paragraph. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the #[+link('###', 'link link_anchor') 1960 ] with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
 
 
 
     //- link
-    section(class='block')
-      a(href='##' class='link') link
-
-
+    +link('###', 'link') Click me, man, I'm a true hyperlink!
+    +link('###', 'link link_anchor') Click me, man, I'm an anchor link!
 
     //- code
     section(class='block')
       //- inline code
-      p(class='text text_display_block text_size_root text_color_black'). 
-        It has survived not only five centuries, but also the leap into electronic typesetting, #[a(href='#image' class='link link_anchor') remaining] essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, #[code(class='code code_display_inline text text_size_sm code_theme_gray') console.log( a );] and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      p(class='text text_display_block text_size_root text_color_black') It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. #[+code( `console.log( a ) !!!;`, 'code code_display_inline text text_size_sm code_theme_gray' ) ] It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
       //- code block
-      pre(class='code code_display_block text text_size_sm code_theme_gray')
-        code.
-          window.addEventListener( 'load', => {
-            console.log('Ready');
-          })
+      +code( 
+`window.addEventListener( 'load', => {
+  console.log('Ready');
+})}`,
+        
+        'code code_display_block text text_size_sm code_theme_gray')
+
+
+
+
+
 
 
 
     //- btn
     section(class='block')
-      a(class='btn btn_theme_black btn_size_md' href='###') a href Button 
-      button(type='button' class='btn btn_theme_black btn_size_md') button Button
-      button(type='button' class='btn btn_theme_black btn_size_md btn_disabled' disabled) button Button
-      input(type='button' value='input Button' class='btn btn_theme_black btn_size_md btn_disabled' disabled) 
+      +btn('a', 'a href Button', '###', 'enabled', 'btn btn_theme_black btn_size_md')
+      +btn('a', 'a href Button disabled', '###', 'disabled', 'btn btn_theme_black btn_size_md')
+      
+      +btn('button', 'button Button', '###', 'enabled', 'btn btn_theme_black btn_size_md')
+      +btn('button', 'button Button disabled', '###', 'disabled', 'btn btn_theme_black btn_size_md')
+
+      +btn('input', 'input Button', '###', 'enabled', 'btn btn_theme_black btn_size_md')
+      +btn('input', 'input Button', '###', 'disabled', 'btn btn_theme_black btn_size_md')
+
+
 
 
 
@@ -320,53 +329,33 @@ block main
 
   //- img-svg
   //- as <img>
-  img(
-    src='./../img/logo.svg' 
-    alt='Logoipsum logo'
-    title='Logoipsum'
-    class='img-svg'
-  )
+  +img-svg('img', './../img/logo.svg', 'Logoipsum logo', 'Logoipsum')
+
 
   //- as CSS background-image
-  div(class='img-svg img-svg_bg')
+  +img-svg('div')
 
   //- and if you need interactivity, use SVG with the help of <object> tag
-  object(
-    type="image/svg+xml" 
-    data="./../img/logo.svg"
-    class='img-svg'
-  ) Your browser does not support SVG
+  +img-svg('object', './../img/logo.svg')
 
 
   //- header
   header(class='header header_view_fullscreen-image header_align-content_center')
-    +heading(
-      'Biscuit Demo Page', 'h1', 
-      'heading heading_size_h1 text text_color_white') 
+    +heading('Full screen Responsive image ', 'heading heading_size_h1') 
 
 
   //- blockquote
   +blockquote(
-    'Big type, even huge type, can be beautiful and useful. But poise is usually far more important than size – and poise consists primarily of emptiness. Typographically, poise is made of white&space.',
+    {
+      text: 'Big type, even huge type, can be beautiful and useful. But poise is usually far more important than size – and poise consists primarily of emptiness. Typographically, poise is made of white&space.',
+      author: 'Robert Bringhurst',
+      source: 'The Elements of Typographic Style',
+      sourceURL: '###'
 
-    'Robert Bringhurst', 
-    
-    'The Elements of Typographic Style',
+    },
 
-    'blockquote text text_size_xl blockquote_theme_black')
-
-
-
-
-
-
-
-
-
-
-
-
-
+    'blockquote text text_size_xl blockquote_theme_black'
+  )
 
 
 
@@ -379,57 +368,60 @@ block main
 
 
   //- badge
-  +badge(
-    'Closure', 
-    'http://google.com', 
-    'badge badge_theme_white text text_size_sm text_line-height_lg')
-  
-  +badge(
-    'Hoisting', 
-    'http://google.com', 
-    'badge badge_theme_black text text_size_sm text_line-height_lg')
-  
-  +badge(
-    'Recursion', 
-    'http://google.com', 
-    'badge badge_theme_white text text_size_sm text_line-height_lg')
-  
-  +badge(
-    'Callback',
-    'http://google.com', 
-    'badge badge_theme_white text text_size_sm text_line-height_lg')
-  
-  +badge(
-    'Prototypes',
-    'http://google.com', 
-    'badge badge_theme_white text text_size_sm text_line-height_lg')
+  +badge('NEW!', 'badge badge_theme_black')
+  +badge('Archived', 'badge badge_theme_black')
+
+
+  //- label
+  +label('Recursion', 'http://google.com', 'label label_theme_white')
+  +label('Callback', 'http://google.com', 'label label_theme_white')
+  +label('Prototypes', 'http://google.com', 'label label_theme_white')
 
 
 
   //- pagination
-  div(class='pagination')
-    a(href='#wq##' class='pagination__item') &laquo;
-    a(href='##fd#' class='pagination__item') 1
-    a(href='##s#' class='pagination__item pagination__item_active') 2
-    a(href='###' class='pagination__item') 3
-    a(href='#da##' class='pagination__item') 4
-    a(href='#fd##' class='pagination__item') &raquo;
+  +pagination()
 
 
 
   //- breadcrumbs
   +breadcrumb(
     'breadcrumb', 
-    { name: 'Home', link: '###' },
-    { name: 'Equipment', link: '###' },
-    { name: 'Cooking Equipment', link: '###' })
+    { name: 'Home', url: '###' },
+    { name: 'Equipment', url: '###' },
+    { name: 'Cooking Equipment', url: '###' }
+  )
 
 
 
   //- icons
-  div
-    +icon('github', 'https://github.com/ponomarevandrey')
-  //-  include ../blocks.basic/icons/icons.pug 
+  +icon('github', '###')
+  +icon('facebook', 'https://github.com/ponomarevandrey')
+  +icon('instagram', '###')
+  +icon('odnoklassniki', '###')
+  +icon('telegram', '###')
+  +icon('twitter', '###')
+  +icon('youtube', '###')
+  +icon('vkontakte', '###')
+
+  +icon('github', '###', 'black')
+  +icon('facebook', 'https://github.com/ponomarevandrey', 'black')
+  +icon('instagram', '###', 'black')
+  +icon('odnoklassniki', '###', 'black')
+  +icon('telegram', '###', 'black')
+  +icon('twitter', '###', 'black')
+  +icon('youtube', '###', 'black')
+  +icon('vkontakte', '###', 'black')
+
+  +icon('github', '###', 'white')
+  +icon('facebook', 'https://github.com/ponomarevandrey', 'white')
+  +icon('instagram', '###', 'white')
+  +icon('odnoklassniki', '###', 'white')
+  +icon('telegram', '###', 'white')
+  +icon('twitter', '###', 'white')
+  +icon('youtube', '###', 'white')
+  +icon('vkontakte', '###', 'white')
+
 
 
 
@@ -447,19 +439,10 @@ block main
 
 
   //- embed (videos, ...)
-  div(class="embed") 
-    iframe(
-      src='https://www.youtube.com/embed/oRkNaF0QvnI' 
-      frameborder='0' 
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    )
-
-
-
+  +embed('https://www.youtube.com/embed/oRkNaF0QvnI')
 
   //- table
-  div(class='table')
+  div(class='table table_theme_documentation')
     table(class='table__container')
       caption(class='table__caption') Table 1.1 Playlist
       thead
@@ -508,42 +491,52 @@ block main
 
 
   //- loader
-    div(class='loader')
+  +loader()
+
 
 
   //- comment section
   div
-    div(class='comment')
-      div(class='comment__avatar') 
-        <svg xmlns="http://www.w3.org/2000/svg" width='100%' height='100%' viewBox="0 0 258.75 258.75">
-          <circle cx="129.375" cy="60" r="60"/>
-          <path d="M129.375 150c-60.061 0-108.75 48.689-108.75 108.75h217.5c0-60.061-48.689-108.75-108.75-108.75z"/>
-        </svg>
-      div(class='comment__text') 
-        div(class='comment__header')
-          span(class='comment__name') Mike Wolfson
-          span(class='comment__time') august 19, 2019 17:48
-        p(class='comment__main').
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
-        div(class='comment__button')
-          a(href='###' class='link') Reply
+  +comment(
+    {
+      name: 'Mike Wolfson',
+      pic: './../blocks.basic/comment/user-pic.svg'
+    },
+
+    {
+      time: 'august 19, 2019 17:48',
+      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    }, 
+
+    'comment')
 
 
-    div(class='comment')
-      div(class='comment__avatar') 
-        <svg xmlns="http://www.w3.org/2000/svg" width='100%' height='100%' viewBox="0 0 258.75 258.75">
-          <circle cx="129.375" cy="60" r="60"/>
-          <path d="M129.375 150c-60.061 0-108.75 48.689-108.75 108.75h217.5c0-60.061-48.689-108.75-108.75-108.75z"/>
-        </svg>
-      div(class='comment__text') 
-        div(class='comment__header')
-          span(class='comment__name') Mike Wolfson
-          span(class='comment__time') august 19, 2019 17:48
-        p(class='comment__main').
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
-        div(class='comment__button')
-          a(href='###' class='link') Reply
+  +comment(
+    {
+      name: 'Mike Wolfson',
+      pic: './../blocks.basic/comment/user-pic.svg'
+    },
 
+    {
+      time: 'august 19, 2019 17:48',
+      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    }, 
+
+    'comment')
+
+
+  +comment(
+    {
+      name: 'Mike Wolfson',
+      pic: './../blocks.basic/comment/user-pic.svg'
+    },
+
+    {
+      time: 'august 19, 2019 17:48',
+      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+    }, 
+
+    'comment')
 
 
 

@@ -1,17 +1,15 @@
-.icons:not(:last-child) {
-  margin-right: 0.6em;
-}
-
 .icons {
   margin: 0em;
   text-decoration: none;
   display: inline-block;
   outline: none;
 
+  &:not(:last-child) {
+    margin-right: 0.6em;
+  }
+
   &__img {
     background-size: cover;
-    /* Use the current text color as the icon’s fill color. */
-    fill: $color_black;
     /* Inherit the text’s size too. Also allows sizing the icon by changing its font-size. */
     width: 1.7em;
     height: 1.7em;
@@ -19,44 +17,67 @@
     overflow: hidden;
 
     align-self: center;
-    transition: opacity 1s ease;
+    transition: opacity 0.2s ease;
 
     &:link,
     &:visited {
       fill: $color_black;
     }
 
-    &:focus,
     &:hover,
+    &:focus,
     &:active {
-      // fill: $color_gray-dark;
-      opacity: 0.8;
+      opacity: 0.6;
     }
 
     // Modifiers:
-    &_name_github {
-      fill: $color_github;
-    }
-    &_name_fb {
-      fill: $color_fb;
-    }
-    &_name_instagram {
-      fill: $color_instagram;
-    }
-    &_name_ok {
-      fill: $color_ok;
-    }
-    &_name_telegram {
-      fill: $color_telegram;
-    }
-    &_name_twitter {
-      fill: $color_twitter;
-    }
-    &_name_youtube {
-      fill: $color_youtube;
-    }
-    &_name_vk {
-      fill: $color_vk;
+
+    &_color {
+      // icons colored in brand colors:
+
+      &_github {
+        fill: $color_github;
+      }
+
+      &_facebook {
+        fill: $color_facebook;
+      }
+
+      &_instagram {
+        fill: $color_instagram;
+      }
+
+      &_odnoklassniki {
+        fill: $color_odnoklassniki;
+      }
+
+      &_telegram {
+        fill: $color_telegram;
+      }
+
+      &_twitter {
+        fill: $color_twitter;
+      }
+
+      &_youtube {
+        fill: $color_youtube;
+      }
+
+      &_vkontakte {
+        fill: $color_vkontakte;
+      }
+
+      // black icons:
+
+      &_black {
+        fill: $color_black;
+      }
+
+      // white icons:
+
+      &_white {
+        fill: $color_white;
+      }
     }
   }
 

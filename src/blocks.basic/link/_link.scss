@@ -21,4 +21,15 @@
   &:active {
     color: $color_gray;
   }
+
+  &_anchor:after {
+    content: ' ';
+    background-image: url('./link.svg');
+    width: 0.8em;
+    height: 0.8em;
+    background-size: 0.8em;
+    display: inline-block;
+    margin-bottom: -0.15em;
+    margin-left: 0em;
+  }
 }
