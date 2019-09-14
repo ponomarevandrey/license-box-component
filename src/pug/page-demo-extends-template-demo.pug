@@ -365,73 +365,88 @@ block main
 
 
 
-
-
-    //- ------------------------------------------------------------
-
-
-
     //- btn
-    section(class='block')
-      //- <a>
-      +btn(
-        { 
-          tag: 'a', 
-          text: 'a href Button', 
-          url: 'https://github.com/ponomarevandrey', 
-          state: 'enabled' 
-        },
-        'btn btn_theme_black btn_size_md'
-      )
-      +btn(
-        { 
-          tag: 'a', 
-          text: 'a href Button disabled', 
-          url: 'https://github.com/ponomarevandrey', 
-          state: 'disabled' 
-        },
-        'btn btn_theme_black btn_size_md'
-      )
-      
-      //- <button>
-      +btn(
-        { 
-          tag: 'button', 
-          text: 'button Button', 
-          url: 'https://github.com/ponomarevandrey', 
-          state: 'enabled' 
-        },
-        'btn btn_theme_black btn_size_md'
-      )
-      +btn(
-        { 
-          tag: 'button', 
-          text: 'button Button disabled', 
-          url: 'https://github.com/ponomarevandrey', 
-          state: 'disabled' 
-        },
-        'btn btn_theme_black btn_size_md'
-      )
+    +block(
+      { name: 'btn',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/btn',
+        description: 'Button' },
 
-      //- <input>
-      +btn(
-        { 
-          tag: 'input', 
-          text: 'input Button', 
-          url: 'https://github.com/ponomarevandrey', 
-          state: 'enabled' 
-        },
-        'btn btn_theme_black btn_size_md'
-      )
-      +btn(
-        { 
-          tag: 'input', 
-          text: 'input Button', 
-          url: 'https://github.com/ponomarevandrey',  
-          url: 'disabled' 
-        },
-        'btn btn_theme_black btn_size_md'
-      )
+      { name: 'theme',
+        values: ['black'],
+        description: 'Button color theme' },
+
+      { name: 'size',
+        values: ['md'],
+        description: 'Button size' },
+
+      { name: 'type',
+        values: ['back-to-top'],
+        description: 'Type of button' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/btn/README.md
+      div(class='block__example')
+        //- <a>
+        +btn(
+          { 
+            tag: 'a', 
+            text: 'a href Button', 
+            url: 'https://github.com/ponomarevandrey', 
+            state: 'enabled' 
+          },
+          'btn btn_theme_black btn_size_md'
+        )
+        +btn(
+          { 
+            tag: 'a', 
+            text: 'a href Button disabled', 
+            url: 'https://github.com/ponomarevandrey', 
+            state: 'disabled' 
+          },
+          'btn btn_theme_black btn_size_md'
+        )
+        
+        //- <button>
+        +btn(
+          { 
+            tag: 'button', 
+            text: 'button Button', 
+            url: 'https://github.com/ponomarevandrey', 
+            state: 'enabled' 
+          },
+          'btn btn_theme_black btn_size_md'
+        )
+        +btn(
+          { 
+            tag: 'button', 
+            text: 'button Button disabled', 
+            url: 'https://github.com/ponomarevandrey', 
+            state: 'disabled' 
+          },
+          'btn btn_theme_black btn_size_md'
+        )
+
+        //- <input>
+        +btn(
+          { 
+            tag: 'input', 
+            text: 'input Button', 
+            url: 'https://github.com/ponomarevandrey', 
+            state: 'enabled' 
+          },
+          'btn btn_theme_black btn_size_md'
+        )
+        +btn(
+          { 
+            tag: 'input', 
+            text: 'input Button', 
+            url: 'https://github.com/ponomarevandrey',  
+            url: 'disabled' 
+          },
+          'btn btn_theme_black btn_size_md'
+        )
+
 
 
 
