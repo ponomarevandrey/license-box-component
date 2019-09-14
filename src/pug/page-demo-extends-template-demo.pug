@@ -333,26 +333,37 @@ block main
 
 
 
-
-
-
-
-
-    //- ------------------------------------------------------------
-
-
-
     //- code
-    section(class='block')
-      //- inline code
-      p(class='text text_display_block text_size_root text_color_black') It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum #[+code( `console.log( a ) !!!;`, 'code code_display_inline text text_size_sm code_theme_gray' ) ] it was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-      //- code block
-      +code( 
+    +block(
+      { name: 'code',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/code',
+        description: 'Code' },
+
+      { name: 'display',
+        values: ['block', 'inline'],
+        description: 'Display code as a line or as a block' },
+
+      { name: 'theme',
+        values: ['gray', 'black'],
+        description: 'Color themes' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/code/README.md
+      div(class='block__example')
+        //- inline code
+        p(class='text text_display_block text_size_root text_color_black') It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum #[+code( `console.log( a );`, 'code code_display_inline text text_size_sm code_theme_gray' ) ] it was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        //- code block
+        +code( 
 `window.addEventListener( 'load', => {
   console.log('Ready');
 })}`,
         
         'code code_display_block text text_size_sm code_theme_gray')
+
+
+
+
 
 
 
@@ -1335,6 +1346,7 @@ block main
     <button type="button" class="close" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
+
 
     
 block script
