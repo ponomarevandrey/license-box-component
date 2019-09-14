@@ -9,40 +9,15 @@
   white-space: nowrap;
   box-sizing: border-box;
 
-  &:focus,
-  &:active {
-    box-shadow: $form__box-shadow_state_primary;
-  }
-
-  &:hover {
-    background-color: $color_gray-darken;
-  }
-
-  &:active {
-    transform: translate(0, 2px);
-  }
-
   // Modifiers:
 
   // disabled:
 
   &_disabled,
   &:disabled {
-    outline: none;
     opacity: 0.3;
     cursor: not-allowed;
-    box-shadow: none;
-
-    &:focus {
-      box-shadow: none;
-    }
-
-    &:hover,
-    &:active {
-      background-color: $color_black;
-      box-shadow: none;
-      transform: none;
-    }
+    pointer-events: none;
   }
 
   &_theme_black {
@@ -52,6 +27,43 @@
     position: relative;
     padding: 0.8rem 1rem;
     border-radius: $border_radius;
+
+    &:hover {
+      background-color: $color_gray-darken;
+    }
+
+    &:focus {
+      box-shadow: $form__box-shadow_state_primary;
+    }
+
+    &:active {
+      transform: translate(0, 2px);
+      box-shadow: $form__box-shadow_state_primary;
+    }
+  }
+
+  &_theme_empty {
+    color: $color_black;
+    background-color: none;
+    display: inline-block;
+    position: relative;
+    padding: 0.8rem 1rem;
+    border: 1px solid $color_black;
+    border-radius: $border_radius;
+
+    &:hover {
+      background-color: $color_black;
+      color: $color_white;
+    }
+
+    &:focus {
+      box-shadow: $form__box-shadow_state_primary;
+    }
+
+    &:active {
+      transform: translate(0, 2px);
+      box-shadow: $form__box-shadow_state_primary;
+    }
   }
 
   &_size_md {

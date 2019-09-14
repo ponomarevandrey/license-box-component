@@ -370,7 +370,7 @@ block main
         description: 'Button' },
 
       { name: 'theme',
-        values: ['black'],
+        values: ['black', 'empty'],
         description: 'Button color theme' },
 
       { name: 'size',
@@ -420,7 +420,7 @@ block main
             tag: 'button', 
             text: 'button Button disabled', 
             url: 'https://github.com/ponomarevandrey', 
-            state: 'disabled' 
+            state: 'disabled'
           },
           'btn btn_theme_black btn_size_md'
         )
@@ -440,7 +440,7 @@ block main
             tag: 'input', 
             text: 'input Button', 
             url: 'https://github.com/ponomarevandrey',  
-            url: 'disabled' 
+            state: 'disabled' 
           },
           'btn btn_theme_black btn_size_md'
         )
@@ -716,11 +716,6 @@ block main
 
 
 
-
-
-
-
-
     //- img-svg
     +block(
       { name: 'img-svg',
@@ -740,15 +735,29 @@ block main
 
 
 
+    //- header
+    +block(
+      { name: 'header',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/header',
+        description: 'Page header' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/header/README.md
+      div(class='block__example')
+        +btn(
+          { 
+            tag: 'a', 
+            text: 'Demo', 
+            url: 'https://github.com/ponomarevandrey', 
+            state: 'enabled' 
+          },
+          'btn btn_theme_empty btn_size_md'
+        )
+        header(class='header header_view_fullscreen-image header_align-content_center')
+          +heading('heading heading_size_h1') Full screen Responsive image 
 
-    section(class='block')
-      //- header
-      header(class='header header_view_fullscreen-image header_align-content_center')
-        +heading('heading heading_size_h1') Full screen Responsive image 
 
-
-
-    //- ------------------------------------------------------------
 
 
 

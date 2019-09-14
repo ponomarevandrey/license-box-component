@@ -2,10 +2,10 @@ mixin btn(btn, classList='btn btn_theme_black btn_size_md')
 
   //- <a> button
   - if (btn.tag === 'a' && btn.state === 'enabled')
-    a(class=`${classList}` href=`${url}`) #{btn.text}
+    a(class=`${classList}` href=`${btn.url}`) #{btn.text}
 
   - if (btn.tag === 'a' && btn.state === 'disabled')
-    a(class=`${classList} btn_disabled` href=`${url}`) #{btn.text}
+    a(class=`${classList} btn_disabled` href=`${btn.url}`) #{btn.text}
 
 
   //- <button> button
@@ -13,7 +13,7 @@ mixin btn(btn, classList='btn btn_theme_black btn_size_md')
     button(tag='button' class=`${classList}`) #{btn.text}
 
   - if (btn.tag === 'button' && btn.state === 'disabled')
-    button(tag='button' class=`${classList}` disabled) #{btn.text}
+    button(type='button' class=`${classList} btn_disabled` disabled) #{btn.text}
 
 
   //- <input> button
@@ -21,4 +21,4 @@ mixin btn(btn, classList='btn btn_theme_black btn_size_md')
     input(tag='button' value=`${btn.text}` class=`${classList}`) 
 
   - if (btn.tag === 'input' && btn.state === 'disabled')
-    input(tag='input' value=`${btn.text}` class=`${classList}` disabled)
+    input(type='input' value=`${btn.text}` class=`${classList} btn_disabled` disabled)
