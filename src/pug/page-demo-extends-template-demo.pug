@@ -872,222 +872,258 @@ block main
 
 
 
+    //- icons
+    +block(
+      { name: 'icons',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/icons',
+        description: 'Social media icons' },
 
-    //- ------------------------------------------------------------
+      { name: 'size',
+        values: ['sm', 'md', 'lg'],
+        description: 'Size of icons' },
+
+      { name: 'color',
+        values: ['github', 'facebook', 'instagram', 'odnoklassniki', 'telegram', 'twitter', 'youtube', 'vkontakte', 'black', 'white'],
+        description: 'Color of icons' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/label/README.md
+      div(class='block__example')
+        //- color - bradn color
+        div(style='')
+          +icons('github', 'https://github.com/ponomarevandrey', 'md')
+          +icons('facebook', 'https://github.com/ponomarevandrey', 'md')
+          +icons('instagram', 'https://github.com/ponomarevandrey', 'md')
+          +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'md')
+          +icons('telegram', 'https://github.com/ponomarevandrey', 'md')
+          +icons('twitter', 'https://github.com/ponomarevandrey', 'md')
+          +icons('youtube', 'https://github.com/ponomarevandrey', 'md')
+          +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md')
+
+        //- colo - black
+        div(style='')
+          +icons('github', 'https://github.com/ponomarevandrey', 'md', 'black')
+          +icons('facebook', 'https://github.com/ponomarevandrey', 'md', 'black')
+          +icons('instagram', 'https://github.com/ponomarevandrey', 'md', 'black')
+          +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'md', 'black')
+          +icons('telegram', 'https://github.com/ponomarevandrey', 'md', 'black')
+          +icons('twitter', 'https://github.com/ponomarevandrey', 'md', 'black')
+          +icons('youtube', 'https://github.com/ponomarevandrey', 'md', 'black')
+          +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md', 'black')
+
+        //- color - white
+        div(style='')
+          +icons('github', 'https://github.com/ponomarevandrey', 'md', 'white')
+          +icons('facebook', 'https://github.com/ponomarevandrey', 'md', 'white')
+          +icons('instagram', 'https://github.com/ponomarevandrey', 'md', 'white')
+          +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'md', 'white')
+          +icons('telegram', 'https://github.com/ponomarevandrey', 'md', 'white')
+          +icons('twitter', 'https://github.com/ponomarevandrey', 'md', 'white')
+          +icons('youtube', 'https://github.com/ponomarevandrey', 'md', 'white')
+          +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md', 'white')
+
+        //- sizes - sm
+        div(style='')
+          +icons('github', 'https://github.com/ponomarevandrey', 'sm')
+          +icons('facebook', 'https://github.com/ponomarevandrey', 'sm')
+          +icons('instagram', 'https://github.com/ponomarevandrey', 'sm')
+          +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'sm')
+          +icons('telegram', 'https://github.com/ponomarevandrey', 'sm')
+          +icons('twitter', 'https://github.com/ponomarevandrey', 'sm')
+          +icons('youtube', 'https://github.com/ponomarevandrey', 'sm')
+          +icons('vkontakte', 'https://github.com/ponomarevandrey', 'sm')
+
+        //- sizes - md
+        div(style='')
+          +icons('github', 'https://github.com/ponomarevandrey', 'md')
+          +icons('facebook', 'https://github.com/ponomarevandrey', 'md')
+          +icons('instagram', 'https://github.com/ponomarevandrey', 'md')
+          +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'md')
+          +icons('telegram', 'https://github.com/ponomarevandrey', 'md')
+          +icons('twitter', 'https://github.com/ponomarevandrey', 'md')
+          +icons('youtube', 'https://github.com/ponomarevandrey', 'md')
+          +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md')
+
+        //- sizes - lg
+        div(style='')
+          +icons('github', 'https://github.com/ponomarevandrey', 'lg')
+          +icons('facebook', 'https://github.com/ponomarevandrey', 'lg')
+          +icons('instagram', 'https://github.com/ponomarevandrey', 'lg')
+          +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'lg')
+          +icons('telegram', 'https://github.com/ponomarevandrey', 'lg')
+          +icons('twitter', 'https://github.com/ponomarevandrey', 'lg')
+          +icons('youtube', 'https://github.com/ponomarevandrey', 'lg')
+          +icons('vkontakte', 'https://github.com/ponomarevandrey', 'lg')
 
 
 
-    section(class='block')
-      //- icons
-      //- color - bradn color
-      div(style='')
-        +icons('github', 'https://github.com/ponomarevandrey', 'md')
-        +icons('facebook', 'https://github.com/ponomarevandrey', 'md')
-        +icons('instagram', 'https://github.com/ponomarevandrey', 'md')
-        +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'md')
-        +icons('telegram', 'https://github.com/ponomarevandrey', 'md')
-        +icons('twitter', 'https://github.com/ponomarevandrey', 'md')
-        +icons('youtube', 'https://github.com/ponomarevandrey', 'md')
-        +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md')
+    //- tooltip
+    +block(
+      { name: 'tooltip',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/tooltip',
+        description: 'Tooltip' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/label/README.md
+      div(class='block__example')
+        div
+          p(class='text text_display_inline') ... some text, 
+            span(class='tooltip') hoverthepointer
+              span(class='tooltip__content') Your text
 
-      //- colo - black
-      div(style='')
-        +icons('github', 'https://github.com/ponomarevandrey', 'md', 'black')
-        +icons('facebook', 'https://github.com/ponomarevandrey', 'md', 'black')
-        +icons('instagram', 'https://github.com/ponomarevandrey', 'md', 'black')
-        +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'md', 'black')
-        +icons('telegram', 'https://github.com/ponomarevandrey', 'md', 'black')
-        +icons('twitter', 'https://github.com/ponomarevandrey', 'md', 'black')
-        +icons('youtube', 'https://github.com/ponomarevandrey', 'md', 'black')
-        +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md', 'black')
+          br
 
-      //- color - white
-      div(style='')
-        +icons('github', 'https://github.com/ponomarevandrey', 'md', 'white')
-        +icons('facebook', 'https://github.com/ponomarevandrey', 'md', 'white')
-        +icons('instagram', 'https://github.com/ponomarevandrey', 'md', 'white')
-        +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'md', 'white')
-        +icons('telegram', 'https://github.com/ponomarevandrey', 'md', 'white')
-        +icons('twitter', 'https://github.com/ponomarevandrey', 'md', 'white')
-        +icons('youtube', 'https://github.com/ponomarevandrey', 'md', 'white')
-        +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md', 'white')
-
-      //- sizes - sm
-      div(style='')
-        +icons('github', 'https://github.com/ponomarevandrey', 'sm')
-        +icons('facebook', 'https://github.com/ponomarevandrey', 'sm')
-        +icons('instagram', 'https://github.com/ponomarevandrey', 'sm')
-        +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'sm')
-        +icons('telegram', 'https://github.com/ponomarevandrey', 'sm')
-        +icons('twitter', 'https://github.com/ponomarevandrey', 'sm')
-        +icons('youtube', 'https://github.com/ponomarevandrey', 'sm')
-        +icons('vkontakte', 'https://github.com/ponomarevandrey', 'sm')
-
-      //- sizes - md
-      div(style='')
-        +icons('github', 'https://github.com/ponomarevandrey', 'md')
-        +icons('facebook', 'https://github.com/ponomarevandrey', 'md')
-        +icons('instagram', 'https://github.com/ponomarevandrey', 'md')
-        +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'md')
-        +icons('telegram', 'https://github.com/ponomarevandrey', 'md')
-        +icons('twitter', 'https://github.com/ponomarevandrey', 'md')
-        +icons('youtube', 'https://github.com/ponomarevandrey', 'md')
-        +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md')
-
-      //- sizes - lg
-      div(style='')
-        +icons('github', 'https://github.com/ponomarevandrey', 'lg')
-        +icons('facebook', 'https://github.com/ponomarevandrey', 'lg')
-        +icons('instagram', 'https://github.com/ponomarevandrey', 'lg')
-        +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'lg')
-        +icons('telegram', 'https://github.com/ponomarevandrey', 'lg')
-        +icons('twitter', 'https://github.com/ponomarevandrey', 'lg')
-        +icons('youtube', 'https://github.com/ponomarevandrey', 'lg')
-        +icons('vkontakte', 'https://github.com/ponomarevandrey', 'lg')
-
-
-
-    //- ------------------------------------------------------------
-
-
-
-    section(class='block')
-      //- tooltip
-      div
-        p(class='text text_display_inline') ... some text, 
-          span(class='tooltip') hoverthepointer
+          span(class='tooltip' style='display: inline-block; width: 50px; height: 50px; background-color: black; border-radius: 10000px;')
             span(class='tooltip__content') Your text
 
-        br
 
-        span(class='tooltip' style='display: inline-block; width: 50px; height: 50px; background-color: black; border-radius: 10000px;')
-          span(class='tooltip__content') Your text
+ 
+    //- embed (videos, ...)
+    +block(
+      { name: 'embed',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/label',
+        description: 'Embeded content (youtube videos, ...)' },
 
-
-
-    //- ------------------------------------------------------------
-
-
-
-    section(class='block')
-      //- embed (videos, ...)
-      +embed('https://www.youtube.com/embed/oRkNaF0QvnI', 'embed')
-
-
-
-    //- ------------------------------------------------------------
-
-
+      { name: 'ratio',
+        values: ['4x3'],
+        description: 'Aspect ratio' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/label/README.md
+      div(class='block__example')
+        +embed('https://www.youtube.com/embed/oRkNaF0QvnI', 'embed')
+      
 
 
-    section(class='block')
-      //- table
-      div(class='table table_theme_documentation')
-        table(class='table__container')
-          caption(class='table__caption') Table 1.1 Playlist
-          thead
-            tr(class='table__row text text_color_white')
-              th(class='table__cell table__cell_type_header') Date
-              th(class='table__cell table__cell_type_header') Artist
-              th(class='table__cell table__cell_type_header') Title
-              th(class='table__cell table__cell_type_header') Album
-              th(class='table__cell table__cell_type_header') Label
-              th(class='table__cell table__cell_type_header') Genres
-              th(class='table__cell table__cell_type_header') Duration
-          tbody
-            tr(class='table__row')
-              td(class='table__cell table__cell_type_main') 1971
-              td(class='table__cell table__cell_type_main') Gil Scott-Heron
-              td(class='table__cell table__cell_type_main') Save The Children
-              td(class='table__cell table__cell_type_main') Pieces Of A Man
-              td(class='table__cell table__cell_type_main') Flying Dutchman
-              td(class='table__cell table__cell_type_main') Soul, Funk, Jazz
-              td(class='table__cell table__cell_type_main') 4:55
-            tr(class='table__row')
-              td(class='table__cell table__cell_type_main') 1975
-              td(class='table__cell table__cell_type_main') Rufus Featuring Chaka Khan
-              td(class='table__cell table__cell_type_main') Sweet Thing
-              td(class='table__cell table__cell_type_main') Rufus Featuring Chaka Khan
-              td(class='table__cell table__cell_type_main') ABC Records
-              td(class='table__cell table__cell_type_main') Soul, Funk, Disco
-              td(class='table__cell table__cell_type_main') 3:18
-            tr(class='table__row')
-              td(class='table__cell table__cell_type_main') 1994
-              td(class='table__cell table__cell_type_main') Adam F ‎
-              td(class='table__cell table__cell_type_main') Sea Of Destiny
-              td(class='table__cell table__cell_type_main') Stronger Than Ever
-              td(class='table__cell table__cell_type_main') Lucky Spin Recordings
-              td(class='table__cell table__cell_type_main') Jungle, Drum'n'Bass
-              td(class='table__cell table__cell_type_main') 6:47
-            tr(class='table__row')
-              td(class='table__cell table__cell_type_main') 2000
-              td(class='table__cell table__cell_type_main') Soulsearcher ‎
-              td(class='table__cell table__cell_type_main') Can't Get Enough (Vocal Club Mix)
-              td(class='table__cell table__cell_type_main') Various ‎- Disco Kandi
-              td(class='table__cell table__cell_type_main') Hed Kandi 
-              td(class='table__cell table__cell_type_main') Garage House, Disco
-              td(class='table__cell table__cell_type_main') 7:19
+    //- table
+    +block(
+      { name: 'table',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/table',
+        description: 'Table' },
 
-
-
-
-    //- ------------------------------------------------------------
-
-
-
-    section(class='block')
-      //- loader
-      +loader('loader')
-
-
-
-    //- ------------------------------------------------------------
+      { name: 'theme',
+        values: ['documentation', 'light'],
+        description: 'Aspect ratio' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/table/README.md
+      div(class='block__example')
+        div(class='table table_theme_light')
+          table(class='table__container')
+            caption(class='table__caption') Table 1.1 Playlist
+            thead
+              tr(class='table__row text text_color_white')
+                th(class='table__cell table__cell_type_header') Date
+                th(class='table__cell table__cell_type_header') Artist
+                th(class='table__cell table__cell_type_header') Title
+                th(class='table__cell table__cell_type_header') Album
+                th(class='table__cell table__cell_type_header') Label
+                th(class='table__cell table__cell_type_header') Genres
+                th(class='table__cell table__cell_type_header') Duration
+            tbody
+              tr(class='table__row')
+                td(class='table__cell table__cell_type_main') 1971
+                td(class='table__cell table__cell_type_main') Gil Scott-Heron
+                td(class='table__cell table__cell_type_main') Save The Children
+                td(class='table__cell table__cell_type_main') Pieces Of A Man
+                td(class='table__cell table__cell_type_main') Flying Dutchman
+                td(class='table__cell table__cell_type_main') Soul, Funk, Jazz
+                td(class='table__cell table__cell_type_main') 4:55
+              tr(class='table__row')
+                td(class='table__cell table__cell_type_main') 1975
+                td(class='table__cell table__cell_type_main') Rufus Featuring Chaka Khan
+                td(class='table__cell table__cell_type_main') Sweet Thing
+                td(class='table__cell table__cell_type_main') Rufus Featuring Chaka Khan
+                td(class='table__cell table__cell_type_main') ABC Records
+                td(class='table__cell table__cell_type_main') Soul, Funk, Disco
+                td(class='table__cell table__cell_type_main') 3:18
+              tr(class='table__row')
+                td(class='table__cell table__cell_type_main') 1994
+                td(class='table__cell table__cell_type_main') Adam F ‎
+                td(class='table__cell table__cell_type_main') Sea Of Destiny
+                td(class='table__cell table__cell_type_main') Stronger Than Ever
+                td(class='table__cell table__cell_type_main') Lucky Spin Recordings
+                td(class='table__cell table__cell_type_main') Jungle, Drum'n'Bass
+                td(class='table__cell table__cell_type_main') 6:47
+              tr(class='table__row')
+                td(class='table__cell table__cell_type_main') 2000
+                td(class='table__cell table__cell_type_main') Soulsearcher ‎
+                td(class='table__cell table__cell_type_main') Can't Get Enough (Vocal Club Mix)
+                td(class='table__cell table__cell_type_main') Various ‎- Disco Kandi
+                td(class='table__cell table__cell_type_main') Hed Kandi 
+                td(class='table__cell table__cell_type_main') Garage House, Disco
+                td(class='table__cell table__cell_type_main') 7:19
 
 
 
-    section(class='block')
-      //- comment section
-      div
-      +comment(
-        {
-          name: 'Mike Wolfson',
-          pic: './../blocks.basic/comment/user-pic.svg'
-        },
-
-        {
-          time: 'august 19, 2019 17:48',
-          content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
-        }, 
-
-        'comment')
+    //- loader
+    +block(
+      { name: 'loader',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/loader',
+        description: 'Loader' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/label/README.md
+      div(class='block__example')
+        +loader('loader')
 
 
-      +comment(
-        {
-          name: 'Mike Wolfson',
-          pic: './../blocks.basic/comment/user-pic.svg'
-        },
 
-        {
-          time: 'august 19, 2019 17:48',
-          content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
-        }, 
+    //- comment
+    +block(
+      { name: 'comment',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/comment ',
+        description: 'Comment section' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/comment/README.md
+      div(class='block__example')
+        +comment(
+          {
+            name: 'Mike Wolfson',
+            pic: './../blocks.basic/comment/user-pic.svg'
+          },
 
-        'comment')
+          {
+            time: 'august 19, 2019 17:48',
+            content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+          }, 
+
+          'comment')
 
 
-      +comment(
-        {
-          name: 'Mike Wolfson',
-          pic: './../blocks.basic/comment/user-pic.svg'
-        },
+        +comment(
+          {
+            name: 'Mike Wolfson',
+            pic: './../blocks.basic/comment/user-pic.svg'
+          },
 
-        {
-          time: 'august 19, 2019 17:48',
-          content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
-        }, 
+          {
+            time: 'august 19, 2019 17:48',
+            content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+          }, 
 
-        'comment')
+          'comment')
+
+
+        +comment(
+          {
+            name: 'Mike Wolfson',
+            pic: './../blocks.basic/comment/user-pic.svg'
+          },
+
+          {
+            time: 'august 19, 2019 17:48',
+            content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+          }, 
+
+          'comment')
 
 
 
