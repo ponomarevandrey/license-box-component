@@ -272,7 +272,7 @@ block main
 
       { name: 'color',
         values: ['black', 'white'],
-        description: 'Headings sizes' }
+        description: 'Line color' }
     )
       //-
         div(class='block__readme') 
@@ -281,6 +281,32 @@ block main
         +hr('hr hr_color_black')
 
 
+
+    //- list
+    +block(
+      { name: 'list',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/list',
+        description: 'List' },
+
+      { name: 'style',
+        values: ['ordered', 'unordered'],
+        description: 'List style' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/list/README.md
+      div(class='block__example')
+        ul(class='list list_style_unordered')
+          li(class='list__item') Fruit
+            ul(class='list list_style_unordered')
+              li(class='list__item') Bananas
+              li(class='list__item') Apples
+                ul(class='list list_style_ordered')
+                  li(class='list__item') Green
+                  li(class='list__item') Red
+              li(class='list__item') Pears
+          li(class='list__item') Vegetables
+          li(class='list__item') Meat
 
 
 
@@ -295,17 +321,7 @@ block main
 
     //- list
     section(class='block')
-      ul(class='list list_style_unordered')
-        li(class='list__item') Fruit
-          ul(class='list list_style_unordered')
-            li(class='list__item') Bananas
-            li(class='list__item') Apples
-              ul(class='list list_style_ordered')
-                li(class='list__item') Green
-                li(class='list__item') Red
-            li(class='list__item') Pears
-        li(class='list__item') Vegetables
-        li(class='list__item') Meat
+
 
 
 
