@@ -7,6 +7,9 @@ mixin img-raster(img)
   - else
   - classList = `img-raster img-raster_theme_${img.theme}`
 
+  - if (img.alignSelf !== undefined)
+  - classList = classList + ` ${img.alignSelf}`;
+
   figure(class=`${classList}`)
     picture(class='img-raster__wrapper')   
       img(
