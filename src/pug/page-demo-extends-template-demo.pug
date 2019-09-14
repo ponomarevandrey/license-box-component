@@ -79,11 +79,11 @@ block head
     }
 
     .block__col1 {
-      width: 15%;
+      width: 20%;
     }
 
     .block__col2 {
-      width: 35%;
+      width: 30%;
     }
 
     .block__col3 {
@@ -139,8 +139,11 @@ block main
                   td(class='table__cell table__cell_type_main block__col1')
                     +code(`${mod.name}`, 'code code_display_inline code_theme_black')
                   td(class='table__cell table__cell_type_main block__col2')
-                    each value in mod.values
-                      +code(`${value}`, 'code code_display_inline code_theme_black')
+                    - if (mod.values === undefined) 
+                      +text('text text_display_inline') —
+                    - else 
+                      each value in mod.values
+                        +code(`${value}`, 'code code_display_inline code_theme_black')
                   td(class='table__cell table__cell_type_main block__col3') #{mod.description}
       block        
 
@@ -209,8 +212,9 @@ block main
         values: ['sans-serif', 'serif', 'monospace'],
         description: 'Text font' }         
     )
-      div(class='block__readme') 
-        include:markdown-it ./../blocks.basic/text/README.md
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/text/README.md
       div(class='block__example')
         +text('text text_display_block text_size_xl').
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the #[+text('text text_display_inline text_color_info') 1500s], when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -310,43 +314,27 @@ block main
 
 
 
+    //- link
+    +block(
+      { name: 'link',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/link',
+        description: 'Link' },
+
+      { name: 'anchor',
+        values: undefined,
+        description: 'Anchor link. Adds small anchor icon after link' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/link/README.md
+      div(class='block__example')
+        +link('https://github.com/ponomarevandrey', 'link') Click me, I'm a link!
+        +link('https://github.com/ponomarevandrey', 'link link_anchor') Click me, I'm an anchor link
 
 
 
 
 
-    //- ------------------------------------------------------------
-
-
-
-    //- list
-    section(class='block')
-
-
-
-
-    //- ------------------------------------------------------------
-
-
-
-    //- text
-    section(class='block')
-      +text('text text_display_inline').
-        Inline text without margin-bottom. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text #[+text('text text_color_success') ever since the 1500s], when an unknown printer took a galley of type and scrambled it to make a type specimen book
-
-      +text('text text_display_block').
-        Block text looks like paragraph. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the #[+link('https://github.com/ponomarevandrey', 'link link_anchor') 1960 ] with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-
-
-
-    //- ------------------------------------------------------------
-
-
-
-    section(class='block')
-      //- link
-      +link('https://github.com/ponomarevandrey', 'link') Click me, man, I'm a true hyperlink!
-      +link('https://github.com/ponomarevandrey', 'link link_anchor') Click me, man, I'm an anchor link!
 
 
 
