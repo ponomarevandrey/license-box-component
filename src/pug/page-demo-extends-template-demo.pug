@@ -447,7 +447,6 @@ block main
 
 
 
-
     //- responsive columns grid
     +block(
       { name: 'grid-auto-col',
@@ -468,9 +467,6 @@ block main
           div(class='grid-auto-col__item') Seven
           div(class='grid-auto-col__item') Eight
           div(class='grid-auto-col__item') Nine
-
-
-
 
 
 
@@ -590,138 +586,158 @@ block main
 
 
 
+    //- grid-page-layout1 
+    +block(
+      { name: 'grid-page-layout1',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/grid-page-layout1',
+        description: 'Grid page layout' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/grid-page-layout1/README.md
+      div(class='block__example')
+        section(class='grid-page-layout1')
+          div(class='grid-page-layout1__header') Header
+          div(class='grid-page-layout1__news1') News. Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+          div(class='grid-page-layout1__news2')
+            div hkjh
+            div(class='grid-page-layout1__article') Article. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            div(class='grid-page-layout1__info') Info
+          div(class='grid-page-layout1__ads-l') Space L
+          div(class='grid-page-layout1__ads-r') Space R  
+          div(class='grid-page-layout1__footer') Footer
 
 
-    //- ------------------------------------------------------------
-
-
-    section(class='block')
-      //- grid-page-layout1 
-      section(class='grid-page-layout1')
-        div(class='grid-page-layout1__header') Header
-        div(class='grid-page-layout1__news1') News. Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
-        div(class='grid-page-layout1__news2')
-          div hkjh
-          div(class='grid-page-layout1__article') Article. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          div(class='grid-page-layout1__info') Info
-        div(class='grid-page-layout1__ads-l') Space L
-        div(class='grid-page-layout1__ads-r') Space R  
-        div(class='grid-page-layout1__footer') Footer
-
-
-
-    //- ------------------------------------------------------------
 
     //- grid-gallery
-      ul(class='grid-gallery')
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22942_hires.jpg" alt="Juno's Latest Flyby of Jupiter Captures Two Massive Storms")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA23021_hires.jpg" alt="A first look at dunes")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA23002_hires.jpg" alt="K2-138 6 Planets Artwork (Artist's Illustration)")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA21212_hires.jpg" alt="Small Prominences")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22983_hires.jpg" alt="Ezinu Crater")
+    +block(
+      { name: 'grid-gallery',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/grid-gallery',
+        description: 'Grid gallery' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/grid-gallery/README.md
+      div(class='block__example')
+        ul(class='grid-gallery')
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22942_hires.jpg" alt="Juno's Latest Flyby of Jupiter Captures Two Massive Storms")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA23021_hires.jpg" alt="A first look at dunes")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA23002_hires.jpg" alt="K2-138 6 Planets Artwork (Artist's Illustration)")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA21212_hires.jpg" alt="Small Prominences")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22983_hires.jpg" alt="Ezinu Crater")
 
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22990_hires.jpg" alt="Polar Ice")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22990_hires.jpg" alt="Polar Ice")
 
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22963_hires.jpg" alt="Jupiter")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22963_hires.jpg" alt="Jupiter")
 
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22918_hires.jpg" alt="Star Gaia 17pbi Seen by Spitzer")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22918_hires.jpg" alt="Star Gaia 17pbi Seen by Spitzer")
 
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22900_hires.jpg" alt="Another Cloudy Day")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22941_hires.jpg" alt="South Equatorial Belt Brown Barge Close-up")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22936_hires.jpg" alt="Earth-based Observation of Jupiter")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22937_hires.jpg" alt="Jupiter's South Tropical Disturbance")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22933_hires.jpg" alt="Jupiter's Southern Circumpolar Cyclones")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22906_hires.jpg" alt=" Juno Flyby Movie ")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22895_hires.jpg" alt="Swiss Cheese on a Red Planet")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA21211_hires.jpg" alt="Solar Active Region's Cameo Appearance")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22914_hires.jpg" alt="Bow Shock Around Young Star")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22695_hires.jpg" alt="Jupiter's North Equatorial Belt")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22770_hires.jpg" alt="Titan Mosaic: The Surface Under the Haze")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA18144_hires.jpg" alt="Reappearing Coronal Hole")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22820_hires.jpg" alt="NASA's ASTER Captures Lava Flow, Ash from Guatemala Volcano")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22869_hires.jpg" alt="Active Dunes in Wirtz Crater")
-      li
-        figure
-          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22569_hires.jpg" alt="Supernova Remnant G54")
-
-
-
-    //- ------------------------------------------------------------
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22900_hires.jpg" alt="Another Cloudy Day")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22941_hires.jpg" alt="South Equatorial Belt Brown Barge Close-up")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22936_hires.jpg" alt="Earth-based Observation of Jupiter")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22937_hires.jpg" alt="Jupiter's South Tropical Disturbance")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22933_hires.jpg" alt="Jupiter's Southern Circumpolar Cyclones")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22906_hires.jpg" alt=" Juno Flyby Movie ")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22895_hires.jpg" alt="Swiss Cheese on a Red Planet")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA21211_hires.jpg" alt="Solar Active Region's Cameo Appearance")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22914_hires.jpg" alt="Bow Shock Around Young Star")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22695_hires.jpg" alt="Jupiter's North Equatorial Belt")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22770_hires.jpg" alt="Titan Mosaic: The Surface Under the Haze")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA18144_hires.jpg" alt="Reappearing Coronal Hole")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22820_hires.jpg" alt="NASA's ASTER Captures Lava Flow, Ash from Guatemala Volcano")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22869_hires.jpg" alt="Active Dunes in Wirtz Crater")
+          li
+            figure
+              img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22569_hires.jpg" alt="Supernova Remnant G54")
 
 
 
     //- grid-page-layout2
-    section(class='block')
-      section(class='grid-page-layout2')
-        div(class='grid-page-layout2__one')
-          One One One One One One One One One One One One One One One
-        div(class='grid-page-layout2__two') Two 
-        div(class='grid-page-layout2__three') Three 
-        div(class='grid-page-layout2__four') Four 
-        div(class='grid-page-layout2__five') Five Five Five Five Five
+    +block(
+      { name: 'grid-page-layout2',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/grid-page-layout2',
+        description: 'Grid page layout' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/grid-page-layout2/README.md
+      div(class='block__example')
+        section(class='grid-page-layout2')
+          div(class='grid-page-layout2__one')
+            One One One One One One One One One One One One One One One
+          div(class='grid-page-layout2__two') Two 
+          div(class='grid-page-layout2__three') Three 
+          div(class='grid-page-layout2__four') Four 
+          div(class='grid-page-layout2__five') Five Five Five Five Five
 
 
 
-    //- ------------------------------------------------------------
 
 
 
-    section(class='block')
-      //- img-svg
-      //- as <img>
-      +img-svg('img', './../img/logo.svg', 'Logoipsum logo', 'Logoipsum')
-      //- as CSS background-image
-      +img-svg('div')
-      //- and if you need interactivity, use SVG with the help of <object> tag
-      +img-svg('object', './../img/logo.svg')
 
 
+    //- img-svg
+    +block(
+      { name: 'img-svg',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/img-svg',
+        description: 'SVG image' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/img-svg/README.md
+      div(class='block__example')
+        //- as <img>
+        +img-svg('img', './../img/logo.svg', 'Logoipsum logo', 'Logoipsum')
+        //- as CSS background-image
+        +img-svg('div')
+        //- and if you need interactivity, use SVG with the help of <object> tag
+        +img-svg('object', './../img/logo.svg')
 
-    //- ------------------------------------------------------------
 
 
 
