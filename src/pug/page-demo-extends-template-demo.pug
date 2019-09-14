@@ -363,8 +363,6 @@ block main
 
 
 
-
-
     //- btn
     +block(
       { name: 'btn',
@@ -450,21 +448,29 @@ block main
 
 
 
-    //- ------------------------------------------------------------
+    //- responsive columns grid
+    +block(
+      { name: 'grid-auto-col',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/grid-auto-col',
+        description: 'Responsive columns grid' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/grid-auto-col/README.md
+      div(class='block__example')
+        div(class='grid-auto-col' style='width: 100%;')
+          div(class='grid-auto-col__item') One
+          div(class='grid-auto-col__item') Two
+          div(class='grid-auto-col__item') Three
+          div(class='grid-auto-col__item') Four 
+          div(class='grid-auto-col__item') Five
+          div(class='grid-auto-col__item') Six
+          div(class='grid-auto-col__item') Seven
+          div(class='grid-auto-col__item') Eight
+          div(class='grid-auto-col__item') Nine
 
 
-    section(class='block')
-      //- responsive columns grid
-      div(class='grid-auto-col')
-        div(class='grid-auto-col__item') One
-        div(class='grid-auto-col__item') Two
-        div(class='grid-auto-col__item') Three
-        div(class='grid-auto-col__item') Four 
-        div(class='grid-auto-col__item') Five
-        div(class='grid-auto-col__item') Six
-        div(class='grid-auto-col__item') Seven
-        div(class='grid-auto-col__item') Eight
-        div(class='grid-auto-col__item') Nine
+
 
 
 
