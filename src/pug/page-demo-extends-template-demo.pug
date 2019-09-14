@@ -173,12 +173,12 @@ block main
         div(class='block__readme') 
           include:markdown-it ./../blocks.basic/heading/README.md
       div(class='block__example')
-        +heading('Heading One', 'heading heading_size_h1')
-        +heading('Heading Two', 'heading heading_size_h2')
-        +heading('Heading Three', 'heading heading_size_h3')
-        +heading('Heading Four', 'heading heading_size_h4')
-        +heading('Heading Five', 'heading heading_size_h5')
-        +heading('Heading Six', 'heading heading_size_h6')
+        +heading('heading heading_size_h1') Heading One
+        +heading('heading heading_size_h2') Heading Two
+        +heading('heading heading_size_h3') Heading Three
+        +heading('heading heading_size_h4') Heading Four
+        +heading('heading heading_size_h5') Heading Five
+        +heading('heading heading_size_h6') Heading Six
 
 
 
@@ -474,66 +474,121 @@ block main
 
 
 
-    //- ------------------------------------------------------------
+    //- grid-items-list 
+    +block(
+      { name: 'grid-items-list',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/link',
+        description: 'Grid from unorded list' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/grid-items-list /README.md
+      div(class='block__example')
+        ul(class='grid-3-col')
+
+          li(class='grid-3-col__item')
+            //- img-raster block
+            +img-raster(
+              {
+                alt: "Ships in the Field",
+                src: "./../img/animals_landscape_xxxl.jpg", 
+                srcset: {
+                    "480": "./../img/animals_landscape_sm.jpg",
+                    "768": "./../img/animals_landscape_md.jpg",
+                    "992": "./../img/animals_landscape_lg.jpg",
+                    "1200": "./../img/animals_landscape_xl.jpg",
+                    "1800": "./../img/animals_landscape_xxl.jpg",
+                    "2000": "./../img/animals_landscape_xxxl.jpg "
+                  },
+            
+                captionText: undefined,
+
+                theme: undefined,
+
+                alignSelf: undefined
+              }
+            )
+            +heading('heading heading_size_h3 text text_line-height_sm grid-items-list__heading') Billions upon bil lions upon billions
+            +text('text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+            +btn(
+              { 
+                tag: 'a', 
+                text: 'Visit Website', 
+                url: 'https://github.com/ponomarevandrey', 
+                state: 'enabled' 
+              },
+              'btn btn_theme_black btn_size_md'
+            )
+
+          li(class='grid-3-col__item')
+            //- img-raster block
+            +img-raster(
+              {
+                alt: "Ships in the Field",
+                src: "./../img/animals_landscape_xxxl.jpg", 
+                srcset: {
+                    "480": "./../img/animals_landscape_sm.jpg",
+                    "768": "./../img/animals_landscape_md.jpg",
+                    "992": "./../img/animals_landscape_lg.jpg",
+                    "1200": "./../img/animals_landscape_xl.jpg",
+                    "1800": "./../img/animals_landscape_xxl.jpg",
+                    "2000": "./../img/animals_landscape_xxxl.jpg "
+                  },
+            
+                captionText: undefined,
+
+                theme: undefined,
+
+                alignSelf: undefined
+              }
+            )
+            +heading('heading heading_size_h3 text text_line-height_sm grid-items-list__heading') Billions upon bil lions upon billions
+            +text('text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+            +btn(
+              { 
+                tag: 'a', 
+                text: 'Visit Website', 
+                url: 'https://github.com/ponomarevandrey', 
+                state: 'enabled' 
+              },
+              'btn btn_theme_black btn_size_md'
+            )
+
+          li(class='grid-3-col__item')
+            //- img-raster block
+            +img-raster(
+              {
+                alt: "Ships in the Field",
+                src: "./../img/animals_landscape_xxxl.jpg", 
+                srcset: {
+                    "480": "./../img/animals_landscape_sm.jpg",
+                    "768": "./../img/animals_landscape_md.jpg",
+                    "992": "./../img/animals_landscape_lg.jpg",
+                    "1200": "./../img/animals_landscape_xl.jpg",
+                    "1800": "./../img/animals_landscape_xxl.jpg",
+                    "2000": "./../img/animals_landscape_xxxl.jpg "
+                  },
+            
+                captionText: undefined,
+
+                theme: undefined,
+
+                alignSelf: undefined
+              }
+            )
+            +heading('heading heading_size_h3 text text_line-height_sm grid-items-list__heading') Billions upon bil lions upon billions
+            +text('text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+            +btn(
+              { 
+                tag: 'a', 
+                text: 'Visit Website', 
+                url: 'https://github.com/ponomarevandrey', 
+                state: 'enabled' 
+              },
+              'btn btn_theme_black btn_size_md'
+            )
 
 
-    section(class='block')
-      //- grid-items-list 
-      ul(class='grid-3-col')
-
-        li(class='grid-3-col__item')
-          //- img-raster block
-          figure(class='img-raster')
-            picture(class='img-raster__wrapper')   
-              img(
-                class='img-raster__img'
-                src="./../img/animals_landscape_xxxl.jpg"
-
-                sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
-
-                srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w"
-                
-                alt='Ships in the Field' 
-              )
-          h1(class='heading heading_size_h3 grid-items-list__heading') Billions upon bil lions upon billions
-          p(class='text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
-          a(class='btn' href="https://github.com/ponomarevandrey") Visit Website
-
-        li(class='grid-3-col__item')
-          //- img-raster block
-          figure(class='img-raster')
-            picture(class='img-raster__wrapper')   
-              img(
-                class='img-raster__img'
-                src="./../img/animals_landscape_xxxl.jpg"
-
-                sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
-
-                srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w"
-                
-                alt='Ships in the Field' 
-              )
-          h1(class='heading heading_size_h3 grid-items-list__heading') Billions upon bil lions upon billions
-          p(class='text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
-          a(class='btn' href="https://github.com/ponomarevandrey") Visit Website
-
-        li(class='grid-3-col__item')
-          //- img-raster block
-          figure(class='img-raster')
-            picture(class='img-raster__wrapper')   
-              img(
-                class='img-raster__img'
-                src="./../img/animals_landscape_xxxl.jpg"
-
-                sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
-
-                srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w"
-                
-                alt='Ships in the Field' 
-              )
-          h1(class='heading heading_size_h3 grid-items-list__heading') Billions upon bil lions upon billions
-          p(class='text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
-          a(class='btn' href="https://github.com/ponomarevandrey") Visit Website
 
 
 
@@ -673,7 +728,7 @@ block main
     section(class='block')
       //- header
       header(class='header header_view_fullscreen-image header_align-content_center')
-        +heading('Full screen Responsive image ', 'heading heading_size_h1') 
+        +heading('heading heading_size_h1') Full screen Responsive image 
 
 
 
