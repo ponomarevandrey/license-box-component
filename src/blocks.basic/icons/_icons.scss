@@ -4,15 +4,15 @@
   display: inline-block;
   outline: none;
 
+  /*
   &:not(:last-child) {
     margin-right: 0.6em;
   }
+  */
 
   &__img {
     background-size: cover;
-    /* Inherit the text’s size too. Also allows sizing the icon by changing its font-size. */
-    width: 1.7em;
-    height: 1.7em;
+
     /* Paths and strokes that overflow the viewBox can show in IE11. */
     overflow: hidden;
 
@@ -31,6 +31,24 @@
     }
 
     // Modifiers:
+
+    &_size {
+      &_sm {
+        width: 1.4em;
+        height: 1.4em;
+      }
+
+      &_md {
+        /* Inherit the text’s size too. Also allows sizing the icon by changing its font-size. */
+        width: 1.7em;
+        height: 1.7em;
+      }
+
+      &_lg {
+        width: 2.4em;
+        height: 2.4em;
+      }
+    }
 
     &_color {
       // icons colored in brand colors:

@@ -19,11 +19,11 @@ block head
 
       display: grid;
       grid-gap: 2rem;
-      grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(900px, 1fr));
       align-items: flex-start;
 
       grid-auto-flow: row;
-      grid-auto-columns: minmax(700px, 1fr);
+      grid-auto-columns: minmax(900px, 1fr);
 
     }
 
@@ -32,14 +32,16 @@ block head
     .block {
       display: flex;
       flex-flow: column nowrap;
-      max-width: 800px;
+
+      max-width: 1200px;
+      
       /*min-width: 45%;*/
       border-radius: .3rem;
       border: 1px solid black;
     }
 
     .block__about {
-      padding: 5rem 6rem 2rem 6rem;
+      
     }
 
 
@@ -62,14 +64,21 @@ block head
     /* ---------------------- */
 
     .block__header {
+      padding: 5rem 6rem 0 6rem;
+
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
       align-items: center;
+
     }
 
     .block__description {
-      margin-bottom: 2rem;
+      padding: 0rem 6rem 2rem 6rem;
+    }
+
+    .block__table {
+      padding: 0rem 6rem 2rem 6rem;      
     }
 
 
@@ -96,19 +105,19 @@ block header
       
 block main
 
-  main(class='demo')
-
-
-
-    //- heading
+  //- mixin for creating a block for each component of the library:
+  mixin block(biscuitBlock, ...allMods)
     section(class='block')
-  
       div(class='block__about')
         header(class='block__header') 
-          +text('heading heading_size_h1 text text_font-stack_monospace') heading
-          +icon('github', '###', 'black')
+          +text('heading heading_size_h1 text text_font-stack_monospace') #{biscuitBlock.name}
+          +icons(
+            'github', 
+            `${biscuitBlock.repository}`, 
+            'lg', 
+            'black')
         div(class='block__description') 
-          +text() H1—H6 headings
+          +text() #{biscuitBlock.description}
         div(class='table block__table table_theme_documentation')
           table(class='table__container')
             thead
@@ -117,23 +126,43 @@ block main
                 th(class='table__cell table__cell_type_header') Values
                 th(class='table__cell table__cell_type_header') Description
             tbody
-              tr(class='table__row')
-                td(class='table__cell table__cell_type_main')
-                  +code('size', 'code code_display_inline code_theme_black')
-                td(class='table__cell table__cell_type_main') 
-                  +code('h1', 'code code_display_inline code_theme_black')
-                  | ,
-                  +code('h2', 'code code_display_inline code_theme_black')
-                  | ,
-                  +code('h3', 'code code_display_inline code_theme_black')
-                  | ,
-                  +code('h4', 'code code_display_inline code_theme_black')
-                  | ,
-                  +code('h5', 'code code_display_inline code_theme_black')
-                  | ,
-                  +code('h6', 'code code_display_inline code_theme_black')
-                td(class='table__cell table__cell_type_main') Headings sizes
+              each mod in allMods
+                tr(class='table__row')
+                  td(class='table__cell table__cell_type_main')
+                    +code(`${mod.name}`, 'code code_display_inline code_theme_black')
+                  td(class='table__cell table__cell_type_main') 
+                    each value in mod.values
+                      +code(`${value}`, 'code code_display_inline code_theme_black')
+  
+                  td(class='table__cell table__cell_type_main') #{mod.description}
+      block        
 
+
+
+  //- ------------------------------------------------------------
+  //- --------------- Biscuit blocks library: --------------------
+  //- ------------------------------------------------------------
+
+
+
+  main(class='demo')
+
+
+
+    //- heading
+    +block(
+      { name: 'heading',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/heading',
+        description: 'H1—H6 headings' },
+
+      { name: 'size',
+        values: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+        description: 'Headings sizes' },
+
+      { name: 'color',
+        values: ['primary', 'secondary', 'warning', 'success', 'danger', 'info', 'disabled'],
+        description: 'Headings sizes' }
+    )
       div(class='block__readme') 
         include:markdown-it ./../blocks.basic/heading/README.md
       div(class='block__example')
@@ -144,9 +173,49 @@ block main
         +heading('Heading Five', 'heading heading_size_h5')
         +heading('Heading Six', 'heading heading_size_h6')
 
-    
 
-    //- ------------------------------------------------------------
+
+    //- text
+    +block(
+      { name: 'text',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/text',
+        description: 'Regular text' },
+
+      { name: 'display',
+        values: ['inline', 'block'],
+        description: "Display text as a line, or as a block i.e. a paragraph" },
+
+      { name: 'size',
+        values: ['xs', 'sm', 'root', 'lg', 'xl'],
+        description: "Text size" },
+
+      { name: 'line-height',
+        values: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
+        description: "Text line height" },
+
+      { name: 'color',
+        values: ['white', 'gray-lightest', 'gray-lighten', 'gray-light', 'gray', 'gray-dark', 'gray-darken', 'gray_darkest', 'black', 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'disabled'],
+        description: 'Text color' },
+
+      { name: 'style',
+        values: ['normal', 'bold', 'italic'],
+        description: 'Text color' },
+
+      { name: 'font-stack',
+        values: ['sans-serif', 'serif', 'monospace'],
+        description: 'Text font' }         
+    )
+      div(class='block__readme') 
+        include:markdown-it ./../blocks.basic/text/README.md
+      div(class='block__example')
+        +text('text') Lorem Ipsum
+
+
+
+
+
+
+
 
 
 
@@ -186,9 +255,17 @@ block main
 
 
 
+    //- ------------------------------------------------------------
+
+
+
     //- hr
     section(class='block')
       +hr('hr hr_color_black')
+
+
+
+    //- ------------------------------------------------------------
 
 
 
@@ -208,24 +285,39 @@ block main
 
 
 
+    //- ------------------------------------------------------------
+
+
+
     //- text
     section(class='block')
       +text('text text_display_inline').
         Inline text without margin-bottom. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
 
       +text('text text_display_block').
-        Block text looks like paragraph. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the #[+link('###', 'link link_anchor') 1960 ] with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+        Block text looks like paragraph. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the #[+link('https://github.com/ponomarevandrey', 'link link_anchor') 1960 ] with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
 
 
 
-    //- link
-    +link('###', 'link') Click me, man, I'm a true hyperlink!
-    +link('###', 'link link_anchor') Click me, man, I'm an anchor link!
+    //- ------------------------------------------------------------
+
+
+
+    section(class='block')
+      //- link
+      +link('https://github.com/ponomarevandrey', 'link') Click me, man, I'm a true hyperlink!
+      +link('https://github.com/ponomarevandrey', 'link link_anchor') Click me, man, I'm an anchor link!
+
+
+
+    //- ------------------------------------------------------------
+
+
 
     //- code
     section(class='block')
       //- inline code
-      p(class='text text_display_block text_size_root text_color_black') It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. #[+code( `console.log( a ) !!!;`, 'code code_display_inline text text_size_sm code_theme_gray' ) ] It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      p(class='text text_display_block text_size_root text_color_black') It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum #[+code( `console.log( a ) !!!;`, 'code code_display_inline text text_size_sm code_theme_gray' ) ] it was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
       //- code block
       +code( 
 `window.addEventListener( 'load', => {
@@ -236,6 +328,8 @@ block main
 
 
 
+    //- ------------------------------------------------------------
+
 
 
     //- btn
@@ -245,7 +339,7 @@ block main
         { 
           tag: 'a', 
           text: 'a href Button', 
-          url: '###', 
+          url: 'https://github.com/ponomarevandrey', 
           state: 'enabled' 
         },
         'btn btn_theme_black btn_size_md'
@@ -254,7 +348,7 @@ block main
         { 
           tag: 'a', 
           text: 'a href Button disabled', 
-          url: '###', 
+          url: 'https://github.com/ponomarevandrey', 
           state: 'disabled' 
         },
         'btn btn_theme_black btn_size_md'
@@ -265,7 +359,7 @@ block main
         { 
           tag: 'button', 
           text: 'button Button', 
-          url: '###', 
+          url: 'https://github.com/ponomarevandrey', 
           state: 'enabled' 
         },
         'btn btn_theme_black btn_size_md'
@@ -274,7 +368,7 @@ block main
         { 
           tag: 'button', 
           text: 'button Button disabled', 
-          url: '###', 
+          url: 'https://github.com/ponomarevandrey', 
           state: 'disabled' 
         },
         'btn btn_theme_black btn_size_md'
@@ -285,7 +379,7 @@ block main
         { 
           tag: 'input', 
           text: 'input Button', 
-          url: '###', 
+          url: 'https://github.com/ponomarevandrey', 
           state: 'enabled' 
         },
         'btn btn_theme_black btn_size_md'
@@ -294,7 +388,7 @@ block main
         { 
           tag: 'input', 
           text: 'input Button', 
-          url: '###',  
+          url: 'https://github.com/ponomarevandrey',  
           url: 'disabled' 
         },
         'btn btn_theme_black btn_size_md'
@@ -302,516 +396,668 @@ block main
 
 
 
+    //- ------------------------------------------------------------
+
+
+    section(class='block')
+      //- responsive columns grid
+      div(class='grid-auto-col')
+        div(class='grid-auto-col__item') One
+        div(class='grid-auto-col__item') Two
+        div(class='grid-auto-col__item') Three
+        div(class='grid-auto-col__item') Four 
+        div(class='grid-auto-col__item') Five
+        div(class='grid-auto-col__item') Six
+        div(class='grid-auto-col__item') Seven
+        div(class='grid-auto-col__item') Eight
+        div(class='grid-auto-col__item') Nine
+
+
+
+    //- ------------------------------------------------------------
+
+
+    section(class='block')
+      //- grid-items-list 
+      ul(class='grid-3-col')
+
+        li(class='grid-3-col__item')
+          //- img-raster block
+          figure(class='img-raster')
+            picture(class='img-raster__wrapper')   
+              img(
+                class='img-raster__img'
+                src="./../img/animals_landscape_xxxl.jpg"
+
+                sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
+
+                srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w"
+                
+                alt='Ships in the Field' 
+              )
+          h1(class='heading heading_size_h3 grid-items-list__heading') Billions upon bil lions upon billions
+          p(class='text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+          a(class='btn' href="https://github.com/ponomarevandrey") Visit Website
+
+        li(class='grid-3-col__item')
+          //- img-raster block
+          figure(class='img-raster')
+            picture(class='img-raster__wrapper')   
+              img(
+                class='img-raster__img'
+                src="./../img/animals_landscape_xxxl.jpg"
+
+                sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
+
+                srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w"
+                
+                alt='Ships in the Field' 
+              )
+          h1(class='heading heading_size_h3 grid-items-list__heading') Billions upon bil lions upon billions
+          p(class='text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+          a(class='btn' href="https://github.com/ponomarevandrey") Visit Website
+
+        li(class='grid-3-col__item')
+          //- img-raster block
+          figure(class='img-raster')
+            picture(class='img-raster__wrapper')   
+              img(
+                class='img-raster__img'
+                src="./../img/animals_landscape_xxxl.jpg"
+
+                sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
+
+                srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w"
+                
+                alt='Ships in the Field' 
+              )
+          h1(class='heading heading_size_h3 grid-items-list__heading') Billions upon bil lions upon billions
+          p(class='text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+          a(class='btn' href="https://github.com/ponomarevandrey") Visit Website
+
+
+
+    //- ------------------------------------------------------------
+
+
+    section(class='block')
+      //- grid-page-layout1 
+      section(class='grid-page-layout1')
+        div(class='grid-page-layout1__header') Header
+        div(class='grid-page-layout1__news1') News. Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+        div(class='grid-page-layout1__news2')
+          div hkjh
+          div(class='grid-page-layout1__article') Article. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          div(class='grid-page-layout1__info') Info
+        div(class='grid-page-layout1__ads-l') Space L
+        div(class='grid-page-layout1__ads-r') Space R  
+        div(class='grid-page-layout1__footer') Footer
+
+
+
+    //- ------------------------------------------------------------
+
+    //- grid-gallery
+      ul(class='grid-gallery')
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22942_hires.jpg" alt="Juno's Latest Flyby of Jupiter Captures Two Massive Storms")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA23021_hires.jpg" alt="A first look at dunes")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA23002_hires.jpg" alt="K2-138 6 Planets Artwork (Artist's Illustration)")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA21212_hires.jpg" alt="Small Prominences")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22983_hires.jpg" alt="Ezinu Crater")
+
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22990_hires.jpg" alt="Polar Ice")
+
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22963_hires.jpg" alt="Jupiter")
+
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22918_hires.jpg" alt="Star Gaia 17pbi Seen by Spitzer")
+
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22900_hires.jpg" alt="Another Cloudy Day")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22941_hires.jpg" alt="South Equatorial Belt Brown Barge Close-up")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22936_hires.jpg" alt="Earth-based Observation of Jupiter")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22937_hires.jpg" alt="Jupiter's South Tropical Disturbance")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22933_hires.jpg" alt="Jupiter's Southern Circumpolar Cyclones")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22906_hires.jpg" alt=" Juno Flyby Movie ")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22895_hires.jpg" alt="Swiss Cheese on a Red Planet")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA21211_hires.jpg" alt="Solar Active Region's Cameo Appearance")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22914_hires.jpg" alt="Bow Shock Around Young Star")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22695_hires.jpg" alt="Jupiter's North Equatorial Belt")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22770_hires.jpg" alt="Titan Mosaic: The Surface Under the Haze")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA18144_hires.jpg" alt="Reappearing Coronal Hole")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22820_hires.jpg" alt="NASA's ASTER Captures Lava Flow, Ash from Guatemala Volcano")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22869_hires.jpg" alt="Active Dunes in Wirtz Crater")
+      li
+        figure
+          img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22569_hires.jpg" alt="Supernova Remnant G54")
 
 
-  //- responsive columns grid
-  div(class='grid-auto-col')
-    div(class='grid-auto-col__item') One
-    div(class='grid-auto-col__item') Two
-    div(class='grid-auto-col__item') Three
-    div(class='grid-auto-col__item') Four 
-    div(class='grid-auto-col__item') Five
-    div(class='grid-auto-col__item') Six
-    div(class='grid-auto-col__item') Seven
-    div(class='grid-auto-col__item') Eight
-    div(class='grid-auto-col__item') Nine
-
-
-
-  //- grid-items-list 
-  ul(class='grid-3-col')
-
-    li(class='grid-3-col__item')
-      //- img-raster block
-      figure(class='img-raster')
-        picture(class='img-raster__wrapper')   
-          img(
-            class='img-raster__img'
-            src="./../img/animals_landscape_xxxl.jpg"
-
-            sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
-
-            srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w"
-            
-            alt='Ships in the Field' 
-          )
-      h1(class='heading heading_size_h3 grid-items-list__heading') Billions upon bil lions upon billions
-      p(class='text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
-      a(class='btn' href="###") Visit Website
-
-    li(class='grid-3-col__item')
-      //- img-raster block
-      figure(class='img-raster')
-        picture(class='img-raster__wrapper')   
-          img(
-            class='img-raster__img'
-            src="./../img/animals_landscape_xxxl.jpg"
-
-            sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
-
-            srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w"
-            
-            alt='Ships in the Field' 
-          )
-      h1(class='heading heading_size_h3 grid-items-list__heading') Billions upon bil lions upon billions
-      p(class='text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
-      a(class='btn' href="###") Visit Website
-
-    li(class='grid-3-col__item')
-      //- img-raster block
-      figure(class='img-raster')
-        picture(class='img-raster__wrapper')   
-          img(
-            class='img-raster__img'
-            src="./../img/animals_landscape_xxxl.jpg"
-
-            sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw"
-
-            srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w"
-            
-            alt='Ships in the Field' 
-          )
-      h1(class='heading heading_size_h3 grid-items-list__heading') Billions upon bil lions upon billions
-      p(class='text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
-      a(class='btn' href="###") Visit Website
-
-
-
-  //- grid-page-layout1 
-  section(class='grid-page-layout1')
-    div(class='grid-page-layout1__header') Header
-    div(class='grid-page-layout1__news1') News. Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
-    div(class='grid-page-layout1__news2')
-      div hkjh
-      div(class='grid-page-layout1__article') Article. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-      div(class='grid-page-layout1__info') Info
-    div(class='grid-page-layout1__ads-l') Space L
-    div(class='grid-page-layout1__ads-r') Space R  
-    div(class='grid-page-layout1__footer') Footer
-
-
-
-  //- grid-gallery
-    ul(class='grid-gallery')
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22942_hires.jpg" alt="Juno's Latest Flyby of Jupiter Captures Two Massive Storms")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA23021_hires.jpg" alt="A first look at dunes")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA23002_hires.jpg" alt="K2-138 6 Planets Artwork (Artist's Illustration)")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA21212_hires.jpg" alt="Small Prominences")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22983_hires.jpg" alt="Ezinu Crater")
-
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22990_hires.jpg" alt="Polar Ice")
-
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22963_hires.jpg" alt="Jupiter")
-
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22918_hires.jpg" alt="Star Gaia 17pbi Seen by Spitzer")
-
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22900_hires.jpg" alt="Another Cloudy Day")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22941_hires.jpg" alt="South Equatorial Belt Brown Barge Close-up")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22936_hires.jpg" alt="Earth-based Observation of Jupiter")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22937_hires.jpg" alt="Jupiter's South Tropical Disturbance")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22933_hires.jpg" alt="Jupiter's Southern Circumpolar Cyclones")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22906_hires.jpg" alt=" Juno Flyby Movie ")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22895_hires.jpg" alt="Swiss Cheese on a Red Planet")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA21211_hires.jpg" alt="Solar Active Region's Cameo Appearance")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22914_hires.jpg" alt="Bow Shock Around Young Star")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22695_hires.jpg" alt="Jupiter's North Equatorial Belt")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22770_hires.jpg" alt="Titan Mosaic: The Surface Under the Haze")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA18144_hires.jpg" alt="Reappearing Coronal Hole")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22820_hires.jpg" alt="NASA's ASTER Captures Lava Flow, Ash from Guatemala Volcano")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22869_hires.jpg" alt="Active Dunes in Wirtz Crater")
-    li
-      figure
-        img(src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA22569_hires.jpg" alt="Supernova Remnant G54")
-
-
-
-  //- grid-page-layout2
-  section(class='grid-page-layout2')
-    div(class='grid-page-layout2__one')
-      One One One One One One One One One One One One One One One
-    div(class='grid-page-layout2__two') Two 
-    div(class='grid-page-layout2__three') Three 
-    div(class='grid-page-layout2__four') Four 
-    div(class='grid-page-layout2__five') Five Five Five Five Five
-
-
-
-  //- img-svg
-  //- as <img>
-  +img-svg('img', './../img/logo.svg', 'Logoipsum logo', 'Logoipsum')
-
-
-  //- as CSS background-image
-  +img-svg('div')
-
-  //- and if you need interactivity, use SVG with the help of <object> tag
-  +img-svg('object', './../img/logo.svg')
-
-
-  //- header
-  header(class='header header_view_fullscreen-image header_align-content_center')
-    +heading('Full screen Responsive image ', 'heading heading_size_h1') 
-
-
-  //- blockquote
-  +blockquote(
-    {
-      text: 'Big type, even huge type, can be beautiful and useful. But poise is usually far more important than size – and poise consists primarily of emptiness. Typographically, poise is made of white&space.',
-      author: 'Robert Bringhurst',
-      source: 'The Elements of Typographic Style',
-      sourceURL: '###'
-
-    },
-
-    'blockquote text text_size_xl blockquote_theme_black'
-  )
-
-
-
-  //- back-to-top-btn
-  button(
-    class='btn btn_type_back-to-top'
-    title='Go to top'
-  ) Top
-
-
-
-  //- badge
-  +badge('NEW!', 'badge badge_theme_black')
-  +badge('Archived', 'badge badge_theme_black')
-
-
-  //- label
-  +label('Recursion', 'http://google.com', 'label label_theme_white')
-  +label('Callback', 'http://google.com', 'label label_theme_white')
-  +label('Prototypes', 'http://google.com', 'label label_theme_white')
-
-
-
-  //- pagination
-  +pagination('pagination')
-
-
-
-  //- breadcrumbs
-  +breadcrumb(
-    'breadcrumb', 
-    { name: 'Home', url: '###' },
-    { name: 'Equipment', url: '###' },
-    { name: 'Cooking Equipment', url: '###' }
-  )
-
-
-
-  //- icons
-  +icon('github', '###')
-  +icon('facebook', 'https://github.com/ponomarevandrey')
-  +icon('instagram', '###')
-  +icon('odnoklassniki', '###')
-  +icon('telegram', '###')
-  +icon('twitter', '###')
-  +icon('youtube', '###')
-  +icon('vkontakte', '###')
-
-  +icon('github', '###', 'black')
-  +icon('facebook', 'https://github.com/ponomarevandrey', 'black')
-  +icon('instagram', '###', 'black')
-  +icon('odnoklassniki', '###', 'black')
-  +icon('telegram', '###', 'black')
-  +icon('twitter', '###', 'black')
-  +icon('youtube', '###', 'black')
-  +icon('vkontakte', '###', 'black')
-
-  +icon('github', '###', 'white')
-  +icon('facebook', 'https://github.com/ponomarevandrey', 'white')
-  +icon('instagram', '###', 'white')
-  +icon('odnoklassniki', '###', 'white')
-  +icon('telegram', '###', 'white')
-  +icon('twitter', '###', 'white')
-  +icon('youtube', '###', 'white')
-  +icon('vkontakte', '###', 'white')
-
-
-
-
-  //- tooltip
-  div
-    p(class='text text_display_inline') ... some text, 
-      span(class='tooltip') hoverthepointer
-        span(class='tooltip__content') Your text
-
-    br
-
-    span(class='tooltip' style='display: inline-block; width: 50px; height: 50px; background-color: black; border-radius: 10000px;')
-      span(class='tooltip__content') Your text
-
-
-
-  //- embed (videos, ...)
-  +embed('https://www.youtube.com/embed/oRkNaF0QvnI', 'embed')
-
-  //- table
-  div(class='table table_theme_documentation')
-    table(class='table__container')
-      caption(class='table__caption') Table 1.1 Playlist
-      thead
-        tr(class='table__row text text_color_white')
-          th(class='table__cell table__cell_type_header') Date
-          th(class='table__cell table__cell_type_header') Artist
-          th(class='table__cell table__cell_type_header') Title
-          th(class='table__cell table__cell_type_header') Album
-          th(class='table__cell table__cell_type_header') Label
-          th(class='table__cell table__cell_type_header') Genres
-          th(class='table__cell table__cell_type_header') Duration
-      tbody
-        tr(class='table__row')
-          td(class='table__cell table__cell_type_main') 1971
-          td(class='table__cell table__cell_type_main') Gil Scott-Heron
-          td(class='table__cell table__cell_type_main') Save The Children
-          td(class='table__cell table__cell_type_main') Pieces Of A Man
-          td(class='table__cell table__cell_type_main') Flying Dutchman
-          td(class='table__cell table__cell_type_main') Soul, Funk, Jazz
-          td(class='table__cell table__cell_type_main') 4:55
-        tr(class='table__row')
-          td(class='table__cell table__cell_type_main') 1975
-          td(class='table__cell table__cell_type_main') Rufus Featuring Chaka Khan
-          td(class='table__cell table__cell_type_main') Sweet Thing
-          td(class='table__cell table__cell_type_main') Rufus Featuring Chaka Khan
-          td(class='table__cell table__cell_type_main') ABC Records
-          td(class='table__cell table__cell_type_main') Soul, Funk, Disco
-          td(class='table__cell table__cell_type_main') 3:18
-        tr(class='table__row')
-          td(class='table__cell table__cell_type_main') 1994
-          td(class='table__cell table__cell_type_main') Adam F ‎
-          td(class='table__cell table__cell_type_main') Sea Of Destiny
-          td(class='table__cell table__cell_type_main') Stronger Than Ever
-          td(class='table__cell table__cell_type_main') Lucky Spin Recordings
-          td(class='table__cell table__cell_type_main') Jungle, Drum'n'Bass
-          td(class='table__cell table__cell_type_main') 6:47
-        tr(class='table__row')
-          td(class='table__cell table__cell_type_main') 2000
-          td(class='table__cell table__cell_type_main') Soulsearcher ‎
-          td(class='table__cell table__cell_type_main') Can't Get Enough (Vocal Club Mix)
-          td(class='table__cell table__cell_type_main') Various ‎- Disco Kandi
-          td(class='table__cell table__cell_type_main') Hed Kandi 
-          td(class='table__cell table__cell_type_main') Garage House, Disco
-          td(class='table__cell table__cell_type_main') 7:19
-
-
-
-  //- loader
-  +loader('loader')
-
-
-
-  //- comment section
-  div
-  +comment(
-    {
-      name: 'Mike Wolfson',
-      pic: './../blocks.basic/comment/user-pic.svg'
-    },
-
-    {
-      time: 'august 19, 2019 17:48',
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
-    }, 
-
-    'comment')
-
-
-  +comment(
-    {
-      name: 'Mike Wolfson',
-      pic: './../blocks.basic/comment/user-pic.svg'
-    },
-
-    {
-      time: 'august 19, 2019 17:48',
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
-    }, 
-
-    'comment')
-
-
-  +comment(
-    {
-      name: 'Mike Wolfson',
-      pic: './../blocks.basic/comment/user-pic.svg'
-    },
-
-    {
-      time: 'august 19, 2019 17:48',
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
-    }, 
-
-    'comment')
-
-
-
-  br
-  //- checkbox
-  //- default:
-  div(class='control') 
-    input(
-      class='control__system-control' 
-      type='checkbox' 
-      id='lastname1')
-    label(
-      class='control__label control__label_checkbox' 
-      for='lastname1') Milk
-    div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Text text text
-
-  //- _validation modifier:
-  div(class='control') 
-    input(
-      class='control__system-control control__system-control_validation' 
-      type='checkbox' 
-      id='lastname2')
-    label(
-      class='control__label control__label_checkbox' 
-      for='lastname2') Milk
-    div(class='control__tip text text_line-height_lg text_color_danger text_size_sm') Teip text Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
-
-  //- _disabled modifier:
-  div(class='control') 
-    input(
-      class='control__system-control control__system-control_disabled' 
-      type='checkbox' 
-      id='lastname3' disabled)
-    label(
-      class='control__label control__label_checkbox' 
-      for='lastname3') Milk
-    div(class='control__tip text text_line-height_lg text_color_disabled text_size_sm') Teip text Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
-
-
-
-
-  br
-  //- radio
-  //- default checked:
-  div(class='control') 
-    input(
-      class='control__system-control'
-      id='radio1' 
-      type='radio'  
-      name='radio' 
-      value='' 
-      checked='checked')
-    label(
-      class='control__label control__label_radio' 
-      for='radio1') Milk
-    div(class='control__tip  text text_line-height_lg text_color_gray-light text_size_sm') Text text text
-
-  //- validation modifier
-  div(class='control') 
-    input(
-      class='control__system-control control__system-control_validation' 
-      type='radio' 
-      id='radio2' 
-      name='radio')
-    label(
-      class='control__label control__label_radio' 
-      for='radio2') Milk
-    div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-  //- disabled modifier
-  div(class='control') 
-    input(
-      class='control__system-control control__system-control_disabled'
-      id='radio3'  
-      type='radio' 
-      name='radio'
-      disabled)
-    label(
-      class='control__label control__label_radio' 
-      for='radio3') Milk
-    div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Text text text
-
-
-
-
-
-  //- switch
-  div(class='control control_switch')
-    input(
-      class='control__system-control' 
-      id='switch1'
-      type='checkbox'
-      name='switch')
-    label(
-      class='control__label control__label_switch' 
-      for='switch1') Milk
-    div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
-
-  //- switch validation modifier
-  div(class='control control_switch')
-    input(
-      class='control__system-control control__system-control_validation' 
-      id='switch2'
-      type='checkbox'
-      name='switch')
-    label(
-      class='control__label control__label_switch' 
-      for='switch2') Milk
-    div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
-
-  //- switch validation modifier
-  div(class='control control_switch')
-    input(
-      class='control__system-control control__system-control_disabled' 
-      id='switch3'
-      type='checkbox'
-      name='switch'
-      disabled)
-    label(
-      class='control__label control__label_switch' 
-      for='switch3') Milk
-    div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+
+    //- ------------------------------------------------------------
+
+
+
+    //- grid-page-layout2
+    section(class='block')
+      section(class='grid-page-layout2')
+        div(class='grid-page-layout2__one')
+          One One One One One One One One One One One One One One One
+        div(class='grid-page-layout2__two') Two 
+        div(class='grid-page-layout2__three') Three 
+        div(class='grid-page-layout2__four') Four 
+        div(class='grid-page-layout2__five') Five Five Five Five Five
+
+
+
+    //- ------------------------------------------------------------
+
+
+
+    section(class='block')
+      //- img-svg
+      //- as <img>
+      +img-svg('img', './../img/logo.svg', 'Logoipsum logo', 'Logoipsum')
+      //- as CSS background-image
+      +img-svg('div')
+      //- and if you need interactivity, use SVG with the help of <object> tag
+      +img-svg('object', './../img/logo.svg')
+
+
+
+    //- ------------------------------------------------------------
+
+
+
+    section(class='block')
+      //- header
+      header(class='header header_view_fullscreen-image header_align-content_center')
+        +heading('Full screen Responsive image ', 'heading heading_size_h1') 
+
+
+
+    //- ------------------------------------------------------------
+
+
+
+    section(class='block')
+      //- blockquote
+      +blockquote(
+        {
+          text: 'Big type, even huge type, can be beautiful and useful. But poise is usually far more important than size – and poise consists primarily of emptiness. Typographically, poise is made of white&space.',
+          author: 'Robert Bringhurst',
+          source: 'The Elements of Typographic Style',
+          sourceURL: 'https://github.com/ponomarevandrey'
+
+        },
+
+        'blockquote text text_size_xl blockquote_theme_black'
+      )
+
+
+
+    //- ------------------------------------------------------------
+
+
+
+    section(class='block')
+      //- back-to-top-btn
+      button(
+        class='btn btn_type_back-to-top'
+        title='Go to top'
+      ) Top
+
+
+
+    //- ------------------------------------------------------------
+
+
+
+    section(class='block')
+      //- badge
+      +badge('NEW!', 'badge badge_theme_black')
+      +badge('Archived', 'badge badge_theme_black')
+
+
+
+    //- ------------------------------------------------------------
+
+
+
+    section(class='block')
+      //- label
+      +label('Recursion', 'http://google.com', 'label label_theme_white')
+      +label('Callback', 'http://google.com', 'label label_theme_white')
+      +label('Prototypes', 'http://google.com', 'label label_theme_white')
+
+
+
+    //- ------------------------------------------------------------
+
+
+    section(class='block')
+      //- pagination
+      +pagination('pagination')
+
+
+
+    //- ------------------------------------------------------------
+
+
+
+    section(class='block')
+      //- breadcrumbs
+      +breadcrumb(
+        'breadcrumb', 
+        { name: 'Home', url: 'https://github.com/ponomarevandrey' },
+        { name: 'Equipment', url: 'https://github.com/ponomarevandrey' },
+        { name: 'Cooking Equipment', url: 'https://github.com/ponomarevandrey' }
+      )
+
+
+
+    //- ------------------------------------------------------------
+
+
+
+    section(class='block')
+      //- icons
+      //- color - bradn color
+      div(style='')
+        +icons('github', 'https://github.com/ponomarevandrey', 'md')
+        +icons('facebook', 'https://github.com/ponomarevandrey', 'md')
+        +icons('instagram', 'https://github.com/ponomarevandrey', 'md')
+        +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'md')
+        +icons('telegram', 'https://github.com/ponomarevandrey', 'md')
+        +icons('twitter', 'https://github.com/ponomarevandrey', 'md')
+        +icons('youtube', 'https://github.com/ponomarevandrey', 'md')
+        +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md')
+
+      //- colo - black
+      div(style='')
+        +icons('github', 'https://github.com/ponomarevandrey', 'md', 'black')
+        +icons('facebook', 'https://github.com/ponomarevandrey', 'md', 'black')
+        +icons('instagram', 'https://github.com/ponomarevandrey', 'md', 'black')
+        +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'md', 'black')
+        +icons('telegram', 'https://github.com/ponomarevandrey', 'md', 'black')
+        +icons('twitter', 'https://github.com/ponomarevandrey', 'md', 'black')
+        +icons('youtube', 'https://github.com/ponomarevandrey', 'md', 'black')
+        +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md', 'black')
+
+      //- color - white
+      div(style='')
+        +icons('github', 'https://github.com/ponomarevandrey', 'md', 'white')
+        +icons('facebook', 'https://github.com/ponomarevandrey', 'md', 'white')
+        +icons('instagram', 'https://github.com/ponomarevandrey', 'md', 'white')
+        +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'md', 'white')
+        +icons('telegram', 'https://github.com/ponomarevandrey', 'md', 'white')
+        +icons('twitter', 'https://github.com/ponomarevandrey', 'md', 'white')
+        +icons('youtube', 'https://github.com/ponomarevandrey', 'md', 'white')
+        +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md', 'white')
+
+      //- sizes - sm
+      div(style='')
+        +icons('github', 'https://github.com/ponomarevandrey', 'sm')
+        +icons('facebook', 'https://github.com/ponomarevandrey', 'sm')
+        +icons('instagram', 'https://github.com/ponomarevandrey', 'sm')
+        +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'sm')
+        +icons('telegram', 'https://github.com/ponomarevandrey', 'sm')
+        +icons('twitter', 'https://github.com/ponomarevandrey', 'sm')
+        +icons('youtube', 'https://github.com/ponomarevandrey', 'sm')
+        +icons('vkontakte', 'https://github.com/ponomarevandrey', 'sm')
+
+      //- sizes - md
+      div(style='')
+        +icons('github', 'https://github.com/ponomarevandrey', 'md')
+        +icons('facebook', 'https://github.com/ponomarevandrey', 'md')
+        +icons('instagram', 'https://github.com/ponomarevandrey', 'md')
+        +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'md')
+        +icons('telegram', 'https://github.com/ponomarevandrey', 'md')
+        +icons('twitter', 'https://github.com/ponomarevandrey', 'md')
+        +icons('youtube', 'https://github.com/ponomarevandrey', 'md')
+        +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md')
+
+      //- sizes - lg
+      div(style='')
+        +icons('github', 'https://github.com/ponomarevandrey', 'lg')
+        +icons('facebook', 'https://github.com/ponomarevandrey', 'lg')
+        +icons('instagram', 'https://github.com/ponomarevandrey', 'lg')
+        +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'lg')
+        +icons('telegram', 'https://github.com/ponomarevandrey', 'lg')
+        +icons('twitter', 'https://github.com/ponomarevandrey', 'lg')
+        +icons('youtube', 'https://github.com/ponomarevandrey', 'lg')
+        +icons('vkontakte', 'https://github.com/ponomarevandrey', 'lg')
+
+
+
+    //- ------------------------------------------------------------
+
+
+
+    section(class='block')
+      //- tooltip
+      div
+        p(class='text text_display_inline') ... some text, 
+          span(class='tooltip') hoverthepointer
+            span(class='tooltip__content') Your text
+
+        br
+
+        span(class='tooltip' style='display: inline-block; width: 50px; height: 50px; background-color: black; border-radius: 10000px;')
+          span(class='tooltip__content') Your text
+
+
+
+    //- ------------------------------------------------------------
+
+
+
+    section(class='block')
+      //- embed (videos, ...)
+      +embed('https://www.youtube.com/embed/oRkNaF0QvnI', 'embed')
+
+
+
+    //- ------------------------------------------------------------
+
+
+
+
+    section(class='block')
+      //- table
+      div(class='table table_theme_documentation')
+        table(class='table__container')
+          caption(class='table__caption') Table 1.1 Playlist
+          thead
+            tr(class='table__row text text_color_white')
+              th(class='table__cell table__cell_type_header') Date
+              th(class='table__cell table__cell_type_header') Artist
+              th(class='table__cell table__cell_type_header') Title
+              th(class='table__cell table__cell_type_header') Album
+              th(class='table__cell table__cell_type_header') Label
+              th(class='table__cell table__cell_type_header') Genres
+              th(class='table__cell table__cell_type_header') Duration
+          tbody
+            tr(class='table__row')
+              td(class='table__cell table__cell_type_main') 1971
+              td(class='table__cell table__cell_type_main') Gil Scott-Heron
+              td(class='table__cell table__cell_type_main') Save The Children
+              td(class='table__cell table__cell_type_main') Pieces Of A Man
+              td(class='table__cell table__cell_type_main') Flying Dutchman
+              td(class='table__cell table__cell_type_main') Soul, Funk, Jazz
+              td(class='table__cell table__cell_type_main') 4:55
+            tr(class='table__row')
+              td(class='table__cell table__cell_type_main') 1975
+              td(class='table__cell table__cell_type_main') Rufus Featuring Chaka Khan
+              td(class='table__cell table__cell_type_main') Sweet Thing
+              td(class='table__cell table__cell_type_main') Rufus Featuring Chaka Khan
+              td(class='table__cell table__cell_type_main') ABC Records
+              td(class='table__cell table__cell_type_main') Soul, Funk, Disco
+              td(class='table__cell table__cell_type_main') 3:18
+            tr(class='table__row')
+              td(class='table__cell table__cell_type_main') 1994
+              td(class='table__cell table__cell_type_main') Adam F ‎
+              td(class='table__cell table__cell_type_main') Sea Of Destiny
+              td(class='table__cell table__cell_type_main') Stronger Than Ever
+              td(class='table__cell table__cell_type_main') Lucky Spin Recordings
+              td(class='table__cell table__cell_type_main') Jungle, Drum'n'Bass
+              td(class='table__cell table__cell_type_main') 6:47
+            tr(class='table__row')
+              td(class='table__cell table__cell_type_main') 2000
+              td(class='table__cell table__cell_type_main') Soulsearcher ‎
+              td(class='table__cell table__cell_type_main') Can't Get Enough (Vocal Club Mix)
+              td(class='table__cell table__cell_type_main') Various ‎- Disco Kandi
+              td(class='table__cell table__cell_type_main') Hed Kandi 
+              td(class='table__cell table__cell_type_main') Garage House, Disco
+              td(class='table__cell table__cell_type_main') 7:19
+
+
+
+
+    //- ------------------------------------------------------------
+
+
+
+    section(class='block')
+      //- loader
+      +loader('loader')
+
+
+
+    //- ------------------------------------------------------------
+
+
+
+    section(class='block')
+      //- comment section
+      div
+      +comment(
+        {
+          name: 'Mike Wolfson',
+          pic: './../blocks.basic/comment/user-pic.svg'
+        },
+
+        {
+          time: 'august 19, 2019 17:48',
+          content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+        }, 
+
+        'comment')
+
+
+      +comment(
+        {
+          name: 'Mike Wolfson',
+          pic: './../blocks.basic/comment/user-pic.svg'
+        },
+
+        {
+          time: 'august 19, 2019 17:48',
+          content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+        }, 
+
+        'comment')
+
+
+      +comment(
+        {
+          name: 'Mike Wolfson',
+          pic: './../blocks.basic/comment/user-pic.svg'
+        },
+
+        {
+          time: 'august 19, 2019 17:48',
+          content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+        }, 
+
+        'comment')
+
+
+
+    //- ------------------------------------------------------------
+
+
+    section(class='block')
+      //- checkbox
+      //- default:
+      div(class='control') 
+        input(
+          class='control__system-control' 
+          type='checkbox' 
+          id='lastname1')
+        label(
+          class='control__label control__label_checkbox' 
+          for='lastname1') Milk
+        div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Text text text
+
+      //- _validation modifier:
+      div(class='control') 
+        input(
+          class='control__system-control control__system-control_validation' 
+          type='checkbox' 
+          id='lastname2')
+        label(
+          class='control__label control__label_checkbox' 
+          for='lastname2') Milk
+        div(class='control__tip text text_line-height_lg text_color_danger text_size_sm') Teip text Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+
+      //- _disabled modifier:
+      div(class='control') 
+        input(
+          class='control__system-control control__system-control_disabled' 
+          type='checkbox' 
+          id='lastname3' disabled)
+        label(
+          class='control__label control__label_checkbox' 
+          for='lastname3') Milk
+        div(class='control__tip text text_line-height_lg text_color_disabled text_size_sm') Teip text Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+
+
+
+    //- ------------------------------------------------------------
+
+
+
+    section(class='block')
+      //- radio
+      //- default checked:
+      div(class='control') 
+        input(
+          class='control__system-control'
+          id='radio1' 
+          type='radio'  
+          name='radio' 
+          value='' 
+          checked='checked')
+        label(
+          class='control__label control__label_radio' 
+          for='radio1') Milk
+        div(class='control__tip  text text_line-height_lg text_color_gray-light text_size_sm') Text text text
+
+      //- validation modifier
+      div(class='control') 
+        input(
+          class='control__system-control control__system-control_validation' 
+          type='radio' 
+          id='radio2' 
+          name='radio')
+        label(
+          class='control__label control__label_radio' 
+          for='radio2') Milk
+        div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+      //- disabled modifier
+      div(class='control') 
+        input(
+          class='control__system-control control__system-control_disabled'
+          id='radio3'  
+          type='radio' 
+          name='radio'
+          disabled)
+        label(
+          class='control__label control__label_radio' 
+          for='radio3') Milk
+        div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Text text text
+
+
+
+    //- ------------------------------------------------------------
+
+
+
+    section(class='block')
+      //- switch
+      div(class='control control_switch')
+        input(
+          class='control__system-control' 
+          id='switch1'
+          type='checkbox'
+          name='switch')
+        label(
+          class='control__label control__label_switch' 
+          for='switch1') Milk
+        div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+
+      //- switch validation modifier
+      div(class='control control_switch')
+        input(
+          class='control__system-control control__system-control_validation' 
+          id='switch2'
+          type='checkbox'
+          name='switch')
+        label(
+          class='control__label control__label_switch' 
+          for='switch2') Milk
+        div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+
+      //- switch validation modifier
+      div(class='control control_switch')
+        input(
+          class='control__system-control control__system-control_disabled' 
+          id='switch3'
+          type='checkbox'
+          name='switch'
+          disabled)
+        label(
+          class='control__label control__label_switch' 
+          for='switch3') Milk
+        div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

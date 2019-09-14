@@ -1,37 +1,45 @@
 # How to use
 
-- icons in brand colors:
+- sizes — sm, md, lg:
 ```pug
-  +icon('github', '###')
-  +icon('facebook', 'https://github.com/ponomarevandrey')
-  +icon('instagram', '###')
-  +icon('odnoklassniki', '###')
-  +icon('telegram', '###')
-  +icon('twitter', '###')
-  +icon('youtube', '###')
-  +icon('vkontakte', '###')
++icon('github', 'https://github.com/ponomarevandrey', 'sm', 'black')
++icon('github', 'https://github.com/ponomarevandrey', 'md', 'white')
++icon('github', 'https://github.com/ponomarevandrey', 'lg')
+
 ```
 
-- black icons: 
+- color — brand colors:
 ```pug
-  +icon('github', '###', 'black')
-  +icon('facebook', 'https://github.com/ponomarevandrey', 'black')
-  +icon('instagram', '###', 'black')
-  +icon('odnoklassniki', '###', 'black')
-  +icon('telegram', '###', 'black')
-  +icon('twitter', '###', 'black')
-  +icon('youtube', '###', 'black')
-  +icon('vkontakte', '###', 'black')
++icon('github', 'https://github.com/ponomarevandrey')
++icon('facebook', 'https://github.com/ponomarevandrey')
++icon('instagram', 'https://github.com/ponomarevandrey')
++icon('odnoklassniki', 'https://github.com/ponomarevandrey')
++icon('telegram', 'https://github.com/ponomarevandrey')
++icon('twitter', 'https://github.com/ponomarevandrey')
++icon('youtube', 'https://github.com/ponomarevandrey')
++icon('vkontakte', 'https://github.com/ponomarevandrey')
 ```
 
-- white icons
+- color — black : 
 ```pug
-  +icon('github', '###', 'white')
-  +icon('facebook', 'https://github.com/ponomarevandrey', 'white')
-  +icon('instagram', '###', 'white')
-  +icon('odnoklassniki', '###', 'white')
-  +icon('telegram', '###', 'white')
-  +icon('twitter', '###', 'white')
-  +icon('youtube', '###', 'white')
-  +icon('vkontakte', '###', 'white')
++icon('github', 'https://github.com/ponomarevandrey', 'black')
++icon('facebook', 'https://github.com/ponomarevandrey', 'black')
++icon('instagram', 'https://github.com/ponomarevandrey', 'black')
++icon('odnoklassniki', 'https://github.com/ponomarevandrey', 'black')
++icon('telegram', 'https://github.com/ponomarevandrey', 'black')
++icon('twitter', 'https://github.com/ponomarevandrey', 'black')
++icon('youtube', 'https://github.com/ponomarevandrey', 'black')
++icon('vkontakte', 'https://github.com/ponomarevandrey', 'black')
+```
+
+- color — white
+```pug
++icon('github', 'https://github.com/ponomarevandrey', 'white')
++icon('facebook', 'https://github.com/ponomarevandrey', 'white')
++icon('instagram', 'https://github.com/ponomarevandrey', 'white')
++icon('odnoklassniki', 'https://github.com/ponomarevandrey', 'white')
++icon('telegram', 'https://github.com/ponomarevandrey', 'white')
++icon('twitter', 'https://github.com/ponomarevandrey', 'white')
++icon('youtube', 'https://github.com/ponomarevandrey', 'white')
++icon('vkontakte', 'https://github.com/ponomarevandrey', 'white')
 ```

@@ -1,6 +1,6 @@
 //- 
   if you omit 'color' value when calling mixin, 'color' will default to 'name' argument
-mixin icon (name, href, color=`${name}`)
+mixin icons (name, href, size, color=`${name}`)
   //- 
     the path inside <use> element should be relative to webpack 'build' folder, not to 'icons' component folder
 
@@ -13,7 +13,7 @@ mixin icon (name, href, color=`${name}`)
       title='Github'
     )
       span(class='icons__access-label') Github
-      svg(class=`icons__img icons__img_color_${color}`)
+      svg(class=`icons__img icons__img_size_${size} icons__img_color_${color}`)
         use(xlink:href='./img/sprite.svg#github')
 
 
@@ -27,7 +27,7 @@ mixin icon (name, href, color=`${name}`)
       title='Facebook'
     )
       span(class='icons__access-label') Facebook
-      svg(class=`icons__img icons__img_color_${color}`)
+      svg(class=`icons__img icons__img_size_${size} icons__img_color_${color}`)
         use(xlink:href='./img/sprite.svg#fb')
 
 
@@ -41,7 +41,7 @@ mixin icon (name, href, color=`${name}`)
       title='Instagram'
     )
       span(class='icons__access-label') Instagram
-      svg(class=`icons__img icons__img_color_${color}`)
+      svg(class=`icons__img icons__img_size_${size} icons__img_color_${color}`)
         use(xlink:href='./img/sprite.svg#instagram')
 
 
@@ -55,7 +55,7 @@ mixin icon (name, href, color=`${name}`)
       title='Odnoklassniki'
     )
       span(class='icons__access-label') Odnoklassniki
-      svg(class=`icons__img icons__img_color_${color}`)
+      svg(class=`icons__img icons__img_size_${size} icons__img_color_${color}`)
         use(xlink:href='./img/sprite.svg#ok')
 
 
@@ -69,7 +69,7 @@ mixin icon (name, href, color=`${name}`)
       title='Telegram'
     )
       span(class='icons__access-label') Telegram
-      svg(class=`icons__img icons__img_color_${color}`)
+      svg(class=`icons__img icons__img_size_${size} icons__img_color_${color}`)
         use(xlink:href='./img/sprite.svg#telegram')
 
 
@@ -83,7 +83,7 @@ mixin icon (name, href, color=`${name}`)
       title='Twitter'
     )
       span(class='icons__access-label') Twitter
-      svg(class=`icons__img icons__img_color_${color}`)
+      svg(class=`icons__img icons__img_size_${size} icons__img_color_${color}`)
         use(xlink:href='./img/sprite.svg#twitter')
 
 
@@ -97,7 +97,7 @@ mixin icon (name, href, color=`${name}`)
       title='YouTube'
     )
       span(class='icons__access-label') YouTube
-      svg(class=`icons__img icons__img_color_${color}`)
+      svg(class=`icons__img icons__img_size_${size} icons__img_color_${color}`)
         use(xlink:href='./img/sprite.svg#youtube')
 
 
@@ -111,5 +111,5 @@ mixin icon (name, href, color=`${name}`)
       title='VKontakte'
     )
       span(class='icons__access-label') VKontakte
-      svg(class=`icons__img icons__img_color_${color}`)
+      svg(class=`icons__img icons__img_size_${size} icons__img_color_${color}`)
         use(xlink:href='./img/sprite.svg#vk')

@@ -16,7 +16,7 @@
   &__cell {
     padding: 1em;
     text-align: left;
-    vertical-align: baseline;
+    vertical-align: top;
 
     /*
     &_type_main {
@@ -56,6 +56,7 @@
     & tr:hover {
       background-color: $color_black;
       color: $color_gray-lightest;
+      transition: all 0.15s ease;
     }
   }
 }
