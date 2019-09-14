@@ -853,21 +853,23 @@ block main
 
 
 
+    //- breadcrumbs
+    +block(
+      { name: 'breadcrumbs',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/breadcrumbs',
+        description: 'Breadcrumbs' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/label/README.md
+      div(class='block__example')
+        +breadcrumb(
+          'breadcrumb', 
+          { name: 'Home', url: 'https://github.com/ponomarevandrey' },
+          { name: 'Equipment', url: 'https://github.com/ponomarevandrey' },
+          { name: 'Cooking Equipment', url: 'https://github.com/ponomarevandrey' }
+        )
 
-
-
-    //- ------------------------------------------------------------
-
-
-
-    section(class='block')
-      //- breadcrumbs
-      +breadcrumb(
-        'breadcrumb', 
-        { name: 'Home', url: 'https://github.com/ponomarevandrey' },
-        { name: 'Equipment', url: 'https://github.com/ponomarevandrey' },
-        { name: 'Cooking Equipment', url: 'https://github.com/ponomarevandrey' }
-      )
 
 
 
