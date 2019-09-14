@@ -445,6 +445,17 @@ block main
           'btn btn_theme_black btn_size_md'
         )
 
+        //- back-to-top-btn
+        +btn(
+          { 
+            tag: 'button', 
+            text: 'Top', 
+            url: undefined, 
+            state: undefined
+          },
+          'btn btn_theme_black btn_type_back-to-top'
+        )
+
 
 
     //- responsive columns grid
@@ -759,66 +770,89 @@ block main
 
 
 
+    //- blockquote
+    +block(
+      { name: 'blockquote',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/blockquote',
+        description: 'Quote' },
 
+      { name: 'theme',
+        values: ['black'],
+        description: 'Color theme' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/link/README.md
+      div(class='block__example')
+        +blockquote(
+            {
+              text: 'Big type, even huge type, can be beautiful and useful. But poise is usually far more important than size – and poise consists primarily of emptiness. Typographically, poise is made of white&space.',
+              author: 'Robert Bringhurst',
+              source: 'The Elements of Typographic Style',
+              sourceURL: 'https://github.com/ponomarevandrey'
 
-    section(class='block')
-      //- blockquote
-      +blockquote(
-        {
-          text: 'Big type, even huge type, can be beautiful and useful. But poise is usually far more important than size – and poise consists primarily of emptiness. Typographically, poise is made of white&space.',
-          author: 'Robert Bringhurst',
-          source: 'The Elements of Typographic Style',
-          sourceURL: 'https://github.com/ponomarevandrey'
+            },
 
-        },
-
-        'blockquote text text_size_xl blockquote_theme_black'
-      )
-
-
-
-    //- ------------------------------------------------------------
-
-
-
-    section(class='block')
-      //- back-to-top-btn
-      button(
-        class='btn btn_type_back-to-top'
-        title='Go to top'
-      ) Top
+            'blockquote text text_size_xl blockquote_theme_black'
+          )
 
 
 
-    //- ------------------------------------------------------------
+    //- badge
+    +block(
+      { name: 'badge',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/badge',
+        description: 'Badge' },
+
+      { name: 'theme',
+        values: ['black', 'white'],
+        description: 'Badge' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/link/README.md
+      div(class='block__example')
+        +badge('NEW!', 'badge badge_theme_black')
+        +badge('Archived', 'badge badge_theme_black')
+        +badge('NEW!', 'badge badge_theme_white')
+        +badge('Archived', 'badge badge_theme_white')
 
 
 
-    section(class='block')
-      //- badge
-      +badge('NEW!', 'badge badge_theme_black')
-      +badge('Archived', 'badge badge_theme_black')
+    //- label
+    +block(
+      { name: 'label',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/label',
+        description: 'Label' },
+
+      { name: 'theme',
+        values: ['black', 'white'],
+        description: 'Clickable label' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/label/README.md
+      div(class='block__example')
+        +label('Recursion', 'http://google.com', 'label label_theme_white')
+        +label('Callback', 'http://google.com', 'label label_theme_white')
+        +label('Prototypes', 'http://google.com', 'label label_theme_white')
 
 
 
-    //- ------------------------------------------------------------
+    //- pagination
+    +block(
+      { name: 'pagination',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/pagination',
+        description: 'Pagination' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/link/README.md
+      div(class='block__example')
+        +pagination('pagination')
 
 
 
-    section(class='block')
-      //- label
-      +label('Recursion', 'http://google.com', 'label label_theme_white')
-      +label('Callback', 'http://google.com', 'label label_theme_white')
-      +label('Prototypes', 'http://google.com', 'label label_theme_white')
-
-
-
-    //- ------------------------------------------------------------
-
-
-    section(class='block')
-      //- pagination
-      +pagination('pagination')
 
 
 

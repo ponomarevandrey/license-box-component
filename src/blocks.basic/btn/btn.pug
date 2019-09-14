@@ -1,5 +1,9 @@
 mixin btn(btn, classList='btn btn_theme_black btn_size_md')
 
+  //- back to top button 
+  - if (classList.includes('btn_type_back-to-top'))
+    button(class='btn btn_type_back-to-top' title='Go to top') Top
+
   //- <a> button
   - if (btn.tag === 'a' && btn.state === 'enabled')
     a(class=`${classList}` href=`${btn.url}`) #{btn.text}
