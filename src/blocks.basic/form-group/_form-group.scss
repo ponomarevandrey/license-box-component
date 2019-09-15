@@ -1,3 +1,8 @@
+// special wrapper used only with <fieldset> tag to fix its width problem
+.form-group-wrapper {
+  width: 100%;
+}
+
 .form-group {
   display: grid;
 
@@ -68,6 +73,8 @@
   // Modifiers:
 
   &_row {
+    width: 100%; // remove this property if you will encounter any errors related to block responsivness
+
     // on a big screen, make form-group a grid with horizonal rows:
     @media screen and (min-width: $screen-sm) {
       // grid-template-columns: [col1-start] 18% [col1-end col2-start] 1fr [col2-end];
@@ -143,35 +150,3 @@
     }
   }
 }
-
-/*
-
-    // Modifiers:
-
-
-    &_error {
-      color: $color_danger;
-
-      & .form__frame::placeholder {
-        color: $color_danger;
-        opacity: 1;
-      }
-
-      & .form__frame {
-        background-color: lighten($color_danger, 20%);
-        color: $color_danger;
-        border-color: lighten($color_danger, 20%);
-        outline-color: $color_danger;
-      }
-
-      & .form__frame:focus {
-        background-color: lighten($color_danger, 20%);
-        border: 1px solid $color_danger;
-        outline-color: $color_danger;
-        color: $color_danger;
-      }
-    }
-  }
-
-
-*/

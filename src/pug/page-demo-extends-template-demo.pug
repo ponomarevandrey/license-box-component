@@ -92,23 +92,6 @@ block head
 
 block header
 
-  //- nav-fixed
-
-    div(class='nav-fixed')
-      div(class='nav-fixed__logo')
-        img(
-          src='./../img/biscuit-logo-white.svg' 
-          alt='Logoipsum logo'
-          title='Logoipsum'
-          class='img-svg'
-        )
-      div(class='nav-fixed__items')
-        a(href='#main' class='nav-fixed__item') Main
-        a(href='#portfolio' class='nav-fixed__item') Portfolio
-        a(href='#blog' class='nav-fixed__item') Blog
-        a(href='#about' class='nav-fixed__item nav-fixed__item_active') About
-        a(href='#contacts' class='nav-fixed__item') Contacts
-      
 
       
 block main
@@ -126,25 +109,26 @@ block main
             'black')
         div(class='block__description') 
           +text('text text_display_inline') #{biscuitBlock.description}
-        div(class='table block__table table_theme_documentation')
-          table(class='table__container')
-            thead
-              tr(class='table__row text text_color_white')
-                th(class='table__cell table__cell_type_header block__col1') Modifiers
-                th(class='table__cell table__cell_type_header block__col2') Values
-                th(class='table__cell table__cell_type_header block__col3') Description
-            tbody
-              each mod in allMods
-                tr(class='table__row')
-                  td(class='table__cell table__cell_type_main block__col1')
-                    +code(`${mod.name}`, 'code code_display_inline code_theme_black')
-                  td(class='table__cell table__cell_type_main block__col2')
-                    - if (mod.values === undefined) 
-                      +text('text text_display_inline') —
-                    - else 
-                      each value in mod.values
-                        +code(`${value}`, 'code code_display_inline code_theme_black')
-                  td(class='table__cell table__cell_type_main block__col3') #{mod.description}
+        - if (allMods != false)
+          div(class='table block__table table_theme_documentation')
+            table(class='table__container')
+              thead
+                tr(class='table__row text text_color_white')
+                  th(class='table__cell table__cell_type_header block__col1') Modifiers
+                  th(class='table__cell table__cell_type_header block__col2') Values
+                  th(class='table__cell table__cell_type_header block__col3') Description
+              tbody
+                each mod in allMods
+                  tr(class='table__row')
+                    td(class='table__cell table__cell_type_main block__col1')
+                      +code(`${mod.name}`, 'code code_display_inline code_theme_black')
+                    td(class='table__cell table__cell_type_main block__col2')
+                      - if (mod.values === undefined) 
+                        +text('text text_display_inline') —
+                      - else 
+                        each value in mod.values
+                          +code(`${value}`, 'code code_display_inline code_theme_black')
+                    td(class='table__cell table__cell_type_main block__col3') #{mod.description}
       block        
 
 
@@ -756,30 +740,6 @@ block main
 
 
 
-    //- header
-    +block(
-      { name: 'header',
-        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/header',
-        description: 'Page header' }
-    )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.basic/header/README.md
-      div(class='block__example')
-        +btn(
-          { 
-            tag: 'a', 
-            text: 'Demo', 
-            url: 'https://github.com/ponomarevandrey', 
-            state: 'enabled' 
-          },
-          'btn btn_theme_empty btn_size_md'
-        )
-        header(class='header header_view_fullscreen-image header_align-content_center')
-          +heading('heading heading_size_h1') Full screen Responsive image 
-
-
-
     //- blockquote
     +block(
       { name: 'blockquote',
@@ -1170,7 +1130,7 @@ block main
         div
           //- checkbox:
 
-          //- default:
+          //- checkbox default:
           div(class='control') 
             input(
               class='control__system-control' 
@@ -1181,7 +1141,7 @@ block main
               for='lastname1') Milk
             div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Text text text
 
-          //- _validation modifier:
+          //- checkbox _validation modifier:
           div(class='control') 
             input(
               class='control__system-control control__system-control_validation' 
@@ -1192,7 +1152,7 @@ block main
               for='lastname2') Milk
             div(class='control__tip text text_line-height_lg text_color_danger text_size_sm') Teip text Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
 
-          //- _disabled modifier:
+          //- checkbox _disabled modifier:
           div(class='control') 
             input(
               class='control__system-control control__system-control_disabled' 
@@ -1290,25 +1250,50 @@ block main
 
 
 
-
-
-
-
-
-
-
-
-
-
-  //- form + grid-forms
-  div
-    //- example 1:
-    form(class='grid-forms' action='' method='')
-      div(style='background-color: red;') a 
-      div(style='background-color: blue;') b 
-      div(style='background-color: green;') c 
-      div(style='background-color: pink;') d
+    //- grid-forms
+    +block(
+      { name: 'grid-forms',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/grid-forms',
+        description: 'Grid-based form layout' }
+    )
       //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/grid-forms/README.md
+      div(class='block__example')
+        form(class='grid-forms' action='' method='')
+          div(style='background-color: red;') a 
+          div(style='background-color: blue;') b 
+          div(style='background-color: green;') c 
+          div(style='background-color: pink;') d
+
+
+
+    //- form-group
+    +block(
+      { name: 'form-group',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/gform-group',
+        description: 'Form group' },
+
+      { name: 'type',
+        values: ['textarea', 'search'],
+        description: 'Applies to "form-group__input"' },
+
+      { name: 'row',
+        values: undefined,
+        description: 'Applies to "form-group"' },
+
+      { name: 'disabled',
+        values: undefined,
+        description: 'Applies to "form-group"' },
+
+      { name: 'validation',
+        values: ['error', 'success'],
+        description: 'Applies to "form-group"' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/grid-forms/README.md
+      div(class='block__example')
         div(class='form-group')
           label(
             class='form-group__label' 
@@ -1321,50 +1306,11 @@ block main
               name='name' 
               placeholder='Your name')
             div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
-        
+
         div(class='form-group form-group_row')
             label(
               class='form-group__label' 
               for='name') Phone/Mobile
-            div(class='form-group__container')
-              input(
-                class='form-group__input' 
-                type='text' 
-                id='name' 
-                name='name' 
-                placeholder='Your name')
-              div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
-
-        div(class='form-group')
-            label(
-              class='form-group__label' 
-              for='name') A long 
-            div(class='form-group__container')
-              input(
-                class='form-group__input' 
-                type='text' 
-                id='name' 
-                name='name' 
-                placeholder='Your name')
-              div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
-
-        div(class='form-group form-group')
-            label(
-              class='form-group__label' 
-              for='name') First name
-            div(class='form-group__container')
-              input(
-                class='form-group__input' 
-                type='text' 
-                id='name' 
-                name='name' 
-                placeholder='Your name')
-              div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
-
-        div(class='form-group form-group_row')
-            label(
-              class='form-group__label' 
-              for='name') First name
             div(class='form-group__container')
               input(
                 class='form-group__input' 
@@ -1399,7 +1345,6 @@ block main
                 name='story') Default text
               div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
 
-
         //- form validation success
         div(class='form-group form-group_validation_success form-group_row text')
             label(
@@ -1413,8 +1358,7 @@ block main
                 name='story') Default text
               div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
 
-
-
+        //- form-group disabled
         div(class='form-group form-group_row form-group_disabled')
             label(
               class='form-group__label' 
@@ -1429,7 +1373,8 @@ block main
                 disabled)
               div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
 
-        div(class='form-group form-group_row')
+        //- form-group search
+        div(class='form-group form-group_row' style='width: 100%;')
             label(
               class='form-group__label' 
               for='name') Search
@@ -1441,10 +1386,8 @@ block main
                 name='name' 
                 placeholder='Search...')
 
-
-
         //- fieldset
-        fieldset(class='fieldset')
+        fieldset(class='form-group-wrapper')
           div(class='form-group form-group_row')
             legend(class='form-group__label') First name
 
@@ -1486,49 +1429,6 @@ block main
                 div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Text text text       
 
 
-        //- validation modifier error
-        div(class='form-group form-group_row form-group_validation_error')
-            label(
-              class='form-group__label' 
-              for='name') First name
-            div(class='form-group__container')
-              input(
-                class='form-group__input' 
-                type='text' 
-                id='name' 
-                name='name' 
-                placeholder='Your name')
-              div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
-
-
-        //- validation modifier success
-        div(class='form-group form-group_row form-group_validation_success')
-            label(
-              class='form-group__label' 
-              for='name') First name
-            div(class='form-group__container')
-              input(
-                class='form-group__input' 
-                type='text' 
-                id='name' 
-                name='name' 
-                placeholder='Your name')
-              div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
-
-
-
-
-        //- select component
-        div(class='form__row')
-          div(class='form__label-wrapper')
-            label(for='country') Color
-          div(class='form__frame-wrapper')
-            select(class='form__frame' id='country' name='country')
-              option(value='australia') Red
-              option(value='canada') Green
-              option(value='usa') Blue
-
-
 
     //- select
     +block(
@@ -1540,13 +1440,17 @@ block main
         div(class='block__readme') 
           include:markdown-it ./../blocks.basic/select/README.md
       div(class='block__example')
-        select(class='form__frame' id='country' name='country')
-          option(value='australia') Red
-          option(value='canada') Green
-          option(value='usa') Blue     
+        div(class='form-group form-group_row')
+          label(
+            for='color' 
+            class='form-group__label') Color
+          div(class='form-group__container')
+            select(class='form-group__selectbox' id='selectbox' name='country')
+              option(value='australia') Red
+              option(value='canada') Green
+              option(value='usa') Blue
 
       
-
 
     //- nav-fixed
     +block(
@@ -1558,15 +1462,21 @@ block main
         div(class='block__readme') 
           include:markdown-it ./../blocks.basic/label/README.md
       div(class='block__example')
-        +btn(
-          { 
-            tag: 'a', 
-            text: 'Demo', 
-            url: 'https://github.com/ponomarevandrey', 
-            state: 'enabled'
-          },
-          'btn btn_theme_empty btn_size_md'
-        )
+        div(class='nav-fixed' style='position: relative; width: calc(100% - 2em)')
+          div(class='nav-fixed__logo')
+            img(
+              src='./../img/biscuit-logo-white.svg' 
+              alt='Logoipsum logo'
+              title='Logoipsum'
+              class='img-svg'
+            )
+          div(class='nav-fixed__items')
+            a(href='#main' class='nav-fixed__item') Main
+            a(href='#portfolio' class='nav-fixed__item') Portfolio
+            a(href='#blog' class='nav-fixed__item') Blog
+            a(href='#about' class='nav-fixed__item nav-fixed__item_active') About
+            a(href='#contacts' class='nav-fixed__item') Contacts
+
 
 
 
@@ -1617,20 +1527,7 @@ block main
 
 
 
-    //- main
-    +block(
-      { name: 'main',
-        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/main',
-        description: 'Main part of the page' }
-    )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.basic/main/README.md
-      div(class='block__example')
-
-
-
-    //- page
+    //- modal window
     +block(
       { name: 'modal',
         repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/modal',
@@ -1655,6 +1552,57 @@ block main
       div(class='block__example')
 
 
+    //- header
+    +block(
+      { name: 'header',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/header',
+        description: 'Page header' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/header/README.md
+      div(class='block__example')
+        +btn(
+          { 
+            tag: 'a', 
+            text: 'Demo', 
+            url: 'https://github.com/ponomarevandrey', 
+            state: 'enabled' 
+          },
+          'btn btn_theme_empty btn_size_md'
+        )
+        header(class='header header_view_fullscreen-image header_align-content_center')
+          +heading('heading heading_size_h1') Full screen Responsive image 
+
+
+
+    //- main
+    +block(
+      { name: 'main',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/main',
+        description: 'Main part of the page' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/main/README.md
+      div(class='block__example')
+
+
+
+    //- footer
+    +block(
+      { name: 'footer',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/footer',
+        description: 'Page footer' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/footer/README.md
+      div(class='block__example')
+        footer(class='footer') &copy; 2019
+
+block footer
+  
 
 block script
   script.
