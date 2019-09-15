@@ -58,8 +58,8 @@ import './blocks.basic/link/_link.scss';
 import './blocks.basic/pagination/_pagination.scss';
 // comment
 import './blocks.basic/comment/_comment.scss';
-// form-grid
-import './blocks.basic/form-grid/_form-grid.scss';
+// grid-forms
+import './blocks.basic/grid-forms/_grid-forms.scss';
 
 // Child blocks
 
@@ -98,6 +98,8 @@ import './blocks.basic/form-group/_form-group.scss';
 // nav
 import './blocks.basic/nav/_nav.scss';
 import './blocks.basic/nav/nav.js';
-// nav-foxed
+// nav-fixed
 import './blocks.basic/nav-fixed/_nav-fixed.scss';
+// select
+import './blocks.basic/select/_select.scss';
 //hamburger-menu

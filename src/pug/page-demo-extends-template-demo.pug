@@ -456,6 +456,16 @@ block main
           'btn btn_theme_black btn_type_back-to-top'
         )
 
+        //- button_theme_empty modifier
+        +btn(
+          { 
+            tag: 'a', 
+            text: 'empty theme button', 
+            url: 'https://github.com/ponomarevandrey', 
+            state: 'enabled'
+          },
+          'btn btn_theme_empty btn_size_md'
+        )
 
 
     //- responsive columns grid
@@ -1290,28 +1300,19 @@ block main
 
 
 
-  //- form + form-grid
+  //- form + grid-forms
   div
     //- example 1:
-    form(class='form-grid' action='' method='')
-
-      div(class='form-group')
-        label(
-          class='form-group__label' 
-          for='name') A long sentence you're forced to read to understand what this stupid form wants from you
-        div(class='form-group__container')
-          input(
-            class='form-group__input' 
-            type='text' 
-            id='name' 
-            name='name' 
-            placeholder='Your name')
-          div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
-      
-      div(class='form-group form-group_row')
+    form(class='grid-forms' action='' method='')
+      div(style='background-color: red;') a 
+      div(style='background-color: blue;') b 
+      div(style='background-color: green;') c 
+      div(style='background-color: pink;') d
+      //-
+        div(class='form-group')
           label(
             class='form-group__label' 
-            for='name') Phone/Mobile
+            for='name') A long sentence you're forced to read to understand what this stupid form wants from you
           div(class='form-group__container')
             input(
               class='form-group__input' 
@@ -1320,237 +1321,344 @@ block main
               name='name' 
               placeholder='Your name')
             div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
-
-      div(class='form-group')
-          label(
-            class='form-group__label' 
-            for='name') A long 
-          div(class='form-group__container')
-            input(
-              class='form-group__input' 
-              type='text' 
-              id='name' 
-              name='name' 
-              placeholder='Your name')
-            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
-
-      div(class='form-group form-group')
-          label(
-            class='form-group__label' 
-            for='name') First name
-          div(class='form-group__container')
-            input(
-              class='form-group__input' 
-              type='text' 
-              id='name' 
-              name='name' 
-              placeholder='Your name')
-            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
-
-      div(class='form-group form-group_row')
-          label(
-            class='form-group__label' 
-            for='name') First name
-          div(class='form-group__container')
-            input(
-              class='form-group__input' 
-              type='text' 
-              id='name' 
-              name='name' 
-              placeholder='Your name')
-            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
-
-      div(class='form-group form-group_row')
-          label(
-            class='form-group__label' 
-            for='text1') Textarea
-          div(class='form-group__container')
-            textarea(
-              class='form-group__input form-group__input_type_textarea' 
-              type='text' 
-              id='text1' 
-              name='story') Default text
-            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
-
-      //- form validation error
-      div(class='form-group form-group_validation_error form-group_row text')
-          label(
-            class='form-group__label' 
-            for='text1') Textarea
-          div(class='form-group__container')
-            textarea(
-              class='form-group__input form-group__input_type_textarea' 
-              type='text' 
-              id='text1' 
-              name='story') Default text
-            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
-
-
-      //- form validation success
-      div(class='form-group form-group_validation_success form-group_row text')
-          label(
-            class='form-group__label' 
-            for='text1') Textarea
-          div(class='form-group__container')
-            textarea(
-              class='form-group__input form-group__input_type_textarea' 
-              type='text' 
-              id='text1' 
-              name='story') Default text
-            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
-
-
-
-      div(class='form-group form-group_row form-group_disabled')
-          label(
-            class='form-group__label' 
-            for='name9') First name
-          div(class='form-group__container')
-            input(
-              class='form-group__input' 
-              type='text' 
-              id='name9' 
-              name='name' 
-              placeholder='Your name'
-              disabled)
-            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
-
-      div(class='form-group form-group_row')
-          label(
-            class='form-group__label' 
-            for='name') Search
-          div(class='form-group__container')
-            input(
-              class='form-group__input form-group__input_type_search' 
-              type='text' 
-              id='name' 
-              name='name' 
-              placeholder='Search...')
-
-
-
-      //- fieldset
-      fieldset(class='fieldset')
+        
         div(class='form-group form-group_row')
-          legend(class='form-group__label') First name
-
-          div
-            div(class='form-group__container control')
+            label(
+              class='form-group__label' 
+              for='name') Phone/Mobile
+            div(class='form-group__container')
               input(
-                class='control__system-control'
-                id='f1' 
-                type='radio'
-                value='1'  
-                name='group1')
-              label(
-                class='control__label control__label_radio' 
-                for='f1') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting
-              div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Text text text
+                class='form-group__input' 
+                type='text' 
+                id='name' 
+                name='name' 
+                placeholder='Your name')
+              div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
 
-            div(class='form-group__container control')
+        div(class='form-group')
+            label(
+              class='form-group__label' 
+              for='name') A long 
+            div(class='form-group__container')
               input(
-                class='control__system-control'
-                id='f2' 
-                type='radio'  
-                value='2'
-                name='group1')
-              label(
-                class='control__label control__label_radio' 
-                for='f2') Milk
-              div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting
+                class='form-group__input' 
+                type='text' 
+                id='name' 
+                name='name' 
+                placeholder='Your name')
+              div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
 
-            div(class='form-group__container control')
+        div(class='form-group form-group')
+            label(
+              class='form-group__label' 
+              for='name') First name
+            div(class='form-group__container')
               input(
-                class='control__system-control'
-                id='f3' 
-                type='radio' 
-                value='3' 
-                name='group1')
-              label(
-                class='control__label control__label_radio'
-                for='f3') Milk
-              div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Text text text       
+                class='form-group__input' 
+                type='text' 
+                id='name' 
+                name='name' 
+                placeholder='Your name')
+              div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
+
+        div(class='form-group form-group_row')
+            label(
+              class='form-group__label' 
+              for='name') First name
+            div(class='form-group__container')
+              input(
+                class='form-group__input' 
+                type='text' 
+                id='name' 
+                name='name' 
+                placeholder='Your name')
+              div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
+
+        div(class='form-group form-group_row')
+            label(
+              class='form-group__label' 
+              for='text1') Textarea
+            div(class='form-group__container')
+              textarea(
+                class='form-group__input form-group__input_type_textarea' 
+                type='text' 
+                id='text1' 
+                name='story') Default text
+              div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
+
+        //- form validation error
+        div(class='form-group form-group_validation_error form-group_row text')
+            label(
+              class='form-group__label' 
+              for='text1') Textarea
+            div(class='form-group__container')
+              textarea(
+                class='form-group__input form-group__input_type_textarea' 
+                type='text' 
+                id='text1' 
+                name='story') Default text
+              div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
 
 
-      //- validation modifier error
-      div(class='form-group form-group_row form-group_validation_error')
-          label(
-            class='form-group__label' 
-            for='name') First name
-          div(class='form-group__container')
-            input(
-              class='form-group__input' 
-              type='text' 
-              id='name' 
-              name='name' 
-              placeholder='Your name')
-            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
-
-
-      //- validation modifier success
-      div(class='form-group form-group_row form-group_validation_success')
-          label(
-            class='form-group__label' 
-            for='name') First name
-          div(class='form-group__container')
-            input(
-              class='form-group__input' 
-              type='text' 
-              id='name' 
-              name='name' 
-              placeholder='Your name')
-            div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
+        //- form validation success
+        div(class='form-group form-group_validation_success form-group_row text')
+            label(
+              class='form-group__label' 
+              for='text1') Textarea
+            div(class='form-group__container')
+              textarea(
+                class='form-group__input form-group__input_type_textarea' 
+                type='text' 
+                id='text1' 
+                name='story') Default text
+              div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
 
 
 
+        div(class='form-group form-group_row form-group_disabled')
+            label(
+              class='form-group__label' 
+              for='name9') First name
+            div(class='form-group__container')
+              input(
+                class='form-group__input' 
+                type='text' 
+                id='name9' 
+                name='name' 
+                placeholder='Your name'
+                disabled)
+              div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
 
-      //- select component
-      div(class='form__row')
-        div(class='form__label-wrapper')
-          label(for='country') Color
-        div(class='form__frame-wrapper')
-          select(class='form__frame' id='country' name='country')
-            option(value='australia') Red
-            option(value='canada') Green
-            option(value='usa') Blue
+        div(class='form-group form-group_row')
+            label(
+              class='form-group__label' 
+              for='name') Search
+            div(class='form-group__container')
+              input(
+                class='form-group__input form-group__input_type_search' 
+                type='text' 
+                id='name' 
+                name='name' 
+                placeholder='Search...')
 
 
+
+        //- fieldset
+        fieldset(class='fieldset')
+          div(class='form-group form-group_row')
+            legend(class='form-group__label') First name
+
+            div
+              div(class='form-group__container control')
+                input(
+                  class='control__system-control'
+                  id='f1' 
+                  type='radio'
+                  value='1'  
+                  name='group1')
+                label(
+                  class='control__label control__label_radio' 
+                  for='f1') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting !!!
+                div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Text text text
+
+              div(class='form-group__container control')
+                input(
+                  class='control__system-control'
+                  id='f2' 
+                  type='radio'  
+                  value='2'
+                  name='group1')
+                label(
+                  class='control__label control__label_radio' 
+                  for='f2') Milk
+                div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting
+
+              div(class='form-group__container control')
+                input(
+                  class='control__system-control'
+                  id='f3' 
+                  type='radio' 
+                  value='3' 
+                  name='group1')
+                label(
+                  class='control__label control__label_radio'
+                  for='f3') Milk
+                div(class='control__tip text text_line-height_lg text_color_gray-light text_size_sm') Text text text       
+
+
+        //- validation modifier error
+        div(class='form-group form-group_row form-group_validation_error')
+            label(
+              class='form-group__label' 
+              for='name') First name
+            div(class='form-group__container')
+              input(
+                class='form-group__input' 
+                type='text' 
+                id='name' 
+                name='name' 
+                placeholder='Your name')
+              div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
+
+
+        //- validation modifier success
+        div(class='form-group form-group_row form-group_validation_success')
+            label(
+              class='form-group__label' 
+              for='name') First name
+            div(class='form-group__container')
+              input(
+                class='form-group__input' 
+                type='text' 
+                id='name' 
+                name='name' 
+                placeholder='Your name')
+              div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
+
+
+
+
+        //- select component
+        div(class='form__row')
+          div(class='form__label-wrapper')
+            label(for='country') Color
+          div(class='form__frame-wrapper')
+            select(class='form__frame' id='country' name='country')
+              option(value='australia') Red
+              option(value='canada') Green
+              option(value='usa') Blue
+
+
+
+    //- select
+    +block(
+      { name: 'select',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/select',
+        description: 'Custom select' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/select/README.md
+      div(class='block__example')
+        select(class='form__frame' id='country' name='country')
+          option(value='australia') Red
+          option(value='canada') Green
+          option(value='usa') Blue     
 
       
 
 
+    //- nav-fixed
+    +block(
+      { name: 'nav-fixed',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/nav-fixed',
+        description: 'Fixed navigation bar' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/label/README.md
+      div(class='block__example')
+        +btn(
+          { 
+            tag: 'a', 
+            text: 'Demo', 
+            url: 'https://github.com/ponomarevandrey', 
+            state: 'enabled'
+          },
+          'btn btn_theme_empty btn_size_md'
+        )
 
-  //- nav
-  div
-    div(class='nav')
-      a(href='#main' class='nav__item') Main
-      a(href='#main' class='nav__item') Portfolio
-      a(href='#about' class='nav__item nav__item_active') About
-      a(href='#contacts' class='nav__item') Contacts
 
 
-  //-
-    <button type="button" class="close" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
+    //- nav
+    +block(
+      { name: 'nav',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/nav',
+        description: 'Main navigation' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/nav/README.md
+      div(class='block__example')
+        div(class='nav')
+          a(href='#main' class='nav__item') Main
+          a(href='#main' class='nav__item') Portfolio
+          a(href='#about' class='nav__item nav__item_active') About
+          a(href='#contacts' class='nav__item') Contacts
+
+
+
+    //- btn-close
+    +block(
+      { name: 'btn-close',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/btn-close',
+        description: 'Close button' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/btn-close/README.md
+      div(class='block__example')
+        <button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+
+
+    //- burger-menu
+    +block(
+      { name: 'burger-menu',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/burger-menu',
+        description: 'Hamburger menu' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/burger-menu/README.md
+      div(class='block__example')
+
+
+
+    //- main
+    +block(
+      { name: 'main',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/main',
+        description: 'Main part of the page' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/main/README.md
+      div(class='block__example')
+
+
+
+    //- page
+    +block(
+      { name: 'modal',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/modal',
+        description: 'Modal window' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/modal/README.md
+      div(class='block__example')
 
 
     
+    //- page
+    +block(
+      { name: 'page',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/page',
+        description: 'Global styles for the whole page' }
+    )
+      //-
+        div(class='block__readme') 
+          include:markdown-it ./../blocks.basic/page/README.md
+      div(class='block__example')
+
+
+
 block script
   script.
-  //-
-    const htmlElements = document.querySelectorAll('.demo__item');
-    
-    function openInNewWin(arg) {
-      arg.forEach(el => {
-          el.addEventListener('click', () => {
-            const win = window.open('', 'Component Demo');
-            win.document.body.innerHTML = el.innerHTML;
-          });
-      });
-    }
-    
-    window.addEventListener('load', openInNewWin(htmlElements));
+
     
 
     

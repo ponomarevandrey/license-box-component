@@ -1,8 +1,9 @@
 .nav {
-  background-color: $color_primary;
-  overflow: hidden;
   display: flex;
   flex-flow: row wrap;
+  overflow: hidden;
+  width: 100%;
+  background-color: $color_primary;
 
   &__item {
     color: $color_white;
