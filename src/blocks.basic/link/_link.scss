@@ -1,12 +1,12 @@
 .link {
   // make fade in/out effect on link hover
   &:link {
-    color: $color_black;
+    color: $color_link;
     transition: all 0.2s linear;
   }
 
   &:visited {
-    color: $color_black;
+    color: $color_link;
   }
 
   &:hover {

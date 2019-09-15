@@ -43,12 +43,12 @@
   }
 
   &_theme_empty {
-    color: $color_black;
+    color: $color_text;
     background-color: none;
     display: inline-block;
     position: relative;
     padding: 0.8rem 1rem;
-    border: 1px solid $color_black;
+    border: 1px solid $color_text;
     border-radius: $border_radius;
 
     &:hover {

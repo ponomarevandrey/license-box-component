@@ -22,12 +22,12 @@
 
     &:hover:not(.pagination__item_active) {
       background-color: $color_gray-lightest;
-      color: $color_black;
+      color: $color_text;
     }
 
     &:focus,
     &:active {
-      color: $color_black;
+      color: $color_text;
       box-shadow: 0 0 0 0.2rem $color_gray-lighten;
     }
 
