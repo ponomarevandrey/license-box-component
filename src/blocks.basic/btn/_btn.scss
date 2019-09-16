@@ -33,22 +33,22 @@
     }
 
     &:focus {
-      box-shadow: $form__box-shadow_state_primary;
+      box-shadow: $form__box-shadow_state_initial;
     }
 
     &:active {
       transform: translate(0, 2px);
-      box-shadow: $form__box-shadow_state_primary;
+      box-shadow: $form__box-shadow_state_initial;
     }
   }
 
   &_theme_empty {
-    color: $color_text;
+    color: $color_black;
     background-color: none;
     display: inline-block;
     position: relative;
     padding: 0.8rem 1rem;
-    border: 1px solid $color_text;
+    border: 1px solid $color_black;
     border-radius: $border_radius;
 
     &:hover {
@@ -57,12 +57,12 @@
     }
 
     &:focus {
-      box-shadow: $form__box-shadow_state_primary;
+      box-shadow: $form__box-shadow_state_initial;
     }
 
     &:active {
       transform: translate(0, 2px);
-      box-shadow: $form__box-shadow_state_primary;
+      box-shadow: $form__box-shadow_state_initial;
     }
   }
 
@@ -79,9 +79,14 @@
     right: 20px;
     z-index: 1030; // guarantee that the button is always on top of other layers
     outline: none;
-    background-color: $color_primary;
+    background-color: $color_black;
     color: $color_white;
     padding: 15px;
     border-radius: $border_radius;
+
+    &:hover {
+      background-color: $color_black;
+      color: $color_white;
+    }
   }
 }

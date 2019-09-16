@@ -3,7 +3,7 @@
   flex-flow: row wrap;
   overflow: hidden;
   width: 100%;
-  background-color: $color_primary;
+  background-color: $color_black;
 
   &__item {
     color: $color_white;
@@ -15,7 +15,7 @@
     // State Modifiers:
     &:hover,
     &_active {
-      border-bottom: 8px solid lighten($color_primary, 50%);
+      border-bottom: 8px solid lighten($color_black, 50%);
     }
   }
 }

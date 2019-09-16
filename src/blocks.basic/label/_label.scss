@@ -34,7 +34,7 @@
 
     &:focus,
     &:active {
-      box-shadow: $form__box-shadow_state_primary;
+      box-shadow: $form__box-shadow_state_initial;
     }
   }
 
@@ -60,7 +60,7 @@
 
     &:focus,
     &:active {
-      box-shadow: $form__box-shadow_state_primary;
+      box-shadow: $form__box-shadow_state_initial;
     }
   }
 }

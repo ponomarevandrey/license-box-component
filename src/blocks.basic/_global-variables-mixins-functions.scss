@@ -2,7 +2,7 @@
 // * VARIABLES *
 // *************
 
-// Typography
+/* Typography */
 $root_font-size: 16px;
 
 $font-stack_sans-serif: Lato, Helvetica, Verdana, Arial, Tahoma, sans-serif;
@@ -11,7 +11,7 @@ $font-stack_serif: Georgia, 'Big Caslon', 'Hoefler Text', Garamond, Baskerville,
 $font-stack_monospace: Consolas, 'Lucida Console', 'Lucida Sans Typewriter',
   'Courier New', Courier, monospace;
 
-// Colors
+/* Colors */
 $color_white: white;
 $color_gray-lightest: #f2f2f2;
 $color_gray-lighten: #cccccc;
@@ -22,16 +22,24 @@ $color_gray-darken: #333333;
 $color_gray_darkest: #1a1a1a;
 $color_black: black;
 
-$color_primary: #636466;
-$color_secondary: #ffe6ff;
-$color_success: #05c46b;
-$color_warning: #ffd32a;
-$color_danger: #ff3f34;
-$color_info: #00d8d6;
-$color_disabled: #808e9b;
+// $color_primary:
+// $color_secondary:
+$color_success: #329a32;
+$color_warning: #f3c50c;
+$color_danger: #d40000;
+$color_info: #3ca8c3;
+$color_disabled: #939dac;
 
-$color_text: #262626;
-$color_link: #0fbcf9;
+$color_link: #206ada;
+
+$form__box-shadow_state_initial: 0 0 0 0.2rem lighten($color_black, 88%);
+$form__border_state_initial: 1px solid $color_gray;
+
+$form__box-shadow_state_success: 0 0 0 0.2rem lighten($color_success, 48%);
+$form__border_state_success: 1px solid $color_success;
+
+$form__box-shadow_state_danger: 0 0 0 0.2rem lighten($color_danger, 50%);
+$form__border_state_danger: 1px solid $color_danger;
 
 $color_facebook: #1877f2;
 $color_github: #161514;
@@ -42,7 +50,7 @@ $color_twitter: #55acee;
 $color_youtube: #ff0000;
 $color_vkontakte: #4680c2;
 
-// Media Quaries
+/* Media Quaries */
 $screen-xs: 0 !default;
 $screen-sm: 480px !default;
 $screen-md: 768px !default;
@@ -50,7 +58,7 @@ $screen-lg: 992px !default;
 $screen-xl: 1200px !default;
 $screen-xxl: 1800px !default;
 
-// Z-indexes
+/* Z-indexes */
 $zindex-dropdown: 1000 !default;
 $zindex-sticky: 1020 !default;
 $zindex-fixed: 1030 !default;
@@ -59,26 +67,12 @@ $zindex-modal: 1050 !default;
 $zindex-popover: 1060 !default;
 $zindex-tooltip: 1070 !default;
 
-// Other
+/* Other */
 $border_radius: 0.3em !default;
-
-$form__box-shadow_state_primary: 0 0 0 0.2rem lighten($color_primary, 85%);
-$form__border_state_primary: 1px solid $color_primary;
-
-$form__box-shadow_state_success: 0 0 0 0.2rem lighten($color_success, 39%);
-$form__border_state_success: 1px solid $color_success;
-
-$form__box-shadow_state_danger: 0 0 0 0.2rem lighten($color_danger, 30%);
-$form__border_state_danger: 1px solid $color_danger;
 
 // **********
 // * MIXINS *
 // **********
-
-// Debugging
-@mixin debugger {
-  border: 1px solid red;
-}
 
 // Typography
 @mixin font-face__regular {

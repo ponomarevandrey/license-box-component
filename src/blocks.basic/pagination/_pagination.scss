@@ -10,24 +10,24 @@
     margin: 0 0.2rem;
     text-decoration: none;
     outline: none;
+    box-sizing: border-box;
 
     &:link {
-      color: $color_gray;
+      color: $color_link;
       transition: all 0.2s ease;
     }
 
     &:visited {
-      color: $color_gray-light;
+      color: $color_link;
     }
 
     &:hover:not(.pagination__item_active) {
-      background-color: $color_gray-lightest;
-      color: $color_text;
+      color: lighten($color_link, 15%);
     }
 
     &:focus,
     &:active {
-      color: $color_text;
+      color: $color_black;
       box-shadow: 0 0 0 0.2rem $color_gray-lighten;
     }
 

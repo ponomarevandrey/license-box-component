@@ -66,7 +66,7 @@
     // add custom checkbox styles:
     &_checkbox:before {
       border-radius: 0.25rem;
-      border: $form__border_state_primary;
+      border: $form__border_state_initial;
       transition: 0.2s;
     }
     // add custom checkmark styles:
@@ -82,7 +82,7 @@
     // add custom radio button styles:
     &_radio:before {
       border-radius: 50%;
-      border: $form__border_state_primary;
+      border: $form__border_state_initial;
       transition: 0.2s;
     }
     // add custom dot styles:
@@ -102,7 +102,7 @@
       left: -2.6rem; // = .control_switch's padding-left value
       background-color: $color_white;
       transition: 0.4s;
-      border: $form__border_state_primary;
+      border: $form__border_state_initial;
       border-radius: 10000px;
       width: 2rem;
       height: 1rem;
@@ -118,7 +118,7 @@
       left: calc(-2.6rem + 2px);
       // top = &_switch:before's 'top' property + 2px (2px is for border)
       top: calc(0.25rem + 2px);
-      background-color: $color_primary;
+      background-color: $color_black;
       border-radius: 50%;
       transition: all 0.4s ease;
       z-index: 10000;
@@ -135,11 +135,11 @@
   }
   // style control:
   &__system-control:checked ~ &__label:before {
-    background-color: $color_primary;
+    background-color: $color_black;
   }
   // and after__ it is deselected:
   &__system-control:focus ~ &__label:before {
-    box-shadow: $form__box-shadow_state_primary;
+    box-shadow: $form__box-shadow_state_initial;
   }
   // modifier for switch to override some of the beforementioned rules:
   // show the checkmark:
@@ -149,7 +149,7 @@
   }
   // style control:
   &__system-control:checked ~ &__label_switch:before {
-    background-color: $color_primary;
+    background-color: $color_black;
   }
 
   /***************

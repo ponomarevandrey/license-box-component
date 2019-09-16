@@ -23,7 +23,7 @@
     width: 100%;
     height: calc(2rem + 2px);
     padding: 0.5rem 0.5rem;
-    border: $form__border_state_primary;
+    border: $form__border_state_initial;
     resize: vertical;
     background-color: $color_white;
     font-family: $font-stack_sans-serif;
@@ -31,12 +31,12 @@
     line-height: 1.5;
     border-radius: $border_radius;
     transition: 0.2s;
-    color: $color_text;
+    color: $color_black;
 
     &:focus {
       outline: none;
-      border: $form__border_state_primary;
-      box-shadow: $form__box-shadow_state_primary;
+      border: $form__border_state_initial;
+      box-shadow: $form__box-shadow_state_initial;
     }
 
     &_type_textarea {
@@ -45,8 +45,8 @@
 
       &:focus {
         outline: none;
-        border: $form__border_state_primary;
-        box-shadow: $form__box-shadow_state_primary;
+        border: $form__border_state_initial;
+        box-shadow: $form__box-shadow_state_initial;
       }
     }
 

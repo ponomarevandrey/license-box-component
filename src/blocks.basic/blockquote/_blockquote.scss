@@ -5,13 +5,14 @@
   vertical-align: baseline;
   display: flex;
   flex-flow: column nowrap;
-  padding: 2em 10%;
+  padding: 1em 10%;
+  font-size: 150%;
 
-  &_theme_black {
-    background-color: $color_black;
+  &_theme_default {
+    border-top: 5px solid $color_black;
+    border-bottom: 5px solid $color_black;
 
     & .blockquote__body {
-      color: $color_white;
       font-weight: bold;
       quotes: none;
 
@@ -25,34 +26,32 @@
     }
 
     & .blockquote__footer {
-      color: $color_gray;
       font-size: 80%;
       align-self: flex-end;
       padding-top: 1em;
     }
 
     & .blockquote__link {
-      transition: color 0.2s linear;
-
       &:link {
-        color: $color_gray;
+        color: $color_link;
+        transition: color 0.2s linear;
       }
 
       &:visited {
-        color: $color_gray;
+        color: $color_link;
       }
 
       &:hover {
-        color: $color_gray-light;
+        color: lighten($color_link, 15%);
         text-decoration: none;
       }
 
       a:focus {
-        color: $color_gray;
+        color: lighten($color_link, 15%);
       }
 
       &:active {
-        color: $color_gray-light;
+        color: lighten($color_link, 15%);
       }
     }
   }
