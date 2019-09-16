@@ -33,6 +33,10 @@
     transition: 0.2s;
     color: $color_black;
 
+    &::placeholder {
+      color: $color_gray;
+    }
+
     &:focus {
       outline: none;
       border: $form__border_state_initial;

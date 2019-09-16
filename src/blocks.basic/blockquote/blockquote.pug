@@ -7,4 +7,4 @@ mixin blockquote(quote, classList)
         | &nbsp;#{quote.source}
       - else
         cite(class='blockquote__source') 
-            a(class='link' href=`${quote.sourceURL}`) #{quote.source}
+            a(class='blockquote__link' href=`${quote.sourceURL}`) #{quote.source}
