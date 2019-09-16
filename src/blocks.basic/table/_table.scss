@@ -54,8 +54,7 @@
       border-bottom: 1px solid $color_black;
     }
     & tr:hover {
-      background-color: $color_black;
-      color: $color_gray-lightest;
+      background-color: $color_gray-lightest;
       transition: all 0.15s ease;
     }
   }

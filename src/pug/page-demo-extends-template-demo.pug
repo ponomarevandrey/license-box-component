@@ -43,6 +43,8 @@ block head
 
       border: 1px solid #ccc;
       background-color: white;
+
+      box-shadow: 0 0 20px #CCC;
     }
 
     .block__about {
@@ -81,21 +83,12 @@ block head
       padding: 0rem 4rem 2rem 4rem;
     }
 
-    .block__table {
-      padding: 0rem 4rem 2rem 4rem;      
-    }
+    .block__table { padding: 0rem 4rem 2rem 4rem; }
+    .block__col1 { width: 20%; }
+    .block__col2 { width: 30%; }
+    .block__col3 { width: 40%; }
 
-    .block__col1 {
-      width: 20%;
-    }
-
-    .block__col2 {
-      width: 30%;
-    }
-
-    .block__col3 {
-      width: 40%;
-    }
+    .block__icons a { padding: 1rem; }
 
 block header
 
@@ -866,9 +859,9 @@ block main
       //-
         div(class='block__readme') 
           include:markdown-it ./../blocks.basic/label/README.md
-      div(class='block__example')
+      div(class='block__example block__icons')
         //- color - bradn color
-        div(style='')
+        div
           +icons('github', 'https://github.com/ponomarevandrey', 'md')
           +icons('facebook', 'https://github.com/ponomarevandrey', 'md')
           +icons('instagram', 'https://github.com/ponomarevandrey', 'md')
@@ -879,7 +872,7 @@ block main
           +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md')
 
         //- colo - black
-        div(style='')
+        div
           +icons('github', 'https://github.com/ponomarevandrey', 'md', 'black')
           +icons('facebook', 'https://github.com/ponomarevandrey', 'md', 'black')
           +icons('instagram', 'https://github.com/ponomarevandrey', 'md', 'black')
@@ -890,7 +883,7 @@ block main
           +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md', 'black')
 
         //- color - white
-        div(style='')
+        div
           +icons('github', 'https://github.com/ponomarevandrey', 'md', 'white')
           +icons('facebook', 'https://github.com/ponomarevandrey', 'md', 'white')
           +icons('instagram', 'https://github.com/ponomarevandrey', 'md', 'white')
@@ -901,7 +894,7 @@ block main
           +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md', 'white')
 
         //- sizes - sm
-        div(style='')
+        div
           +icons('github', 'https://github.com/ponomarevandrey', 'sm')
           +icons('facebook', 'https://github.com/ponomarevandrey', 'sm')
           +icons('instagram', 'https://github.com/ponomarevandrey', 'sm')
@@ -912,7 +905,7 @@ block main
           +icons('vkontakte', 'https://github.com/ponomarevandrey', 'sm')
 
         //- sizes - md
-        div(style='')
+        div
           +icons('github', 'https://github.com/ponomarevandrey', 'md')
           +icons('facebook', 'https://github.com/ponomarevandrey', 'md')
           +icons('instagram', 'https://github.com/ponomarevandrey', 'md')
@@ -923,7 +916,7 @@ block main
           +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md')
 
         //- sizes - lg
-        div(style='')
+        div
           +icons('github', 'https://github.com/ponomarevandrey', 'lg')
           +icons('facebook', 'https://github.com/ponomarevandrey', 'lg')
           +icons('instagram', 'https://github.com/ponomarevandrey', 'lg')
