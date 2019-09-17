@@ -2,7 +2,7 @@ mixin btn(btn, classList='btn btn_theme_black btn_size_md')
 
   //- back to top button 
   - if (classList.includes('btn_type_back-to-top'))
-    button(class='btn btn_type_back-to-top' title='Go to top') Top
+    button(type='button' class='btn btn_type_back-to-top' title='Go to top') Top
 
   //- <a> button
   - if (btn.tag === 'a' && btn.state === 'enabled')
@@ -14,15 +14,15 @@ mixin btn(btn, classList='btn btn_theme_black btn_size_md')
 
   //- <button> button
   - if (btn.tag === 'button' && btn.state === 'enabled')
-    button(tag='button' class=`${classList}`) #{btn.text}
+    button(type='button' class=`${classList}`) #{btn.text}
 
   - if (btn.tag === 'button' && btn.state === 'disabled')
-    button(type='button' class=`${classList} btn_disabled` disabled) #{btn.text}
+    button(class=`${classList} btn_disabled` disabled) #{btn.text}
 
 
   //- <input> button
   - if (btn.tag === 'input' && btn.state === 'enabled')
-    input(tag='button' value=`${btn.text}` class=`${classList}`) 
+    input(type='button' value=`${btn.text}` class=`${classList}`) 
 
   - if (btn.tag === 'input' && btn.state === 'disabled')
-    input(type='input' value=`${btn.text}` class=`${classList} btn_disabled` disabled)
+    input(type='button' value=`${btn.text}` class=`${classList} btn_disabled` disabled)
