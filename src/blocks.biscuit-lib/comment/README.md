@@ -4,7 +4,7 @@
 +comment(
   {
     name: 'Mike Wolfson',
-    pic: './../blocks.basic/comment/user-pic.svg'
+    pic: './../blocks.biscuit-lib/comment/user-pic.svg'
   },
 
   {

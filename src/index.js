@@ -10,7 +10,7 @@ requireFiles(require.context('./img/', true, /(svg|png|jpg)$/));
 /*************
  * CSS RESET *
  *************/
-import './blocks.basic/_reset.scss';
+import './blocks.biscuit-lib/_reset.scss';
 
 /**********
  * BLOCKS *
@@ -22,84 +22,91 @@ import './blocks.basic/_reset.scss';
 
 **Don't change the order of blocks!** Although, all blocks are self-sufficient and don't rely on cascade and inheritance, in some rare cases reordering of their imports may break minor details like link color or font-size, so to be safe try to maintain the current blocks' order. If you don't need a block in your bundle, comment it out, don't delete it from this file, you might need it in the future */
 
+/***************** Redefinition level 'blocks.biscuit-lib' *******************/
+
 // Parent blocks
 
 // page
-import './blocks.basic/page/_page.scss';
-import './blocks.basic/page/page.js';
+import './blocks.biscuit-lib/page/_page.scss';
+import './blocks.biscuit-lib/page/page.js';
 // text
-import './blocks.basic/text/_text.scss';
+import './blocks.biscuit-lib/text/_text.scss';
 // heading
-import './blocks.basic/heading/_heading.scss';
+import './blocks.biscuit-lib/heading/_heading.scss';
 // grid-responsive-col
-import './blocks.basic/grid-auto-col/_grid-auto-col.scss';
-// grid-items-list.scss
-import './blocks.basic/grid-3-col/_grid-3-col.scss';
-// grid-classic
-import './blocks.basic/grid-page-layout1/_grid-page-layout1.scss';
-// grid-12col
-import './blocks.basic/grid-page-layout2/_grid-page-layout2.scss';
+import './blocks.biscuit-lib/grid-auto-col/_grid-auto-col.scss';
 // grid-gallery
-import './blocks.basic/grid-gallery/_grid-gallery.scss';
+import './blocks.biscuit-lib/grid-gallery/_grid-gallery.scss';
+// fulscreen-bg
+import './blocks.biscuit-lib/fullscreen-bg/_fullscreen-bg.scss';
 // header
-import './blocks.basic/header/_header.scss';
+import './blocks.biscuit-lib/header/_header.scss';
 // main
-import './blocks.basic/main/_main.scss';
+import './blocks.biscuit-lib/main/_main.scss';
 // footer
-import './blocks.basic/footer/_footer.scss';
+import './blocks.biscuit-lib/footer/_footer.scss';
 // list
-import './blocks.basic/list/_list.scss';
+import './blocks.biscuit-lib/list/_list.scss';
 // btn
-import './blocks.basic/btn/_btn.scss';
-import './blocks.basic/btn/btn.js';
+import './blocks.biscuit-lib/btn/_btn.scss';
+import './blocks.biscuit-lib/btn/btn.js';
 // link
-import './blocks.basic/link/_link.scss';
+import './blocks.biscuit-lib/link/_link.scss';
 // pagination
-import './blocks.basic/pagination/_pagination.scss';
+import './blocks.biscuit-lib/pagination/_pagination.scss';
 // comment
-import './blocks.basic/comment/_comment.scss';
+import './blocks.biscuit-lib/comment/_comment.scss';
 // grid-forms
-import './blocks.basic/grid-forms/_grid-forms.scss';
+import './blocks.biscuit-lib/grid-forms/_grid-forms.scss';
 
 // Child blocks
 
 // image-svg
-import './blocks.basic/img-svg/_img-svg.scss';
+import './blocks.biscuit-lib/img-svg/_img-svg.scss';
 // image-raster
-import './blocks.basic/img-raster/_img-raster.scss';
+import './blocks.biscuit-lib/img-raster/_img-raster.scss';
 // tooltip
-import './blocks.basic/tooltip/_tooltip.scss';
+import './blocks.biscuit-lib/tooltip/_tooltip.scss';
 // icon
-import './blocks.basic/icons/_icons.scss';
-requireFiles(require.context('./blocks.basic/icons/', true, /(svg|png|jpg)$/));
+import './blocks.biscuit-lib/icons/_icons.scss';
+requireFiles(
+  require.context('./blocks.biscuit-lib/icons/', true, /(svg|png|jpg)$/)
+);
 // breadcrumbs
-import './blocks.basic/breadcrumb/_breadcrumb.scss';
+import './blocks.biscuit-lib/breadcrumb/_breadcrumb.scss';
 // badge
-import './blocks.basic/badge/_badge.scss';
+import './blocks.biscuit-lib/badge/_badge.scss';
 // blockquote
-import './blocks.basic/blockquote/_blockquote.scss';
+import './blocks.biscuit-lib/blockquote/_blockquote.scss';
 // code
-import './blocks.basic/code/_code.scss';
+import './blocks.biscuit-lib/code/_code.scss';
 // hr
-import './blocks.basic/hr/_hr.scss';
+import './blocks.biscuit-lib/hr/_hr.scss';
 // label
-import './blocks.basic/label/_label.scss';
+import './blocks.biscuit-lib/label/_label.scss';
 // media content
-import './blocks.basic/embed/_embed.scss';
+import './blocks.biscuit-lib/embed/_embed.scss';
 // table
-import './blocks.basic/table/_table.scss';
+import './blocks.biscuit-lib/table/_table.scss';
 // loader
-import './blocks.basic/loader/_loader.scss';
+import './blocks.biscuit-lib/loader/_loader.scss';
 // control
-import './blocks.basic/control/_control.scss';
-// requireFiles(require.context('./blocks.basic/control', true, /(svg|png|jpg)$/));
+import './blocks.biscuit-lib/control/_control.scss';
+// requireFiles(require.context('./blocks.biscuit-lib/control', true, /(svg|png|jpg)$/));
 // form-group
-import './blocks.basic/form-group/_form-group.scss';
+import './blocks.biscuit-lib/form-group/_form-group.scss';
 // nav
-import './blocks.basic/nav/_nav.scss';
-import './blocks.basic/nav/nav.js';
+import './blocks.biscuit-lib/nav/_nav.scss';
+import './blocks.biscuit-lib/nav/nav.js';
 // nav-fixed
-import './blocks.basic/nav-fixed/_nav-fixed.scss';
+import './blocks.biscuit-lib/nav-fixed/_nav-fixed.scss';
 // select
-import './blocks.basic/select/_select.scss';
+import './blocks.biscuit-lib/select/_select.scss';
 //hamburger-menu
+
+/***************** Redefinition level 'blocks.new-project' *******************/
+
+// grid-classic
+import './blocks.new-proj/grid-page-layout1/_grid-page-layout1.scss';
+// grid-12col
+import './blocks.new-proj/grid-page-layout2/_grid-page-layout2.scss';

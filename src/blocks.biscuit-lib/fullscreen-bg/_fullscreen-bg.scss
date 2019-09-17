@@ -1,30 +1,15 @@
-.header {
-  display: flex;
-  flex-flow: column nowrap;
-
-  // Modifiers:
-
-  &_align-content_right {
-    align-items: flex-end;
-  }
-
-  &_align-content_center {
-    align-items: center;
-    justify-content: center;
-  }
-
-  &_view_fullscreen-image {
+.fullscreen-bg {
+  &_content_solid-color {
     height: 100%;
-
-    // background-color: $color_black;
-
+    background-color: $color_black;
     /* instead of background-color you can apply gradient:
-
     background: linear-gradient($color_primary-lightest, $color_primary-lighten)
-      no-repeat; */
+      no-repeat; 
+    */
+  }
 
-    /* or image: */
-
+  &_content_img {
+    height: 100%;
     background-image: url('./../../img/fullscreen-image.jpg');
     // make background image responsive:
     background-position: center;
