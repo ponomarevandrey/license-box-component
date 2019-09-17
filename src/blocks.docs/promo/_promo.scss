@@ -3,9 +3,8 @@
   align-items: flex-start;
   justify-content: center;
   position: relative;
-
   background-color: $color_white;
-  // width: auto;
+  align-content: flex-start;
   height: 100%;
 
   @media screen and (min-width: $screen-sm) {
@@ -13,51 +12,46 @@
     justify-content: center;
   }
 
-  &__heading {
-    font-size: calc(#{$font-size_h2} - 100%);
-
-    @media screen and (min-width: $screen-sm) {
-      font-size: $font-size_h2;
-      line-height: 1.2;
-    }
-  }
-
-  &__header {
-    display: none;
-
-    @media screen and (min-width: $screen-sm) {
-      position: absolute;
-      top: 0;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-evenly;
-      width: 95%;
-    }
-  }
-
   &__presentation {
     display: grid;
     grid-gap: 1rem;
     width: 30rem;
-    margin-top: 4rem;
+    height: calc(98%-2rem);
+    padding: 1rem 1rem 5rem 1rem;
+    grid-template-rows: auto 1fr auto;
+    align-content: center;
 
-    &:after {
-      display: block;
-      padding-top: 2rem;
-      font-size: 3rem;
-      font-weight: bold;
-      content: '↓';
+    @media screen and (min-width: $screen-sm) {
+      height: auto;
+    }
+  }
+
+  &__heading {
+    font-size: calc(#{$font-size_h2} - 100%);
+    align-self: flex-start;
+
+    @media screen and (min-width: $screen-sm) {
+      font-size: $font-size_h3;
+      line-height: 1.2;
     }
   }
 
   &__logo {
-    max-width: 200px;
-    margin-bottom: 2.5rem;
+    max-width: 70%;
   }
 
   &__buttons {
+    position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
     grid-gap: 1rem;
+  }
+}
+
+.hamburger-menu {
+  display: inline-block;
+
+  @media screen and (min-width: $screen-sm) {
+    display: none;
   }
 }

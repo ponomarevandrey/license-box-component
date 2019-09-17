@@ -30,7 +30,6 @@ block head
       flex-flow: column nowrap;        
       padding: 1rem;
       border-radius: .3rem;
-      border: 1px solid #ccc;
       background-color: white;
       box-sizing: border-box;
       width: 100%;
@@ -122,20 +121,21 @@ block header
   //- -------------------- Doc page layout -----------------------
 
 
-  div(class='promo')
-    div(class='promo__header')
-      span About 
-      span Getting Started 
-      span Blocks Library
+  section(class='promo')
 
     div(class='promo__presentation')
-      +img-svg('img', './../img/biscuit-logo-black.svg', 'Biscuit Logo', 'Biscuit', 'promo__logo')
+      div(class='promo__mobile-nav-top')
+        +img-svg('img', './../img/biscuit-logo-black.svg', 'Biscuit Logo', 'Biscuit', 'promo__logo')
+        nav(class='hamburger-menu') <!-- N -->
       +heading('heading heading_size_h2 promo__heading') Front-end framework for rapid web-develpment
       div(class='promo__buttons')
         +btn(
            { tag: 'a', text: `Demo`, url: '###', state: 'enabled' }, 'btn btn_theme_black btn_size_lg' )
         +btn(
            { tag: 'a', text: 'Download', url: '###', state: 'enabled' }, 'btn btn_theme_empty btn_size_lg' )
+        +btn(
+           { tag: 'a', text: 'Documentation', url: '###', state: 'enabled' }, 'btn btn_theme_empty btn_size_lg' )
+
 
 block main
 
