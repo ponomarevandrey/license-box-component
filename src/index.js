@@ -39,13 +39,6 @@ import './blocks.biscuit-lib/grid-auto-col/_grid-auto-col.scss';
 import './blocks.biscuit-lib/grid-gallery/_grid-gallery.scss';
 // fulscreen-bg
 import './blocks.biscuit-lib/fullscreen-bg/_fullscreen-bg.scss';
-// header
-import './blocks.biscuit-lib/header/_header.scss';
-// main
-import './blocks.biscuit-lib/main/_main.scss';
-// footer
-import './blocks.biscuit-lib/footer/_footer.scss';
-// list
 import './blocks.biscuit-lib/list/_list.scss';
 // btn
 import './blocks.biscuit-lib/btn/_btn.scss';
@@ -104,9 +97,21 @@ import './blocks.biscuit-lib/nav-fixed/_nav-fixed.scss';
 import './blocks.biscuit-lib/select/_select.scss';
 //hamburger-menu
 
+/******************** Redefinition level 'blocks.docs' ***********************/
+
+// promo
+import './blocks.docs/promo/_promo.scss';
+
 /***************** Redefinition level 'blocks.new-project' *******************/
 
 // grid-classic
 import './blocks.new-proj/grid-page-layout1/_grid-page-layout1.scss';
 // grid-12col
 import './blocks.new-proj/grid-page-layout2/_grid-page-layout2.scss';
+// main
+import './blocks.new-proj/main/_main.scss';
+// header
+import './blocks.new-proj/header/_header.scss';
+// footer
+import './blocks.new-proj/footer/_footer.scss';
+// list

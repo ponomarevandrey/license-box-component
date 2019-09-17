@@ -9,6 +9,8 @@
     box-shadow 0.2s ease;
   white-space: nowrap;
   box-sizing: border-box;
+  font-weight: bold;
+  vertical-align: middle;
 
   // Modifiers:
 
@@ -28,6 +30,7 @@
     position: relative;
     padding: 0.8rem 1rem;
     border-radius: $border_radius;
+    border: 1px solid transparent;
 
     &:hover {
       background-color: $color_gray-darken;
@@ -49,8 +52,8 @@
     display: inline-block;
     position: relative;
     padding: 0.8rem 1rem;
-    border: 1px solid $color_black;
     border-radius: $border_radius;
+    border: 1px solid $color_black;
 
     &:hover {
       background-color: $color_black;
@@ -65,10 +68,6 @@
       transform: translate(0, 2px);
       box-shadow: $form__box-shadow_state_initial;
     }
-  }
-
-  &_size_md {
-    line-height: 1.2;
   }
 
   &_type_back-to-top {

@@ -32,7 +32,6 @@ block head
       border-radius: .3rem;
       border: 1px solid #ccc;
       background-color: white;
-      box-shadow: 0 0 20px #CCC; 
       box-sizing: border-box;
       width: 100%;
     }
@@ -113,20 +112,32 @@ block head
 
       .block__icons a { padding: 1rem; }
     
-    }
-      
+    } 
+
+
 
 block header
-  header(class='header' style="padding: 1rem; justify-content: space-evenly;") 
+
+
+  //- -------------------- Doc page layout -----------------------
+
+
+  div(class='promo')
+    div(class='promo__header')
       span About 
       span Getting Started 
       span Blocks Library
 
-      
-block main
+    div(class='promo__presentation')
+      +img-svg('img', './../img/biscuit-logo-black.svg', 'Biscuit Logo', 'Biscuit', 'promo__logo')
+      +heading('heading heading_size_h2 promo__heading') Front-end framework for rapid web-develpment
+      div(class='promo__buttons')
+        +btn(
+           { tag: 'a', text: `Demo`, url: '###', state: 'enabled' }, 'btn btn_theme_black btn_size_lg' )
+        +btn(
+           { tag: 'a', text: 'Download', url: '###', state: 'enabled' }, 'btn btn_theme_empty btn_size_lg' )
 
-  div(class='header__logo' style="width: 400px;")
-    +img-svg('img', './../img/biscuit-logo-black.svg', 'Logoipsum logo', 'Logoipsum')
+block main
 
   //- mixin for creating a block for each component of the library:
   mixin block(biscuitBlock, ...allMods)
@@ -162,6 +173,9 @@ block main
                           +code(`${value}`, 'code code_display_inline code_theme_black')
                     td(class='table__cell table__cell_type_main block__col3') #{mod.description}
       block        
+
+
+
 
 
 

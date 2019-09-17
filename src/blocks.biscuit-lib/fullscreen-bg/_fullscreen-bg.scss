@@ -1,6 +1,7 @@
 .fullscreen-bg {
-  &_content_solid-color {
-    height: 100%;
+  height: 100%;
+
+  &_color_black {
     background-color: $color_black;
     /* instead of background-color you can apply gradient:
     background: linear-gradient($color_primary-lightest, $color_primary-lighten)
@@ -8,8 +9,11 @@
     */
   }
 
-  &_content_img {
-    height: 100%;
+  &_color_white {
+    background-color: $color_white;
+  }
+
+  &_media_img {
     background-image: url('./../../img/fullscreen-image.jpg');
     // make background image responsive:
     background-position: center;
