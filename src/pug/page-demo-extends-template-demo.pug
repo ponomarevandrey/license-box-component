@@ -13,82 +13,125 @@ block meta
 
 block head
   style. 
-    body {
-      background-color: #eee;
-    }
-
+    
+    body { background-color: #eee; }
+    
     .demo {
-      padding: 2rem 5vw;
-      
-      display: grid;
-      grid-gap: 2rem;
-      grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
-      align-items: flex-start;
-
-      grid-auto-flow: row;
-      grid-auto-columns: minmax(800px, 1fr);
-
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: minmax(0, .95fr);
+        grid-auto-columns: minmax(0, .95fr);
+        justify-content: center;   
     }
-
-    /* -------------------------------- */
 
     .block {
       display: flex;
-      flex-flow: column nowrap;
-
-      max-width: 1200px;
-      
+      flex-flow: column nowrap;        
+      padding: 1rem;
       border-radius: .3rem;
-      /*border: 1px solid black;*/
-
       border: 1px solid #ccc;
       background-color: white;
-
       box-shadow: 0 0 20px #CCC;
     }
 
-    .block__about {
-      
-    }
-
-
-    .block__readme {
-      padding: 4rem;
-      background-color: #eee;
-      color: #262626;
-      font-weight: bold;
-      overflow: scroll; 
-    }
-
-    .block__example {
-       display: flex;
-       flex-flow: column nowrap;
-       align-items: center;
-       padding: 4rem;
-    }
-
-    /* ---------------------- */
-
     .block__header {
-      padding: 3rem 4rem 0 4rem;
-
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
       align-items: center;
+      overflow: hidden;
+    }
 
+    .block__header .icons {
+      margin-bottom: .5rem;
+    }
+
+    .block__example {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: flex-start;
+      padding: 1rem 0 0 0;
     }
 
     .block__description {
-      padding: 0rem 4rem 2rem 4rem;
+      padding-bottom: 1rem;
+    }    
+
+
+    /*
+    @media screen and (min-width: 768px) {
+      .demo {
+        padding: 2rem 5vw;
+        
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
+
+        align-items: flex-start;
+        justify-items: center;
+        
+        grid-auto-flow: row;
+        grid-auto-columns: minmax(800px, 1fr);
+      }
+
+
+      .block {
+        display: flex;
+        flex-flow: column nowrap;
+
+        width: 100%;
+        // max-width: 800px;
+        
+        border-radius: .3rem;
+        border: 1px solid #ccc;
+        background-color: white;
+        box-shadow: 0 0 20px #CCC;
+      }
+
+      .block__readme {
+        padding: 2rem;
+        background-color: #eee;
+        color: #262626;
+        font-weight: bold;
+        overflow: scroll; 
+      }
+
+      .block__example {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        padding: 2rem;
+      }
+
+      .block__header {
+        padding: 3rem 2rem 0 2rem;
+
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+
+      }
+
+      .block__description {
+        padding: 0rem 2rem 2rem 2rem;
+      }
+
+      .block__table { padding: 0rem 2rem 2rem 2rem; }
+      .block__col1 { width: 20%; }
+      .block__col2 { width: 30%; }
+      .block__col3 { width: 40%; }
+
+      .block__icons a { padding: 1rem; }
     }
+    */
 
-    .block__table { padding: 0rem 4rem 2rem 4rem; }
-    .block__col1 { width: 20%; }
-    .block__col2 { width: 30%; }
-    .block__col3 { width: 40%; }
+    /* -------------------------------- */
 
-    .block__icons a { padding: 1rem; }
+
+
+
+
 
 block header
 
@@ -145,7 +188,7 @@ block main
 
     //- heading
     +block(
-      { name: 'heading',
+      { name: 'headin',
         repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.basic/heading',
         description: 'H1—H6 headings' },
 
@@ -157,12 +200,12 @@ block main
         div(class='block__readme') 
           include:markdown-it ./../blocks.basic/heading/README.md
       div(class='block__example')
-        +heading('heading heading_size_h1') Heading One
-        +heading('heading heading_size_h2') Heading Two
-        +heading('heading heading_size_h3') Heading Three
-        +heading('heading heading_size_h4') Heading Four
-        +heading('heading heading_size_h5') Heading Five
-        +heading('heading heading_size_h6') Heading Six
+        +heading('heading heading_size_h1') Heading One heading one heading one
+        +heading('heading heading_size_h2') Heading Two heading two heading two heading two
+        +heading('heading heading_size_h3') Heading Three heading three heading three heading 
+        +heading('heading heading_size_h4') Heading Four heading four heading four heading four
+        +heading('heading heading_size_h5') Heading Five heading five heading five heading five heading five heading five
+        +heading('heading heading_size_h6') Heading Six heading six heading six heading six heading six heading six heading six heading six heading six
 
 
 
@@ -339,9 +382,9 @@ block main
         p(class='text text_display_block text_size_root text_color_black') It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum #[+code( `console.log( a );`, 'code code_display_inline text text_size_sm code_theme_gray' ) ] it was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         //- code block
         +code( 
-`window.addEventListener( 'load', => {
-  console.log('Ready');
-})}`,
+          `window.addEventListener( 'load', => {
+            console.log('Ready');
+          })}`,
         
         'code code_display_block text text_size_sm code_theme_gray')
 
@@ -509,7 +552,7 @@ block main
                 alignSelf: undefined
               }
             )
-            +heading('heading heading_size_h3 text text_line-height_sm grid-items-list__heading') Billions upon bil lions upon billions
+            +heading('heading heading_size_h3 text grid-items-list__heading') Billions upon bil lions upon billions
             +text('text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
             +btn(
               { 
@@ -543,7 +586,7 @@ block main
                 alignSelf: undefined
               }
             )
-            +heading('heading heading_size_h3 text text_line-height_sm grid-items-list__heading') Billions upon bil lions upon billions
+            +heading('heading heading_size_h3 text grid-items-list__heading') Billions upon bil lions upon billions
             +text('text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
             +btn(
               { 
@@ -577,7 +620,7 @@ block main
                 alignSelf: undefined
               }
             )
-            +heading('heading heading_size_h3 text text_line-height_sm grid-items-list__heading') Billions upon bil lions upon billions
+            +heading('heading heading_size_h3 text grid-items-list__heading') Billions upon bil lions upon billions
             +text('text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
             +btn(
               { 
@@ -600,7 +643,7 @@ block main
       //-
         div(class='block__readme') 
           include:markdown-it ./../blocks.basic/grid-page-layout1/README.md
-      div(class='block__example')
+      div(class='block__example' style="overflow: hidden;")
         section(class='grid-page-layout1')
           div(class='grid-page-layout1__header') Header
           div(class='grid-page-layout1__news1') News. Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
@@ -710,7 +753,7 @@ block main
       //-
         div(class='block__readme') 
           include:markdown-it ./../blocks.basic/grid-page-layout2/README.md
-      div(class='block__example')
+      div(class='block__example' style="overflow: hidden;")
         section(class='grid-page-layout2')
           div(class='grid-page-layout2__one')
             One One One One One One One One One One One One One One One
@@ -981,7 +1024,7 @@ block main
       //-
         div(class='block__readme') 
           include:markdown-it ./../blocks.basic/table/README.md
-      div(class='block__example')
+      div(class='block__example' style='overflow: scroll;')
         div(class='table table_theme_light')
           table(class='table__container')
             caption(class='table__caption') Table 1.1 Playlist
@@ -1561,7 +1604,7 @@ block main
       //-
         div(class='block__readme') 
           include:markdown-it ./../blocks.basic/header/README.md
-      div(class='block__example')
+      div(class='block__example' style='overflow: hidden;')
         +btn(
           { 
             tag: 'a', 

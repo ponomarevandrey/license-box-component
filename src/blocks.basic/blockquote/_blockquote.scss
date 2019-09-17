@@ -5,8 +5,11 @@
   vertical-align: baseline;
   display: flex;
   flex-flow: column nowrap;
-  padding: 1em 10%;
   font-size: 150%;
+  padding: 0.5em 0 0.5em 0;
+
+  @media screen and (min-width: $screen-sm) {
+  }
 
   &_theme_default {
     border-top: 5px solid $color_black;
