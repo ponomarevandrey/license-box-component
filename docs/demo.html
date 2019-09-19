@@ -18,356 +18,105 @@
     <meta name="description" content="Description of the page less than 150 characters">
     <meta name="keywords" content="web development, web applications, frontend">
     <meta name="author" content="Andrey Ponomarev">
-    <title>Biscuit Demo</title>
+    <title>Home</title>
     <style>
-      .block {
-        display: flex;
-        max-width: 1200px;
-        margin: auto;
+      .demo {
+        height: 100%;
+      }
+      .demo__header {
+        text-align: center;
+        padding: 2em 4%;
+        background-color: #565f77;
+      }
+      
+      .demo__heading {
+        margin-left: -1.1em;
+        color: #4788fb;
+        font-size: 2rem;
+        font-family: Lato, Arial, Verdana, sans-serif;
+        font-weight: bold;
+        font-style: normal;
+        line-height: 1.7;
+        margin-bottom: 0.5em;
+      }
+      
+      .demo__main {
+        padding: 0 4vw 4em 4vw;
+      }
+      
+      .demo__article {
+        margin-bottom: 2em;
+        padding: 2em;
+      }
+      
+      .demo__section {
+        margin-bottom: 2em;
+        display: grid;
+        grid-template-columns: repeat(autofit, 1fr);
+        grid-row-gap: 2em;
+      }
+      
+      .demo__section-item {
+        padding-left: 2em;
+        margin-bottom: 2em;
+        border-left: 1em solid black;
+      }
+      
+      .demo__palette {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
+      }
+      
+      .demo__color-primary {
+        background-color: #4788fb;
+      }
+      
+      .demo__color-secondary {
+        background-color: #565f77;
+      }
+      
+      .demo__color-on-error {
+        background-color: #ea2929;
+      }
+      
+      .demo__color-on-success {
+        background-color: #00996a;
+      }
+      
+      .demo__color-info-message {
+        background-color: #347ed4;
+      }
+      
+      .demo__code {
+        background-color: black;
+        color: white;
+        font-family: Consolas, 'Courier New', Courier, monospace;
+        padding: 2em;
+        display: block;
       }
       
       
+      
+          
     </style>
-  <link href="./styles.cad315e513b3ccd7179a.css" rel="stylesheet"></head>
+  <link href="./styles.bc48e3b35732a57b1810.css" rel="stylesheet"></head>
   <body class="page__body page__preload text text_line-height_lg text_font-stack_sans-serif"> 
     <noscript>Your browser doesn't support JavaScript or you have disabled JavaScript.</noscript>
-    <main class="demo">
-      <section class="block">
-        <h1 class="heading heading_size_h1">Heading One</h1>
-        <h2 class="heading heading_size_h2">Heading Two</h2>
-        <h3 class="heading heading_size_h3">Heading Three</h3>
-        <h4 class="heading heading_size_h4">Heading Four</h4>
-        <h5 class="heading heading_size_h5">Heading Five</h5>
-        <h6 class="heading heading_size_h6">Heading Six</h6>
-      </section>
-      <section class="block">
-        <article class="block__about">Some text</article>
-        <div class="block__demo">
-          <figure class="img-raster">
-            <picture class="img-raster__wrapper">  <img class="img-raster__img" src="./img/animals_landscape_xxxl.jpg" sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw" srcset="./img/animals_landscape_sm.jpg 480w, ./img/animals_landscape_md.jpg 768w, ./img/animals_landscape_lg.jpg 992w, ./img/animals_landscape_xl.jpg 1200w, ./img/animals_landscape_xxl.jpg 1800w, ./img/animals_landscape_xxxl.jpg 2000w" alt="Ships in the Field"></picture>
-            <figcaption class="img-raster__caption">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-              
-              
-              
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-      <section class="block">
-        <article class="block__about">Some text</article>
-        <div class="block__demo">
-          <hr class="hr">
-        </div>
-      </section>
-      <section class="block">
-        <article class="block__about">Some text</article>
-        <div class="block__demo">
-          <ul class="list list_style_unordered">
-            <li class="list__item">Fruit
-              <ul class="list list_style_unordered">
-                <li class="list__item">Bananas</li>
-                <li class="list__item">Apples
-                  <ul class="list list_style_ordered">
-                    <li class="list__item">Green</li>
-                    <li class="list__item">Red</li>
-                  </ul>
-                </li>
-                <li class="list__item">Pears</li>
-              </ul>
-            </li>
-            <li class="list__item">Vegetables</li>
-            <li class="list__item">Meat</li>
-          </ul>
-        </div>
-      </section>
-      <section class="block">
-        <article class="block__about">Some text</article>
-        <div class="block__demo">
-          <p class="text text_display_inline">Lorem Ipsum</p>
-          <p class="text text_display_inline">Lorem Ipsum</p>
-        </div>
-      </section>
-      <section class="block">
-        <article class="block__about">Some text</article>
-        <div class="block__demo">
-          <p class="text text_display_block text_size_root">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-          <p class="text text_display_block text_size_root">
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            
-            
-            
-          </p>
-        </div>
-      </section>
-      <section class="block">
-        <article class="block__about">Some text</article>
-        <div class="block__demo"><a class="link" href="##">link</a></div>
-      </section>
-      <section class="block">
-        <article class="block__about">Some text</article>
-        <div class="block__demo">
-          <p class="text text_display_block text_size_root text_color_black">It has survived not only five centuries, but also the leap into electronic typesetting, <a class="link link_anchor" href="#image">remaining</a> essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, <code class="code code_display_inline text text_size_sm code_theme_gray">console.log( a );</code> and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          <pre class="code code_display_block text text_size_sm code_theme_gray"><code>window.addEventListener( 'load', => {
-  console.log('Ready');
-})
+    <p class="text text_display_block"></p><p><code>_variables-mixins-and-functions.scss</code>
+contains global variables, mixins and functions. It is already imported in every .scss file of the project
+through <code>webpack.config.js</code> (in sass-loader options). This file, <code>_variables-mixins-and-functions.scss</code>, makes variables, mixins and functions, declared inside it, available in all SCSS files of the project.
+IMPORTANT: <code>_variables-mixins-and-functions.scss</code> should only contain variables, mixins and functions and nothing else(!). Thus when compiled, the entire content of <code>_variables-mixins-and-functions.scss</code> 'dissapears', being imported (and compiled into actual CSS) into every SCSS file. More on this: https://github.com/angular/angular-cli/issues/8431#issuecomment-343486059</p>
+<p><code>_reset.scss</code>
+global css reset. Imported in final CSS file through <code>index.js</code></p>
+<p><code>index.js</code>
+is the entry point for Webpack. We import all blocks in the same order they are mentioned in the main 'html' block</p>
+<p><code>master</code>
+(<code>.master</code> class assigned to <code>&lt;html&gt;</code> tag)
+is the main block of the project and master template for Pug plugin in <code>webpack.config.js</code>. It bundles all Pug files of the project together</p>
 
-
-</code></pre>
-        </div>
-      </section>
-      <section class="block">
-        <article class="block__about">Some text</article>
-        <div class="block__demo"><a class="btn btn_theme_black btn_size_md" href="###">a href Button </a>
-          <button class="btn btn_theme_black btn_size_md" type="button">button Button</button>
-          <button class="btn btn_theme_black btn_size_md btn_disabled" type="button" disabled="disabled">button Button</button>
-          <input class="btn btn_theme_black btn_size_md btn_disabled" type="button" value="input Button" disabled="disabled">
-        </div>
-      </section>
-    </main>
-    <div class="grid-auto-col">
-      <div class="grid-auto-col__item">One</div>
-      <div class="grid-auto-col__item">Two</div>
-      <div class="grid-auto-col__item">Three</div>
-      <div class="grid-auto-col__item">Four </div>
-      <div class="grid-auto-col__item">Five</div>
-      <div class="grid-auto-col__item">Six</div>
-      <div class="grid-auto-col__item">Seven</div>
-      <div class="grid-auto-col__item">Eight</div>
-      <div class="grid-auto-col__item">Nine</div>
-    </div>
-    <ul class="grid-3-col">
-      <li class="grid-3-col__item">
-        <figure class="img-raster">
-          <picture class="img-raster__wrapper">  <img class="img-raster__img" src="./img/animals_landscape_xxxl.jpg" sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw" srcset="./img/animals_landscape_sm.jpg 480w, ./img/animals_landscape_md.jpg 768w, ./img/animals_landscape_lg.jpg 992w, ./img/animals_landscape_xl.jpg 1200w, ./img/animals_landscape_xxl.jpg 1800w, ./img/animals_landscape_xxxl.jpg 2000w" alt="Ships in the Field"></picture>
-        </figure>
-        <h1 class="heading heading_size_h3 grid-items-list__heading">Billions upon bil lions upon billions</h1>
-        <p class="text text_display_block">Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?</p><a class="btn" href="###">Visit Website</a>
-      </li>
-      <li class="grid-3-col__item">
-        <figure class="img-raster">
-          <picture class="img-raster__wrapper">  <img class="img-raster__img" src="./img/animals_landscape_xxxl.jpg" sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw" srcset="./img/animals_landscape_sm.jpg 480w, ./img/animals_landscape_md.jpg 768w, ./img/animals_landscape_lg.jpg 992w, ./img/animals_landscape_xl.jpg 1200w, ./img/animals_landscape_xxl.jpg 1800w, ./img/animals_landscape_xxxl.jpg 2000w" alt="Ships in the Field"></picture>
-        </figure>
-        <h1 class="heading heading_size_h3 grid-items-list__heading">Billions upon bil lions upon billions</h1>
-        <p class="text text_display_block">Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?</p><a class="btn" href="###">Visit Website</a>
-      </li>
-      <li class="grid-3-col__item">
-        <figure class="img-raster">
-          <picture class="img-raster__wrapper">  <img class="img-raster__img" src="./img/animals_landscape_xxxl.jpg" sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw" srcset="./img/animals_landscape_sm.jpg 480w, ./img/animals_landscape_md.jpg 768w, ./img/animals_landscape_lg.jpg 992w, ./img/animals_landscape_xl.jpg 1200w, ./img/animals_landscape_xxl.jpg 1800w, ./img/animals_landscape_xxxl.jpg 2000w" alt="Ships in the Field"></picture>
-        </figure>
-        <h1 class="heading heading_size_h3 grid-items-list__heading">Billions upon bil lions upon billions</h1>
-        <p class="text text_display_block">Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?</p><a class="btn" href="###">Visit Website</a>
-      </li>
-    </ul>
-    <section class="grid-page-layout1">
-      <div class="grid-page-layout1__header">Header</div>
-      <div class="grid-page-layout1__news1">News. Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?</div>
-      <div class="grid-page-layout1__news2">
-        <div>hkjh</div>
-        <div class="grid-page-layout1__article">Article. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-        <div class="grid-page-layout1__info">Info</div>
-      </div>
-      <div class="grid-page-layout1__ads-l">Space L</div>
-      <div class="grid-page-layout1__ads-r">Space R  </div>
-      <div class="grid-page-layout1__footer">Footer</div>
-    </section>
-    <section class="grid-page-layout2">
-      <div class="grid-page-layout2__one">
-        <one>One One One One One One One One One One One One One One</one>
-      </div>
-      <div class="grid-page-layout2__two">Two </div>
-      <div class="grid-page-layout2__three">Three </div>
-      <div class="grid-page-layout2__four">Four </div>
-      <div class="grid-page-layout2__five">Five Five Five Five Five</div>
-    </section><img class="img-svg" src="./img/logo.svg" alt="Logoipsum logo" title="Logoipsum">
-    <div class="img-svg img-svg_bg"></div>
-    <object class="img-svg" type="image/svg+xml" data="./img/logo.svg">Your browser does not support SVG</object>
-    <header class="header header_view_fullscreen-image header_align-content_center">
-      <h1 class="heading heading_size_h1 heading_color_white">Biscuit Demo Page</h1>
-    </header>
-    <p class="text text_display_block">It has survived not only five centuries,</p>
-    <blockquote class="blockquote text text_size_xl blockquote_theme_gray">
-      <p class="blockquote__main">Big type, even huge type, can be beautiful and useful. But poise is usually far more important than size – and poise consists primarily of emptiness. Typographically, poise is made of white&space.</p>
-      <footer class="blockquote__footer text text_color_gray">Robert Bringhurst, 
-        <cite title="Source Title">The Elements of Typographic Style</cite>
-        
-        
-        
-      </footer>
-    </blockquote>
-    <button class="btn btn_type_back-to-top" title="Go to top">Top</button><a class="badge badge_theme_white text text_size_sm text_line-height_lg" href="###">Closure</a><a class="badge badge_theme_white text text_size_sm text_line-height_lg" href="###">Hoisting</a><a class="badge badge_theme_white text text_size_sm text_line-height_lg" href="###">Call Stack</a><a class="badge badge_theme_white text text_size_sm text_line-height_lg" href="###">Prototypes</a>
-    <div class="pagination"><a class="pagination__item" href="#wq##">&laquo;</a><a class="pagination__item" href="##fd#">1</a><a class="pagination__item pagination__item_active" href="##s#">2</a><a class="pagination__item" href="###">3</a><a class="pagination__item" href="#da##">4</a><a class="pagination__item" href="#fd##">&raquo;</a></div>
-    <ul class="breadcrumb">
-      <li class="breadcrumb__item"><a class="link" href="###">Home</a></li>
-      <li class="breadcrumb__item"><a class="link" href="#s##">Equipment</a></li>
-      <li class="breadcrumb__item"><a class="link" href="###f">Cooking Equipment</a></li>
-      <li class="breadcrumb__item breadcrumb__item_active">
-        Cooking Performance Group S60-G24-N Natural Gas 6 Burner 60" Range with 24" Griddle and 2 Standard Ovens - 280,000 BTU
-        
-        
-        
-      </li>
-    </ul>
-    <div><a class="icons" href="https://github.com/ponomarevandrey" aria-hidden="true" focusable="false" title="Github"><span class="icons__access-label">Github</span>
-        <svg class="icons__img icons__img_name_github">
-          <use xlink:href="./img/sprite.svg#github"></use>
-        </svg></a><a class="icons" href="###" aria-hidden="true" focusable="false" title="Github"><span class="icons__access-label">Facebook</span>
-        <svg class="icons__img icons__img_name_fb">
-          <use xlink:href="./img/sprite.svg#fb"></use>
-        </svg></a><a class="icons" href="###" aria-hidden="true" focusable="false" title="Github"><span class="icons__access-label">Instagram</span>
-        <svg class="icons__img icons__img_name_instagram">
-          <use xlink:href="./img/sprite.svg#instagram"></use>
-        </svg></a><a class="icons" href="###" aria-hidden="true" focusable="false" title="Github"><span class="icons__access-label">Odnoklassniki</span>
-        <svg class="icons__img icons__img_name_ok">
-          <use xlink:href="./img/sprite.svg#ok"></use>
-        </svg></a><a class="icons" href="###" aria-hidden="true" focusable="false" title="Github"><span class="icons__access-label">Telegram</span>
-        <svg class="icons__img icons__img_name_telegram">
-          <use xlink:href="./img/sprite.svg#telegram"></use>
-        </svg></a><a class="icons" href="###" aria-hidden="true" focusable="false" title="Github"><span class="icons__access-label">Twitter</span>
-        <svg class="icons__img icons__img_name_twitter">
-          <use xlink:href="./img/sprite.svg#twitter"></use>
-        </svg></a><a class="icons" href="###" aria-hidden="true" focusable="false" title="Github"><span class="icons__access-label">YouTube</span>
-        <svg class="icons__img icons__img_name_youtube">
-          <use xlink:href="./img/sprite.svg#youtube"></use>
-        </svg></a><a class="icons" href="###" aria-hidden="true" focusable="false" title="Github"><span class="icons__access-label">VKontakte</span>
-        <svg class="icons__img icons__img_name_vk">
-          <use xlink:href="./img/sprite.svg#vk"></use>
-        </svg></a></div>
+    <p></p>
     <div>
-      <p class="text text_display_inline">... some text, <span class="tooltip">hoverthepointer<span class="tooltip__content">Your text</span></span></p><br><span class="tooltip" style="display: inline-block; width: 50px; height: 50px; background-color: black; border-radius: 10000px;"><span class="tooltip__content">Your text</span></span>
-    </div>
-    <div class="embed"> 
-      <iframe src="https://www.youtube.com/embed/oRkNaF0QvnI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="table">
-      <table class="table__container">
-        <caption class="table__caption">Table 1.1 Playlist</caption>
-        <thead>
-          <tr class="table__row text text_color_white">
-            <th class="table__cell table__cell_type_header">Date</th>
-            <th class="table__cell table__cell_type_header">Artist</th>
-            <th class="table__cell table__cell_type_header">Title</th>
-            <th class="table__cell table__cell_type_header">Album</th>
-            <th class="table__cell table__cell_type_header">Label</th>
-            <th class="table__cell table__cell_type_header">Genres</th>
-            <th class="table__cell table__cell_type_header">Duration</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="table__row">
-            <td class="table__cell table__cell_type_main">1971</td>
-            <td class="table__cell table__cell_type_main">Gil Scott-Heron</td>
-            <td class="table__cell table__cell_type_main">Save The Children</td>
-            <td class="table__cell table__cell_type_main">Pieces Of A Man</td>
-            <td class="table__cell table__cell_type_main">Flying Dutchman</td>
-            <td class="table__cell table__cell_type_main">Soul, Funk, Jazz</td>
-            <td class="table__cell table__cell_type_main">4:55</td>
-          </tr>
-          <tr class="table__row">
-            <td class="table__cell table__cell_type_main">1975</td>
-            <td class="table__cell table__cell_type_main">Rufus Featuring Chaka Khan</td>
-            <td class="table__cell table__cell_type_main">Sweet Thing</td>
-            <td class="table__cell table__cell_type_main">Rufus Featuring Chaka Khan</td>
-            <td class="table__cell table__cell_type_main">ABC Records</td>
-            <td class="table__cell table__cell_type_main">Soul, Funk, Disco</td>
-            <td class="table__cell table__cell_type_main">3:18</td>
-          </tr>
-          <tr class="table__row">
-            <td class="table__cell table__cell_type_main">1994</td>
-            <td class="table__cell table__cell_type_main">Adam F ‎</td>
-            <td class="table__cell table__cell_type_main">Sea Of Destiny</td>
-            <td class="table__cell table__cell_type_main">Stronger Than Ever</td>
-            <td class="table__cell table__cell_type_main">Lucky Spin Recordings</td>
-            <td class="table__cell table__cell_type_main">Jungle, Drum'n'Bass</td>
-            <td class="table__cell table__cell_type_main">6:47</td>
-          </tr>
-          <tr class="table__row">
-            <td class="table__cell table__cell_type_main">2000</td>
-            <td class="table__cell table__cell_type_main">Soulsearcher ‎</td>
-            <td class="table__cell table__cell_type_main">Can't Get Enough (Vocal Club Mix)</td>
-            <td class="table__cell table__cell_type_main">Various ‎- Disco Kandi</td>
-            <td class="table__cell table__cell_type_main">Hed Kandi </td>
-            <td class="table__cell table__cell_type_main">Garage House, Disco</td>
-            <td class="table__cell table__cell_type_main">7:19</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div>
-      <div class="comment">
-        <div class="comment__avatar">
-           <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 258.75 258.75">
-<circle cx="129.375" cy="60" r="60"/>
-<path d="M129.375 150c-60.061 0-108.75 48.689-108.75 108.75h217.5c0-60.061-48.689-108.75-108.75-108.75z"/>
-</svg>
-        </div>
-        <div class="comment__text"> 
-          <div class="comment__header"><span class="comment__name">Mike Wolfson</span><span class="comment__time">august 19, 2019 17:48</span></div>
-          <p class="comment__main">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-          <div class="comment__button"><a class="link" href="###">Reply</a></div>
-        </div>
-      </div>
-      <div class="comment">
-        <div class="comment__avatar">
-           <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 258.75 258.75">
-<circle cx="129.375" cy="60" r="60"/>
-<path d="M129.375 150c-60.061 0-108.75 48.689-108.75 108.75h217.5c0-60.061-48.689-108.75-108.75-108.75z"/>
-</svg>
-        </div>
-        <div class="comment__text"> 
-          <div class="comment__header"><span class="comment__name">Mike Wolfson</span><span class="comment__time">august 19, 2019 17:48</span></div>
-          <p class="comment__main">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-          <div class="comment__button"><a class="link" href="###">Reply</a></div>
-        </div>
-      </div>
-    </div><br>
-    <div class="control"> 
-      <input class="control__system-control" type="checkbox" id="lastname1">
-      <label class="control__label control__label_checkbox" for="lastname1">Milk</label>
-      <div class="control__tip text text_line-height_lg text_color_gray-light text_size_sm">Text text text</div>
-    </div>
-    <div class="control"> 
-      <input class="control__system-control control__system-control_validation" type="checkbox" id="lastname2">
-      <label class="control__label control__label_checkbox" for="lastname2">Milk</label>
-      <div class="control__tip text text_line-height_lg text_color_danger text_size_sm">Teip text Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?</div>
-    </div>
-    <div class="control"> 
-      <input class="control__system-control control__system-control_disabled" type="checkbox" id="lastname3" disabled="disabled">
-      <label class="control__label control__label_checkbox" for="lastname3">Milk</label>
-      <div class="control__tip text text_line-height_lg text_color_disabled text_size_sm">Teip text Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?</div>
-    </div><br>
-    <div class="control"> 
-      <input class="control__system-control" id="radio1" type="radio" name="radio" value="" checked="checked">
-      <label class="control__label control__label_radio" for="radio1">Milk</label>
-      <div class="control__tip text text_line-height_lg text_color_gray-light text_size_sm">Text text text</div>
-    </div>
-    <div class="control"> 
-      <input class="control__system-control control__system-control_validation" type="radio" id="radio2" name="radio">
-      <label class="control__label control__label_radio" for="radio2">Milk</label>
-      <div class="control__tip text text_line-height_lg text_color_gray-light text_size_sm">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-    </div>
-    <div class="control"> 
-      <input class="control__system-control control__system-control_disabled" id="radio3" type="radio" name="radio" disabled="disabled">
-      <label class="control__label control__label_radio" for="radio3">Milk</label>
-      <div class="control__tip text text_line-height_lg text_color_gray-light text_size_sm">Text text text</div>
-    </div>
-    <div class="control control_switch">
-      <input class="control__system-control" id="switch1" type="checkbox" name="switch">
-      <label class="control__label control__label_switch" for="switch1">Milk</label>
-      <div class="control__tip text text_line-height_lg text_color_gray-light text_size_sm">Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</div>
-    </div>
-    <div class="control control_switch">
-      <input class="control__system-control control__system-control_validation" id="switch2" type="checkbox" name="switch">
-      <label class="control__label control__label_switch" for="switch2">Milk</label>
-      <div class="control__tip text text_line-height_lg text_color_gray-light text_size_sm">Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</div>
-    </div>
-    <div class="control control_switch">
-      <input class="control__system-control control__system-control_disabled" id="switch3" type="checkbox" name="switch" disabled="disabled">
-      <label class="control__label control__label_switch" for="switch3">Milk</label>
-      <div class="control__tip text text_line-height_lg text_color_gray-light text_size_sm">Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</div>
-    </div>
-    <div>
-      <form class="form-grid" action="" method="">
+      <form class="grid-forms" action="" method="">
         <div class="form-group">
           <label class="form-group__label" for="name">A long sentence you're forced to read to understand what this stupid form wants from you</label>
           <div class="form-group__container">
@@ -437,13 +186,13 @@
             <input class="form-group__input form-group__input_type_search" type="text" id="name" name="name" placeholder="Search...">
           </div>
         </div>
-        <fieldset class="fieldset">
+        <fieldset>
           <div class="form-group form-group_row">
             <legend class="form-group__label">First name</legend>
             <div>
               <div class="form-group__container control">
                 <input class="control__system-control" id="f1" type="radio" value="1" name="group1">
-                <label class="control__label control__label_radio" for="f1">Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting</label>
+                <label class="control__label control__label_radio" for="f1">Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting !!!</label>
                 <div class="control__tip text text_line-height_lg text_color_gray-light text_size_sm">Text text text</div>
               </div>
               <div class="form-group__container control">
@@ -459,38 +208,7 @@
             </div>
           </div>
         </fieldset>
-        <div class="form-group form-group_row form-group_validation_error">
-          <label class="form-group__label" for="name">First name</label>
-          <div class="form-group__container">
-            <input class="form-group__input" type="text" id="name" name="name" placeholder="Your name">
-            <div class="form-group__tip text text_line-height_lg text_color_gray-light text_size_sm">Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle</div>
-          </div>
-        </div>
-        <div class="form-group form-group_row form-group_validation_success">
-          <label class="form-group__label" for="name">First name</label>
-          <div class="form-group__container">
-            <input class="form-group__input" type="text" id="name" name="name" placeholder="Your name">
-            <div class="form-group__tip text text_line-height_lg text_color_gray-light text_size_sm">Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle</div>
-          </div>
-        </div>
-        <div class="form__row">
-          <div class="form__label-wrapper">
-            <label for="country">Color</label>
-          </div>
-          <div class="form__frame-wrapper">
-            <select class="form__frame" id="country" name="country">
-              <option value="australia">Red</option>
-              <option value="canada">Green</option>
-              <option value="usa">Blue</option>
-            </select>
-          </div>
-        </div>
       </form>
     </div>
-    <div>
-      <div class="nav"><a class="nav__item" href="#main">Main</a><a class="nav__item" href="#main">Portfolio</a><a class="nav__item nav__item_active" href="#about">About</a><a class="nav__item" href="#contacts">Contacts</a></div>
-    </div>
-    <p>footer</p>
-    <script></script>
-  <script type="text/javascript" src="./scripts.3b30a9d53dee293b642a.js" async></script></body>
+  <script type="text/javascript" src="./scripts.cab75e2d668b8c88219e.js" async></script></body>
 </html>
