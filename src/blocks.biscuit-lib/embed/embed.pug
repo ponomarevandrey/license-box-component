@@ -2,7 +2,6 @@ mixin embed(url, classList)
   div(class=`${classList}`) 
     iframe(
       src=`${url}`
-      frameborder='0' 
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
     )
