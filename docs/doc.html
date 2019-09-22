@@ -56,8 +56,12 @@
       .block__example {
         display: flex;
         flex-flow: column nowrap;
-        align-items: flex-start;
         padding: 1rem 0 0 0;
+        align-items: flex-start;
+      }
+      
+      .block__example > * {
+      
       }
       
       .block__description {
@@ -92,17 +96,14 @@
         .block__example {
           display: flex;
           flex-flow: column nowrap;
-          align-items: center;
           padding: 2rem;
         }
       
         .block__header {
           padding: 3rem 2rem 0 2rem;
-      
           display: flex;
           flex-flow: row wrap;
           justify-content: space-between;
-          align-items: center;
       
         }
       
@@ -122,10 +123,10 @@
       
       
     </style>
-  <link href="./styles.bc48e3b35732a57b1810.css" rel="stylesheet"></head>
+  <link href="./styles.5572c68012abf8d624a3.css" rel="stylesheet"></head>
   <body class="page__body page__preload text text_line-height_lg text_font-stack_sans-serif"> 
     <noscript>Your browser doesn't support JavaScript or you have disabled JavaScript.</noscript>
-    <section class="promo">
+    <div class="promo">
       <div class="promo__presentation">
         <div class="promo__mobile-nav-top">
           <img class="img-svg promo__logo" src="./img/biscuit-logo-black.svg" alt="Biscuit Logo" title="Biscuit">
@@ -133,10 +134,25 @@
         </div>
         <h1 class="heading heading_size_h2 promo__heading">Front-end framework for rapid web-develpment
         </h1>
-        <div class="promo__buttons"><a class="btn btn_theme_black btn_size_lg" href="###">Demo</a><a class="btn btn_theme_empty btn_size_lg" href="###">Download</a><a class="btn btn_theme_empty btn_size_lg" href="###">Documentation</a>
+        <div class="promo__buttons"><a class="btn btn_theme_black btn_size_lg" href="https://github.com/ponomarevandrey">Demo</a><a class="btn btn_theme_empty btn_size_lg" href="https://github.com/ponomarevandrey">Download</a><a class="btn btn_theme_empty btn_size_lg" href="https://github.com/ponomarevandrey">Documentation</a>
         </div>
       </div>
-    </section>
+    </div>
+    <h1>Accordion</h1>
+    <div class="accordion">
+      <h2 class="accordion__header">Man-of-War</h2>
+      <div class="accordion__content">
+        <p class="text">Prow clipper capstan grog poop deck. Hands man-of-war interloper measured fer yer chains no prey, no pay. Spanish Main dead men tell no tales hands spirits Pieces of Eight.</p>
+      </div>
+      <h2 class="accordion__header">Cutlass</h2>
+      <div class="accordion__content">
+        <p class="text">Yard blow the man down execution dock broadside barque. Pressgang bilge hang the jib Spanish Main driver. Belay red ensign cutlass chantey trysail.</p>
+      </div>
+      <h2 class="accordion__header">Pirate Draft</h2>
+      <div class="accordion__content">
+        <p class="text">Main sheet gunwalls tender Admiral of the Black Cat o'nine tails. Bring a spring upon her cable parrel gangplank pirate draft. Rutters bilge rat driver ballast swing the lead.</p>
+      </div>
+    </div>
     <main class="demo">
           <section class="block">
             <div class="block__about">
@@ -726,9 +742,7 @@
             </div>
             <div class="block__example" style="overflow: hidden;">
               <section class="grid-page-layout2">
-                <div class="grid-page-layout2__one">
-                  <one>One One One One One One One One One One One One One One</one>
-                </div>
+                <div class="grid-page-layout2__one">One One One One One One One One One One One One One One One</div>
                 <div class="grid-page-layout2__two">Two </div>
                 <div class="grid-page-layout2__three">Three </div>
                 <div class="grid-page-layout2__four">Four </div>
@@ -1391,7 +1405,7 @@
               </div>
             </div>
             <div class="block__example">
-              <form class="grid-forms" action="" method="">
+              <form class="grid-forms" action="./action_page.php" method="post">
                 <div style="background-color: red;">a </div>
                 <div style="background-color: blue;">b </div>
                 <div style="background-color: green;">c </div>
@@ -1468,21 +1482,21 @@
               <div class="form-group form-group_row">
                 <label class="form-group__label" for="form3">Textarea</label>
                 <div class="form-group__container">
-                  <textarea class="form-group__input form-group__input_type_textarea" type="text" id="form3" name="story" placeholder="Placholder text..."></textarea>
+                  <textarea class="form-group__input form-group__input_type_textarea" id="form3" name="story" placeholder="Placholder text..."></textarea>
                   <div class="form-group__tip text text_line-height_lg text_color_gray-light text_size_sm">Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle</div>
                 </div>
               </div>
               <div class="form-group form-group_validation_error form-group_row text">
                 <label class="form-group__label" for="form4">Textarea</label>
                 <div class="form-group__container">
-                  <textarea class="form-group__input form-group__input_type_textarea" type="text" id="form4" name="message">Default text</textarea>
+                  <textarea class="form-group__input form-group__input_type_textarea" id="form4" name="message">Default text</textarea>
                   <div class="form-group__tip text text_line-height_lg text_color_gray-light text_size_sm">Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle</div>
                 </div>
               </div>
               <div class="form-group form-group_validation_success form-group_row text">
                 <label class="form-group__label" for="form5">Textarea</label>
                 <div class="form-group__container">
-                  <textarea class="form-group__input form-group__input_type_textarea" type="text" id="form5" name="story">Default text</textarea>
+                  <textarea class="form-group__input form-group__input_type_textarea" id="form5" name="story">Default text</textarea>
                   <div class="form-group__tip text text_line-height_lg text_color_gray-light text_size_sm">Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle</div>
                 </div>
               </div>
@@ -1500,8 +1514,8 @@
                 </div>
               </div>
               <fieldset class="form-group-wrapper">
-                <div class="form-group form-group_row">
-                  <legend class="form-group__label">First name</legend>
+                <legend class="form-group form-group_row">
+                  <div class="form-group__label">First name:</div>
                   <div>
                     <div class="form-group__container control">
                       <input class="control__system-control" id="a1" type="radio" value="1" name="group1">
@@ -1519,7 +1533,7 @@
                       <div class="control__tip text text_line-height_lg text_color_gray-light text_size_sm">Text text text       </div>
                     </div>
                   </div>
-                </div>
+                </legend>
               </fieldset>
             </div>
           </section>
@@ -1535,9 +1549,9 @@
             </div>
             <div class="block__example">
               <div class="form-group form-group_row">
-                <label class="form-group__label" for="color">Color</label>
+                <label class="form-group__label" for="selectbox1">Color</label>
                 <div class="form-group__container">
-                  <select class="form-group__selectbox" id="selectbox" name="country">
+                  <select class="form-group__selectbox" id="selectbox1" name="country">
                     <option value="australia">Red</option>
                     <option value="canada">Green</option>
                     <option value="usa">Blue</option>
@@ -1711,5 +1725,5 @@
     </main>
     <footer class="footer">&copy; 2019</footer>
     <script></script>
-  <script type="text/javascript" src="./scripts.cab75e2d668b8c88219e.js" async></script></body>
+  <script type="text/javascript" src="./scripts.04451c904304df7547ec.js" async></script></body>
 </html>
