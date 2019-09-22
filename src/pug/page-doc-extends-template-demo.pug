@@ -50,8 +50,12 @@ block head
     .block__example {
       display: flex;
       flex-flow: column nowrap;
-      align-items: flex-start;
       padding: 1rem 0 0 0;
+      align-items: flex-start;
+    }
+
+    .block__example > * {
+
     }
 
     .block__description {
@@ -86,17 +90,14 @@ block head
       .block__example {
         display: flex;
         flex-flow: column nowrap;
-        align-items: center;
         padding: 2rem;
       }
 
       .block__header {
         padding: 3rem 2rem 0 2rem;
-
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
-        align-items: center;
 
       }
 
@@ -121,7 +122,7 @@ block header
   //- -------------------- Doc page layout -----------------------
 
 
-  section(class='promo')
+  div(class='promo')
 
     div(class='promo__presentation')
       div(class='promo__mobile-nav-top')
@@ -130,11 +131,11 @@ block header
       +heading('heading heading_size_h2 promo__heading') Front-end framework for rapid web-develpment
       div(class='promo__buttons')
         +btn(
-           { tag: 'a', text: `Demo`, url: '###', state: 'enabled' }, 'btn btn_theme_black btn_size_lg' )
+           { tag: 'a', text: `Demo`, url: 'https://github.com/ponomarevandrey', state: 'enabled' }, 'btn btn_theme_black btn_size_lg' )
         +btn(
-           { tag: 'a', text: 'Download', url: '###', state: 'enabled' }, 'btn btn_theme_empty btn_size_lg' )
+           { tag: 'a', text: 'Download', url: 'https://github.com/ponomarevandrey', state: 'enabled' }, 'btn btn_theme_empty btn_size_lg' )
         +btn(
-           { tag: 'a', text: 'Documentation', url: '###', state: 'enabled' }, 'btn btn_theme_empty btn_size_lg' )
+           { tag: 'a', text: 'Documentation', url: 'https://github.com/ponomarevandrey', state: 'enabled' }, 'btn btn_theme_empty btn_size_lg' )
 
 
 block main
@@ -183,6 +184,9 @@ block main
   //- --------------- Biscuit blocks library: --------------------
   //- ------------------------------------------------------------
 
+
+
+  include ./../blocks.biscuit-lib/accordeon/accordeon.pug
 
 
   main(class='demo')
@@ -765,7 +769,7 @@ block main
           include:markdown-it ./../blocks.biscuit-lib/grid-page-layout2/README.md
       div(class='block__example' style="overflow: hidden;")
         section(class='grid-page-layout2')
-          div(class='grid-page-layout2__one')
+          div(class='grid-page-layout2__one').
             One One One One One One One One One One One One One One One
           div(class='grid-page-layout2__two') Two 
           div(class='grid-page-layout2__three') Three 
@@ -1313,7 +1317,7 @@ block main
         div(class='block__readme') 
           include:markdown-it ./../blocks.biscuit-lib/grid-forms/README.md
       div(class='block__example')
-        form(class='grid-forms' action='' method='')
+        form(class='grid-forms' action='./action_page.php' method='post')
           div(style='background-color: red;') a 
           div(style='background-color: blue;') b 
           div(style='background-color: green;') c 
@@ -1380,7 +1384,6 @@ block main
             div(class='form-group__container')
               textarea(
                 class='form-group__input form-group__input_type_textarea' 
-                type='text' 
                 id='form3' 
                 name='story'
                 placeholder='Placholder text...')
@@ -1394,7 +1397,6 @@ block main
             div(class='form-group__container')
               textarea(
                 class='form-group__input form-group__input_type_textarea' 
-                type='text' 
                 id='form4' 
                 name='message') Default text
               div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
@@ -1407,7 +1409,6 @@ block main
             div(class='form-group__container')
               textarea(
                 class='form-group__input form-group__input_type_textarea' 
-                type='text' 
                 id='form5' 
                 name='story') Default text
               div(class='form-group__tip text text_line-height_lg text_color_gray-light text_size_sm') Help text Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle
@@ -1442,8 +1443,8 @@ block main
 
         //- fieldset
         fieldset(class='form-group-wrapper')
-          div(class='form-group form-group_row')
-            legend(class='form-group__label') First name
+          legend(class='form-group form-group_row')
+            div(class='form-group__label') First name:
 
             div
               div(class='form-group__container control')

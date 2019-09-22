@@ -11,5 +11,4 @@ if (backToTopBtn) {
     document.body.scrollTop = 0; // for Safari
     window.scrollTo(0, 0);
   });
-} else
-  throw new Error('There is no ".backToTopBtn" class in your HTML document');
+} /* else throw new Error('There is no ".backToTopBtn" class in your HTML document'); */
