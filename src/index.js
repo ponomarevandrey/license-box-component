@@ -96,8 +96,8 @@ import './blocks.biscuit-lib/nav-fixed/_nav-fixed.scss';
 // select
 import './blocks.biscuit-lib/select/_select.scss';
 // accordeon
-import './blocks.biscuit-lib/accordeon/_accordeon.scss';
-
+import './blocks.biscuit-lib/accordion/_accordion.scss';
+import './blocks.biscuit-lib/accordion/accordion.js';
 //hamburger-menu
 
 /******************** Redefinition level 'blocks.docs' ***********************/

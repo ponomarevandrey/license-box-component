@@ -1,14 +1,22 @@
 'use strict';
 
-let arr = ['peaches', 'strawberry', 'carrot', 'milk'];
+const accordion = document.querySelectorAll('.accordion__header');
 
-let className = '.header__content header';
+for (let el of accordion) {
+  el.addEventListener(
+    'click',
+    function(e) {
+      let accordion__content = this.nextElementSibling;
 
-console.log(arr.reduce( (acumulator, currentValue) => {
-  return acumulator + currentValue
-}, '.'));
-
-
+      if (accordion__content.style.display === 'block') {
+        accordion__content.style.display = 'none';
+      } else {
+        accordion__content.style.display = 'block';
+      }
+    },
+    false
+  );
+}
 
 /*
 class Animal {

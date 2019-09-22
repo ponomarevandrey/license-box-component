@@ -131,11 +131,11 @@ block header
       +heading('heading heading_size_h2 promo__heading') Front-end framework for rapid web-develpment
       div(class='promo__buttons')
         +btn(
-           { tag: 'a', text: `Demo`, url: 'https://github.com/ponomarevandrey', state: 'enabled' }, 'btn btn_theme_black btn_size_lg' )
+           { tag: 'a', text: `Demo`, url: 'http://andreyponomarev.ru/biscuit/demo', state: 'enabled' }, 'btn btn_theme_black btn_size_lg' )
         +btn(
            { tag: 'a', text: 'Download', url: 'https://github.com/ponomarevandrey', state: 'enabled' }, 'btn btn_theme_empty btn_size_lg' )
         +btn(
-           { tag: 'a', text: 'Documentation', url: 'https://github.com/ponomarevandrey', state: 'enabled' }, 'btn btn_theme_empty btn_size_lg' )
+           { tag: 'a', text: 'Documentation', url: '#demo', state: 'enabled' }, 'btn btn_theme_empty btn_size_lg' )
 
 
 block main
@@ -186,10 +186,10 @@ block main
 
 
 
-  include ./../blocks.biscuit-lib/accordeon/accordeon.pug
+  include ./../blocks.biscuit-lib/accordion/accordion.pug
 
 
-  main(class='demo')
+  main(class='demo' id='demo')
 
 
 

@@ -1,0 +1,19 @@
+.accordion {
+  &__header {
+    background-color: $color_gray-lightest;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+
+    &:hover,
+    &_active {
+      background-color: $color_gray-lighten;
+    }
+  }
+
+  &__content {
+    background-color: $color_white;
+    display: none;
+    overflow: hidden;
+  }
+}

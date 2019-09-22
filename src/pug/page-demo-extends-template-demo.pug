@@ -1,97 +1,32 @@
 extends template-demo.pug
 
+
+
 block meta
   meta(name='description' content='Description of the page less than 150 characters')
   //- Displayed in Google search results:
   meta(name='keywords' content='web development, web applications, frontend')
   meta(name='author' content='Andrey Ponomarev')
-  title Home
-      
+  title Demo
+
+
+
 block head
   style. 
-    .demo {
-      height: 100%;
-    }
-    .demo__header {
-      text-align: center;
-      padding: 2em 4%;
-      background-color: #565f77;
-    }
-
-    .demo__heading {
-      margin-left: -1.1em;
-      color: #4788fb;
-      font-size: 2rem;
-      font-family: Lato, Arial, Verdana, sans-serif;
-      font-weight: bold;
-      font-style: normal;
-      line-height: 1.7;
-      margin-bottom: 0.5em;
-    }
-
-    .demo__main {
-      padding: 0 4vw 4em 4vw;
-    }
-
-    .demo__article {
-      margin-bottom: 2em;
-      padding: 2em;
-    }
-
-    .demo__section {
-      margin-bottom: 2em;
-      display: grid;
-      grid-template-columns: repeat(autofit, 1fr);
-      grid-row-gap: 2em;
-    }
-
-    .demo__section-item {
-      padding-left: 2em;
-      margin-bottom: 2em;
-      border-left: 1em solid black;
-    }
-
-    .demo__palette {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
-    }
-
-    .demo__color-primary {
-      background-color: #4788fb;
-    }
-
-    .demo__color-secondary {
-      background-color: #565f77;
-    }
-
-    .demo__color-on-error {
-      background-color: #ea2929;
-    }
-
-    .demo__color-on-success {
-      background-color: #00996a;
-    }
-
-    .demo__color-info-message {
-      background-color: #347ed4;
-    }
-
-    .demo__code {
-      background-color: black;
-      color: white;
-      font-family: Consolas, 'Courier New', Courier, monospace;
-      padding: 2em;
-      display: block;
-    }
-    
 
 
-        
+
 block header
+//-
   p(class='text text_display_block')
     include:markdown-it ../readme.md
-      
+
+
+
 block main
+  include ./../blocks.biscuit-lib/accordion/accordion.pug
+
+//- the code below not validated!
   //- form + grid-forms (usage example)
   div
     //- example 1:
