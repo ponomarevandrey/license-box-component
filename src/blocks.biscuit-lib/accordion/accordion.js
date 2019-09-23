@@ -1,22 +1,162 @@
 'use strict';
 
-const accordion = document.querySelectorAll('.accordion__header');
+/* Accordion v2 */
 
-for (let el of accordion) {
-  el.addEventListener(
-    'click',
-    function(e) {
-      let accordion__content = this.nextElementSibling;
+class Accordion {
+  constructor(single = false) {
+    let headers = document.querySelectorAll('.accordion .accordion__header');
 
-      if (accordion__content.style.display === 'block') {
-        accordion__content.style.display = 'none';
+    if (headers.length > 0) {
+      if (single) {
+        headers.forEach(header =>
+          header.addEventListener('click', this.singleOpen)
+        );
       } else {
-        accordion__content.style.display = 'block';
+        headers.forEach(header => header.addEventListener('click', this.open));
       }
-    },
-    false
-  );
+    }
+  }
+
+  /* fires when user clicks on a header and
+     'init' invoked with default value 'false': init() */
+  open() {
+    let content = this.nextElementSibling;
+
+    if (content.style.maxHeight) content.style.maxHeight = '';
+    else content.style.maxHeight = `${content.scrollHeight}px`;
+
+    this.classList.toggle('accordion__header_active');
+  }
+
+  /* fires when user clicks on a header and
+     'init' invoked with 'true': init(true) */
+  singleOpen() {
+    // reset state of all panels:
+
+    // 1) close all panels:
+    let contents = this.parentElement.querySelectorAll('.accordion__content');
+
+    if (contents.length > 0) {
+      contents.forEach(content => (content.style.maxHeight = ''));
+    }
+
+    // 2) reset color of all panels:
+    let headers = this.parentElement.querySelectorAll('.accordion__header');
+    if (headers.length > 0) {
+      headers.forEach(header => {
+        if (header.classList.contains('accordion__header_active')) {
+          header.classList.remove('accordion__header_active');
+        }
+      });
+    }
+
+    // open the current panel:
+
+    // 1) get content under current header
+    let content = this.nextElementSibling;
+
+    if (content.style.maxHeight) {
+      content.style.maxHeight = '';
+    } else {
+      content.style.maxHeight = `${content.scrollHeight}px`;
+    }
+    // 2) change opened header color:
+    this.classList.toggle('accordion__header_active');
+  }
 }
+
+window.addEventListener('load', function() {
+  new Accordion(true);
+});
+
+/* ---------------------------------------------------------------- */
+
+let accordion = {
+  init(single = false) {
+    let headers = document.querySelectorAll('.accordion .accordion__header');
+
+    if (headers.length > 0) {
+      if (single) {
+        headers.forEach(header =>
+          header.addEventListener('click', this.singleOpen)
+        );
+      } else {
+        headers.forEach(header => header.addEventListener('click', this.open));
+      }
+    }
+  },
+
+  /* fires when user clicks on a header and
+     'init' invoked with default value 'false': init() */
+  open() {
+    let content = this.nextElementSibling;
+
+    if (content.style.maxHeight) content.style.maxHeight = '';
+    else content.style.maxHeight = `${content.scrollHeight}px`;
+
+    this.classList.toggle('accordion__header_active');
+  },
+
+  /* fires when user clicks on a header and
+     'init' invoked with 'true': init(true) */
+  singleOpen() {
+    // reset state of all panels:
+
+    // 1) close all panels:
+    let contents = this.parentElement.querySelectorAll('.accordion__content');
+
+    if (contents.length > 0) {
+      contents.forEach(content => (content.style.maxHeight = ''));
+    }
+
+    // 2) reset color of all panels:
+    let headers = this.parentElement.querySelectorAll('.accordion__header');
+    if (headers.length > 0) {
+      headers.forEach(header => {
+        if (header.classList.contains('accordion__header_active')) {
+          header.classList.remove('accordion__header_active');
+        }
+      });
+    }
+
+    // open the current panel:
+
+    // 1) get content under current header
+    let content = this.nextElementSibling;
+
+    if (content.style.maxHeight) {
+      content.style.maxHeight = '';
+    } else {
+      content.style.maxHeight = `${content.scrollHeight}px`;
+    }
+    // 2) change opened header color:
+    this.classList.toggle('accordion__header_active');
+  },
+};
+/*
+window.addEventListener('load', function() {
+  accordion.init();
+});
+*/
+
+/* Accordion v1 */
+/*
+const accordionOne = document.querySelectorAll('.accordion__header');
+
+for (let el of accordionOne) {
+  el.addEventListener('click', openAcc, false);
+}
+
+function openAcc() {
+  let accordion__content = this.nextElementSibling;
+
+  accordion__content.style.maxHeight
+    ? (accordion__content.style.maxHeight = '')
+    : (accordion__content.style.maxHeight = `${accordion__content.scrollHeight}px`);
+
+  this.classList.toggle('accordion__header_active');
+}
+*/
 
 /*
 class Animal {
@@ -73,7 +213,6 @@ function sayHello () {
     }
     hello()
 }
-
 
 
 
