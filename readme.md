@@ -5,7 +5,12 @@ Biscuit provides a Webpack starter template and library of ready to use BEM bloc
 
 Utilizes Pug templating engine and SASS preprocessor.
 
-In simple words, Biscuit is a lightweight analog of Bootstrap, already integrated with Webpack project template and tailored to accommodate BEM
+In simple words, Biscuit is a lightweight analog of Bootstrap, already integrated with Webpack project template and tailored to accommodate BEM.
+
+For now, it consists of two parts:
+  * `biscuit` — [Webpack starter template for developing static websites](https://github.com/ponomarevandrey/biscuit)
+  * `biscuit-blocks-lib` — [BEM blocks library](https://github.com/ponomarevandrey/biscuit-blocks-lib)
+
 
 ## Browser support and current status (fall 2019)
 
@@ -20,9 +25,28 @@ Right now I'm at the very beginning of the framework testing process so there mi
 
 # Getting started
 
-To start using Biscuit, clone the [project repository](https://github.com/ponomarevandrey/biscuit) to your local machine and run `npm install`
+  * To start using Biscuit, clone the [project repository](https://github.com/ponomarevandrey/biscuit) to your local machine and run `npm install`:
+    ```shell
+    mkdir <your-project-folder>
+    cd <your-project-folder>
+    git clone https://github.com/ponomarevandrey/biscuit-blocks-lib ./
+    ```
+  
+  * then add Biscuit blocks library — https://github.com/ponomarevandrey/biscuit-blocks-lib — BEM blocks library which is intended for use specifically with Biscuit for speeding up application/website development process. To install this library into your project based on Biscuit framework, do the following:
+    ```shell
+    cd  <your-project-folder>/src
+    mkdir 'blocks.biscuit-lib'
+    cd 'blocks.biscuit-lib'
+    git clone https://github.com/ponomarevandrey/biscuit-blocks-lib ./
+    ```
 
 **By default, ALL blocks will be bundled into your production bundle.**
+
+Currently BEM blocks library is under development so from time to time I change something in it. To sync BEM blocks library with the one in your project:
+   ```shell
+   cd 'blocks.biscuit-lib'
+   git pull -p
+   ```
 
 ## How it works
 

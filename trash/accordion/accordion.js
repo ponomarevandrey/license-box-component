@@ -1,47 +1,65 @@
 'use strict';
 
-let a = {
-  drink: 'juice',
-};
+// const userInput = document.querySelector('.');
 
-let b = {
-  food: 'sausage',
-};
+class Food {
+  constructor(name, fats, proteins, carbs, price) {
+    this.name = name;
 
-b.__proto__ = a;
-console.log(b.drink);
+    // arr = [1, 2, 3];
 
-function Machine(params) {
-  let privateProp = 'Machine';
+    class Nested {
+      constructor() {}
 
-  this._protectedProp = 'Machine protected prop';
+      method() {
+        return 'works';
+      }
+    }
+
+    this.prop = new Nested();
+  }
+
+  get energyValue() {}
+  set energyValue(value) {}
 }
 
-Machine.prototype.greeting = function() {
-  this.n = 'Hello, ' + this._protectedProp;
-  // console.log('one');
-};
+class Fruite extends Food {
+  constructor(name, fats, proteins, carbs, price, h) {
+    super(name, fats, proteins, carbs, price);
 
-function CoffeeMachine(params) {
-  Machine.apply(this, arguments);
-
-  this.string = this._protectedProp + '!!!';
+    this.h = h;
+  }
 }
 
-CoffeeMachine.prototype = Object.create(Machine.prototype);
-CoffeeMachine.prototype.constructor = CoffeeMachine;
+let banana = new Fruite();
+console.log(banana.prop.method());
 
-CoffeeMachine.prototype.greeting = function() {
-  Machine.prototype.greeting.apply(this, arguments);
-  console.log(this.n + ' Extended');
-  // console.log('two');
-};
+// ----------------------------------------------------------
+// Pet app
+// ----------------------------------------------------------
 
-let m = new CoffeeMachine();
+const petfinderAPIKey = 'oKzKhXQZZ7z6VgqpjZf8cj13LTHPZIMVpIeMQzEMIyb90qQwEQ';
+const petfinderSecter = 'tHd2J6r9yuN7l0qpXzk3obBKDwwBqk49ZBc6LLFo';
 
-m.greeting();
-console.log(CoffeeMachine.prototype.__proto__ === Machine.prototype);
+const baseURL = 'https://api.myfonts.net/v1/';
 
+fetch('typefaces-filtered.txt')
+  .then(response => response.text())
+  .then(response => {
+    let fonts = response.split(/\n/);
+    fonts.forEach(fontName => {
+      fetch(
+        `${baseURL}family?api_key=${myFontsAPIkey}&name=${fontName}&name_type=contains`
+      )
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error));
+    });
+    return fonts;
+  });
+
+/* -------------------------------------------------- */
+/* ----------------------- MVC------------------------ */
 /* -------------------------------------------------- */
 
 class Model1 {
