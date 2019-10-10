@@ -101,7 +101,7 @@ module.exports = (env, options) => {
               options: {
                 sourceMap: true,
                 data:
-                  '@import "./blocks.biscuit-lib/_global-variables-mixins-functions.scss";',
+                  '@import "./node_modules/biscuit-blocks-lib/_global-variables-mixins-functions.scss";',
                 includePaths: [__dirname, 'src'],
               },
             },
@@ -186,6 +186,7 @@ module.exports = (env, options) => {
           collapseWhitespace: false,
         },
       }),
+      
       // 404 page
       new HtmlWebpackPlugin({
         inject: true,

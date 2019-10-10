@@ -113,6 +113,77 @@ block head
       .block__icons a { padding: 1rem; }
     
     } 
+    
+    //-
+    
+    
+    .promo {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      position: relative;
+      background-color: white;
+      align-content: flex-start;
+      height: 100%;      
+    }
+
+    @media screen and (min-width: 480px) {
+      .promo {
+          align-items: center;
+          justify-content: center;
+        }
+    }
+
+    .promo__presentation {
+      display: grid;
+      grid-gap: 1rem;
+      width: 30rem;
+      height: calc(98%-2rem);
+      padding: 1rem 1rem 5rem 1rem;
+      grid-template-rows: auto 1fr auto;
+      align-content: center;
+    }
+
+
+    @media screen and (min-width: 480px) {
+      .promo__presentation {
+        height: auto;
+      }
+    }
+
+    .promo__heading {
+      font-size: calc(2.441rem - 100%);
+      align-self: flex-start;
+    }
+      
+    @media screen and (min-width: 480px) {
+      .promo__heading {
+        font-size: 1.953rem;
+        line-height: 1.2;
+      }
+    }
+
+    .promo__logo {
+      max-width: 70%;
+    }
+
+    .promo__buttons {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      grid-gap: 1rem;
+    }
+  
+
+    .hamburger-menu {
+      display: inline-block;
+    }
+
+    @media screen and (min-width: 480px) {
+     .hamburger-menu {
+        display: none;
+      }
+    }
 
 
 
@@ -126,6 +197,7 @@ block header
 
     div(class='promo__presentation')
       div(class='promo__mobile-nav-top')
+      //-
         +img-svg('img', './../img/biscuit-logo-black.svg', 'Biscuit Logo', 'Biscuit', 'promo__logo')
         nav(class='hamburger-menu') <!-- N -->
       +heading('heading heading_size_h2 promo__heading') Front-end framework for rapid web-develpment
@@ -186,9 +258,6 @@ block main
 
 
 
-  include ./../blocks.biscuit-lib/accordion/accordion.pug
-
-
   main(class='demo' id='demo')
 
 
@@ -205,7 +274,7 @@ block main
     )
       //-
         div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/heading/README.md
+          include:markdown-it ./../../node_modules/biscuit-blocks-lib/heading/README.md
       div(class='block__example')
         +heading('heading heading_size_h1') Heading One heading one heading one
         +heading('heading heading_size_h2') Heading Two heading two heading two heading two
@@ -277,7 +346,7 @@ block main
     )
       //-
         div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/img-raster/README.md
+          include:markdown-it ./../../node_modules/biscuit-blocks-lib/img-raster/README.md
       div(class='block__example')
         +img-raster(
           {
@@ -314,7 +383,7 @@ block main
     )
       //-
         div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/hr/README.md
+          include:markdown-it ./../../node_modules/biscuit-blocks-lib/hr/README.md
       div(class='block__example')
         +hr('hr hr_color_black')
 
@@ -332,7 +401,7 @@ block main
     )
       //-
         div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/list/README.md
+          include:markdown-it ./../../node_modules/biscuit-blocks-lib/list/README.md
       div(class='block__example')
         ul(class='list list_style_unordered')
           li(class='list__item') Fruit
@@ -368,20 +437,20 @@ block main
 
 
     //- fullscreen-bg
-    +block(
-      { name: 'fullscreen-bg',
-        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/fullscreen-bg',
-        description: 'Fullscreen background' },
+      +block(
+        { name: 'fullscreen-bg',
+          repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/fullscreen-bg',
+          description: 'Fullscreen background' },
 
-      { name: 'content',
-        values: ['solid-color ', 'img'],
-        description: 'Fill full screen with this content' }
-    )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/btn/README.md
-      div(class='block__example')
-        +fullscreen-bg('fullscreen-bg_content_solid-color')
+        { name: 'content',
+          values: ['solid-color ', 'img'],
+          description: 'Fill full screen with this content' }
+      )
+        //-
+          div(class='block__readme') 
+            include:markdown-it ./../blocks.biscuit-lib/btn/README.md
+        div(class='block__example')
+          +fullscreen-bg('fullscreen-bg_content_solid-color')
 
 
 
@@ -779,21 +848,21 @@ block main
 
 
     //- img-svg
-    +block(
-      { name: 'img-svg',
-        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/img-svg',
-        description: 'SVG image' }
-    )
+      +block(
+        { name: 'img-svg',
+          repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/img-svg',
+          description: 'SVG image' }
+      )
       //-
         div(class='block__readme') 
           include:markdown-it ./../blocks.biscuit-lib/img-svg/README.md
-      div(class='block__example')
-        //- as <img>
-        +img-svg('img', './../img/logo.svg', 'Logoipsum logo', 'Logoipsum')
-        //- as CSS background-image
-        +img-svg('div')
-        //- and if you need interactivity, use SVG with the help of <object> tag
-        +img-svg('object', './../img/logo.svg')
+        div(class='block__example')
+          //- as <img>
+          +img-svg('img', './../img/logo.svg', 'Logoipsum logo', 'Logoipsum')
+          //- as CSS background-image
+          +img-svg('div')
+          //- and if you need interactivity, use SVG with the help of <object> tag
+          +img-svg('object', './../img/logo.svg')
 
 
 
@@ -1102,55 +1171,55 @@ block main
 
 
     //- comment
-    +block(
-      { name: 'comment',
-        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/comment ',
-        description: 'Comment section' }
-    )
+      +block(
+        { name: 'comment',
+          repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/comment ',
+          description: 'Comment section' }
+      )
       //-
         div(class='block__readme') 
           include:markdown-it ./../blocks.biscuit-lib/comment/README.md
-      div(class='block__example')
-        +comment(
-          {
-            name: 'Mike Wolfson',
-            pic: './../blocks.biscuit-lib/comment/user-pic.svg'
-          },
+        div(class='block__example')
+          +comment(
+            {
+              name: 'Mike Wolfson',
+              pic: './../node_modules/biscuit-blocks-lib/comment/user-pic.svg'
+            },
 
-          {
-            time: 'august 19, 2019 17:48',
-            content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
-          }, 
+            {
+              time: 'august 19, 2019 17:48',
+              content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+            }, 
 
-          'comment')
-
-
-        +comment(
-          {
-            name: 'Mike Wolfson',
-            pic: './../blocks.biscuit-lib/comment/user-pic.svg'
-          },
-
-          {
-            time: 'august 19, 2019 17:48',
-            content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
-          }, 
-
-          'comment')
+            'comment')
 
 
-        +comment(
-          {
-            name: 'Mike Wolfson',
-            pic: './../blocks.biscuit-lib/comment/user-pic.svg'
-          },
+          +comment(
+            {
+              name: 'Mike Wolfson',
+              pic: './../blocks.biscuit-lib/comment/user-pic.svg'
+            },
 
-          {
-            time: 'august 19, 2019 17:48',
-            content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
-          }, 
+            {
+              time: 'august 19, 2019 17:48',
+              content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+            }, 
 
-          'comment')
+            'comment')
+
+
+          +comment(
+            {
+              name: 'Mike Wolfson',
+              pic: './../blocks.biscuit-lib/comment/user-pic.svg'
+            },
+
+            {
+              time: 'august 19, 2019 17:48',
+              content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+            }, 
+
+            'comment')
 
 
 
