@@ -32,7 +32,7 @@ Right now I'm at the very beginning of the framework testing process so there mi
     git clone https://github.com/ponomarevandrey/biscuit-blocks-lib ./
     ```
   
-  * then add Biscuit blocks library — https://github.com/ponomarevandrey/biscuit-blocks-lib — BEM blocks library which is intended for use specifically with Biscuit for speeding up application/website development process. To install this library into your project based on Biscuit framework, do the following:
+  * then add Biscuit blocks library — https://github.com/ponomarevandrey/biscuit-blocks-lib — BEM blocks library which is intended for use specifically with Biscuit for speeding up application/website development process. **Never modify any files in the library or you won't be able to update to the newer version of the library. Use it 'as is'**. To install this library into your project based on Biscuit framework, do the following:
     ```shell
     cd  <your-project-folder>/src
     mkdir 'blocks.biscuit-lib'
@@ -42,7 +42,12 @@ Right now I'm at the very beginning of the framework testing process so there mi
 
 **By default, ALL blocks will be bundled into your production bundle.**
 
-Currently BEM blocks library is under development so from time to time I change something in it. To sync BEM blocks library with the one in your project:
+Currently BEM blocks library is under development so from time to time I change something in it. To check if something had changed in BEM blocks library repository:
+   ```
+   cd 'blocks.biscuit-lib'
+   git diff origin 
+   ```
+And if there are differences, in order to sync remove BEM blocks library repository with the one in your project:
    ```shell
    cd 'blocks.biscuit-lib'
    git pull -p

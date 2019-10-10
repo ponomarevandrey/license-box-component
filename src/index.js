@@ -105,16 +105,17 @@ import './blocks.biscuit-lib/accordion/accordion.js';
 // promo
 import './blocks.docs/promo/_promo.scss';
 
-/***************** Redefinition level 'blocks.new-project' *******************/
+/***************** Redefinition level 'blocks' *******************/
+
+// Project-specific blocks
 
 // grid-classic
-import './blocks.new-proj/grid-page-layout1/_grid-page-layout1.scss';
+import './blocks/grid-page-layout1/_grid-page-layout1.scss';
 // grid-12col
-import './blocks.new-proj/grid-page-layout2/_grid-page-layout2.scss';
+import './blocks/grid-page-layout2/_grid-page-layout2.scss';
 // main
-import './blocks.new-proj/main/_main.scss';
+import './blocks/main/_main.scss';
 // header
-import './blocks.new-proj/header/_header.scss';
+import './blocks/header/_header.scss';
 // footer
-import './blocks.new-proj/footer/_footer.scss';
-// list
+import './blocks/footer/_footer.scss';
