@@ -11,7 +11,6 @@ requireFiles(require.context('./img/', true, /(svg|png|jpg)$/));
  * CSS RESET *
  *************/
 import './../node_modules/biscuit-blocks-lib/_reset.scss';
-// import './../node_modules/biscuit-blocks-lib/_reset.scss';
 
 /**********
  * BLOCKS *
@@ -120,3 +119,6 @@ import './blocks/header/_header.scss';
 import './blocks/footer/_footer.scss';
 // fulscreen-bg
 import './blocks/fullscreen-bg/_fullscreen-bg.scss';
+
+import './blocks/img-slider/_img-slider.scss';
+import './blocks/img-slider/img-slider.js';
