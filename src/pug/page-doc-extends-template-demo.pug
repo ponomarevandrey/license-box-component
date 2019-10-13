@@ -63,7 +63,7 @@ block head
     }    
     
 
-    /* Large screen layout  */
+    /* Large screen layout */  
 
     @media screen and (min-width: 768px) {
       .demo {
@@ -74,18 +74,6 @@ block head
         grid-auto-flow: row;
         grid-auto-columns: minmax(750px, 1fr);
       }
-    
-   
-      /*
-      .block__readme {
-        padding: 2rem;
-        background-color: #eee;
-        color: #262626;
-        font-weight: bold;
-        overflow: scroll; 
-      }
-      */
-
       
       .block__example {
         display: flex;
@@ -114,8 +102,7 @@ block head
     
     } 
     
-    //-
-    
+    /* Header */ 
     
     .promo {
       display: flex;
@@ -124,7 +111,7 @@ block head
       position: relative;
       background-color: white;
       align-content: flex-start;
-      height: 100%;      
+      height: 100%;    
     }
 
     @media screen and (min-width: 480px) {
@@ -200,14 +187,12 @@ block header
       //-
         +img-svg('img', './../img/biscuit-logo-black.svg', 'Biscuit Logo', 'Biscuit', 'promo__logo')
         nav(class='hamburger-menu') <!-- N -->
-      +heading('heading heading_size_h2 promo__heading') Front-end framework for rapid web-develpment
+      h1(class='heading heading_size_h2 promo__heading') Front-end framework for rapid web-develpment
       div(class='promo__buttons')
-        +btn(
-           { tag: 'a', text: `Demo`, url: 'http://andreyponomarev.ru/biscuit/demo', state: 'enabled' }, 'btn btn_theme_black btn_size_lg' )
-        +btn(
-           { tag: 'a', text: 'Download', url: 'https://github.com/ponomarevandrey', state: 'enabled' }, 'btn btn_theme_empty btn_size_lg' )
-        +btn(
-           { tag: 'a', text: 'Documentation', url: '#demo', state: 'enabled' }, 'btn btn_theme_empty btn_size_lg' )
+        a(class='btn btn_theme_black btn_size_lg' href='http://andreyponomarev.ru/biscuit/demo') Demo
+        a(class='btn btn_theme_empty btn_size_lg' href='https://github.com/ponomarevandrey') Download
+        a(class='btn btn_theme_empty btn_size_lg' href='#demo') Documentation
+
 
 
 block main
@@ -217,14 +202,19 @@ block main
     section(class='block')
       div(class='block__about')
         header(class='block__header') 
-          +text('heading heading_size_h1 text text_display_inline text_font-stack_monospace') #{biscuitBlock.name}
-          +icons(
-            'github', 
-            `${biscuitBlock.repository}`, 
-            'lg', 
-            'black')
+          span(class='heading heading_size_h1 text text_font-stack_monospace') #{biscuitBlock.name}
+          a(
+            href=`${biscuitBlock.repository}`
+            class='icons' 
+            aria-hidden='true'
+            focusable='false' 
+            title='Github'
+          )
+            span(class='icons__access-label') Github
+            svg(class=`icons__img icons__img_size_lg icons__img_color_black`)
+              use(xlink:href='./img/sprite.svg#github')
         div(class='block__description') 
-          +text('text text_display_inline') #{biscuitBlock.description}
+          span('text text_display_inline') #{biscuitBlock.description}
         - if (allMods != false)
           div(class='table block__table table_theme_documentation')
             table(class='table__container')
@@ -237,13 +227,13 @@ block main
                 each mod in allMods
                   tr(class='table__row')
                     td(class='table__cell table__cell_type_main block__col1')
-                      +code(`${mod.name}`, 'code code_display_inline code_theme_black')
+                      code(class='code code_display_inline code_theme_black') #{mod.name}
                     td(class='table__cell table__cell_type_main block__col2')
                       - if (mod.values === undefined) 
-                        +text('text text_display_inline') —
+                        span('text text_display_inline') —
                       - else 
                         each value in mod.values
-                          +code(`${value}`, 'code code_display_inline code_theme_black')
+                          code(class='code code_display_inline code_theme_black') #{value}
                     td(class='table__cell table__cell_type_main block__col3') #{mod.description}
       block        
 
@@ -272,17 +262,14 @@ block main
         values: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
         description: 'Headings sizes' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../../node_modules/biscuit-blocks-lib/heading/README.md
-      div(class='block__example')
-        +heading('heading heading_size_h1') Heading One heading one heading one
-        +heading('heading heading_size_h2') Heading Two heading two heading two heading two
-        +heading('heading heading_size_h3') Heading Three heading three heading three heading 
-        +heading('heading heading_size_h4') Heading Four heading four heading four heading four
-        +heading('heading heading_size_h5') Heading Five heading five heading five heading five heading five heading five
-        +heading('heading heading_size_h6') Heading Six heading six heading six heading six heading six heading six heading six heading six heading six
 
+      div(class='block__example')
+        h1(class='heading heading_size_h1') Heading One
+        h1(class='heading heading_size_h2') Heading Two
+        h1(class='heading heading_size_h3') Heading Three
+        h1(class='heading heading_size_h4') Heading Four
+        h1(class='heading heading_size_h5') Heading Five
+        h1(class='heading heading_size_h6') Heading Six
 
 
     //- text
@@ -315,18 +302,11 @@ block main
         values: ['sans-serif', 'serif', 'monospace'],
         description: 'Text font' }         
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/text/README.md
+
       div(class='block__example')
-        +text('text text_display_block text_size_xl').
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the #[+text('text text_display_inline text_color_info') 1500s], when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        span(class=`text_display_inline`) Lorem Ipsum is simply dummy text of the printing and typesetting industry
 
-        +text('text text_display_block text_color_danger text_line-height_sm').
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-
-          #[+text('text text_display_inline text_style_italic') Text]
-          #[+text('text text_display_inline text_style_bold') Text]
+        p(class=`text text_display_block text_size_xl`) Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the #[span(class=`text text_display_inline`) 1500s], when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 
 
 
@@ -344,30 +324,22 @@ block main
         values: ['black'],
         description: "Place an image into black frame" }  
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../../node_modules/biscuit-blocks-lib/img-raster/README.md
+
       div(class='block__example')
-        +img-raster(
-          {
-            alt: "Ships in the Field",
-            src: "./../img/animals_landscape_xxxl.jpg", 
-            srcset: {
-                "480": "./../img/animals_landscape_sm.jpg",
-                "768": "./../img/animals_landscape_md.jpg",
-                "992": "./../img/animals_landscape_lg.jpg",
-                "1200": "./../img/animals_landscape_xl.jpg",
-                "1800": "./../img/animals_landscape_xxl.jpg",
-                "2000": "./../img/animals_landscape_xxxl.jpg "
-              },
-        
-            captionText: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-
-            theme: undefined,
-
-            alignSelf: undefined
-          }
-        )
+        figure(class='img-raster')
+          picture(class='img-raster__wrapper')   
+            img(
+              class='img-raster__img' 
+              
+              src="./../img/animals_landscape_lg.jpg" 
+              
+              sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw" 
+              
+              srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w" 
+              
+              alt='Ships in the Field')
+          figcaption(class='img-raster__caption').
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 
 
 
@@ -381,11 +353,9 @@ block main
         values: ['black', 'white'],
         description: 'Line color' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../../node_modules/biscuit-blocks-lib/hr/README.md
+
       div(class='block__example')
-        +hr('hr hr_color_black')
+        hr(class='hr hr_color_black')
 
 
 
@@ -399,9 +369,7 @@ block main
         values: ['ordered', 'unordered'],
         description: 'List style' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../../node_modules/biscuit-blocks-lib/list/README.md
+
       div(class='block__example')
         ul(class='list list_style_unordered')
           li(class='list__item') Fruit
@@ -427,12 +395,10 @@ block main
         values: undefined,
         description: 'Anchor link. Adds small anchor icon after link' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/link/README.md
+
       div(class='block__example')
-        +link('https://github.com/ponomarevandrey', 'link') Click me, I'm a link!
-        +link('https://github.com/ponomarevandrey', 'link link_anchor') Click me, I'm an anchor link
+        a(href='https://github.com/ponomarevandrey' class='link') Click me, man, I'm a true hyperlink!
+        a(href='https://github.com/ponomarevandrey' class='link link_anchor') Click me, man, I'm an anchor link!
 
 
 
@@ -473,14 +439,13 @@ block main
           include:markdown-it ./../blocks.biscuit-lib/code/README.md
       div(class='block__example')
         //- inline code
-        p(class='text text_display_block text_size_root text_color_black') It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum #[+code( `console.log( a );`, 'code code_display_inline text text_size_sm code_theme_gray' ) ] it was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        p(class='text text_display_block text_size_root text_color_black') It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum #[code(class='code code_display_inline text text_size_sm code_theme_gray') console.log( a ) !!!; ] it was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         //- code block
-        +code( 
-          `window.addEventListener( 'load', => {
-            console.log('Ready');
-          })}`,
-        
-        'code code_display_block text text_size_sm code_theme_gray')
+        pre(class='code code_display_block text text_size_sm code_theme_gray')
+          code. 
+            window.addEventListener( 'load', => {
+              console.log('Ready');
+            })}
 
 
 
@@ -502,91 +467,27 @@ block main
         values: ['back-to-top'],
         description: 'Type of button' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/btn/README.md
+
       div(class='block__example')
-        //- <a>
-        +btn(
-          { 
-            tag: 'a', 
-            text: 'a href Button', 
-            url: 'https://github.com/ponomarevandrey', 
-            state: 'enabled' 
-          },
-          'btn btn_theme_black btn_size_md'
-        )
-        +btn(
-          { 
-            tag: 'a', 
-            text: 'a href Button disabled', 
-            url: 'https://github.com/ponomarevandrey', 
-            state: 'disabled' 
-          },
-          'btn btn_theme_black btn_size_md'
-        )
-        
-        //- <button>
-        +btn(
-          { 
-            tag: 'button', 
-            text: 'button Button', 
-            url: 'https://github.com/ponomarevandrey', 
-            state: 'enabled' 
-          },
-          'btn btn_theme_black btn_size_md'
-        )
-        +btn(
-          { 
-            tag: 'button', 
-            text: 'button Button disabled', 
-            url: 'https://github.com/ponomarevandrey', 
-            state: 'disabled'
-          },
-          'btn btn_theme_black btn_size_md'
-        )
+        button(type='button' class='btn btn_type_back-to-top' title='Go to top') Top
+        //- <a> button
+        //- enabled
+        a(class='btn btn_theme_black btn_size_md' href='https://github.com/ponomarevandrey') Click me
+        //- disabled
+        a(class='btn btn_theme_black btn_size_md btn_disabled' href='https://github.com/ponomarevandrey') Click me
+      
+        //- <button> button
+        //- enabled
+        button(type='button' class='btn btn_theme_black btn_size_md') Click me
+        //- disabled
+        button(class='btn btn_theme_black btn_size_md btn_disabled' disabled) Click me
 
-        //- <input>
-        +btn(
-          { 
-            tag: 'input', 
-            text: 'input Button', 
-            url: 'https://github.com/ponomarevandrey', 
-            state: 'enabled' 
-          },
-          'btn btn_theme_black btn_size_md'
-        )
-        +btn(
-          { 
-            tag: 'input', 
-            text: 'input Button', 
-            url: 'https://github.com/ponomarevandrey',  
-            state: 'disabled' 
-          },
-          'btn btn_theme_black btn_size_md'
-        )
+        //- <input> button
+        //- enabled
+        input(type='button' value='Click me' class='btn btn_theme_black btn_size_md')   
+        //- disabled
+        input(type='button' value='Click me' class='btn btn_theme_black btn_size_md btn_disabled' disabled) 
 
-        //- back-to-top-btn
-        +btn(
-          { 
-            tag: 'button', 
-            text: 'Top', 
-            url: undefined, 
-            state: undefined
-          },
-          'btn btn_theme_black btn_type_back-to-top'
-        )
-
-        //- button_theme_empty modifier
-        +btn(
-          { 
-            tag: 'a', 
-            text: 'empty theme button', 
-            url: 'https://github.com/ponomarevandrey', 
-            state: 'enabled'
-          },
-          'btn btn_theme_empty btn_size_md'
-        )
 
 
     //- grid-auto-col
@@ -595,113 +496,63 @@ block main
         repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/grid-auto-col',
         description: 'Responsive columns grid' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/grid-auto-col/README.md
+
       div(class='block__example')
         div(class='grid-auto-col')
 
           div(class='grid-equal-col__item')
             //- img-raster block
-            +img-raster(
-              {
-                alt: "Ships in the Field",
-                src: "./../img/animals_landscape_xxxl.jpg", 
-                srcset: {
-                    "480": "./../img/animals_landscape_sm.jpg",
-                    "768": "./../img/animals_landscape_md.jpg",
-                    "992": "./../img/animals_landscape_lg.jpg",
-                    "1200": "./../img/animals_landscape_xl.jpg",
-                    "1800": "./../img/animals_landscape_xxl.jpg",
-                    "2000": "./../img/animals_landscape_xxxl.jpg "
-                  },
-            
-                captionText: undefined,
-
-                theme: undefined,
-
-                alignSelf: undefined
-              }
-            )
-            +heading('heading heading_size_h3') Billions upon bil lions upon billions
-            +text('text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
-            +btn(
-              { 
-                tag: 'a', 
-                text: 'Visit Website', 
-                url: 'https://github.com/ponomarevandrey', 
-                state: 'enabled' 
-              },
-              'btn btn_theme_black btn_size_md'
-            )
+            figure(class='img-raster')
+              picture(class='img-raster__wrapper')   
+                img(
+                  class='img-raster__img' 
+                  
+                  src="./../img/animals_landscape_lg.jpg" 
+                  
+                  sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw" 
+                  
+                  srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w" 
+                  
+                  alt='Ships in the Field')
+            h1(class='heading heading_size_h3') Heading One Billions upon bil lions upon billions
+            p(class=`text text_display_block`) Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+            a(class='btn btn_theme_black btn_size_md' href='https://github.com/ponomarevandrey') Visit Website
 
           div(class='grid-auto-col__item')
             //- img-raster block
-            +img-raster(
-              {
-                alt: "Ships in the Field",
-                src: "./../img/animals_landscape_xxxl.jpg", 
-                srcset: {
-                    "480": "./../img/animals_landscape_sm.jpg",
-                    "768": "./../img/animals_landscape_md.jpg",
-                    "992": "./../img/animals_landscape_lg.jpg",
-                    "1200": "./../img/animals_landscape_xl.jpg",
-                    "1800": "./../img/animals_landscape_xxl.jpg",
-                    "2000": "./../img/animals_landscape_xxxl.jpg "
-                  },
-            
-                captionText: undefined,
-
-                theme: undefined,
-
-                alignSelf: undefined
-              }
-            )
-            +heading('heading heading_size_h3') Billions upon bil lions upon billions
-            +text('text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
-            +btn(
-              { 
-                tag: 'a', 
-                text: 'Visit Website', 
-                url: 'https://github.com/ponomarevandrey', 
-                state: 'enabled' 
-              },
-              'btn btn_theme_black btn_size_md'
-            )
+            figure(class='img-raster')
+              picture(class='img-raster__wrapper')   
+                img(
+                  class='img-raster__img' 
+                  
+                  src="./../img/animals_landscape_lg.jpg" 
+                  
+                  sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw" 
+                  
+                  srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w" 
+                  
+                  alt='Ships in the Field')
+            h1(class='heading heading_size_h3') Heading One Billions upon bil lions upon billions
+            p(class=`text text_display_block`) Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+            a(class='btn btn_theme_black btn_size_md' href='https://github.com/ponomarevandrey') Visit Website
 
           div(class='grid-auto-col__item')
             //- img-raster block
-            +img-raster(
-              {
-                alt: "Ships in the Field",
-                src: "./../img/animals_landscape_xxxl.jpg", 
-                srcset: {
-                    "480": "./../img/animals_landscape_sm.jpg",
-                    "768": "./../img/animals_landscape_md.jpg",
-                    "992": "./../img/animals_landscape_lg.jpg",
-                    "1200": "./../img/animals_landscape_xl.jpg",
-                    "1800": "./../img/animals_landscape_xxl.jpg",
-                    "2000": "./../img/animals_landscape_xxxl.jpg "
-                  },
-            
-                captionText: undefined,
-
-                theme: undefined,
-
-                alignSelf: undefined
-              }
-            )
-            +heading('heading heading_size_h3') Billions upon bil lions upon billions
-            +text('text text_display_block') Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
-            +btn(
-              { 
-                tag: 'a', 
-                text: 'Visit Website', 
-                url: 'https://github.com/ponomarevandrey', 
-                state: 'enabled' 
-              },
-              'btn btn_theme_black btn_size_md'
-            )
+            figure(class='img-raster')
+              picture(class='img-raster__wrapper')   
+                img(
+                  class='img-raster__img' 
+                  
+                  src="./../img/animals_landscape_lg.jpg" 
+                  
+                  sizes="(min-width: 1800px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 480px) 100vw, (min-width: 0) 100vw, 100vw" 
+                  
+                  srcset="./../img/animals_landscape_sm.jpg 480w, ./../img/animals_landscape_md.jpg 768w, ./../img/animals_landscape_lg.jpg 992w, ./../img/animals_landscape_xl.jpg 1200w, ./../img/animals_landscape_xxl.jpg 1800w, ./../img/animals_landscape_xxxl.jpg 2000w" 
+                  
+                  alt='Ships in the Field')
+            h1(class='heading heading_size_h3') Heading One Billions upon bil lions upon billions
+            p(class=`text text_display_block`) Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
+            a(class='btn btn_theme_black btn_size_md' href='https://github.com/ponomarevandrey') Visit Website
 
           div(class='grid-auto-col__item') One
           div(class='grid-auto-col__item') Two
@@ -723,9 +574,7 @@ block main
         repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/grid-page-layout1',
         description: 'Grid page layout' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/grid-page-layout1/README.md
+
       div(class='block__example' style="overflow: hidden;")
         section(class='grid-page-layout1')
           div(class='grid-page-layout1__header') Header
@@ -833,9 +682,7 @@ block main
         repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/grid-page-layout2',
         description: 'Grid page layout' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/grid-page-layout2/README.md
+
       div(class='block__example' style="overflow: hidden;")
         section(class='grid-page-layout2')
           div(class='grid-page-layout2__one').
@@ -848,21 +695,28 @@ block main
 
 
     //- img-svg
-      +block(
-        { name: 'img-svg',
-          repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/img-svg',
-          description: 'SVG image' }
+    +block(
+      { name: 'img-svg',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/img-svg',
+        description: 'SVG image' }
       )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/img-svg/README.md
-        div(class='block__example')
-          //- as <img>
-          +img-svg('img', './../img/logo.svg', 'Logoipsum logo', 'Logoipsum')
-          //- as CSS background-image
-          +img-svg('div')
-          //- and if you need interactivity, use SVG with the help of <object> tag
-          +img-svg('object', './../img/logo.svg')
+
+      div(class='block__example')
+        //- as <img>
+        img(
+          src='./../img/logo.svg' 
+          alt='Logoipsum logo'
+          title='Logoipsum'
+          class='img-svg'
+        )
+        //- as CSS background-image
+        div(class='img-svg img-svg_bg')
+        //- and if you need interactivity, use SVG with the help of <object> tag
+        object(
+          type="image/svg+xml" 
+          data='./../img/logo.svg'
+          class=`img-svg ${classList}`
+        ) Your browser does not support SVG
 
 
 
@@ -876,21 +730,13 @@ block main
         values: ['default'],
         description: 'Color theme' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/link/README.md
+
       div(class='block__example')
-        +blockquote(
-            {
-              text: 'Big type, even huge type, can be beautiful and useful. But poise is usually far more important than size – and poise consists primarily of emptiness. Typographically, poise is made of white&space.',
-              author: 'Robert Bringhurst',
-              source: 'The Elements of Typographic Style',
-              sourceURL: 'https://github.com/ponomarevandrey'
-
-            },
-
-            'blockquote text text_size_xl blockquote_theme_default'
-          )
+        blockquote(class='blockquote text text_size_xl blockquote_theme_default') 
+          p(class='blockquote__body') Big type, even huge type, can be beautiful and useful. But poise is usually far more important than size – and poise consists primarily of emptiness. Typographically, poise is made of white&space.
+          footer(class='blockquote__footer') Robert Bringhurst —
+            cite(class='blockquote__source') 
+              a(class='blockquote__link' href='https://github.com/ponomarevandrey') &nbsp;The Elements of Typographic Style
 
 
 
@@ -904,14 +750,10 @@ block main
         values: ['black', 'white'],
         description: 'Badge' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/link/README.md
+
       div(class='block__example')
-        +badge('NEW!', 'badge badge_theme_black')
-        +badge('Archived', 'badge badge_theme_black')
-        +badge('NEW!', 'badge badge_theme_white')
-        +badge('Archived', 'badge badge_theme_white')
+        span(class='badge badge_theme_black') NEW!
+        span(class='badge badge_theme_white') NEW!
 
 
 
@@ -925,13 +767,11 @@ block main
         values: ['black', 'white'],
         description: 'Clickable label' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/label/README.md
+
       div(class='block__example')
-        +label('Recursion', 'http://google.com', 'label label_theme_white')
-        +label('Callback', 'http://google.com', 'label label_theme_white')
-        +label('Prototypes', 'http://google.com', 'label label_theme_white')
+        a(href='http://google.com' class='label label_theme_white') Recursion
+        a(href='http://google.com' class='label label_theme_white') Callback
+        a(href='http://google.com' class='label label_theme_white') Prototypes
 
 
 
@@ -941,11 +781,15 @@ block main
         repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/pagination',
         description: 'Pagination' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/link/README.md
+
       div(class='block__example')
-        +pagination('pagination')
+        div(class='pagination')
+          a(href='#wq##' class='pagination__item') &laquo;
+          a(href='##fd#' class='pagination__item') 1
+          a(href='##s#' class='pagination__item pagination__item_active') 2
+          a(href='https://github.com/ponomarevandrey' class='pagination__item') 3
+          a(href='#da##' class='pagination__item') 4
+          a(href='#fd##' class='pagination__item') &raquo;
 
 
 
@@ -955,16 +799,16 @@ block main
         repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/breadcrumbs',
         description: 'Breadcrumbs' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/label/README.md
+
       div(class='block__example')
-        +breadcrumb(
-          'breadcrumb', 
-          { name: 'Home', url: 'https://github.com/ponomarevandrey' },
-          { name: 'Equipment', url: 'https://github.com/ponomarevandrey' },
-          { name: 'Cooking Equipment', url: 'https://github.com/ponomarevandrey' }
-        )
+        ul(class='breadcrumb')
+          li(class='breadcrumb__item')
+            a(href='https://github.com/ponomarevandrey' class='link') Home
+          li(class='breadcrumb__item')
+            a(href='https://github.com/ponomarevandrey' class='link') Equipment
+          li(class='breadcrumb__item')
+            a(href='https://github.com/ponomarevandrey' class='link') Cooking Equipment
+          li(class='breadcrumb__item breadcrumb__item_active') Cooking Performance Group S60-G24-N Natural Gas 6 Burner 60" Range with 24" Griddle and 2 Standard Ovens - 280,000 BTU
 
 
 
@@ -982,75 +826,96 @@ block main
         values: ['github', 'facebook', 'instagram', 'odnoklassniki', 'telegram', 'twitter', 'youtube', 'vkontakte', 'black', 'white'],
         description: 'Color of icons' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/label/README.md
+
       div(class='block__example block__icons')
-        //- color - bradn color
-        div
-          +icons('github', 'https://github.com/ponomarevandrey', 'md')
-          +icons('facebook', 'https://github.com/ponomarevandrey', 'md')
-          +icons('instagram', 'https://github.com/ponomarevandrey', 'md')
-          +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'md')
-          +icons('telegram', 'https://github.com/ponomarevandrey', 'md')
-          +icons('twitter', 'https://github.com/ponomarevandrey', 'md')
-          +icons('youtube', 'https://github.com/ponomarevandrey', 'md')
-          +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md')
+      
+        a(
+          href='https://github.com/ponomarevandrey' 
+          class='icons' 
+          aria-hidden='true'
+          focusable='false' 
+          title='Github'
+        )
+          span(class='icons__access-label') Github
+          svg(class=`icons__img icons__img_size_md icons__img_color_black`)
+            use(xlink:href='./img/sprite.svg#github')
 
-        //- colo - black
-        div
-          +icons('github', 'https://github.com/ponomarevandrey', 'md', 'black')
-          +icons('facebook', 'https://github.com/ponomarevandrey', 'md', 'black')
-          +icons('instagram', 'https://github.com/ponomarevandrey', 'md', 'black')
-          +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'md', 'black')
-          +icons('telegram', 'https://github.com/ponomarevandrey', 'md', 'black')
-          +icons('twitter', 'https://github.com/ponomarevandrey', 'md', 'black')
-          +icons('youtube', 'https://github.com/ponomarevandrey', 'md', 'black')
-          +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md', 'black')
+        a(
+          href=`https://github.com/ponomarevandrey` 
+          class='icons' 
+          aria-hidden='true'
+          focusable='false' 
+          title='Facebook'
+        )
+          span(class='icons__access-label') Facebook
+          svg(class=`icons__img icons__img_size_md icons__img_color_black`)
+            use(xlink:href='./img/sprite.svg#facebook')
 
-        //- color - white
-        div
-          +icons('github', 'https://github.com/ponomarevandrey', 'md', 'white')
-          +icons('facebook', 'https://github.com/ponomarevandrey', 'md', 'white')
-          +icons('instagram', 'https://github.com/ponomarevandrey', 'md', 'white')
-          +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'md', 'white')
-          +icons('telegram', 'https://github.com/ponomarevandrey', 'md', 'white')
-          +icons('twitter', 'https://github.com/ponomarevandrey', 'md', 'white')
-          +icons('youtube', 'https://github.com/ponomarevandrey', 'md', 'white')
-          +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md', 'white')
+        a(
+          href=`https://github.com/ponomarevandrey` 
+          class='icons' 
+          aria-hidden='true'
+          focusable='false' 
+          title='Instagram'
+        )
+          span(class='icons__access-label') Instagram
+          svg(class=`icons__img icons__img_size_md icons__img_color_black`)
+            use(xlink:href='./img/sprite.svg#instagram')
 
-        //- sizes - sm
-        div
-          +icons('github', 'https://github.com/ponomarevandrey', 'sm')
-          +icons('facebook', 'https://github.com/ponomarevandrey', 'sm')
-          +icons('instagram', 'https://github.com/ponomarevandrey', 'sm')
-          +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'sm')
-          +icons('telegram', 'https://github.com/ponomarevandrey', 'sm')
-          +icons('twitter', 'https://github.com/ponomarevandrey', 'sm')
-          +icons('youtube', 'https://github.com/ponomarevandrey', 'sm')
-          +icons('vkontakte', 'https://github.com/ponomarevandrey', 'sm')
+        a(
+          href=`https://github.com/ponomarevandrey` 
+          class='icons' 
+          aria-hidden='true'
+          focusable='false' 
+          title='Odnoklassniki'
+        )
+          span(class='icons__access-label') Odnoklassniki
+          svg(class=`icons__img icons__img_size_md icons__img_color_black`)
+            use(xlink:href='./img/sprite.svg#odnoklassniki')
 
-        //- sizes - md
-        div
-          +icons('github', 'https://github.com/ponomarevandrey', 'md')
-          +icons('facebook', 'https://github.com/ponomarevandrey', 'md')
-          +icons('instagram', 'https://github.com/ponomarevandrey', 'md')
-          +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'md')
-          +icons('telegram', 'https://github.com/ponomarevandrey', 'md')
-          +icons('twitter', 'https://github.com/ponomarevandrey', 'md')
-          +icons('youtube', 'https://github.com/ponomarevandrey', 'md')
-          +icons('vkontakte', 'https://github.com/ponomarevandrey', 'md')
+        a(
+          href=`https://github.com/ponomarevandrey` 
+          class='icons' 
+          aria-hidden='true'
+          focusable='false' 
+          title='Telegram'
+        )
+          span(class='icons__access-label') Telegram
+          svg(class=`icons__img icons__img_size_md icons__img_color_black`)
+            use(xlink:href='./img/sprite.svg#telegram')
 
-        //- sizes - lg
-        div
-          +icons('github', 'https://github.com/ponomarevandrey', 'lg')
-          +icons('facebook', 'https://github.com/ponomarevandrey', 'lg')
-          +icons('instagram', 'https://github.com/ponomarevandrey', 'lg')
-          +icons('odnoklassniki', 'https://github.com/ponomarevandrey', 'lg')
-          +icons('telegram', 'https://github.com/ponomarevandrey', 'lg')
-          +icons('twitter', 'https://github.com/ponomarevandrey', 'lg')
-          +icons('youtube', 'https://github.com/ponomarevandrey', 'lg')
-          +icons('vkontakte', 'https://github.com/ponomarevandrey', 'lg')
+        a(
+          href=`https://github.com/ponomarevandrey` 
+          class='icons' 
+          aria-hidden='true'
+          focusable='false' 
+          title='Twitter'
+        )
+          span(class='icons__access-label') Twitter
+          svg(class=`icons__img icons__img_size_md icons__img_color_black`)
+            use(xlink:href='./img/sprite.svg#twitter')
+
+        a(
+          href=`https://github.com/ponomarevandrey` 
+          class='icons' 
+          aria-hidden='true'
+          focusable='false' 
+          title='YouTube'
+        )
+          span(class='icons__access-label') YouTube
+          svg(class=`icons__img icons__img_size_md icons__img_color_black`)
+            use(xlink:href='./img/sprite.svg#youtube')
+
+        a(
+          href=`https://github.com/ponomarevandrey` 
+          class='icons' 
+          aria-hidden='true'
+          focusable='false' 
+          title='VKontakte'
+        )
+          span(class='icons__access-label') VKontakte
+          svg(class=`icons__img icons__img_size_md icons__img_color_black`)
+            use(xlink:href='./img/sprite.svg#vkontakte')
 
 
 
@@ -1060,9 +925,7 @@ block main
         repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/tooltip',
         description: 'Tooltip' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/label/README.md
+
       div(class='block__example')
         div
           p(class='text text_display_inline') ... some text, 
@@ -1086,12 +949,15 @@ block main
         values: ['4x3'],
         description: 'Aspect ratio' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/label/README.md
+
       div(class='block__example')
-        +embed('https://www.youtube.com/embed/oRkNaF0QvnI', 'embed')
-      
+        div(class='embed') 
+          iframe(
+            src='https://www.youtube.com/embed/oRkNaF0QvnI'
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullsc
+          )
+              
 
 
     //- table
@@ -1104,9 +970,7 @@ block main
         values: ['documentation', 'light'],
         description: 'Aspect ratio' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/table/README.md
+
       div(class='block__example' style='overflow: scroll;')
         div(class='table table_theme_light')
           table(class='table__container')
@@ -1162,66 +1026,51 @@ block main
         repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/loader',
         description: 'Loader' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/label/README.md
+
       div(class='block__example')
-        +loader('loader')
+        div(class='loader')
 
 
 
     //- comment
-      +block(
-        { name: 'comment',
-          repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/comment ',
-          description: 'Comment section' }
-      )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/comment/README.md
-        div(class='block__example')
-          +comment(
-            {
-              name: 'Mike Wolfson',
-              pic: './../node_modules/biscuit-blocks-lib/comment/user-pic.svg'
-            },
+    +block(
+      { name: 'comment',
+        repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/comment ',
+        description: 'Comment section' }
+    )
 
-            {
-              time: 'august 19, 2019 17:48',
-              content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
-            }, 
+      div(class='block__example')
+        div(class='comment')
+          img(src='./../blocks.biscuit-lib/comment/user-pic.svg' alt='Mike Wolfson' class='comment__user-pic')
+          div(class='comment__text') 
+            div(class='comment__header')
+              span(class='comment__user-name') Mike Wolfson
+              span(class='comment__time') august 19, 2019 17:48
+            p(class='comment__content') Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+            div(class='comment__button')
+              a(href='https://github.com/ponomarevandrey' class='link') Reply
 
-            'comment')
+        div(class='comment')
+          img(src='./../blocks.biscuit-lib/comment/user-pic.svg' alt='Mike Wolfson' class='comment__user-pic')
+          div(class='comment__text') 
+            div(class='comment__header')
+              span(class='comment__user-name') Mike Wolfson
+              span(class='comment__time') august 19, 2019 17:48
+            p(class='comment__content') Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+            div(class='comment__button')
+              a(href='https://github.com/ponomarevandrey' class='link') Reply
 
+        div(class='comment')
+          img(src='./../blocks.biscuit-lib/comment/user-pic.svg' alt='Mike Wolfson' class='comment__user-pic')
+          div(class='comment__text') 
+            div(class='comment__header')
+              span(class='comment__user-name') Mike Wolfson
+              span(class='comment__time') august 19, 2019 17:48
+            p(class='comment__content') Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+            div(class='comment__button')
+              a(href='https://github.com/ponomarevandrey' class='link') Reply
 
-          +comment(
-            {
-              name: 'Mike Wolfson',
-              pic: './../blocks.biscuit-lib/comment/user-pic.svg'
-            },
-
-            {
-              time: 'august 19, 2019 17:48',
-              content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
-            }, 
-
-            'comment')
-
-
-          +comment(
-            {
-              name: 'Mike Wolfson',
-              pic: './../blocks.biscuit-lib/comment/user-pic.svg'
-            },
-
-            {
-              time: 'august 19, 2019 17:48',
-              content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
-            }, 
-
-            'comment')
-
-
+            
 
     //- control
     +block(
@@ -1249,9 +1098,7 @@ block main
         values: undefined,
         description: 'Disabled state' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/label/README.md
+
       div(class='block__example')
         div
           //- checkbox:
@@ -1627,9 +1474,7 @@ block main
         repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/btn-close',
         description: 'Close button' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/btn-close/README.md
+
       div(class='block__example')
         <button type="button" class="close" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -1643,9 +1488,7 @@ block main
         repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/burger-menu',
         description: 'Hamburger menu' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/burger-menu/README.md
+
       div(class='block__example')
 
 
@@ -1656,9 +1499,7 @@ block main
         repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/modal',
         description: 'Modal window' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/modal/README.md
+
       div(class='block__example')
 
 
@@ -1673,9 +1514,7 @@ block main
         values: ['solid', 'gradient', 'img'],
         description: "(apply to 'page__body' element) Apllies fixed background to the full page height" }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/page/README.md
+
       div(class='block__example')
 
 
@@ -1689,9 +1528,7 @@ block main
         values: ['center'],
         description: "Align header content to center" }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/header/README.md
+
       div(class='block__example' style='overflow: hidden;')
         div(class='header')
 
@@ -1704,9 +1541,7 @@ block main
         repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/main',
         description: 'Main content container' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/main/README.md
+
       div(class='block__example')
 
 
@@ -1717,9 +1552,7 @@ block main
         repository: 'https://github.com/ponomarevandrey/biscuit/tree/master/src/blocks.biscuit-lib/footer',
         description: 'Page footer container' }
     )
-      //-
-        div(class='block__readme') 
-          include:markdown-it ./../blocks.biscuit-lib/footer/README.md
+
       div(class='block__example')
         footer(class='footer') &copy; 2019
 

@@ -1,0 +1,92 @@
+.btn {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  border: 0;
+  transition: transform 0.2s ease, background-color 0.2s ease,
+    box-shadow 0.2s ease;
+  white-space: nowrap;
+  box-sizing: border-box;
+  font-weight: bold;
+  vertical-align: middle;
+
+  // Modifiers:
+
+  // disabled:
+
+  &_disabled,
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &_theme_black {
+    color: $color_white;
+    background-color: $color_black;
+    display: inline-block;
+    position: relative;
+    padding: 0.8rem 1rem;
+    border-radius: $border_radius;
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: $color_gray-darken;
+    }
+
+    &:focus {
+      box-shadow: $form__box-shadow_state_initial;
+    }
+
+    &:active {
+      transform: translate(0, 2px);
+      box-shadow: $form__box-shadow_state_initial;
+    }
+  }
+
+  &_theme_empty {
+    color: $color_black;
+    background-color: none;
+    display: inline-block;
+    position: relative;
+    padding: 0.8rem 1rem;
+    border-radius: $border_radius;
+    border: 1px solid $color_black;
+
+    &:hover {
+      background-color: $color_black;
+      color: $color_white;
+    }
+
+    &:focus {
+      box-shadow: $form__box-shadow_state_initial;
+    }
+
+    &:active {
+      transform: translate(0, 2px);
+      box-shadow: $form__box-shadow_state_initial;
+    }
+  }
+
+  &_type_back-to-top {
+    display: none; // default state of the button is hidden
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1030; // guarantee that the button is always on top of other layers
+    outline: none;
+    background-color: $color_black;
+    color: $color_white;
+    padding: 15px;
+    border-radius: $border_radius;
+
+    &:hover {
+      background-color: $color_black;
+      color: $color_white;
+    }
+  }
+}

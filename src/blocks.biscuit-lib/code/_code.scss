@@ -1,0 +1,31 @@
+.code {
+  border-radius: $border_radius;
+  white-space: pre-wrap;
+  // word-wrap: break-word;
+  border: none;
+  font-family: $font-stack_monospace;
+  box-sizing: border-box;
+
+  &_display_block {
+    padding: 2em;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &_display_inline {
+    display: inline-block;
+    padding: 0 0.4rem;
+    margin: 0 0.1rem;
+  }
+
+  &_theme_gray {
+    background-color: $color_gray-lightest;
+    color: $color_black;
+  }
+
+  &_theme_black {
+    background-color: $color_black;
+    color: $color_white;
+  }
+}

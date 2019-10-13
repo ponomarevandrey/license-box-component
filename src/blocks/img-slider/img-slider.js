@@ -1,5 +1,8 @@
 'strict';
 
+let node = document.querySelector('.main');
+console.log(node);
+
 // ref: http://christianheilmann.com/2015/04/08/keeping-it-simple-coding-a-carousel/
 
 let carousel = (function() {

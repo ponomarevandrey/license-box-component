@@ -1,0 +1,61 @@
+.table {
+  // make table responsive (adds scrollbar if the width is too small)
+  overflow-x: auto;
+
+  &__container {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+
+  &__caption {
+    font-style: italic;
+    padding: 1em;
+  }
+
+  &__cell {
+    padding: 1em;
+    text-align: left;
+    vertical-align: top;
+
+    /*
+    &_type_main {
+    }
+    */
+  }
+
+  // Modifiers:
+
+  // theme_light
+
+  &_theme_light {
+    & th {
+      background-color: $color_black;
+      color: $color_white;
+    }
+
+    & tr:nth-child(even) {
+      background-color: $color_gray-lightest;
+    }
+    & tr:hover {
+      background-color: $color_gray-lightest;
+    }
+  }
+
+  // theme_documentation
+
+  &_theme_documentation {
+    & th {
+      background-color: $color_black;
+      font-weight: bold;
+    }
+
+    & tr {
+      border-bottom: 1px solid $color_black;
+    }
+    & tr:hover {
+      background-color: $color_gray-lightest;
+      transition: all 0.15s ease;
+    }
+  }
+}
