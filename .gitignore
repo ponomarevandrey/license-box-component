@@ -52,7 +52,7 @@
 _source/                        
 
 # other
-dist/
+# dist/
 node_modules/
 package-lock.json
 *~
