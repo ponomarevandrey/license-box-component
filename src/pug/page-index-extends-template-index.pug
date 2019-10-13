@@ -5,20 +5,20 @@ block header
 
 block main 
   main(class='main') Main content stuff
-    div(class="carousel-box")
-      div(class="buttons")
-        button(class="prev") ◀  
-          span(class="offscreen") Previous
-        button(class="next") ▶ 
-          span(class="offscreen") Next 
-      ol(class="content")
-        li
+    div(class="carousel")
+      div(class="carousel__buttons")
+        button(class="carousel__prev") ◀  
+          span(class="carousel__offscreen") Previous
+        button(class="carousel__next") ▶ 
+          span(class="carousel__offscreen") Next 
+      ol(class="carousel__content")
+        li(class='carousel__item')
           a(href='###') 1
-        li
+        li(class='carousel__item')
           a(href='###') 2
-        li 
+        li(class='carousel__item')
           a(href='###') 3
-        li 
+        li(class='carousel__item')
           a(href='###') 4
 
   

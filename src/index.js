@@ -33,10 +33,6 @@ import './blocks.biscuit-lib/text/_text.scss';
 
 import './blocks.biscuit-lib/heading/_heading.scss';
 
-import './blocks.biscuit-lib/grid-auto-col/_grid-auto-col.scss';
-
-import './blocks.biscuit-lib/grid-gallery/_grid-gallery.scss';
-
 import './blocks.biscuit-lib/list/_list.scss';
 
 import './blocks.biscuit-lib/btn/_btn.scss';
@@ -104,6 +100,10 @@ import './blocks/grid-page-layout1/_grid-page-layout1.scss';
 
 import './blocks/grid-page-layout2/_grid-page-layout2.scss';
 
+import './blocks/grid-gallery/_grid-gallery.scss';
+
+import './blocks/grid-auto-col/_grid-auto-col.scss';
+
 import './blocks/main/_main.scss';
 
 import './blocks/header/_header.scss';
@@ -114,3 +114,5 @@ import './blocks/fullscreen-bg/_fullscreen-bg.scss';
 
 import './blocks/img-slider/_img-slider.scss';
 import './blocks/img-slider/img-slider.js';
+
+// import 'biscuit-blocks-lib/btn/_btn.scss';
