@@ -8,11 +8,6 @@
   align-items: center;
   padding: 1rem;
 
-  &__total {
-    font-family: Bebas, Arial, Verdana;
-    text-transform: uppercase;
-  }
-
   &__license-plans {
     display: flex;
     flex-flow: column nowrap;
@@ -23,11 +18,7 @@
 
   &__license-plan {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
     border: 1px solid transparent;
-    padding: 1rem;
 
     &_active {
       cursor: pointer;
@@ -61,6 +52,7 @@
     font-family: Bebas, Arial, Verdana;
     padding: 2rem 0;
     font-size: 2rem;
+    text-transform: uppercase;
   }
 
   &__btn {

@@ -1,84 +1,69 @@
 .control {
-  // make room for control:
-  padding-left: 3rem;
   display: block;
+  position: relative;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  // hide default &__system-control but keep it accessible
+  // hide default system control but keep it accessible:
   &__system-control {
+    left: 1.5rem;
+    top: 2rem;
     opacity: 0;
     z-index: -1;
     position: absolute;
   }
 
-  &__label {
-    position: relative;
-    cursor: pointer;
-    /* make it not a 'block', but 'inline-block' to prevent it from occupying 100% of the width, creating a blank clickable area to the right of the label text: */
-    display: inline-block;
-
-    // define sime common styles for any checkboxes,
-    // radio buttons and switches:
-
-    // create the foundation for the future checkbox/radio btn/switch:
-    &:before {
-      box-sizing: border-box;
-      content: '';
-      position: absolute;
-      display: block;
-      top: 0.5rem;
-      left: -3rem;
-      width: 2rem;
-      height: 2rem;
-      background-color: $color_white;
-    }
-
-    // create the foundation for the future
-    // radio dot/checkmark//switch circle button:
-    &:after {
-      box-sizing: border-box;
-      content: '';
-      position: absolute;
-      // by default, hide custrom control dot/checkmark:
-      display: none;
-      // custrom control dot/checkmark styles:
-      left: -3rem;
-      top: 0.5rem;
-      width: 2rem;
-      height: 2rem;
-    }
-
-    // Modifiers:
-
-    /****************
-     * Radio button *
-     ****************/
-
-    // add custom radio button styles:
-    &_radio:before {
-      border-radius: 50%;
-      border: $form__border_state_initial;
-      transition: 0.2s;
-      border: 5px solid #dadada;
-    }
-
-    // add custom dot styles:
-    &_radio:after {
-      border-radius: 50%;
-      // center/40% means 'to center the image and scale it by 40%':
-      background: no-repeat center/38% url('./dot.svg');
-    }
+  &__license-plan-name {
+    margin-left: 3rem;
   }
 
-  /*****************************
-   * Modifiers (when checked): *
-   *****************************/
+  &__box__license-plan-price {
+  }
+
+  // create the base for the radio button:
+  &__custom-control {
+    box-sizing: border-box;
+    position: absolute;
+    display: block;
+    top: 1.5rem;
+    left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: $color_white;
+    border-radius: 50%;
+    transition: 0.2s;
+    border: 5px solid #dadada;
+  }
+
+  // create the base for the radio button dot:
+  &__custom-control_active {
+    box-sizing: border-box;
+    position: absolute;
+    // by default, hide custrom control dot/checkmark:
+    display: none;
+    // custrom control dot/checkmark styles:
+    left: 1rem;
+    top: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    // center/40% means 'to center the image and scale it by 40%':
+    background: no-repeat center/38% url('./dot.svg');
+  }
+
+  /* Modifiers (when checked): */
 
   // show the checkmark/dot:
-  &__system-control:checked ~ &__label:after {
+  &__system-control:checked ~ &__custom-control_active {
     display: block;
   }
   // style control:
-  &__system-control:checked ~ &__label:before {
+  &__system-control:checked ~ &__custom-control {
     background-color: $color_white;
     border-color: #34648e;
   }
