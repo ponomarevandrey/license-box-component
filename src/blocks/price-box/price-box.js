@@ -117,26 +117,6 @@ function renderBox(response) {
 
     box__numberOfLicenses.appendChild(select);
 
-    function handleSelectBox() {
-      const num = Number(this.options[this.selectedIndex].value);
-      // const total = num *
-
-      const selectedPricePlan = document.querySelector(
-        'input[type="radio"]:checked'
-      ).value;
-      response.licensePlan.forEach((plan, index) => {
-        if (plan.name === selectedPricePlan) {
-          const planPrice = Number(
-            response.licensePlan[index].price.match(/\d+/)[0]
-          );
-          const total = num * planPrice;
-          //console.log(total);
-        }
-      });
-    }
-
-    select.addEventListener('change', handleSelectBox);
-
     return select;
   }
 
