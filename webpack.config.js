@@ -101,7 +101,7 @@ module.exports = (env, options) => {
               options: {
                 sourceMap: true,
                 data:
-                  '@import "./blocks.biscuit-lib/_global-variables-mixins-functions.scss";',
+                  '@import "node_modules/biscuit-components/_global-variables-mixins-functions.scss";',
                 includePaths: [__dirname, 'src'],
               },
             },
@@ -186,40 +186,7 @@ module.exports = (env, options) => {
           collapseWhitespace: false,
         },
       }),
-      
-      // 404 page
-      new HtmlWebpackPlugin({
-        inject: true,
-        hash: false,
-        filename: '404.html',
-        template: './src/pug/page-404-extends-template-index.pug',
-        minify: {
-          removeComments: true,
-          collapseWhitespace: false,
-        },
-      }),
-      // demo page
-      new HtmlWebpackPlugin({
-        inject: true,
-        hash: false,
-        filename: 'demo.html',
-        template: './src/pug/page-demo-extends-template-demo.pug',
-        minify: {
-          removeComments: true,
-          collapseWhitespace: false,
-        },
-      }),
-      // demo doc
-      new HtmlWebpackPlugin({
-        inject: true,
-        hash: false,
-        filename: 'doc.html',
-        template: './src/pug/page-doc-extends-template-demo.pug',
-        minify: {
-          removeComments: true,
-          collapseWhitespace: false,
-        },
-      }),
+
       new ScriptExtHtmlWebpackPlugin({
         defaultAttribute: 'async',
       }),

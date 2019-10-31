@@ -1,29 +1,22 @@
 extends template-index.pug
 
 block header
-  header(class='header') Header content
+	header(class='header header_align-content_center') 
+		h1(class='heading heading_size_h3') Тестовые задания для Front End разработчика Daminion Software
 
-block main 
-  main(class='main') Main content stuff
-    div(class="carousel")
-      div(class="carousel__buttons")
-        button(class="carousel__prev") ◀  
-          span(class="carousel__offscreen") Previous
-        button(class="carousel__next") ▶ 
-          span(class="carousel__offscreen") Next 
-      ol(class="carousel__content")
-        li(class='carousel__item')
-          a(href='###') 1
-        li(class='carousel__item')
-          a(href='###') 2
-        li(class='carousel__item')
-          a(href='###') 3
-        li(class='carousel__item')
-          a(href='###') 4
-
-  
-  
-
+block main 	
+	div(class='main')
+		div(class='box')
+			div(class='box__license-plans')
+			div(class='box__number-of-licenses')
+				label(for='number-of-licenses' class='form-group__label') Number of licenses:
+				select(class='box__selectbox' id='number-of-licenses' name='number-of-licenses')
+					option(value='australia') Red
+					option(value='canada') Green
+					option(value='usa') Blue
+			div(class='box__total')
+			button(class='box__btn btn') buy now 
+			div(class='box__tip')
 
 block footer
-  footer(class='footer') &copy; 2019
+	footer(class='footer') &copy; 2019

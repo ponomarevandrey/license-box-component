@@ -1,0 +1,8 @@
+{
+  "licenseplan": [
+    { "name": "licenseplan#1", "price": "$13" },
+    { "name": "licenseplan#2", "price": "$22" },
+    { "name": "licenseplan#3", "price": "$34" }
+  ],
+  "number-of-licenses": [1, 3, 6, 10]
+}

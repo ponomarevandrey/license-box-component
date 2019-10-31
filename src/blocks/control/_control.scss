@@ -1,0 +1,85 @@
+.control {
+  // make room for control:
+  padding-left: 3rem;
+  display: block;
+
+  // hide default &__system-control but keep it accessible
+  &__system-control {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+  }
+
+  &__label {
+    position: relative;
+    cursor: pointer;
+    /* make it not a 'block', but 'inline-block' to prevent it from occupying 100% of the width, creating a blank clickable area to the right of the label text: */
+    display: inline-block;
+
+    // define sime common styles for any checkboxes,
+    // radio buttons and switches:
+
+    // create the foundation for the future checkbox/radio btn/switch:
+    &:before {
+      box-sizing: border-box;
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0.5rem;
+      left: -3rem;
+      width: 2rem;
+      height: 2rem;
+      background-color: $color_white;
+    }
+
+    // create the foundation for the future
+    // radio dot/checkmark//switch circle button:
+    &:after {
+      box-sizing: border-box;
+      content: '';
+      position: absolute;
+      // by default, hide custrom control dot/checkmark:
+      display: none;
+      // custrom control dot/checkmark styles:
+      left: -3rem;
+      top: 0.5rem;
+      width: 2rem;
+      height: 2rem;
+    }
+
+    // Modifiers:
+
+    /****************
+     * Radio button *
+     ****************/
+
+    // add custom radio button styles:
+    &_radio:before {
+      border-radius: 50%;
+      border: $form__border_state_initial;
+      transition: 0.2s;
+      border: 5px solid #dadada;
+    }
+
+    // add custom dot styles:
+    &_radio:after {
+      border-radius: 50%;
+      // center/40% means 'to center the image and scale it by 40%':
+      background: no-repeat center/38% url('./dot.svg');
+    }
+  }
+
+  /*****************************
+   * Modifiers (when checked): *
+   *****************************/
+
+  // show the checkmark/dot:
+  &__system-control:checked ~ &__label:after {
+    display: block;
+  }
+  // style control:
+  &__system-control:checked ~ &__label:before {
+    background-color: $color_white;
+    border-color: #34648e;
+  }
+}

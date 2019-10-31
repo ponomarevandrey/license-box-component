@@ -1,0 +1,75 @@
+.box {
+  min-width: 420px;
+  background-color: #f8f8f8;
+  border: 1rem solid #ebebeb;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 1rem;
+
+  &__total {
+    font-family: Bebas, Arial, Verdana;
+    text-transform: uppercase;
+  }
+
+  &__license-plans {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    padding-bottom: 0.6rem;
+    cursor: pointer;
+  }
+
+  &__license-plan {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid transparent;
+    padding: 1rem;
+
+    &_active {
+      cursor: pointer;
+      background-color: #ebf4f7;
+      border: 1px solid #b7d7e2;
+      box-sizing: content-box;
+    }
+  }
+
+  &__license-plan-name {
+    font-family: Bebas, Arial, Verdana;
+    color: grey;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  &__license-plan-price {
+    font-family: Arial, Tahoma, Verdana;
+    color: grey;
+  }
+
+  &__number-of-licenses {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 2rem 0;
+    width: 100%;
+    font-family: Arial, Tahoma, Verdana;
+  }
+
+  &__total {
+    font-family: Bebas, Arial, Verdana;
+    padding: 2rem 0;
+    font-size: 2rem;
+  }
+
+  &__btn {
+    &:hover {
+      background-color: green;
+    }
+  }
+
+  &__tip {
+    padding: 2rem 0;
+  }
+}
