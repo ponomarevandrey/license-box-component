@@ -5,13 +5,15 @@ const jsonbinAPIkey =
 const jsonURL = 'https://api.jsonbin.io/b/5db8ac21511885752b0041e9/2';
 
 const box = document.querySelector('.box');
+const defaultPricePlan = 3;
+const defaultSelectBoxOption = 2;
 
 //-
 
 function renderBox(response) {
   const box__licensePlans = document.querySelector('.box__license-plans');
 
-  function renderPlan(plan, index) {
+  function renderPlan(plan, index, selectedByDefault = 1) {
     const id = `rb${index}`;
 
     const control = document.createElement('label');
@@ -39,7 +41,8 @@ function renderBox(response) {
     control__systemControl.type = 'radio';
     control__systemControl.value = plan.name;
     control__systemControl.name = 'license-plan';
-    if (index === response.licensePlan.length - 1) {
+    // set price plan selected by default:
+    if (index === selectedByDefault - 1) {
       control__systemControl.checked = 'checked';
       control.classList.add('box__license-plan_active');
     }
@@ -93,7 +96,7 @@ function renderBox(response) {
 
   //-
 
-  function renderSelectBox(numberOfLicenses, selectedByDefault) {
+  function renderSelectBox(numberOfLicenses, selectedByDefault = 1) {
     const box__numberOfLicenses = document.querySelector(
       '.box__number-of-licenses'
     );
@@ -108,6 +111,7 @@ function renderBox(response) {
       option.value = number;
       option.textContent = number;
 
+      // set default select box value:
       if (index === selectedByDefault - 1) {
         option.setAttribute('selected', true);
       }
@@ -119,6 +123,8 @@ function renderBox(response) {
 
     return select;
   }
+
+  //-
 
   function renderTotal() {
     const box__total = document.querySelector('.box__total');
@@ -140,14 +146,22 @@ function renderBox(response) {
     box__total.textContent = `Total: ${currentPrice * currentSelectBoxValue}US`;
   }
 
+  //-
+
   // render all license plans:
-  response.licensePlan.forEach(renderPlan);
+  response.licensePlan.forEach((plan, index) => {
+    // third arguments is the number of price plan selected by default:
+    renderPlan(plan, index, defaultPricePlan);
+  });
   // when user selects a price plan, evend handler updates the style of
   // currently selected price plan and resets styles on all other plans:
   box__licensePlans.addEventListener('change', selectPricePlan);
   // build select box based on the data from JSON file and return it:
   // (the second argument is the option selected by default)
-  const selectBox = renderSelectBox(response.numberOfLicenses, 2);
+  const selectBox = renderSelectBox(
+    response.numberOfLicenses,
+    defaultSelectBoxOption
+  );
 
   // if user changes price plan on selec box value, update 'box__total' div;
   //
