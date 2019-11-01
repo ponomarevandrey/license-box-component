@@ -11,9 +11,12 @@ block main
 			div(class='box__number-of-licenses')
 				label(for='number-of-licenses' class='form-group__label') Number of licenses:
 			div(class='box__total')
-			button(class='box__btn btn') buy now 
+				span(class='box__total-text box__heading') Total:
+				span(class='box__total-sum box__heading') 
+				sup(class='box__total-currency box__heading')
+			button(class='btn box__btn') buy now 
 			div(class='box__tip')
 
 block footer
-	footer(class='footer') &copy; 2019
+	footer(class='footer') Tested in Chrome 78, Firefox 70 and Opera 58 / Linux
 

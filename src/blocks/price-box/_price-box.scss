@@ -8,6 +8,13 @@
   align-items: center;
   padding: 1rem;
 
+  &__heading {
+    font-family: Bebas, Arial, Verdana;
+    color: grey;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
   &__license-plans {
     display: flex;
     flex-flow: column nowrap;
@@ -28,13 +35,6 @@
     }
   }
 
-  &__license-plan-name {
-    font-family: Bebas, Arial, Verdana;
-    color: grey;
-    font-size: 2rem;
-    text-transform: uppercase;
-  }
-
   &__license-plan-price {
     font-family: Arial, Tahoma, Verdana;
     color: grey;
@@ -43,16 +43,25 @@
   &__number-of-licenses {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     width: 100%;
     font-family: Arial, Tahoma, Verdana;
   }
 
   &__total {
-    font-family: Bebas, Arial, Verdana;
-    padding: 2rem 0;
-    font-size: 2rem;
-    text-transform: uppercase;
+    padding: 1.5rem 0 0 0;
+  }
+
+  &__total-text {
+  }
+
+  &__total-currency {
+    font-size: 1.2rem;
+    color: #3387a7;
+  }
+
+  &__total-sum {
+    color: #3387a7;
   }
 
   &__btn {
@@ -62,6 +71,7 @@
   }
 
   &__tip {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
+    color: #3387a7;
   }
 }

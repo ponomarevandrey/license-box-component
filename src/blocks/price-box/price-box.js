@@ -31,7 +31,7 @@ function renderBox(response) {
 
     const box__licensePlanName = document.createElement('span');
     box__licensePlanName.classList.add(
-      'box__license-plan-name',
+      'box__heading',
       'control__license-plan-name'
     );
     box__licensePlanName.textContent = plan.name;
@@ -127,23 +127,29 @@ function renderBox(response) {
   //-
 
   function renderTotal() {
-    const box__total = document.querySelector('.box__total');
+    const box__totalSum = document.querySelector('.box__total-sum');
+    const box__totalCurrency = document.querySelector('.box__total-currency');
+    const box__tip = document.querySelector('.box__tip');
 
     const currentSelectBoxValue = Number(
       selectBox.options[selectBox.selectedIndex].value
     );
 
+    const selectedPricePlan = document.querySelector(
+      '.box__license-plans input[type="radio"]:checked'
+    );
+
     const currentPrice = (() => {
-      const selectedPricePlan = document.querySelector(
-        '.box__license-plans input[type="radio"]:checked'
-      );
       const [{ price }] = response.licensePlan.filter(
         plan => plan.name === selectedPricePlan.value
       );
       return Number(price.match(/\d+/)[0]);
     })();
 
-    box__total.textContent = `Total: ${currentPrice * currentSelectBoxValue}US`;
+    box__totalCurrency.textContent = 'US';
+    box__totalSum.textContent = ` $${currentPrice * currentSelectBoxValue}`;
+
+    box__tip.textContent = `Selected: ${selectedPricePlan.value.match(/\#.+/)}`;
   }
 
   //-
