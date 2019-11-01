@@ -1,5 +1,9 @@
 'use strict';
 
+//
+// Assignment 1
+//
+
 const jsonbinAPIkey =
   '$2b$10$66Zqkjp6s2XFRpL/.wqS0.4k7CxUK4N3WOPsjdVODrN4088K2EL.e';
 const jsonURL = 'https://api.jsonbin.io/b/5db8ac21511885752b0041e9/2';
@@ -150,6 +154,13 @@ function renderBox(response) {
     box__totalSum.textContent = ` $${currentPrice * currentSelectBoxValue}`;
 
     box__tip.textContent = `Selected: ${selectedPricePlan.value.match(/\#.+/)}`;
+
+    // create link for the button:
+    const box__btn = document.querySelector('.box__btn');
+    box__btn.setAttribute(
+      'href',
+      `http://google.com/name=${selectedPricePlan.name}&value=${selectedPricePlan.value}`
+    );
   }
 
   //-
@@ -200,3 +211,7 @@ fetch(jsonURL, {
   .catch(err => {
     throw new Error(err);
   });
+
+//
+// Assignment 2
+//
