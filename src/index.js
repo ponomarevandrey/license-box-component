@@ -41,3 +41,5 @@ import './blocks/price-box/_price-box.scss';
 import './blocks/btn/_btn.scss';
 
 import './blocks/control/_control.scss';
+
+import './blocks/canvas/_canvas.scss';
