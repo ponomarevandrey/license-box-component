@@ -148,7 +148,7 @@
       box__totalSum.textContent = ` $${currentPrice * selectBoxValue}`;
 
       box__tip.textContent = `Selected: ${selectedPricePlan.value.match(
-        /\#.+/
+        /#.+/
       )}`;
 
       const box__btn = document.querySelector('.box__btn');
@@ -204,6 +204,10 @@
 
 /* Assignment 2 */
 
+// https://stackoverflow.com/questions/3814442/drawing-a-circle-on-the-canvas-using-mouse-events
+// https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage
+//https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes
+
 (function() {
   const canvas = document.querySelector('.canvas');
   const ctx = canvas.getContext('2d');
@@ -218,12 +222,4 @@
   }
 })();
 
-/*
-let a = (function() {
-  console.log(5);
-  let b = 2;
-  return { b };
-})();
-// */
-
-console.log();
+// ... not finished
