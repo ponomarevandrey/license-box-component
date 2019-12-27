@@ -53,7 +53,7 @@
     height: 2rem;
     border-radius: 50%;
     // center/40% means 'to center the image and scale it by 40%':
-    background: no-repeat center/38% url('./dot.svg');
+    background: no-repeat center/38% url("./dot.svg");
   }
 
   /* Modifiers (when checked): */

@@ -1,7 +1,7 @@
 {
   "name": "static-website-starter-template",
   "version": "1.0.0",
-  "description": "Webpack template for developing static websites",
+  "description": "License plan box",
   "main": "master.js",
   "private": true,
   "scripts": {
